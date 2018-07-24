@@ -1,0 +1,8 @@
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\optimized\
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\Nudge_.iOS.csprojAssemblyReference.cache
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\obj\iPhoneSimulator\Debug\Nudge_.iOS.csproj.CoreCompileInputs.cache

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:Nudge_.View"
+            x:Class="Nudge_.View.MainPage">
+    <TabbedPage.Children>
+        <NavigationPage Title="Message">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_feed.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:MessagePage>
+                    <x:Arguments>
+                        <x:String>MessagesPositive</x:String>
+                    </x:Arguments>
+                </views:MessagePage>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Action">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_about.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:MessagePage>
+                    <x:Arguments>
+                        <x:String>MessagesAction</x:String>
+                    </x:Arguments>
+                </views:MessagePage>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Affirmation">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_about.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:MessagePage>
+                    <x:Arguments>
+                        <x:String>MessagesAffirmation</x:String>
+                    </x:Arguments>
+                </views:MessagePage>
+                
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Created">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_about.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:MessagePage>
+                    <x:Arguments>
+                        <x:String>MessagesCreated</x:String>
+                    </x:Arguments>
+                </views:MessagePage>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>
