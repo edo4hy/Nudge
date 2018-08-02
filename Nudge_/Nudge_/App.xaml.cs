@@ -15,8 +15,8 @@ namespace Nudge_
         public App ()
 		{
 			InitializeComponent();
-
-            MainPage = new MainPage();
+           
+            MainPage = new MessageTabbedPage();
 		}
 
 		protected override void OnStart ()

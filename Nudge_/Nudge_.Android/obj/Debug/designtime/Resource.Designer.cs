@@ -2778,10 +2778,25 @@ namespace Nudge_.Droid
 			public const int notify_panel_notification_icon_bg = 2130837605;
 			
 			// aapt resource value: 0x7F010002
-			public const int starEmpty = 2130771970;
+			public const int number1 = 2130771970;
 			
 			// aapt resource value: 0x7F010003
-			public const int starFull = 2130771971;
+			public const int number2 = 2130771971;
+			
+			// aapt resource value: 0x7F010004
+			public const int number3 = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int number4 = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int number5 = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int starEmpty = 2130771975;
+			
+			// aapt resource value: 0x7F010008
+			public const int starFull = 2130771976;
 			
 			static Drawable()
 			{

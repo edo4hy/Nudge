@@ -9,43 +9,42 @@
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-<ContentPage.Content>
-
+    <ContentPage.Content>
         <StackLayout 
-            Padding="20">
-
-            <Components:ClickUpdateListView ItemsSource="{Binding MessagesPassed}"
+            Padding="10">
+            <ListView ItemsSource="{Binding MessagesPassed}"
                       HasUnevenRows="True"
-                      x:Name="MessagesListView"
-                      StarClickedCommand="{Binding StarClickedCommand}">
-                <Components:ClickUpdateListView.ItemTemplate>
+                      x:Name="MessagesListView">
+                <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ContentView>
-                                <StackLayout Padding="20">
-                                    <StackLayout Orientation="Horizontal">
+                                <StackLayout Padding="0">
+                                    <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
                                         <StackLayout Orientation="Vertical" HorizontalOptions="Start">
                                             <Label Text="{Binding MessageText}"
-                                                   FontAttributes="Bold"/>
-                                            <Label Text="{Binding Author}"/>
-                                               
+                                                   FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
                                         </StackLayout>
-                                        <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="12" HorizontalOptions="EndAndExpand">
-                                            
-                                            <Image.GestureRecognizers>
-                                                <TapGestureRecognizer 
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Padding="0, 5, 0, 5">
+                                            <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="12" VerticalOptions="CenterAndExpand">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer 
                                                     Command="{Binding Path=BindingContext.TapCommand, Source={x:Reference MessagesListView}}" 
                                                     CommandParameter="{Binding MessageId}"/>
 
-                                            </Image.GestureRecognizers>
-                                        </Image>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" Padding="10, -5, 0, 10">
+                                        <Label Text="{Binding Author}" FontSize="Micro"/>
                                     </StackLayout>
                                 </StackLayout>
                             </ContentView>
                         </ViewCell>
                     </DataTemplate>
-                </Components:ClickUpdateListView.ItemTemplate>
-            </Components:ClickUpdateListView>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

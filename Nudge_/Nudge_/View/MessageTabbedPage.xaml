@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nudge_.View.MessageTabbedPage"
+             xmlns:views="clr-namespace:Nudge_.View"
+                >
+  <!--Pages can be added as references or inline-->
+
+    <views:MessagePage Title="Messages">
+        <x:Arguments>
+            <x:String>MessagesPositive</x:String>
+        </x:Arguments>
+    </views:MessagePage>
+    <views:MessagePage Title="Action">
+        <x:Arguments>
+            <x:String>MessagesAction</x:String>
+        </x:Arguments>
+    </views:MessagePage>
+    <views:MessagePage Title="Affirmation">
+        <x:Arguments>
+            <x:String>MessagesAffirmation</x:String>
+        </x:Arguments>
+    </views:MessagePage>
+    <views:MessagePage Title="Created">
+        <x:Arguments>
+            <x:String>MessagesCreated</x:String>
+        </x:Arguments>
+    </views:MessagePage>
+    <views:MessagePage Title="Favourited">
+        <x:Arguments>
+            <x:String>tempObservableCollection</x:String>
+        </x:Arguments>
+    </views:MessagePage>
+</TabbedPage>

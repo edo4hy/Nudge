@@ -19,64 +19,18 @@ namespace Nudge_.Data
             database.CreateTableAsync<Message>().Wait();
             database.CreateTableAsync<Person>().Wait();
 
-            database.CreateTableAsync<Model.Slider>().Wait();
+            database.CreateTableAsync<Nudge_.Model.Slider>().Wait();
             database.CreateTableAsync<SliderResult>().Wait();
             database.CreateTableAsync<Question>().Wait();
             database.CreateTableAsync<QuestionResult>().Wait();
             database.CreateTableAsync<SliderResult>().Wait();
         }
 
-        //public Task<Person> GetPersonAsync()
-        //{
-        //    return database.Table<Person>().FirstOrDefaultAsync();
-        //}
-
         public Task<List<Message>> GetMessagesAsync()
         {
             return database.Table<Message>().ToListAsync();
         }
 
-        //public Task<List<Models.Slider>> GetSlidersAsync()
-        //{
-        //    return database.Table<Models.Slider>().ToListAsync();
-        //}
-
-        //public Task<List<SliderResult>> GetSliderResultsAsync()
-        //{
-        //    return database.Table<SliderResult>().ToListAsync();
-        //}
-
-        //public Task<List<Question>> GetQuestionsAsync()
-        //{
-        //    return database.Table<Question>().ToListAsync();
-        //}
-
-        //public Task<List<QuestionResult>> GetQuestionResultAsync()
-        //{
-        //    return database.Table<QuestionResult>().ToListAsync();
-        //}
-
-        //public Task<List<Answer>> GetAnswersAsync()
-        //{
-        //    return database.Table<Answer>().ToListAsync();
-        //}
-
-        //public Task<int> SavePersonAsync(Person person)
-        //{
-        //    if(person.PersonId != 0)
-        //    {
-        //        return database.UpdateAsync(person);
-        //    }
-        //    else
-        //    {
-        //        return database.InsertAsync(person);
-        //    }
-        //}
-
-        //public Task<int> DeletePersonAsync(Person person)
-        //{
-        //    return database.DeleteAsync(person);
-        //}
 
         public Task<Message> GetMessageAsync(int id)
         {

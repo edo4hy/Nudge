@@ -8,24 +8,28 @@ using System.Text;
 using System.Windows.Input;
 using Nudge_.Model;
 using Xamarin.Forms;
+using System.Linq;
+using Nudge_.Data.Model;
 
 namespace Nudge_.ViewModels
 {
     public class MessagesViewModel : INotifyPropertyChanged
     {
 
-        public ObservableCollection<Message> Messages { get; set; } = new ObservableCollection<Message>();
+        public TrulyObservableCollection<Message> Messages { get; set; } = new TrulyObservableCollection<Message>();
 
-        public ObservableCollection<Message> MessagesPassed { get; set; } = new ObservableCollection<Message>();
+        public TrulyObservableCollection<Message> MessagesPassed { get; set; } = new TrulyObservableCollection<Message> ();
 
-        public ObservableCollection<Message> MessagesCreated { get; set; } = new ObservableCollection<Message>();
+        public TrulyObservableCollection<Message> MessagesCreated { get; set; } = new TrulyObservableCollection<Message>();
 
-        public ObservableCollection<Message> MessagesAction { get; set; } = new ObservableCollection<Message>();
+        public TrulyObservableCollection<Message> MessagesAction { get; set; } = new TrulyObservableCollection<Message>();
 
-        public ObservableCollection<Message> MessagesAffirmation { get; set; } = new ObservableCollection<Message>();
+        public TrulyObservableCollection<Message> MessagesAffirmation { get; set; } = new TrulyObservableCollection<Message>();
 
-        public ObservableCollection<Message> MessagesPositive { get; set; } = new ObservableCollection<Message>();
+        public TrulyObservableCollection<Message> MessagesPositive { get; set; } = new TrulyObservableCollection<Message>();
 
+        public TrulyObservableCollection<Message> MessagesFavourite { get; set; } = new TrulyObservableCollection<Message>();
+       
         
         ICommand tapCommand;
 
@@ -33,23 +37,45 @@ namespace Nudge_.ViewModels
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public MessagesViewModel()
         {
+            MessagesFavourite = new TrulyObservableCollection<Message>();
             GetMessages();
             tapCommand = new Command(StarTapped);
         }
 
-        private void StarTapped(object obj)
+        private async  void StarTapped(object obj)
         {
+            var item = MessagesPassed.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
+            if(item != null)
+            {
+                if(item.Favourited == true)
+                {
+                    item.Favourited = false;
+                    var item2 = MessagesFavourite.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
 
-            Console.WriteLine("changing star");
+                    item.Favourited = true;
+                    MessagesFavourite.Add(item);
 
-           
+                    item.Favourited = true;
+                    MessagesFavourite.Add(item);
+
+                    MessagesFavourite.Remove(item2);
+                }
+                else
+                {
+                    item.Favourited = true;
+                    MessagesFavourite.Add(item);
+                }
+               
+
+                await App.Database.SaveMessageAsync(item);
+
+                Console.WriteLine("update the database");
+            }
         }
 
         public ICommand TapCommand
@@ -57,39 +83,11 @@ namespace Nudge_.ViewModels
             get { return tapCommand; }
         }
 
-        private string _alertMessage;
-
-        public string AlertMessage
-        {
-            get
-            {
-                return _alertMessage;
-            }
-            set
-            {
-               
-                _alertMessage = value;
-                
-                OnPropertyChanged();
-            }
-        }
-
-        public ICommand StarClickedCommand
-        {
-            get
-            {
-                return new Command((item) =>
-                {
-                    AlertMessage = item as string;
-                });
-            }
-        }
-         
 
 
         public MessagesViewModel(string messageType) 
         {
-            
+            MessagesFavourite = new TrulyObservableCollection<Message>();
             GetMessages();
 
             if (messageType == "MessagesAction")
@@ -107,6 +105,10 @@ namespace Nudge_.ViewModels
             else if(messageType == "MessagesPositive")
             {
                 MessagesPassed = MessagesPositive;
+            }
+            else if(messageType == "tempObservableCollection")
+            {
+                MessagesPassed = MessagesFavourite;
             }
             else
             {
@@ -139,6 +141,12 @@ namespace Nudge_.ViewModels
                 else if (m.Type == Model.Type.Created)
                 {
                     MessagesCreated.Add(m);
+                    
+                }
+
+                if (m.Favourited == true)
+                {
+                    MessagesFavourite.Add(m);
                 }
             }
         }
