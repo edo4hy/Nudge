@@ -56,13 +56,6 @@ namespace Nudge_.ViewModels
                 {
                     item.Favourited = false;
                     var item2 = MessagesFavourite.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
-
-                    item.Favourited = true;
-                    MessagesFavourite.Add(item);
-
-                    item.Favourited = true;
-                    MessagesFavourite.Add(item);
-
                     MessagesFavourite.Remove(item2);
                 }
                 else
@@ -82,7 +75,6 @@ namespace Nudge_.ViewModels
         {
             get { return tapCommand; }
         }
-
 
 
         public MessagesViewModel(string messageType) 

@@ -15,7 +15,7 @@ namespace Nudge_
         public App ()
 		{
 			InitializeComponent();
-           
+
             MainPage = new MessageTabbedPage();
 		}
 

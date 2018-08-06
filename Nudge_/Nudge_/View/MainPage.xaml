@@ -5,16 +5,16 @@
             x:Class="Nudge_.View.MainPage"
             >
     <TabbedPage.Children>
-        <NavigationPage Title="Message">
+        <!--<NavigationPage Title="Message">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:MessagePage>
+                <views:MessageDisplay>
                     
-                </views:MessagePage>
+                </views:MessageDisplay>
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Action">
@@ -24,11 +24,11 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:MessagePage>
+                <views:MessageDisplay>
                     <x:Arguments>
-                        <x:String>MessagesAction</x:String>
+                     
                     </x:Arguments>
-                </views:MessagePage>
+                </views:MessageDisplay>
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Affirmation">
@@ -38,11 +38,11 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:MessagePage>
+                <views:MessageDisplay>
                     <x:Arguments>
-                        <x:String>MessagesAffirmation</x:String>
+                     
                     </x:Arguments>
-                </views:MessagePage>
+                </views:MessageDisplay>
 
             </x:Arguments>
         </NavigationPage>
@@ -53,12 +53,12 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:MessagePage>
+                <views:MessageDisplay>
                     <x:Arguments>
-                        <x:String>MessagesCreated</x:String>
+                        
                     </x:Arguments>
-                </views:MessagePage>
+                </views:MessageDisplay>
             </x:Arguments>
-        </NavigationPage>
+        </NavigationPage>-->
     </TabbedPage.Children>
 </TabbedPage>
