@@ -16,7 +16,8 @@ namespace Nudge_
 		{
 			InitializeComponent();
 
-            MainPage = new MessageTabbedPage();
+            //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
+            MainPage = new RatePage();
 		}
 
 		protected override void OnStart ()
@@ -43,7 +44,9 @@ namespace Nudge_
                 {
                     database = new NudgeDatabase(
                         Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NudgeSQLite3.db3"));
+
                 }
+                
                 return database;
             }
         }

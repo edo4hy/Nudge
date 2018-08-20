@@ -9,6 +9,14 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nud
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.pdb
-C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csprojAssemblyReference.cache
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MessageTabbedPage.xaml.g.cs
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MessageView.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\Top5Page.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csprojAssemblyReference.cache
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\QuestionView.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\SliderView.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.dll
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.pdb
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.xml
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csproj.CopyComplete

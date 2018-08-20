@@ -1,23 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
-             x:Class="Nudge_.View.MessageView">
+             xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             x:Class="Nudge_.View.MessageView"
+             >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
+            <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
+   
     <StackLayout 
             Padding="10">
         <ListView 
             HasUnevenRows="True"
-            x:Name="MessagesListView">
+            x:Name="MessagesListView"
+            SelectionMode="Single"
+            >
+            <ListView.Behaviors>
+                <behaviours:EventToCommandBehavior
+                    Source="{x:Reference MessagesListView}"
+                    EventName="ItemSelected"
+                    Command="{Binding MessageTapCommand}"
+                    Converter="{StaticResource SelectedItemConverter}" 
+                    />
+            </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ContentView>
-                            <StackLayout Padding="0">
+                            <StackLayout Padding="0" >
                                 <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
                                     <StackLayout Orientation="Vertical" HorizontalOptions="Start">
                                         <Label Text="{Binding MessageText}"
@@ -27,9 +42,8 @@
                                         <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="12" VerticalOptions="CenterAndExpand">
                                             <Image.GestureRecognizers>
                                                 <TapGestureRecognizer 
-                                                    Command="{Binding Path=BindingContext.TapCommand, Source={x:Reference MessagesListView}}" 
+                                                    Command="{Binding Path=BindingContext.StarTapCommand, Source={x:Reference MessagesListView}}" 
                                                     CommandParameter="{Binding MessageId}"/>
-
                                             </Image.GestureRecognizers>
                                         </Image>
                                     </StackLayout>

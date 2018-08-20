@@ -8,7 +8,7 @@ using SQLite;
 namespace Nudge_.Model
 {
     public enum Type { Affirmation, PositiveMessage, Action, Created }
-    public enum Top5Number { pos1, pos2, pos3, pos4, pos5 }
+    public enum Top5Number { pos1, pos2, pos3, pos4, pos5, none }
 
     public class Message : INotifyPropertyChanged
     {

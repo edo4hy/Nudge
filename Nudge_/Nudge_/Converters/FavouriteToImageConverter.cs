@@ -10,7 +10,6 @@ namespace Nudge_.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Console.WriteLine("Converting the bool");
             if ((bool)value == true)
             {
                 return "starFull.png";

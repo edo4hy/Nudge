@@ -19,7 +19,7 @@ namespace Nudge_.Data
             database.CreateTableAsync<Message>().Wait();
             database.CreateTableAsync<Person>().Wait();
 
-            database.CreateTableAsync<Nudge_.Model.Slider>().Wait();
+            database.CreateTableAsync<Nudge_.Model.RateSlider>().Wait();
             database.CreateTableAsync<SliderResult>().Wait();
             database.CreateTableAsync<Question>().Wait();
             database.CreateTableAsync<QuestionResult>().Wait();
@@ -58,5 +58,35 @@ namespace Nudge_.Data
         {
             return database.DropTableAsync<Message>();
         }
+
+        public Task<Message> GetMessageByTop5(Top5Number n)
+        {
+            return database.Table<Message>().Where(i => i.Top5 == n).FirstOrDefaultAsync();
+        }
+
+
+        public Task<List<Question>> GetQuestionsAsync()
+        {
+            return database.Table<Question>().ToListAsync();
+        }
+
+        public Task<Question> GetQuestionAsync(int id)
+        {
+            return database.Table<Question>().Where(i => i.QuestionId == id).FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveQuestionAsync(Question question)
+        {
+            if(question.QuestionId != 0)
+            {
+                return database.UpdateAsync(question);
+
+            }
+            else
+            {
+                return database.InsertAsync(question);
+            }
+        }
+      
     }
 }
