@@ -26,6 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="View\BrowseSliders.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\EditSliderView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\MessagePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -50,11 +56,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\BrowseQuestions.xaml.cs">
+      <DependentUpon>BrowseQuestions.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\MessagePage.xaml.cs">
       <DependentUpon>MessagePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="View\MessageTabbedPage.xaml.cs">
       <DependentUpon>MessageTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\EditRatePage.xaml.cs">
+      <DependentUpon>EditRatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\EditQuestionView.xaml.cs">
+      <DependentUpon>EditQuestionView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

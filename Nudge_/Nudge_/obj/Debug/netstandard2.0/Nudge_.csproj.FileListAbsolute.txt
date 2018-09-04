@@ -20,3 +20,8 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xam
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.pdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.xml
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csproj.CopyComplete
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\BrowseSliders.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\BrowseQuestions.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\EditRatePage.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\EditQuestionView.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\EditSliderView.xaml.g.cs

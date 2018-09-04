@@ -9,10 +9,10 @@
 
                 <SearchBar FontSize="Small" TextChanged="SearchBar_TextChanged" x:Name="Searchbar" Focused="Searchbar_Focused" Unfocused="Searchbar_Unfocused"/>
                 <StackLayout Padding="20">
-                    <ListView x:Name="SearchList" IsVisible="False" ItemSelected="ListView_ItemSelected">
+                    <ListView x:Name="SearchList" IsVisible="False" ItemSelected="ListView_ItemSelected" HeightRequest="150">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextCell Text="{Binding AnswerText}"/>
+                                    <TextCell Text="{Binding AnswerText}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

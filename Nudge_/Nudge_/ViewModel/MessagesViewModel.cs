@@ -15,7 +15,6 @@ namespace Nudge_.ViewModels
 {
     public class MessagesViewModel : INotifyPropertyChanged
     {
-
         public TrulyObservableCollection<Message> Messages { get; set; } = new TrulyObservableCollection<Message>();
 
         public TrulyObservableCollection<Message> MessagesPassed { get; set; } = new TrulyObservableCollection<Message> ();
@@ -115,17 +114,7 @@ namespace Nudge_.ViewModels
 
         public async void GetMessages()
         {
-
-
-
             List<Message> messageOut = await App.Database.GetMessagesAsync();
-
-
-
-
-
-
-
 
             foreach(Message m in messageOut)
             {

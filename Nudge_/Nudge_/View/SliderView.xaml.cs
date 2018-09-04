@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nudge_.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,5 +20,14 @@ namespace Nudge_.View
             PositiveAnswer.Text = positiveAnswer;
             NegativeAnswer.Text = negativeAnswer;
 		}
+
+        public SliderView(RateSlider slider)
+        {
+            InitializeComponent();
+            SliderTitle.Text = slider.Title;
+            PositiveAnswer.Text = slider.positiveAnswer;
+            NegativeAnswer.Text = slider.negativeAnswer;
+
+        }
 	}
 }

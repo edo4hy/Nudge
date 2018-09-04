@@ -76,7 +76,7 @@ namespace Nudge_.ViewModel
             GetMessages();
             starTapCommand = new Command(StarTapped);
             messageTapCommand = new Command(MessageTappedSelectedFromTop5);
-            Navigation = top5VM.Navigation;
+            Navigation =  top5VM.Navigation;
             this.top5VM = top5VM;
         }
 

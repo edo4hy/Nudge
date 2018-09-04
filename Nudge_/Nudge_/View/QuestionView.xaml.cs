@@ -1,4 +1,5 @@
-﻿using Nudge_.Model;
+﻿using Nudge_.Data.Model;
+using Nudge_.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,14 +15,36 @@ namespace Nudge_.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QuestionView : ContentView
 	{
-        public ObservableCollection<Answer> answers;
+        public TrulyObservableCollection<Answer> answerCollection = new TrulyObservableCollection<Answer>();
+
+        public TrulyObservableCollection<Answer> answersReduced = new TrulyObservableCollection<Answer>();
         public Question question;
 
-		public QuestionView (Question question, ObservableCollection<Answer> answers)
+        //, ObservableCollection<Answer> answers
+        public QuestionView (Question question, List<Answer> answers)
 		{
 			InitializeComponent ();
-            this.answers = answers;
-            SearchList.ItemsSource = answers;
+           // this.answers = answers;
+           if(answers.Count > 0)
+            {
+                foreach (Answer a in answers)
+                {
+                    answerCollection.Add(a);
+                }
+            }
+            else
+            {
+                for(int i = 0; i < 5; i++)
+                {
+                    answerCollection.Add(new Answer
+                    {
+                        AnswerText = " Answer " + i,
+
+                    });
+                }
+            }
+           
+            SearchList.ItemsSource = answerCollection;
             this.question = question;
             QuestionTitle.Text = question.Title;
 		}
@@ -40,11 +63,34 @@ namespace Nudge_.View
         {
             if (string.IsNullOrEmpty(e.NewTextValue))
             {
-                SearchList.ItemsSource = answers;
+                Console.WriteLine("setting to full collection");
+                SearchList.ItemsSource = answerCollection;
             }
             else
             {
-                SearchList.ItemsSource = answers.Where(x => x.AnswerText.Contains(e.NewTextValue));
+                if(answerCollection.Where(x => x.AnswerText.ToLower().Contains(e.NewTextValue.ToLower())) != null)
+                {
+                    TrulyObservableCollection<Answer> a = new TrulyObservableCollection<Answer>();
+                    if(answerCollection.Count() > 0)
+                    {
+                        foreach (Answer at in answerCollection)
+                        {
+                            if (at.AnswerText.Contains(e.NewTextValue))
+                            {
+                                a.Add(at);
+                            }
+                        }
+                        if (a.Count > 0)
+                        {
+                            SearchList.ItemsSource = a;
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("There are no results");
+                        }
+                    }
+                }
             }
         }
 

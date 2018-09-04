@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nudge_.View.EditRatePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="How are you feeling" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout  x:Name="SliderHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="Add Slider"></Button>
+                    </StackLayout>
+                <StackLayout  x:Name="QuestionHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Add Question"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

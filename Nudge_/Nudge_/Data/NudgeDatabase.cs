@@ -18,6 +18,7 @@ namespace Nudge_.Data
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Message>().Wait();
             database.CreateTableAsync<Person>().Wait();
+            database.CreateTableAsync<Answer>().Wait();
 
             database.CreateTableAsync<Nudge_.Model.RateSlider>().Wait();
             database.CreateTableAsync<SliderResult>().Wait();
@@ -30,7 +31,6 @@ namespace Nudge_.Data
         {
             return database.Table<Message>().ToListAsync();
         }
-
 
         public Task<Message> GetMessageAsync(int id)
         {
@@ -45,6 +45,7 @@ namespace Nudge_.Data
             }
             else
             {
+             
                 return database.InsertAsync(message);
             }
         }
@@ -75,18 +76,68 @@ namespace Nudge_.Data
             return database.Table<Question>().Where(i => i.QuestionId == id).FirstOrDefaultAsync();
         }
 
+        public Task<List<Question>> GetQuestionsInUse()
+        {
+            return database.Table<Question>().Where(i => i.InUse == true).ToListAsync();
+        }
+
         public Task<int> SaveQuestionAsync(Question question)
         {
             if(question.QuestionId != 0)
             {
-                return database.UpdateAsync(question);
+                Console.WriteLine("Adding to the database via Update");
 
+                return database.UpdateAsync(question);
             }
             else
             {
+                Console.WriteLine("Adding to the database via insert ");
                 return database.InsertAsync(question);
             }
         }
+
+        public Task<List<Answer>> GetAnswersAsync(int questionId)
+        {
+            return database.Table<Answer>().Where(i => i.QuestionId == questionId).ToListAsync();
+        }
+
+        public Task<Answer> GetAnswerAsync(int id)
+        {
+            return database.Table<Answer>().Where(i => i.AnswerId == id).FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveAnswerAsync(Answer answer)
+        {
+            if(answer.AnswerId != 0)
+            {
+                return database.UpdateAsync(answer);
+            }
+            else
+            {
+                return database.InsertAsync(answer);
+            }
+        }
+
+        public Task<List<RateSlider>> GetSlidersAysnc()
+        {
+            return database.Table<RateSlider>().ToListAsync();
+        }
+
+        public Task<List<RateSlider>> GetSlidersInUseAsync()
+        {
+            return database.Table<RateSlider>().Where(i => i.InUse == true).ToListAsync();
+        }
       
+        public Task<int> SaveSliderAsync(RateSlider slider)
+        {
+            if(slider.SliderId != 0)
+            {
+                return database.UpdateAsync(slider);
+            }
+            else
+            {
+                return database.InsertAsync(slider);
+            }
+        }
     }
 }
