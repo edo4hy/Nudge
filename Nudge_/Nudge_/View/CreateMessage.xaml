@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nudge_.View.CreateMessage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Create a new Message"/>
+            <Entry x:Name="newMessageEntry" Placeholder="Enter new message" />
+            <Button Command="{Binding AddNewMessage}" Text="Add" HorizontalOptions="End"/>
+            <Label TextColor="Red" IsVisible="False" x:Name="messageAddedLabel" HorizontalOptions="Center"
+                   Text="New Message has been added, check the Created tab"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

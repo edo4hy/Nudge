@@ -1,4 +1,6 @@
-﻿using Nudge_.ViewModel;
+﻿using Nudge_.Data.Model;
+using Nudge_.Model;
+using Nudge_.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,9 +19,14 @@ namespace Nudge_.View
 		public BrowseSliders ()
 		{
 			InitializeComponent ();
-
             BrowseSliderViewModel vm = new BrowseSliderViewModel();
             SlidersListView.ItemsSource = vm.sliders;
 		}
+
+        public BrowseSliders(TrulyObservableCollection<RateSlider> col)
+        {
+            InitializeComponent();
+            SlidersListView.ItemsSource = col;
+        }
 	}
 }

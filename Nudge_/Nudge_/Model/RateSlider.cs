@@ -16,8 +16,9 @@ namespace Nudge_.Model
         public string Title             { get; set; }
         public string NegativeAnswer    { get; set; }
         public string PositiveAnswer    { get; set; }
-        public bool InUse              { get; set; }
+        public bool InUse               { get; set; }
         public int Order                { get; set; }
+        public bool Created             { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

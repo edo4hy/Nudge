@@ -11,6 +11,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Nudge_.View;
+using System.Threading.Tasks;
 
 namespace Nudge_.ViewModel
 {
@@ -36,25 +37,34 @@ namespace Nudge_.ViewModel
 
         Top5MessageConverter top5MessageConverter = new Top5MessageConverter();
 
+        public Label messageCreatedLabel;
+        public Entry newMessageEntry;
+
         INavigation Navigation;
+
+
+        ICommand addNewMessage;
+        public ICommand AddNewMessage
+        {
+            get { return addNewMessage; }
+        }
    
         ICommand starTapCommand;
-
         public ICommand StarTapCommand
         {
             get { return starTapCommand; }
+        }
+
+        ICommand messageTapCommand;
+        public ICommand MessageTapCommand
+        {
+            get { return messageTapCommand; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        ICommand messageTapCommand;
-        public ICommand MessageTapCommand
-        {
-            get { return messageTapCommand;  }
         }
 
 
@@ -66,20 +76,39 @@ namespace Nudge_.ViewModel
             GetMessages();
             starTapCommand = new Command(StarTapped);
             messageTapCommand = new Command(MessageTapped);
-
+            addNewMessage = new Command(MessageAdded);
         }
-
 
         public MessageTabbedPageViewModel(Top5PageViewModel top5VM)
         {
-           
             GetMessages();
             starTapCommand = new Command(StarTapped);
             messageTapCommand = new Command(MessageTappedSelectedFromTop5);
+            addNewMessage = new Command(MessageAdded);
+
             Navigation =  top5VM.Navigation;
             this.top5VM = top5VM;
         }
 
+        private async void MessageAdded()
+        {
+            Message newMessage = new Message
+            {
+                MessageText = newMessageEntry.Text.ToString(),
+                Author = "Me"
+            };
+
+            MessagesCreated.Add(newMessage);
+            await App.Database.SaveMessageAsync(newMessage);
+
+            newMessageEntry.Text = "";
+
+            messageCreatedLabel.IsVisible = true;
+
+            await Task.Delay(5000);
+
+            messageCreatedLabel.IsVisible = false;
+        }
 
         private void MessageTappedSelectedFromTop5(object obj)
         {
@@ -127,11 +156,9 @@ namespace Nudge_.ViewModel
             top5VM.SortCollection(top5VM.MessagesTop5Unordered);
             Navigation.PopAsync();
         }
-      
 
         private async void MessageTapped(object obj)
         {
-
             if (messageTappedBeingExecuted) return;
             messageTappedBeingExecuted = true;
             Message message = (Message)obj;

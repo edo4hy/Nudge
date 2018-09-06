@@ -2793,10 +2793,13 @@ namespace Nudge_.Droid
 			public const int number5 = 2130771974;
 			
 			// aapt resource value: 0x7F010007
-			public const int starEmpty = 2130771975;
+			public const int rubbish-bin = 2130771975;
 			
 			// aapt resource value: 0x7F010008
-			public const int starFull = 2130771976;
+			public const int starEmpty = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int starFull = 2130771977;
 			
 			static Drawable()
 			{

@@ -8,25 +8,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.EditQuestionView.xaml", "View/EditQuestionView.xaml", typeof(global::Nudge_.View.EditQuestionView))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.CreateMessage.xaml", "View/CreateMessage.xaml", typeof(global::Nudge_.View.CreateMessage))]
 
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\EditQuestionView.xaml")]
-    public partial class EditQuestionView : global::Xamarin.Forms.ContentView {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\CreateMessage.xaml")]
+    public partial class CreateMessage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.StackLayout QuestionSearchBar;
+        private global::Xamarin.Forms.Entry newMessageEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label QuestionTitle;
+        private global::Xamarin.Forms.Label messageAddedLabel;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(EditQuestionView));
-            QuestionSearchBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "QuestionSearchBar");
-            QuestionTitle = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "QuestionTitle");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(CreateMessage));
+            newMessageEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "newMessageEntry");
+            messageAddedLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "messageAddedLabel");
         }
     }
 }

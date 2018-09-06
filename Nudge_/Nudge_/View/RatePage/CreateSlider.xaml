@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nudge_.View.CreateSlider">
+  <ContentPage.Content>
+      <StackLayout Padding="10">
+            <Label HorizontalOptions="Center" FontSize="Large" Text="Create a new Slider" />
+            <Entry x:Name="sliderTitle" Placeholder="Enter slider title"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                    <Entry x:Name="sliderNeg" Placeholder="Negative answer"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                    <Entry x:Name="sliderPos" Placeholder="Positive answer" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="Add" Command="{Binding AddNewSlider}" HorizontalOptions="End"/>
+            <Label TextColor="Red" IsVisible="False" x:Name="sliderAddedLabel" HorizontalOptions="Center" Text="New Slider has been addded, check the Created tab"/>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

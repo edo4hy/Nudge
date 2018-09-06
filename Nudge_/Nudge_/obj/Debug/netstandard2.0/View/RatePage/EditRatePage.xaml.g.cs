@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.RatePage.xaml", "View/RatePage.xaml", typeof(global::Nudge_.View.RatePage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.RatePage.EditRatePage.xaml", "View/RatePage/EditRatePage.xaml", typeof(global::Nudge_.View.EditRatePage))]
 
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePage.xaml")]
-    public partial class RatePage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePage\\EditRatePage.xaml")]
+    public partial class EditRatePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.StackLayout SliderHolder;
@@ -24,7 +24,7 @@ namespace Nudge_.View {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RatePage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(EditRatePage));
             SliderHolder = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "SliderHolder");
             QuestionHolder = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "QuestionHolder");
         }

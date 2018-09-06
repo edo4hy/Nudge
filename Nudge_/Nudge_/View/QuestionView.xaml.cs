@@ -59,6 +59,12 @@ namespace Nudge_.View
             QuestionTitle.Text = question.Title;
         }
 
+        //public QuestionView(TrulyObservableCollection<Question> questions)
+        //{
+        //    InitializeComponent();
+        //    SearchList.ItemsSource = questions;
+        //}
+
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(e.NewTextValue))

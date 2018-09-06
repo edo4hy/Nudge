@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.EditSliderView.xaml", "View/EditSliderView.xaml", typeof(global::Nudge_.View.EditSliderView))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.RatePage.EditSliderView.xaml", "View/RatePage/EditSliderView.xaml", typeof(global::Nudge_.View.EditSliderView))]
 
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\EditSliderView.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePage\\EditSliderView.xaml")]
     public partial class EditSliderView : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

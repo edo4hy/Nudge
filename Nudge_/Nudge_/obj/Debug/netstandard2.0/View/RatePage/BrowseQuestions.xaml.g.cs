@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.BrowseQuestions.xaml", "View/BrowseQuestions.xaml", typeof(global::Nudge_.View.BrowseQuestions))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.RatePage.BrowseQuestions.xaml", "View/RatePage/BrowseQuestions.xaml", typeof(global::Nudge_.View.BrowseQuestions))]
 
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\BrowseQuestions.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePage\\BrowseQuestions.xaml")]
     public partial class BrowseQuestions : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

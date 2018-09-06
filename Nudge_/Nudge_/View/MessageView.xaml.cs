@@ -17,27 +17,19 @@ namespace Nudge_.View
     public partial class MessageView :  ContentPage
     {
         public TrulyObservableCollection<Message> Items { get; set; }
-        
 
         public MessageView()
         {
             InitializeComponent();
-
             MessagesListView.ItemsSource = Items;
         }
 
         public MessageView(TrulyObservableCollection<Message> items)
         {
             InitializeComponent();
-
             MessagesListView.ItemsSource = items;
 
         }
-
-       
-
-
-
 
         //private async Task MessagesListView_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)
         //{
@@ -46,9 +38,6 @@ namespace Nudge_.View
         //    var action = await DisplayActionSheet("ActionSheet: SavePhoto?", "Cancel", "Delete", "Photo Roll", "Email");
         //    Debug.WriteLine("Action: " + action);
         //}
-
-
-
 
 
         //async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

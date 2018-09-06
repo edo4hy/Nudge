@@ -14,6 +14,7 @@ namespace Nudge_.Model
         public string Title     { get; set; }
         public bool InUse       { get; set; }
         public int Order        { get; set; }
+        public bool Created      { get; set; }
 
 
         public ObservableCollection<Answer> Answers = new ObservableCollection<Answer>();

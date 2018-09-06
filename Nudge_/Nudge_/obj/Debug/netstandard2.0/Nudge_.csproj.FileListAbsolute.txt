@@ -12,7 +12,6 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nud
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MessageTabbedPage.xaml.g.cs
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MessageView.xaml.g.cs
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\Top5Page.xaml.g.cs
-C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage.xaml.g.cs
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csprojAssemblyReference.cache
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\QuestionView.xaml.g.cs
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\SliderView.xaml.g.cs
@@ -20,8 +19,14 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xam
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.pdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.xml
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csproj.CopyComplete
-C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\BrowseSliders.xaml.g.cs
-C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\BrowseQuestions.xaml.g.cs
-C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\EditRatePage.xaml.g.cs
-C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\EditQuestionView.xaml.g.cs
-C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\EditSliderView.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\BrowseQuestions.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\BrowseSliders.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\CreateQuestion.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\EditQuestionTabbed.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\EditQuestionView.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\EditRatePage.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\EditSliderView.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\RatePage.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\CreateSlider.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePage\EditSliderTabbed.xaml.g.cs
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\CreateMessage.xaml.g.cs

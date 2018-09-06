@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.BrowseSliders.xaml", "View/BrowseSliders.xaml", typeof(global::Nudge_.View.BrowseSliders))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.RatePage.BrowseSliders.xaml", "View/RatePage/BrowseSliders.xaml", typeof(global::Nudge_.View.BrowseSliders))]
 
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\BrowseSliders.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePage\\BrowseSliders.xaml")]
     public partial class BrowseSliders : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
