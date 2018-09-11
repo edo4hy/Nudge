@@ -108,6 +108,9 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\res\drawab
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\res\drawable\number1.png
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\res\drawable\number5.png
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\res\drawable\number4.png
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\res\drawable\rubbishbin.png
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\res\drawable\bin2.png
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\res\drawable\negsign.png
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\bin\Debug\Nudge_.Android.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\linksrc\Nudge_.pdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\linksrc\Nudge_.Android.dll.mdb

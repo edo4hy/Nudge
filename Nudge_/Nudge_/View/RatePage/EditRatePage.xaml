@@ -9,12 +9,12 @@
                 <StackLayout  x:Name="SliderHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
                 </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Button Text="Add Slider"></Button>
+                        <Button Text="Add Slider" Command="{Binding AddSlider}"></Button>
                     </StackLayout>
                 <StackLayout  x:Name="QuestionHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button Text="Add Question"></Button>
+                    <Button Text="Add Question" Command="{Binding AddQuestion}"></Button>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

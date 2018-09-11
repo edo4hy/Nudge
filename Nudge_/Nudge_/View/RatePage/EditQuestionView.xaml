@@ -4,11 +4,23 @@
              x:Class="Nudge_.View.EditQuestionView">
   <ContentView.Content>
       <StackLayout>
-            <StackLayout x:Name="QuestionSearchBar" >
-                    <Label FontSize="Medium" x:Name="QuestionTitle" HorizontalOptions="CenterAndExpand"/>
-                <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button WidthRequest="80" FontSize="Micro" Text="Delete" HeightRequest="30"  />
+            <StackLayout Padding="10" >
+                <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start">
+                        <StackLayout x:Name="QuestionSearchBar" >
+                            <Label FontSize="Medium" x:Name="QuestionTitle" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Padding="0, 5, 0, 5">
+                        <Image Source="negSign.png"  HeightRequest="17" VerticalOptions="CenterAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
                 </StackLayout>
+                <BoxView WidthRequest="1000" HeightRequest="0.5" Opacity="0.5" HorizontalOptions="Center" Color="Black">
+                </BoxView>
             </StackLayout>
         </StackLayout>
   </ContentView.Content>

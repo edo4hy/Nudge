@@ -7,19 +7,24 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Nudge_.ViewModel
 {
+    /*
+     * This View model adds instances of QuestionView, SliderView or EditQuestionView, EditSliderQuestionView
+     * For Edit Views they are deleted through code behind the view whcih then calls
+     * Remove functions in this VM and the values are update in the database
+     */
     public class RatePageViewModel : ContentPage, IAsyncInitialization
     {
-        TrulyObservableCollection<RateSlider> sliders = new TrulyObservableCollection<RateSlider>();
-        TrulyObservableCollection<Question> questions = new TrulyObservableCollection<Question>();
-
         StackLayout sliderHolder;
         StackLayout questionHolder;
 
         private bool isEditPage;
+
+        public INavigation Navigation;
 
         public Task Initialization { get; private set; }
 
@@ -35,6 +40,21 @@ namespace Nudge_.ViewModel
             this.sliderHolder = sliderHolder;
             this.questionHolder = questionHolder;
             this.isEditPage = isEdit;
+
+            addSlider = new Command(NavigateToAddSlider);
+            addQuestion = new Command(NavigateToAddQuestion);
+        }
+
+        ICommand addSlider;
+        public ICommand AddSlider
+        {
+            get { return addSlider; }
+        }
+
+        ICommand addQuestion;
+        public ICommand AddQuestion
+        {
+            get { return addQuestion; }
         }
 
         private async Task InitializeAysnc()
@@ -217,31 +237,44 @@ namespace Nudge_.ViewModel
             App.Database.SaveAnswerAsync(answer);
         }
 
+        public async void RemoveSlider(RateSlider rateSlider)
+        {
+            rateSlider.InUse = false;
+            await App.Database.SaveSliderAsync(rateSlider);
+        }
+
+        public async void RemoveQuestion(Question question)
+        {
+            question.InUse = false;
+            await App.Database.SaveQuestionAsync(question);
+        }
+
         public async Task GetSliders()
         {
             List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
 
             foreach(RateSlider r in slidersList)
             {
-                if (isEditPage == true)
+                r.InUse = true;
+                if(r.InUse == true)
                 {
-                    if (r == null) return;
-                    if (sliderHolder == null) return;
-                    if (sliderHolder.Children == null) return;
+                    if (isEditPage == true)
+                    {
+                        if (r == null) return;
+                        if (sliderHolder == null) return;
+                        if (sliderHolder.Children == null) return;
 
-                    sliderHolder.Children.Add(new EditSliderView(r));
-                    sliders.Add(r);
-                    AddDivider(sliderHolder);
-                }
-                else
-                {
-                    if (r == null) return;
-                    if (sliderHolder == null) return;
-                    if (sliderHolder.Children == null) return;
+                        sliderHolder.Children.Add(new EditSliderView(r, this));
+                    }
+                    else
+                    {
+                        if (r == null) return;
+                        if (sliderHolder == null) return;
+                        if (sliderHolder.Children == null) return;
 
-                    sliderHolder.Children.Add(new SliderView(r));
-                    sliders.Add(r);
-                    AddDivider(sliderHolder);
+                        SliderView sw = new SliderView(r);
+                        sliderHolder.Children.Add(sw);
+                    }
                 }
             }
         }
@@ -252,18 +285,17 @@ namespace Nudge_.ViewModel
 
             foreach(Question q in questionList)
             {
-                if (isEditPage == true)
+                if (q.InUse == true)
                 {
-                    questionHolder.Children.Add(new EditQuestionView(q));
-                    questions.Add(q);
-                    AddDivider(questionHolder);
-                }
-                else
-                {
-                    List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
-                    questionHolder.Children.Add(new QuestionView(q, answerList));
-                    questions.Add(q);
-                    AddDivider(questionHolder);
+                    if (isEditPage == true)
+                    {
+                        questionHolder.Children.Add(new EditQuestionView(q, this));
+                    }
+                    else
+                    {
+                        List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
+                        questionHolder.Children.Add(new QuestionView(q, answerList));
+                    }
                 }
             }
         }
@@ -278,16 +310,28 @@ namespace Nudge_.ViewModel
             }
         }
 
-        public void AddDivider(StackLayout holder)
+        public async void NavigateToAddSlider()
         {
-            BoxView bv = new BoxView();
-            bv.WidthRequest = 1000;
-            bv.HeightRequest = 0.5;
-            bv.Opacity = 0.5;
-            bv.HorizontalOptions = LayoutOptions.Center;
-            bv.Color = Color.Black;
-
-            holder.Children.Add(bv);
+            Console.WriteLine("adding slider");
+            await Navigation.PushAsync(new BrowseSliderTabbed());
         }
+
+        public async void NavigateToAddQuestion()
+        {
+            Console.WriteLine(" Adding Question");
+            await Navigation.PushAsync(new BrowseQuestionTabbed());
+        }
+
+        //public void AddDivider(StackLayout holder)
+        //{
+        //    BoxView bv = new BoxView();
+        //    bv.WidthRequest = 1000;
+        //    bv.HeightRequest = 0.5;
+        //    bv.Opacity = 0.5;
+        //    bv.HorizontalOptions = LayoutOptions.Center;
+        //    bv.Color = Color.Black;
+
+        //    holder.Children.Add(bv);
+        //}
     }
 }

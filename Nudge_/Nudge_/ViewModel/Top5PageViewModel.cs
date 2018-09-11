@@ -66,11 +66,6 @@ namespace Nudge_.ViewModel
 
                 await Navigation.PushAsync(messageTabbedPage);
 
-                //foreach(Message m in MessagesTop5)
-                //{
-                //    Console.WriteLine(m.MessageText);
-                //}
-
                 top5IsTapped = false;
             }
         }

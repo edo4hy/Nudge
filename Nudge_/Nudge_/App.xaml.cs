@@ -16,11 +16,12 @@ namespace Nudge_
 		{
 			InitializeComponent();
 
-            //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
-            MainPage = new MessageTabbedPage();
-		}
+            MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
+            //MainPage = new NavigationPage(new EditRatePage());
 
-		protected override void OnStart ()
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}
@@ -35,7 +36,6 @@ namespace Nudge_
 			// Handle when your app resumes
 		}
 
-
         public static NudgeDatabase Database
         {
             get
@@ -44,9 +44,7 @@ namespace Nudge_
                 {
                     database = new NudgeDatabase(
                         Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NudgeSQLite3.db3"));
-
                 }
-                
                 return database;
             }
         }

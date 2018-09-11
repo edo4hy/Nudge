@@ -25,6 +25,7 @@ namespace Nudge_.View
 			InitializeComponent ();
             vm = new RatePageViewModel(SliderHolder, QuestionHolder, true);
 
+            vm.Navigation = Navigation;
             BindingContext = vm;
         }
 	}
