@@ -4,20 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Nudge_.View;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Nudge_.Converters;
 
@@ -64,6 +53,8 @@ namespace Nudge_.ViewModel
                 selectedMessage = (Message)obj;
                 MessageTabbedPage messageTabbedPage = new MessageTabbedPage(this);
 
+                //CrossLocalNotifications.Current.Show("Title", "Body asldkjflaksjdfl;kasd ");
+
                 await Navigation.PushAsync(messageTabbedPage);
 
                 top5IsTapped = false;
@@ -82,11 +73,9 @@ namespace Nudge_.ViewModel
                     MessagesTop5Unordered.Add(m);
                 }
             }
-
             // Order the Messages by top5 position
             SortCollection(MessagesTop5Unordered);
             Console.WriteLine("Sorted collection");
-         
         }
 
         public void SortCollection(TrulyObservableCollection<Message> msgs)

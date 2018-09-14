@@ -6,6 +6,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Support.V4.App;
+
+using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
+
+
 
 namespace Nudge_.Droid
 {
@@ -21,6 +26,7 @@ namespace Nudge_.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
         }
     }
 }

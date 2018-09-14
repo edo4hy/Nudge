@@ -4,6 +4,8 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\as
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\Mono.Android.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\mscorlib.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\Nudge_.dll
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\Plugin.LocalNotifications.Abstractions.dll
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\Plugin.LocalNotifications.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\SQLite-net.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\SQLitePCLRaw.batteries_green.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\SQLitePCLRaw.batteries_v2.dll

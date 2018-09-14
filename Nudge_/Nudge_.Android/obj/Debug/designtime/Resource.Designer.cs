@@ -26,6 +26,7 @@ namespace Nudge_.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::Nudge_.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Nudge_.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -2797,6 +2798,9 @@ namespace Nudge_.Droid
 			
 			// aapt resource value: 0x7F010008
 			public const int number5 = 2130771976;
+			
+			// aapt resource value: 0x7F010012
+			public const int plugin_lc_smallicon = 2130771986;
 			
 			// aapt resource value: 0x7F010009
 			public const int rubbishBin = 2130771977;

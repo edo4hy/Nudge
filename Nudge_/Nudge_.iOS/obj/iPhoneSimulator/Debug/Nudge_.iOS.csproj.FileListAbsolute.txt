@@ -6,6 +6,8 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debu
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.core.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.provider.sqlite3.dll
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\Plugin.LocalNotifications.Abstractions.dll
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\Plugin.LocalNotifications.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.pdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.dll
