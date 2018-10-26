@@ -16,9 +16,9 @@ namespace Nudge_
 		{
 			InitializeComponent();
 
-            //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
+            MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
             //MainPage = new NavigationPage(new EditRatePage());
-            MainPage = new MainPage1();
+            //MainPage = new MainPage1();
 
         }
 

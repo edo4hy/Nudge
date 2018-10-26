@@ -115,6 +115,7 @@ C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\as
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.pdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\bin\Debug\Nudge_.Android.dll
+C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\linksrc\Nudge_.pdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\linksrc\Nudge_.Android.dll.mdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\linksrc\FormsViewGroup.dll.mdb
 C:\Users\Catalyst\source\repos\Nudge_\Nudge_\Nudge_.Android\obj\Debug\linksrc\Plugin.LocalNotifications.dll.mdb
