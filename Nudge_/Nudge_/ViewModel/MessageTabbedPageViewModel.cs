@@ -81,6 +81,9 @@ namespace Nudge_.ViewModel
 
         public MessageTabbedPageViewModel(Top5PageViewModel top5VM)
         {
+            //App.Database.DeleteAllMessagesDatabase();
+            //AddData();
+
             GetMessages();
             starTapCommand = new Command(StarTapped);
             messageTapCommand = new Command(MessageTappedSelectedFromTop5);
@@ -95,6 +98,8 @@ namespace Nudge_.ViewModel
             Message newMessage = new Message
             {
                 MessageText = newMessageEntry.Text.ToString(),
+                Type = Model.Type.Created,
+                Top5 = Top5Number.none,
                 Author = "Me"
             };
 
@@ -110,6 +115,7 @@ namespace Nudge_.ViewModel
             messageCreatedLabel.IsVisible = false;
         }
 
+        // Called when Message is tapped from the browse page - when first coming from the top 5 selection. 
         private void MessageTappedSelectedFromTop5(object obj)
         {
             if (messageTappedBeingExecuted) return;
@@ -270,7 +276,7 @@ namespace Nudge_.ViewModel
         private void UpdateTop5LocalInTop5VM(Top5Number n, Message m, TrulyObservableCollection<Message> collection)
         {
 
-            Message message = collection.FirstOrDefault(msg => msg.MessageId == m.MessageId);
+            Message message = collection.FirstOrDefault(msg => msg.Top5 == m.Top5);
             if (message != null)
             {
                 Console.WriteLine("Deleting message from old position");
@@ -371,15 +377,25 @@ namespace Nudge_.ViewModel
             }
         }
 
-        public void AddData()
+        public async void AddData()
         {
             TrulyObservableCollection<Message> Messages = new TrulyObservableCollection<Message>();
+
+            Message hightestIdMessage = await App.Database.GetHighestId();
+            int highestId = 0;
+            if (hightestIdMessage != null)
+            {
+                highestId = hightestIdMessage.MessageId;
+            }
+
 
             Message message = new Message
             {
                 MessageText = "Message 1 ",
                 Author = "Edo4hy",
                 Type = Model.Type.Action,
+                Top5 = Top5Number.none,
+
                 Favourited = true,
             };
             Messages.Add(message);
@@ -389,6 +405,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 2 _ message message message message message message message message message message message message",
                 Author = "Edo4hy",
                 Type = Model.Type.Action,
+                Top5 = Top5Number.none,
                 Favourited = true,
             };
             Messages.Add(message);
@@ -398,6 +415,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 3 _l",
                 Author = "Edo4hy",
                 Type = Model.Type.Action,
+                Top5 = Top5Number.none,
                 Favourited = true,
             };
             Messages.Add(message);
@@ -407,6 +425,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind",
                 Author = "Dr. Seuss",
                 Type = Model.Type.PositiveMessage,
+                Top5 = Top5Number.none,
                 Favourited = true
             };
             Messages.Add(message);
@@ -416,6 +435,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 5 hello there words words words lost in all the words I have all the words but what are the words",
                 Author = "Bruce Lee",
                 Type = Model.Type.PositiveMessage,
+                Top5 = Top5Number.none,
                 Favourited = true
             };
             Messages.Add(message);
@@ -426,6 +446,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 6 never eat meat always eat fish never eat chicken always eat bread",
                 Author = "Me",
                 Type = Model.Type.Created,
+                Top5 = Top5Number.none,
                 Favourited = true
             };
             Messages.Add(message);
@@ -435,6 +456,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 7 two witches watch two watches which witch is watching which watch",
                 Author = "",
                 Type = Model.Type.Affirmation,
+                Top5 = Top5Number.none,
             };
             Messages.Add(message);
 
@@ -443,6 +465,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 8 olive oil ",
                 Author = "Me",
                 Type = Model.Type.Action,
+                Top5 = Top5Number.none,
                 Favourited = true
             };
             Messages.Add(message);
@@ -452,6 +475,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 9 why wait for everyone else to have their fun with the olives",
                 Author = "Me",
                 Type = Model.Type.Affirmation,
+                Top5 = Top5Number.none,
                 Favourited = true
             };
             Messages.Add(message);
@@ -461,6 +485,7 @@ namespace Nudge_.ViewModel
                 MessageText = "Ministers like panic its a subsitution for achievement",
                 Author = "Me",
                 Type = Model.Type.Action,
+                Top5 = Top5Number.none,
                 Favourited = true
             };
             Messages.Add(message);
@@ -471,13 +496,14 @@ namespace Nudge_.ViewModel
                 MessageText = "Message 11 alway believe in your soul you got the power to knonw you're indistructable always believing, thatchers gold ",
                 Author = "Me",
                 Type = Model.Type.PositiveMessage,
+                Top5 = Top5Number.none,
                 Favourited = true
             };
             Messages.Add(message);
 
             foreach (Message m in Messages)
             {
-                App.Database.SaveMessageAsync(m);
+                await App.Database.SaveMessageAsync(m);
             }
         }
     }

@@ -800,10 +800,11 @@
   },
   "libraries": {
     "sqlite-net-pcl/1.4.118": {
-      "sha512": "66wl2z26PpA/m+hY2UJudsHF3GpbbC8Scx9WvXC0MomQxrbclkb2jiavYsXH3AEXHsTAjKIWavmwKoRIPWsdAg==",
+      "sha512": "S5yWVFDWV4hq2ldntae/Iq+Oe9LMjX53XnhXrpNbxphQy4lSUMbNgAjrOZ64AO81cHC6VK/nJlGOJUNQYHO+hw==",
       "type": "package",
       "path": "sqlite-net-pcl/1.4.118",
       "files": [
+        ".signature.p7s",
         "lib/netstandard1.1/SQLite-net.deps.json",
         "lib/netstandard1.1/SQLite-net.dll",
         "lib/netstandard1.1/SQLite-net.pdb",
@@ -816,10 +817,11 @@
       ]
     },
     "SQLitePCLRaw.bundle_green/1.1.5": {
-      "sha512": "rz+SPgp57CAWkEfCJmWqHXMd+fSqhgYmzOdjkSbCQ3OEG0I3+vUlycElvy5zTi0GAYg5pVrmRqbquotS0985CQ==",
+      "sha512": "1iFD+xBp+F4bGNX2qHqWw5khFmK6jW8U+Fo/cQYfOMssVSi2ZZEwg0CCxRr9AGPDsRnh9ZWFM/hp9K35gcc4WA==",
       "type": "package",
       "path": "sqlitepclraw.bundle_green/1.1.5",
       "files": [
+        ".signature.p7s",
         "build/wp8/SQLitePCLRaw.bundle_green.targets",
         "build/wp80/arm/SQLitePCLRaw.batteries_green.dll",
         "build/wp80/arm/SQLitePCLRaw.batteries_v2.dll",
@@ -861,10 +863,11 @@
       ]
     },
     "SQLitePCLRaw.core/1.1.5": {
-      "sha512": "NViT1KDYnPAQo7yoYmkAMWzT15ZjqbLTSZp9iTVwZDz7fBC5fQ9TYebOFUIxYxrD/RvBpYB8m9PtcL8x/QbKNg==",
+      "sha512": "f5PoVZnZ1Y3wddUxW4Y/VVysT7H5PmoeznUVi7FC5EYq3GDV9qQVkY9PUcLYPkXF2fEa3qZjKiIsg/Oruf3dzQ==",
       "type": "package",
       "path": "sqlitepclraw.core/1.1.5",
       "files": [
+        ".signature.p7s",
         "lib/MonoAndroid/SQLitePCLRaw.core.dll",
         "lib/Xamarin.Mac20/SQLitePCLRaw.core.dll",
         "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll",
@@ -885,10 +888,11 @@
       ]
     },
     "SQLitePCLRaw.provider.sqlite3.ios_unified/1.1.5": {
-      "sha512": "rRtWCg0Mvr2T8zQqMZuVrhxOXeLRZ40g/u3TAZ50rjVkaorzqmOG9xD6UD8KjQtRi4eizVb4lNBL/fiAAy3p6w==",
+      "sha512": "SxyQFYw0tImMyTTcInLOfR09bE+/sgkUfUbf3Sy6M2BfR8Ys8gkUaAVNElE4NqKgnMsQAzdJRy9n090tibWb6w==",
       "type": "package",
       "path": "sqlitepclraw.provider.sqlite3.ios_unified/1.1.5",
       "files": [
+        ".signature.p7s",
         "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll",
         "sqlitepclraw.provider.sqlite3.ios_unified.1.1.5.nupkg.sha512",
         "sqlitepclraw.provider.sqlite3.ios_unified.nuspec"
@@ -928,7 +932,7 @@
       ]
     },
     "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
+      "sha512": "oYfHpCY9i9wN4vLllsIhzDZY5iOCUtZ3RHxID1fiXOcf7yL9UA16NUsI8opoNmpv1Ru2lTGG9ZKKT1sYS6DLjA==",
       "type": "package",
       "path": "xamarin.forms/3.1.0.697729",
       "files": [
@@ -1091,20 +1095,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Catalyst\\.nuget\\packages\\": {}
+    "C:\\Users\\edwar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Catalyst\\source\\repos\\Nudge_\\Nudge_\\Nudge_.iOS\\Nudge_.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_.iOS\\Nudge_.iOS.csproj",
       "projectName": "Nudge_.iOS",
-      "projectPath": "C:\\Users\\Catalyst\\source\\repos\\Nudge_\\Nudge_\\Nudge_.iOS\\Nudge_.iOS.csproj",
-      "packagesPath": "C:\\Users\\Catalyst\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Catalyst\\source\\repos\\Nudge_\\Nudge_\\Nudge_.iOS\\obj\\",
+      "projectPath": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_.iOS\\Nudge_.iOS.csproj",
+      "packagesPath": "C:\\Users\\edwar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Catalyst\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\edwar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1117,8 +1121,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Catalyst\\source\\repos\\Nudge_\\Nudge_\\Nudge_\\Nudge_.csproj": {
-              "projectPath": "C:\\Users\\Catalyst\\source\\repos\\Nudge_\\Nudge_\\Nudge_\\Nudge_.csproj"
+            "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_\\Nudge_.csproj": {
+              "projectPath": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_\\Nudge_.csproj"
             }
           }
         }

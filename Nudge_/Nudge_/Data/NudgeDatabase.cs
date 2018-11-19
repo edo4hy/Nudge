@@ -55,6 +55,11 @@ namespace Nudge_.Data
             return database.DeleteAsync(message);
         }
 
+        public Task<Message> GetHighestId()
+        {
+            return database.Table<Message>().OrderBy(i => i.MessageId).FirstOrDefaultAsync();
+        }
+
         public Task<int> DeleteAllMessagesDatabase()
         {
             return database.DropTableAsync<Message>();
