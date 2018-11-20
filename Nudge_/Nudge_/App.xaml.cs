@@ -5,6 +5,7 @@ using Nudge_.Data;
 using System.IO;
 using Nudge_.View;
 
+
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Nudge_
 {
@@ -16,11 +17,13 @@ namespace Nudge_
 		{
 			InitializeComponent();
 
-            MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
+            //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
             //MainPage = new NavigationPage(new EditRatePage());
             //MainPage = new MainPage1();
             //MainPage = new MessageTabbedPage();
+            MainPage = new SettingsPage();
 
+          
             if (!Application.Current.Properties.ContainsKey("SendNotifications"))
             {
                 Application.Current.Properties ["SendNotifications"] = true;

@@ -63,7 +63,7 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\V
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csproj.CoreCompileInputs.cache
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.AssemblyInfoInputs.cache
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.AssemblyInfo.cs
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csproj.CopyComplete
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.pdb
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\XamlC.stamp

@@ -26,6 +26,20 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Plugin.Notifications/4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Notifications.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.4.118": {
         "type": "package",
         "dependencies": {
@@ -66,6 +80,15 @@
           "lib/netstandard1.1/SQLitePCLRaw.core.dll": {}
         }
       },
+      "Toasts.Forms.Plugin/3.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.1/Toasts.Forms.Plugin.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Toasts.Forms.Plugin.Abstractions.dll": {}
+        }
+      },
       "Xam.Plugins.Notifier/3.0.1": {
         "type": "package",
         "compile": {
@@ -98,10 +121,11 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -237,6 +261,38 @@
         "netstandard.library.nuspec"
       ]
     },
+    "Plugin.Notifications/4.0.2": {
+      "sha512": "rRGqfKqK8yojBjG80FISrLaNsSnJoq+XjoQdXFbVqLlMqP7hee3HvzeetDuVJQgKosO55MYfWu5LURd86yU6zA==",
+      "type": "package",
+      "path": "plugin.notifications/4.0.2",
+      "files": [
+        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Notifications.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Notifications.dll",
+        "lib/MonoAndroid10/Plugin.Notifications.dll.mdb",
+        "lib/MonoAndroid10/Plugin.Notifications.pdb",
+        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.dll",
+        "lib/Xamarin.Mac20/Plugin.Notifications.Abstractions.pdb",
+        "lib/Xamarin.Mac20/Plugin.Notifications.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Notifications.dll",
+        "lib/Xamarin.iOS10/Plugin.Notifications.dll.mdb",
+        "lib/Xamarin.iOS10/Plugin.Notifications.pdb",
+        "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.Notifications.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.Notifications.deps.json",
+        "lib/netstandard1.0/Plugin.Notifications.dll",
+        "lib/netstandard1.0/Plugin.Notifications.pdb",
+        "lib/uap10/Plugin.Notifications.Abstractions.dll",
+        "lib/uap10/Plugin.Notifications.Abstractions.pdb",
+        "lib/uap10/Plugin.Notifications.dll",
+        "lib/uap10/Plugin.Notifications.pdb",
+        "lib/uap10/Plugin.Notifications.pri",
+        "plugin.notifications.4.0.2.nupkg.sha512",
+        "plugin.notifications.nuspec"
+      ]
+    },
     "sqlite-net-pcl/1.4.118": {
       "sha512": "S5yWVFDWV4hq2ldntae/Iq+Oe9LMjX53XnhXrpNbxphQy4lSUMbNgAjrOZ64AO81cHC6VK/nJlGOJUNQYHO+hw==",
       "type": "package",
@@ -323,6 +379,29 @@
         "lib/wpa81/SQLitePCLRaw.core.dll",
         "sqlitepclraw.core.1.1.5.nupkg.sha512",
         "sqlitepclraw.core.nuspec"
+      ]
+    },
+    "Toasts.Forms.Plugin/3.3.2": {
+      "sha512": "saIl6R4GeW9MbqdZLEWm6EAl+YQARDEpjOYXtiwtHqmklaMDG7tOJmC0Qwtr6AuukgFu57L3HiLw/Eo2WRDf9g==",
+      "type": "package",
+      "path": "toasts.forms.plugin/3.3.2",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Toasts.Forms.Plugin.Abstractions.dll",
+        "lib/MonoAndroid10/Toasts.Forms.Plugin.Abstractions.pdb",
+        "lib/MonoAndroid10/Toasts.Forms.Plugin.Droid.dll",
+        "lib/MonoAndroid10/Toasts.Forms.Plugin.Droid.pdb",
+        "lib/Xamarin.iOS10/Toasts.Forms.Plugin.Abstractions.dll",
+        "lib/Xamarin.iOS10/Toasts.Forms.Plugin.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Toasts.Forms.Plugin.iOS.dll",
+        "lib/netstandard1.1/Toasts.Forms.Plugin.Abstractions.dll",
+        "lib/netstandard1.1/Toasts.Forms.Plugin.Abstractions.pdb",
+        "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll",
+        "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.pdb",
+        "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll",
+        "lib/uap10.0/Toasts.Forms.Plugin.UWP.pdb",
+        "toasts.forms.plugin.3.3.2.nupkg.sha512",
+        "toasts.forms.plugin.nuspec"
       ]
     },
     "Xam.Plugins.Notifier/3.0.1": {
@@ -511,6 +590,8 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "Plugin.Notifications >= 4.0.2",
+      "Toasts.Forms.Plugin >= 3.3.2",
       "Xam.Plugins.Notifier >= 3.0.1",
       "Xamarin.Forms >= 3.1.0.697729",
       "sqlite-net-pcl >= 1.4.118"
@@ -562,6 +643,14 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Plugin.Notifications": {
+            "target": "Package",
+            "version": "[4.0.2, )"
+          },
+          "Toasts.Forms.Plugin": {
+            "target": "Package",
+            "version": "[3.3.2, )"
           },
           "Xam.Plugins.Notifier": {
             "target": "Package",

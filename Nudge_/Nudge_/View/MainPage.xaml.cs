@@ -34,11 +34,5 @@ namespace Nudge_.View
         {
             item = item;
         }
-
-      
-
-
-
-   
     }
 }
