@@ -4321,8 +4321,8 @@ namespace Nudge_.Droid
 			// aapt resource value: 0x7F010008
 			public const int number5 = 2130771976;
 			
-			// aapt resource value: 0x7F010012
-			public const int plugin_lc_smallicon = 2130771986;
+			// aapt resource value: 0x7F010013
+			public const int plugin_lc_smallicon = 2130771987;
 			
 			// aapt resource value: 0x7F010009
 			public const int rubbishBin = 2130771977;
@@ -4330,8 +4330,11 @@ namespace Nudge_.Droid
 			// aapt resource value: 0x7F010010
 			public const int starEmpty = 2130771984;
 			
+			// aapt resource value: 0x7F010012
+			public const int starFull = 2130771986;
+			
 			// aapt resource value: 0x7F010011
-			public const int starFull = 2130771985;
+			public const int starFull - Copy = 2130771985;
 			
 			static Drawable()
 			{
