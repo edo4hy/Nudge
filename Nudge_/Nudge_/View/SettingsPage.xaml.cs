@@ -14,34 +14,94 @@ namespace Nudge_.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SettingsPage : ContentPage
 	{
-		public SettingsPage ()
+
+        NotificationScheduler ns;
+
+        public SettingsPage ()
 		{
 			InitializeComponent ();
 
-            NotificationScheduler ns = new NotificationScheduler();
+            ns = new NotificationScheduler();
             DateTime testDT = DateTime.Now;
 
-            ns.SendNotificationAsync("title", "Here is the body of the text - here it all is all of it you see now pretty much all of it", 1, testDT);
+            //ns.ClearAllNotifications();
+            //ns.SendWeeklyNotifications();
+
+            //var t = Application.Current.Properties["DailyStartTime"];
+
+            //Application.Current.Properties["DailyStartTime"] = new TimeSpan(8, 0, 0);
+            //Application.Current.Properties["DailyEndTime"] = new TimeSpan(21, 0, 0);
+
+
+            TimeSpan startTime = new TimeSpan((int)Application.Current.Properties["DailyStartTime_Hours"],
+                (int)Application.Current.Properties["DailyStartTime_Hours"],
+                (int)Application.Current.Properties["DailyStartTime_Hours"]);
+
+            TimeSpan endTime = new TimeSpan((int)Application.Current.Properties["DailyEndTime_Hours"],
+               (int)Application.Current.Properties["DailyEndTime_Hours"],
+               (int)Application.Current.Properties["DailyEndTime_Hours"]);
+
+            DailyStartTime.Time = startTime;
+            DailyEndTime.Time = endTime;
+            FrequencyPicker.Value = (int)Application.Current.Properties["MessageFrequency"];
+            SendNotifications.IsEnabled = (bool)Application.Current.Properties["SendNotifications"];
         }
 
         private void FrequencyPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Application.Current.Properties["MessageFrequency"] = int.Parse(FrequencyPicker.Items[FrequencyPicker.SelectedIndex]);
+            //if(FrequencyPicker != null)
+            //{
+
+            //}
+            //Application.Current.Properties["MessageFrequency"] = (int) FrequencyPicker.Value;
+
+            //var f = Application.Current.Properties["MessageFrequency"];
+            //var f1 = Application.Current.Properties["DailyStartTime"];
+
+            //var f2 = Application.Current.Properties["DailyEndTime"];
+            //var f3 = Application.Current.Properties["SendNotifications"];
+
+            //ns.SendWeeklyNotifications();
         }
 
         private void DailyStartTime_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            Application.Current.Properties["DailyStartTime"] = DailyStartTime.ToString();
+            //Application.Current.Properties["DailyStartTime"] = (TimeSpan) DailyStartTime.Time;
+
+            //var f1 = Application.Current.Properties["DailyStartTime"];
+
+            //var f = Application.Current.Properties["MessageFrequency"];
+
+            //var f2 = Application.Current.Properties["DailyEndTime"];
+            //var f3 = Application.Current.Properties["SendNotifications"];
+
+            //ns.SendWeeklyNotifications();
         }
 
         private void DailyEndTime_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            Application.Current.Properties["DailyEndTime"] = DailyEndTime.ToString();
+            //Application.Current.Properties["DailyEndTime"] = (TimeSpan) DailyEndTime.Time;
+
+            //var f = Application.Current.Properties["MessageFrequency"];
+            //var f1 = Application.Current.Properties["DailyStartTime"];
+
+            //var f2 = Application.Current.Properties["DailyEndTime"];
+            //var f3 = Application.Current.Properties["SendNotifications"];
+
+            //ns.SendWeeklyNotifications();
         }
 
         private void SendNotifications_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            //Application.Current.Properties["SendNotifications"] = bool.Parse(SendNotifications.ToString());
+            //Application.Current.Properties["SendNotifications"] = (bool) SendNotifications.IsEnabled;
+
+            //var f = Application.Current.Properties["MessageFrequency"];
+            //var f1 = Application.Current.Properties["DailyStartTime"];
+
+            //var f2 = Application.Current.Properties["DailyEndTime"];
+            //var f3 = Application.Current.Properties["SendNotifications"];
+
+            //ns.SendWeeklyNotifications();
         }
     }
 }

@@ -7,105 +7,268 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using Plugin.Toasts;
-using Plugin.Notifications;
+
+using System.Threading.Tasks;
 using Notification = Plugin.Notifications.Notification;
- 
 
 namespace Nudge_.Shared
 {
     public class NotificationScheduler
     {
-        const int _SAMPLE_ID = 1;
-        DateTime NextNotificationDT = new DateTime();
-        string TitleText = "Daily Messages";
-       
+
+        int DailyNumberOfNotifications = 0;
+        TimeSpan startTime = new TimeSpan();
+        TimeSpan endTime = new TimeSpan();
+
+        readonly int DaysNotificationAdvance;
+
+        public NotificationScheduler()
+        {
+            //DailyNumberOfNotifications = (int)Application.Current.Properties["MessageFrequency"];
+
+            //startTime = (TimeSpan)Application.Current.Properties["DailyStartTime"];
+            //endTime = (TimeSpan)Application.Current.Properties["DailyEndTime"];
+
+            //startTime = new TimeSpan(7, 0, 0);
+            //endTime = new TimeSpan(23, 0, 0);
+            //DailyNumberOfNotifications = 5;
+            //DaysNotificationAdvance = 7;
+        }
+
 
         Top5PageViewModel top5PageViewModel = new Top5PageViewModel();
 
+        int i = 0;
 
         public string CreateBodyText()
         {
             string bodyText = "";
 
-            foreach (Message m in top5PageViewModel.MessagesTop5)
+            if (top5PageViewModel.MessagesTop5.Count > 0)
             {
-                bodyText += m.MessageText + "" + System.Environment.NewLine;
+                foreach (Message m in top5PageViewModel.MessagesTop5)
+                {
+                    bodyText += m.MessageText + "" + System.Environment.NewLine;
+                }
+            }
+            else
+            {
+                bodyText = i++ + "Select Top 5 Messages for meaningful notifications";
             }
 
             return bodyText;
         }
 
+        public Notification CreateTop5Notification(DateTime dt)
+        {
+
+            Notification n = new Notification
+            {
+                Title = "Have a great day",
+                Message = CreateBodyText(),
+                Vibrate = true,
+                Date = dt,
+            };
+
+            return n;
+        }
+
         public void SendNotification()
         {
-            //CrossLocalNotifications.Current.Show(TitleText, CreateBodyText(), _SAMPLE_ID, NextNotificationDT);
+            //CrossLocalNotifications.Current.Show(TitleText, CreateBodyText(), _SAMPLE_ID, new DateTime());
         }
 
-        public async void SendNotificationAsync(string _titleText, string _bodytext,int _sampleId, DateTime _dateTime )
+        public async void SendNotificationAsync(string _titleText, string _bodytext, int _sampleId, DateTime _dateTime)
         {
-            CrossLocalNotifications.Current.Show(_titleText + DateTime.Now.ToString(), _bodytext, 1, _dateTime);
-
-            //CrossLocalNotifications.Current.Show(_titleText + DateTime.Now.ToString(), _bodytext, 2, _dateTime.AddMinutes(1));
-
-            //CrossLocalNotifications.Current.Show(_titleText + DateTime.Now.ToString(), _bodytext, 2, _dateTime.AddMinutes(30));
-
-            //CrossLocalNotifications.Current.Show(_titleText + DateTime.Now.ToString(), _bodytext, 3, _dateTime.AddHours(1));
-
-            //CrossLocalNotifications.Current.Show(_titleText + DateTime.Now.ToString(), _bodytext, 3, _dateTime.AddSeconds(10));
-            
-            
-
             await CrossNotifications.Current.Send(new Notification
             {
-                Title = "Hello",
-                Message = "hello from edward Obree ",
+                Title = _titleText,
+                Message = _bodytext,
                 Vibrate = true,
-                When = TimeSpan.FromSeconds(10)
+                Date = _dateTime
             });
-
-            //var notificator =  DependencyService.Get<IToastNotificator>();
-
-            //var options = new NotificationOptions()
-            //{
-            //    Title = "Title",
-            //    Description = "Description",
-            //    IsClickable = true,
-
-            //};
-
-
-            //var result = await notificator.Notify(options);
-            //IList<INotification> list = await notificator.GetDeliveredNotifications();
-
-            //Console.WriteLine(await notificator.GetDeliveredNotifications());
-
-            //Console.WriteLine("asldjkflasdf");
-
-            //Notification n = new Notification
-            //{
-            //    Date = DateTime.Now.AddMinutes(1),
-            //    Id = 1001,
-            //    Message = "Whos the guy - whos the other guy",
-            //    Title = "Title ",
-            //    Vibrate = true,
-            //    When = new TimeSpan(1000),
-            //    Sound = null
-            //};
-
-            //await CrossNotifications.Current.Send(n);
-            //await CrossNotifications.Current.Send(n);
-
-            var list = await CrossNotifications.Current.GetScheduledNotifications();
-
-            //Console.WriteLine(list.ToString());
-            //var list = await CrossNotifications.Current.GetScheduledNotifications();
-
-            //await CrossNotifications.Current.Send("My Title", "My message for the notification");
         }
 
-        //public async void SetNotificationDateTime()
-        //{
-        //    var list = await CrossNotifications.Current.GetScheduledNotifications();
 
-        //}
+        // Send out future notifications based on settings and those already scheduled 
+        public async void PrintNotifications()
+        {
+            var list = await CrossNotifications.Current.GetScheduledNotifications();
+
+            int i = 0;
+            foreach (Notification n in list)
+            {
+                Console.WriteLine(++i + "    " + n.Date);
+            }
+        }
+
+        // Delete all old notifications - if any 
+        public async void DeleteAllOldNotifications()
+        {
+            var list = await CrossNotifications.Current.GetScheduledNotifications();
+
+            foreach (Notification n in list)
+            {
+                if (n.Date < new DateTime())
+                {
+                    await CrossNotifications.Current.Cancel((int)n.Id);
+                }
+            }
+        }
+
+        // Get the last notification scheduled 
+        public async Task<Notification> FindLastNotification()
+        {
+            var list = await CrossNotifications.Current.GetScheduledNotifications();
+
+            DateTime current = new DateTime();
+            Notification LastNotification = new Notification();
+
+            foreach (Notification n in list)
+            {
+                if (n.Date > current)
+                {
+                    LastNotification = n;
+                    current = (DateTime)n.Date;
+                }
+            }
+
+            return LastNotification;
+        }
+
+        // Cancel and then send out notifications for the specified period 
+        public void SendWeeklyNotifications()
+        {
+            ClearAllNotifications();
+
+            SendTodaysRemainingDailyNotification();
+
+            DateTime DayCountDate = DateTime.Now;
+
+            for (int i = 0; i < DaysNotificationAdvance; i++)
+            {
+                DayCountDate = DayCountDate.AddDays(1);
+
+                SendDatesDailyNotification(DayCountDate);
+            }
+        }
+
+
+        // Clear all the notifications
+        public async void ClearAllNotifications()
+        {
+            await CrossNotifications.Current.CancelAll();
+        }
+
+
+        //Send the notifications for a today
+        public async void SendTodaysRemainingDailyNotification()
+        {
+            // Get the Application Settings 
+            DailyNumberOfNotifications = (int)Application.Current.Properties["MessageFrequency"];
+            startTime = (TimeSpan)Application.Current.Properties["DailyStartTime"];
+            endTime = (TimeSpan)Application.Current.Properties["DailyEndTime"];
+
+            if (DailyNumberOfNotifications != 0 )
+            {
+                return;
+            }
+            if(startTime == endTime)
+            {
+                return;
+            }
+
+            DateTime Current = DateTime.Now;
+            Current = Current.Date.AddHours(startTime.Hours);
+
+            int totalNotificationHours = (endTime.Hours - startTime.Hours);
+            float timeBetweenMessagesNormal = (float)(totalNotificationHours)/ (float)(DailyNumberOfNotifications - 1);
+
+            for (int i = 0; i < DailyNumberOfNotifications; i++)
+            {
+
+                DateTime dtTemp = (DateTime)Current;
+
+                Notification n = new Notification()
+                {
+                    Title = "Think through these beauties" + dtTemp.ToShortTimeString(),
+                    Message = CreateBodyText(),
+                    Vibrate = true,
+                    Date = dtTemp
+
+                };
+
+                if (dtTemp > DateTime.Now)
+                {
+                    await CrossNotifications.Current.Send(n);
+                }
+
+                // If message frequency is over or under and hour
+                if (timeBetweenMessagesNormal >= 1)
+                {
+                    Current = Current.AddHours(timeBetweenMessagesNormal);
+                }
+                else
+                {
+                    Current = Current.AddMinutes(timeBetweenMessagesNormal * 60);
+                }
+            }
+        }
+
+        //OverLoad - Send the notifications for a set day
+        public async void SendDatesDailyNotification(DateTime NotificationDate)
+        {
+            // Get the Application Settings 
+            DailyNumberOfNotifications = (int)Application.Current.Properties["MessageFrequency"];
+            startTime = (TimeSpan)Application.Current.Properties["DailyStartTime"];
+            endTime = (TimeSpan)Application.Current.Properties["DailyEndTime"];
+
+            if (DailyNumberOfNotifications != 0)
+            {
+                return;
+            }
+            if (startTime == endTime)
+            {
+                return;
+            }
+
+            DateTime Current = NotificationDate;
+            Current = Current.Date.AddHours(startTime.Hours);
+
+            int totalNotificationHours = (endTime.Hours - startTime.Hours);
+            float timeBetweenMessagesNormal = (float)(totalNotificationHours) / (float)(DailyNumberOfNotifications - 1);
+
+            for (int i = 0; i < DailyNumberOfNotifications; i++)
+            {
+
+                DateTime dtTemp = (DateTime)Current;
+
+                Notification n = new Notification()
+                {
+                    Title = "Think through these beauties" + dtTemp.ToShortTimeString(),
+                    Message = CreateBodyText(),
+                    Vibrate = true,
+                    Date = dtTemp
+
+                };
+
+                if (dtTemp > DateTime.Now)
+                {
+                    await CrossNotifications.Current.Send(n);
+                }
+
+                // If message frequency is over or under and hour
+                if (timeBetweenMessagesNormal >= 1)
+                {
+                    Current = Current.AddHours(timeBetweenMessagesNormal);
+                }
+                else
+                {
+                    Current = Current.AddMinutes(timeBetweenMessagesNormal * 60);
+                }
+            }
+        }
+
+        
     }
 }
