@@ -25,6 +25,7 @@ namespace Nudge_.Data
             database.CreateTableAsync<Question>().Wait();
             database.CreateTableAsync<QuestionResult>().Wait();
             database.CreateTableAsync<SliderResult>().Wait();
+            database.CreateTableAsync<Settings>().Wait();
         }
 
         public Task<List<Message>> GetMessagesAsync()
@@ -142,6 +143,30 @@ namespace Nudge_.Data
             else
             {
                 return database.InsertAsync(slider);
+            }
+        }
+
+        public Task<List<Settings>> GetSettingsAsync()
+        {
+            return database.Table<Settings>().ToListAsync();
+        }
+
+        public Task<Settings> GetSettingAsync(int id)
+        {
+            return database.Table<Settings>().Where(i => i.SettingId == id).FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveSettingsAsync(Settings setting)
+        {
+            if (setting.SettingId != 0)
+            {
+                setting.SettingId = 1;
+                return database.UpdateAsync(setting);
+            }
+            else
+            {
+                setting.SettingId = 1;
+                return database.InsertAsync(setting);
             }
         }
     }

@@ -22,36 +22,53 @@ namespace Nudge_
             //MainPage = new MainPage1();
             //MainPage = new MessageTabbedPage();
 
-            Application.Current.Properties.Clear();
+            //Application.Current.Properties.Clear();
 
 
 
 
             if (!Application.Current.Properties.ContainsKey("SendNotifications"))
             {
-                Application.Current.Properties["SendNotifications"] = 1;
+                Application.Current.Properties["SendNotifications"] = (int)1;
             }
 
             if (!Application.Current.Properties.ContainsKey("MessageFrequency"))
             {
-                Application.Current.Properties["MessageFrequency"] = (float) 5;
+                Application.Current.Properties["MessageFrequency"] =  (int)5;
             }
 
-            if (!Application.Current.Properties.ContainsKey("DailyStartTime"))
+
+            TimeSpan startTime = new TimeSpan(8, 30, 0);
+            if (!Application.Current.Properties.ContainsKey("DailyStartTime_Hours"))
             {
-                TimeSpan startTime = new TimeSpan(8, 30, 0);
-                Application.Current.Properties["DailyStartTime_Hour"] = (int)startTime.Hours;
+                Application.Current.Properties["DailyStartTime_Hours"] = (int)startTime.Hours;
+            }
+            if (!Application.Current.Properties.ContainsKey("DailyStartTime_Minutes"))
+            {
+
                 Application.Current.Properties["DailyStartTime_Minutes"] = (int)startTime.Minutes;
+            }
+            if (!Application.Current.Properties.ContainsKey("DailyStartTime_Seconds"))
+            {
+
                 Application.Current.Properties["DailyStartTime_Seconds"] = (int)startTime.Seconds;
             }
 
-            if (!Application.Current.Properties.ContainsKey("DailyEndTime"))
+
+            TimeSpan endTime = new TimeSpan(22, 00, 0);
+            if (!Application.Current.Properties.ContainsKey("DailyEndTime_Hours"))
             {
-                TimeSpan startTime = new TimeSpan(22, 00, 0);
-                Application.Current.Properties["DailyEndTime_Hours"] = (int)startTime.Hours;
-                Application.Current.Properties["DailyEndTime_Minutes"] = (int)startTime.Minutes;
-                Application.Current.Properties["DailyEndTime_Seconds"] = (int)startTime.Seconds;
+                Application.Current.Properties["DailyEndTime_Hours"] = (int)endTime.Hours;
             }
+            if (!Application.Current.Properties.ContainsKey("DailyEndTime_Minutes"))
+            {
+                Application.Current.Properties["DailyEndTime_Minutes"] = (int)endTime.Minutes;
+            }
+            if (!Application.Current.Properties.ContainsKey("DailyEndTime_Seconds"))
+            {
+                Application.Current.Properties["DailyEndTime_Seconds"] = (int)endTime.Seconds;
+            }
+
 
             if (!Application.Current.Properties.ContainsKey("PauseFromDateTime"))
             {
@@ -64,7 +81,7 @@ namespace Nudge_
             }
 
             MainPage = new SettingsPage();
-
+            //MainPage = new Top5Page();
 
         }
 

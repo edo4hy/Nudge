@@ -1,23 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             Title="{Binding Title}"
              x:Class="Nudge_.View.SettingsPage">
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Label Text="Send Notificiations"/>
-            <Switch x:Name="SendNotifications" PropertyChanged="SendNotifications_PropertyChanged" ></Switch>
+
+            <Label Text="Send Notifications"/>
+            <Switch x:Name="ShouldSendNotification" IsEnabled="{Binding SendNotifications}"></Switch>
             
             <Label  x:Name="SliderDisplay" Text="{Binding Source={x:Reference FrequencyPicker}, Path=Value, StringFormat='Frequency {0:F0}'}"/>
-            <Slider x:Name="FrequencyPicker" Maximum="50" Minimum="0" ValueChanged="FrequencyPicker_SelectedIndexChanged"/>
+            <Slider x:Name="FrequencyPicker"  Value="{Binding MessageFrequency } " Maximum="50" Minimum="0" ValueChanged="FrequencyPicker_SelectedIndexChanged"/>
             
             <Label Text="Start time:"/>
-            <TimePicker x:Name="DailyStartTime"  IsVisible="True" PropertyChanged="DailyStartTime_PropertyChanged" ></TimePicker>
+
+            <TimePicker x:Name="DailyStartTime" Time="{Binding StartTime}" IsVisible="True" PropertyChanged="DailyStartTime_PropertyChanged" ></TimePicker>
             <Label Text="End time:"/>
-            <TimePicker x:Name="DailyEndTime"  IsVisible="True" PropertyChanged="DailyEndTime_PropertyChanged" ></TimePicker>
+            <TimePicker x:Name="DailyEndTime"  Time="{Binding EndTime}" IsVisible="True" PropertyChanged="DailyEndTime_PropertyChanged" ></TimePicker>
             
-            <ListView>
-                
-            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

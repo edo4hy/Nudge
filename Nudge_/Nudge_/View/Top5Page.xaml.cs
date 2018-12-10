@@ -23,6 +23,7 @@ namespace Nudge_.View
             BindingContext = vm;
           
             TrulyObservableCollection<Message> mt = vm.MessagesTop5;
+
             InitializeComponent();
 
             Top5ListView.ItemsSource = mt;

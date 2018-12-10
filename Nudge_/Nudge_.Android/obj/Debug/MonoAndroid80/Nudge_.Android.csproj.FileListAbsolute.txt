@@ -132,7 +132,6 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\MonoAndr
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\MonoAndroid80\android\assets\Xamarin.Forms.Xaml.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\MonoAndroid80\res\drawable\icon.png
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\Nudge_.Android.dll
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\MonoAndroid80\linksrc\Nudge_.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\MonoAndroid80\linksrc\Nudge_.Android.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\MonoAndroid80\linksrc\FormsViewGroup.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\MonoAndroid80\linksrc\Plugin.LocalNotifications.dll.mdb
