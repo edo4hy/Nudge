@@ -17,8 +17,6 @@ namespace Nudge_.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        Settings appSettings = new Settings();
-
         public SettingsViewModel()
         {
             Title = "Hello this is the title";
@@ -34,35 +32,38 @@ namespace Nudge_.ViewModel
             set { title = value; }
         }
 
-        TimeSpan startTime = new TimeSpan(7, 0, 0);
+        TimeSpan startTime = new TimeSpan();
         public TimeSpan StartTime
         {
             get { return startTime; }
             set
             {
                 startTime = value;
+                SaveSetting(CollectSettings());
                 OnPropertyChanged();
             }
         }
 
-        TimeSpan endTime = new TimeSpan(22, 0, 0);
+        TimeSpan endTime = new TimeSpan();
         public TimeSpan EndTime
         {
             get { return endTime; }
             set
             {
                 endTime = value;
+                SaveSetting(CollectSettings());
                 OnPropertyChanged();
             }
         }
 
         bool sendNotifications = false;
-        public bool SendNotificatinos
+        public bool SendNotifications
         {
             get { return sendNotifications; }
             set
             {
                 sendNotifications = value;
+                SaveSetting(CollectSettings());
                 OnPropertyChanged();
             }
         }
@@ -74,67 +75,28 @@ namespace Nudge_.ViewModel
             set
             {
                 messageFrequency = (int)value;
-                appSettings.MessageFrequency = (int)value;
+                SaveSetting(CollectSettings());
                 OnPropertyChanged();
             }
         }
 
+        public Settings CollectSettings()
+        {
+            Settings setting = new Settings
+            {
+                SendNotifications = SendNotifications,
+                MessageFrequency = MessageFrequency,
+                DailyStartTime = StartTime,
+                DailyEndTime = EndTime
+            };
 
+            return setting;
+        }
 
-        //public TimeSpan startTime = new TimeSpan(7, 0, 0);
-
-        //public string test = "alsdjflkajsdklfjasdklfasd";
-        //public TimeSpan StartTime
-        //{
-        //    set {
-        //            startTime = value;
-        //            OnPropertyChanged();
-        //        }
-        //    get {
-        //        return startTime;
-        //    }
-        //}
-
-        //TimeSpan EndTime;
-
-        //int MessageFrequency;
-        //bool SendNotifications;
-
-        //public Settings appSettings = new Settings();
-
-        //public SettingsViewModel()
-        //{
-        //    GetSettings();
-
-        //    sendNotifications_Command = new Command(SendNotificationsToggled);
-        //}
-
-
-        //ICommand sendNotifications_Command;
-        //bool sendNotificationsToggleProcessing = false;
-
-        //public ICommand SendNotifications_Command
-        //{
-        //    get { return sendNotifications_Command; }
-        //}
-
-        //public void SendNotificationsToggled()
-        //{
-        //    if (sendNotificationsToggleProcessing)
-        //    {
-        //        return;
-        //    }
-
-        //    sendNotificationsToggleProcessing = true;
-
-
-        //    sendNotificationsToggleProcessing = false;
-        //}
 
         public async void SaveSetting(Settings s)
         {
             await App.Database.SaveSettingsAsync(s);
-
         }
 
 
@@ -146,13 +108,8 @@ namespace Nudge_.ViewModel
             StartTime = appSettings.DailyStartTime;
             EndTime = appSettings.DailyEndTime;
             MessageFrequency = appSettings.MessageFrequency;
-            SendNotificatinos = appSettings.SendNotifications;
+            SendNotifications = appSettings.SendNotifications;
 
         }
-
-        //public async void SetSettings(Settings st)
-        //{
-        //    await App.Database.SaveSettingsAsync(st);
-        //}
     }
 }

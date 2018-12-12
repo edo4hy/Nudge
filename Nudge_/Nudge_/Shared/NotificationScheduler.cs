@@ -20,12 +20,12 @@ namespace Nudge_.Shared
         TimeSpan startTime = new TimeSpan();
         TimeSpan endTime = new TimeSpan();
 
-        readonly int DaysNotificationAdvance;
+        int DaysNotificationAdvance;
 
         public NotificationScheduler()
         {
             //DailyNumberOfNotifications = (int)Application.Current.Properties["MessageFrequency"];
-
+            DaysNotificationAdvance = 7;
             //startTime = (TimeSpan)Application.Current.Properties["DailyStartTime"];
             //endTime = (TimeSpan)Application.Current.Properties["DailyEndTime"];
 
@@ -40,6 +40,7 @@ namespace Nudge_.Shared
 
         int i = 0;
 
+        // Text for Notification generated as text
         public string CreateBodyText()
         {
             string bodyText = "";
@@ -59,9 +60,9 @@ namespace Nudge_.Shared
             return bodyText;
         }
 
+        // Collect current top5 
         public Notification CreateTop5Notification(DateTime dt)
         {
-
             Notification n = new Notification
             {
                 Title = "Have a great day",
@@ -98,6 +99,7 @@ namespace Nudge_.Shared
             int i = 0;
             foreach (Notification n in list)
             {
+                DateTime d = (DateTime) n.Date;
                 Console.WriteLine(++i + "    " + n.Date);
             }
         }
@@ -164,12 +166,14 @@ namespace Nudge_.Shared
         //Send the notifications for a today
         public async void SendTodaysRemainingDailyNotification()
         {
-            // Get the Application Settings 
-            DailyNumberOfNotifications = (int)Application.Current.Properties["MessageFrequency"];
-            startTime = (TimeSpan)Application.Current.Properties["DailyStartTime"];
-            endTime = (TimeSpan)Application.Current.Properties["DailyEndTime"];
+            Settings settings = await App.Database.GetSettingAsync(1);
 
-            if (DailyNumberOfNotifications != 0 )
+            // Get the Application Settings 
+            DailyNumberOfNotifications = settings.MessageFrequency;
+            startTime = settings.DailyStartTime;
+            endTime = settings.DailyEndTime;
+
+            if (DailyNumberOfNotifications == 0 )
             {
                 return;
             }
@@ -184,6 +188,8 @@ namespace Nudge_.Shared
             int totalNotificationHours = (endTime.Hours - startTime.Hours);
             float timeBetweenMessagesNormal = (float)(totalNotificationHours)/ (float)(DailyNumberOfNotifications - 1);
 
+            string bodyText = CreateBodyText();
+
             for (int i = 0; i < DailyNumberOfNotifications; i++)
             {
 
@@ -192,7 +198,7 @@ namespace Nudge_.Shared
                 Notification n = new Notification()
                 {
                     Title = "Think through these beauties" + dtTemp.ToShortTimeString(),
-                    Message = CreateBodyText(),
+                    Message = bodyText,
                     Vibrate = true,
                     Date = dtTemp
 
@@ -219,11 +225,14 @@ namespace Nudge_.Shared
         public async void SendDatesDailyNotification(DateTime NotificationDate)
         {
             // Get the Application Settings 
-            DailyNumberOfNotifications = (int)Application.Current.Properties["MessageFrequency"];
-            startTime = (TimeSpan)Application.Current.Properties["DailyStartTime"];
-            endTime = (TimeSpan)Application.Current.Properties["DailyEndTime"];
+            Settings settings = await App.Database.GetSettingAsync(1);
 
-            if (DailyNumberOfNotifications != 0)
+            // Get the Application Settings 
+            DailyNumberOfNotifications = settings.MessageFrequency;
+            startTime = settings.DailyStartTime;
+            endTime = settings.DailyEndTime;
+
+            if (DailyNumberOfNotifications == 0)
             {
                 return;
             }
@@ -238,6 +247,8 @@ namespace Nudge_.Shared
             int totalNotificationHours = (endTime.Hours - startTime.Hours);
             float timeBetweenMessagesNormal = (float)(totalNotificationHours) / (float)(DailyNumberOfNotifications - 1);
 
+            string bodyText = CreateBodyText();
+
             for (int i = 0; i < DailyNumberOfNotifications; i++)
             {
 
@@ -246,7 +257,7 @@ namespace Nudge_.Shared
                 Notification n = new Notification()
                 {
                     Title = "Think through these beauties" + dtTemp.ToShortTimeString(),
-                    Message = CreateBodyText(),
+                    Message = bodyText,
                     Vibrate = true,
                     Date = dtTemp
 

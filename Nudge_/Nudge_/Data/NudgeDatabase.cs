@@ -158,11 +158,12 @@ namespace Nudge_.Data
 
         public Task<int> SaveSettingsAsync(Settings setting)
         {
-            if (setting.SettingId != 0)
+            Task<int> settingsCount = database.Table<Settings>().CountAsync();
+            if (settingsCount.Result > 0)
             {
                 setting.SettingId = 1;
                 return database.UpdateAsync(setting);
-            }
+            }            
             else
             {
                 setting.SettingId = 1;

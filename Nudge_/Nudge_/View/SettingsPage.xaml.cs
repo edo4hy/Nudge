@@ -26,23 +26,24 @@ namespace Nudge_.View
             InitializeComponent();
 
             ns = new NotificationScheduler();
+            ns.SendWeeklyNotifications();
             //DailyEndTime.Time = vm.startTime;
 
         }
 
         private void FrequencyPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-    
+
         }
 
         private void DailyStartTime_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-         
+
         }
 
         private void DailyEndTime_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            
+
         }
 
         private void SendNotifications_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

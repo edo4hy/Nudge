@@ -6,19 +6,14 @@
              x:Class="Nudge_.View.SettingsPage">
     <ContentPage.Content>
         <StackLayout Padding="20">
-
             <Label Text="Send Notifications"/>
-            <Switch x:Name="ShouldSendNotification" IsEnabled="{Binding SendNotifications}"></Switch>
-            
+            <Switch x:Name="ShouldSendNotification" PropertyChanged="SendNotifications_PropertyChanged" IsEnabled="{Binding SendNotifications}"></Switch>
             <Label  x:Name="SliderDisplay" Text="{Binding Source={x:Reference FrequencyPicker}, Path=Value, StringFormat='Frequency {0:F0}'}"/>
             <Slider x:Name="FrequencyPicker"  Value="{Binding MessageFrequency } " Maximum="50" Minimum="0" ValueChanged="FrequencyPicker_SelectedIndexChanged"/>
-            
             <Label Text="Start time:"/>
-
             <TimePicker x:Name="DailyStartTime" Time="{Binding StartTime}" IsVisible="True" PropertyChanged="DailyStartTime_PropertyChanged" ></TimePicker>
             <Label Text="End time:"/>
             <TimePicker x:Name="DailyEndTime"  Time="{Binding EndTime}" IsVisible="True" PropertyChanged="DailyEndTime_PropertyChanged" ></TimePicker>
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
