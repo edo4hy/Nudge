@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using Nudge_.ViewModel;
 using Nudge_.Model;
 using Nudge_.Data.Model;
+using Nudge_.Shared;
 
 namespace Nudge_.View
 {
@@ -16,8 +17,9 @@ namespace Nudge_.View
 	public partial class Top5Page : ContentPage
 	{
         Top5PageViewModel vm;
+        NotificationScheduler ns;
 
-		public  Top5Page ()
+        public Top5Page ()
 		{
             vm = new Top5PageViewModel();
             BindingContext = vm;
@@ -27,6 +29,9 @@ namespace Nudge_.View
             InitializeComponent();
 
             Top5ListView.ItemsSource = mt;
+
+            ns = new NotificationScheduler();
+            ns.SendWeeklyNotifications();
 
             // Pass the navigation through to the VM
             vm.Navigation = Navigation;

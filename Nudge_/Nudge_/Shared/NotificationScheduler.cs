@@ -24,15 +24,7 @@ namespace Nudge_.Shared
 
         public NotificationScheduler()
         {
-            //DailyNumberOfNotifications = (int)Application.Current.Properties["MessageFrequency"];
             DaysNotificationAdvance = 7;
-            //startTime = (TimeSpan)Application.Current.Properties["DailyStartTime"];
-            //endTime = (TimeSpan)Application.Current.Properties["DailyEndTime"];
-
-            //startTime = new TimeSpan(7, 0, 0);
-            //endTime = new TimeSpan(23, 0, 0);
-            //DailyNumberOfNotifications = 5;
-            //DaysNotificationAdvance = 7;
         }
 
 
@@ -58,6 +50,18 @@ namespace Nudge_.Shared
             }
 
             return bodyText;
+        }
+
+        int cycle = 0; 
+        // Select one of the Messages from the Top 5
+        public string SelectMessageText()
+        {
+            Message m = top5PageViewModel.MessagesTop5[cycle++];
+            if(cycle > 4)
+            {
+                cycle = 0;
+            }
+            return m.MessageText;
         }
 
         // Collect current top5 
@@ -143,9 +147,11 @@ namespace Nudge_.Shared
         {
             ClearAllNotifications();
 
-            SendTodaysRemainingDailyNotification();
+            //SendTodaysRemainingDailyNotification();
 
             DateTime DayCountDate = DateTime.Now;
+
+            SendDatesDailyNotification(DayCountDate);
 
             for (int i = 0; i < DaysNotificationAdvance; i++)
             {
@@ -163,7 +169,7 @@ namespace Nudge_.Shared
         }
 
 
-        //Send the notifications for a today
+        //Send the notifications for a today  ---- this should be able to be deleted - ***** *** * ** 
         public async void SendTodaysRemainingDailyNotification()
         {
             Settings settings = await App.Database.GetSettingAsync(1);
@@ -197,11 +203,10 @@ namespace Nudge_.Shared
 
                 Notification n = new Notification()
                 {
-                    Title = "Think through these beauties" + dtTemp.ToShortTimeString(),
-                    Message = bodyText,
+                    Title = "Think through these beauties" ,
+                    Message = SelectMessageText(),
                     Vibrate = true,
                     Date = dtTemp
-
                 };
 
                 if (dtTemp > DateTime.Now)
@@ -256,8 +261,8 @@ namespace Nudge_.Shared
 
                 Notification n = new Notification()
                 {
-                    Title = "Think through these beauties" + dtTemp.ToShortTimeString(),
-                    Message = bodyText,
+                    Title = "Think through these beauties",
+                    Message = SelectMessageText(),
                     Vibrate = true,
                     Date = dtTemp
 
@@ -279,7 +284,6 @@ namespace Nudge_.Shared
                 }
             }
         }
-
         
     }
 }

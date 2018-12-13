@@ -35,7 +35,7 @@
                                     <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
                                         <Label Text="{Binding MessageText}" FontAttributes="Bold" />
                                         <Label Text="{Binding Author}" />
-                                        <Label Text="{Binding Top5}" />
+                                        <!--<Label Text="{Binding Top5}" />-->
                                     </StackLayout>
                                 </ContentView>
                             </ViewCell>

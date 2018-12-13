@@ -75,7 +75,7 @@ namespace Nudge_.ViewModel
             }
             // Order the Messages by top5 position
             SortCollection(MessagesTop5Unordered);
-            Console.WriteLine("Sorted collection");
+            //Console.WriteLine("Sorted collection");
         }
 
         public void SortCollection(TrulyObservableCollection<Message> msgs)
