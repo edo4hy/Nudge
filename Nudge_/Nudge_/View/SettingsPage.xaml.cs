@@ -21,12 +21,24 @@ namespace Nudge_.View
         public SettingsPage ()
 		{
 
-           
-            BindingContext = new SettingsViewModel();
+           SettingsViewModel vm = new SettingsViewModel();
+
+            BindingContext = vm;
             InitializeComponent();
 
-            ns = new NotificationScheduler();
-            ns.SendWeeklyNotifications();
+            //vm.sendNotificationSwitch = ShouldSendNotification;
+            //vm.startTimePicker = DailyStartTime;
+            //vm.endTimePicker = DailyEndTime;
+            //vm.mesFrequency = FrequencyPicker;
+
+            //ns = new NotificationScheduler();
+            
+
+            //Task.Run(async () =>
+            //{
+            //    await ns.SendWeeklyNotifications();
+            //});
+           
             //DailyEndTime.Time = vm.startTime;
 
         }

@@ -4,7 +4,9 @@ using Xamarin.Forms.Xaml;
 using Nudge_.Data;
 using System.IO;
 using Nudge_.View;
-
+using Nudge_.View.Test_Delete;
+using Nudge_.Shared;
+using System.Threading.Tasks;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Nudge_
@@ -12,37 +14,45 @@ namespace Nudge_
 	public partial class App : Application
 	{
         static NudgeDatabase database;
+        static NotificationScheduler ns = new NotificationScheduler();
 
         public App ()
 		{
 			InitializeComponent();
 
             Application.Current.Properties.Clear();
-           
+
             //MainPage = new SettingsPage();
             //MainPage = new NavigationPage(new EditRatePage());
             //MainPage = new MainPage1();
             //MainPage = new MessageTabbedPage();
-            MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
+            //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
+
+            MainPage = new MasterDetailPage1();
 
         }
 
         protected override void OnStart ()
 		{
             // Handle when your app starts
-            Application.Current.Properties.Clear();
+            ns.PrintNotifications();
         }
 
-		protected override void OnSleep ()
+		protected async override void OnSleep ()
 		{
-			// Handle when your app sleeps
+            // Handle when your app sleeps
+           await ns.SendWeeklyNotifications();
+
+            await Task.Delay(500);
+            ns.PrintNotifications();
 		}
 
-		protected override void OnResume ()
-		{
+        protected override void OnResume()
+        {
             // Handle when your app resumes
-            Application.Current.Properties.Clear();
+            ns.PrintNotifications();
         }
+
 
         public static NudgeDatabase Database
         {

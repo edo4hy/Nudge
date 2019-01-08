@@ -1,9 +1,11 @@
 ﻿using Nudge_.Model;
+using Nudge_.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -17,11 +19,22 @@ namespace Nudge_.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        //NotificationScheduler ns = new NotificationScheduler();
+
+        //public Switch sendNotificationSwitch;
+        //public TimePicker startTimePicker;
+        //public TimePicker endTimePicker;
+        //public Slider mesFrequency;
+
+       
+        public Task Initialization { get; private set; }
+
         public SettingsViewModel()
         {
             Title = "Hello this is the title";
 
-            GetSettings();
+            Initialization = GetSettings();
+            
         }
 
 
@@ -33,7 +46,7 @@ namespace Nudge_.ViewModel
         }
 
         TimeSpan startTime = new TimeSpan();
-        public TimeSpan StartTime
+        public TimeSpan StartTime 
         {
             get { return startTime; }
             set
@@ -41,6 +54,7 @@ namespace Nudge_.ViewModel
                 startTime = value;
                 SaveSetting(CollectSettings());
                 OnPropertyChanged();
+                //ResendNotifications();
             }
         }
 
@@ -53,6 +67,7 @@ namespace Nudge_.ViewModel
                 endTime = value;
                 SaveSetting(CollectSettings());
                 OnPropertyChanged();
+                //ResendNotifications();
             }
         }
 
@@ -62,13 +77,17 @@ namespace Nudge_.ViewModel
             get { return sendNotifications; }
             set
             {
+                
                 sendNotifications = value;
                 SaveSetting(CollectSettings());
                 OnPropertyChanged();
+                //ResendNotifications();
             }
         }
 
         int messageFrequency = 0;
+        //int messageFrequencyTemp = 0;
+        int checkCount = 0;
         public int MessageFrequency
         {
             get { return messageFrequency; }
@@ -77,7 +96,20 @@ namespace Nudge_.ViewModel
                 messageFrequency = (int)value;
                 SaveSetting(CollectSettings());
                 OnPropertyChanged();
+                //ResendNotifications();
+                Console.WriteLine("Printing out the result  " + checkCount++);
             }
+        }
+
+
+
+        public void ResendNotifications()
+        {
+            //Task.Run(async() =>
+            //{
+            //    await ns.SendWeeklyNotifications();
+            //});
+            
         }
 
         public Settings CollectSettings()
@@ -100,7 +132,7 @@ namespace Nudge_.ViewModel
         }
 
 
-        public async void GetSettings()
+        public async Task GetSettings()
         {
             List<Settings> SettingsList = await App.Database.GetSettingsAsync();
             Settings appSettings = SettingsList[0];

@@ -32,22 +32,31 @@
     <EmbeddedResource Update="View\CreateMessage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="View\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\HomePageDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\HomePageMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\BrowseSliders.xaml">
+    <EmbeddedResource Update="View\RatePages\BrowseSliders.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\CreateQuestion.xaml">
+    <EmbeddedResource Update="View\RatePages\CreateQuestion.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\CreateSlider.xaml">
+    <EmbeddedResource Update="View\RatePages\CreateSlider.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\BrowseQuestionTabbed.xaml">
+    <EmbeddedResource Update="View\RatePages\BrowseQuestionTabbed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\EditSliderView.xaml">
+    <EmbeddedResource Update="View\RatePages\EditSliderView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\MessagePage.xaml">
@@ -59,13 +68,25 @@
     <EmbeddedResource Update="View\MessageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\QuestionView.xaml">
+    <EmbeddedResource Update="View\RatePages\QuestionView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\RatePage.xaml">
+    <EmbeddedResource Update="View\RatePages\RatePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePage\SliderView.xaml">
+    <EmbeddedResource Update="View\RatePages\SliderView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\MasterDetail\MasterDetailPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\MasterDetail\MasterDetailPage1Detail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\MasterDetail\MasterDetailPage1Master.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\MasterDetail\Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Top5Page.xaml">
@@ -74,10 +95,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\HomePageMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MainPage1.xaml.cs">
       <DependentUpon>MainPage1.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\RatePage\BrowseQuestions.xaml.cs">
+    <Compile Update="View\RatePages\BrowseQuestions.xaml.cs">
       <DependentUpon>BrowseQuestions.xaml</DependentUpon>
     </Compile>
     <Compile Update="View\MessagePage.xaml.cs">
@@ -86,17 +110,20 @@
     <Compile Update="View\MessageTabbedPage.xaml.cs">
       <DependentUpon>MessageTabbedPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\RatePage\BrowseQuestionTabbed.xaml.cs">
+    <Compile Update="View\RatePages\BrowseQuestionTabbed.xaml.cs">
       <DependentUpon>BrowseQuestionTabbed.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\RatePage\BrowseSliderTabbed.xaml.cs">
+    <Compile Update="View\RatePages\BrowseSliderTabbed.xaml.cs">
       <DependentUpon>BrowseSliderTabbed.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\RatePage\EditRatePage.xaml.cs">
+    <Compile Update="View\RatePages\EditRatePage.xaml.cs">
       <DependentUpon>EditRatePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\RatePage\EditQuestionView.xaml.cs">
+    <Compile Update="View\RatePages\EditQuestionView.xaml.cs">
       <DependentUpon>EditQuestionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\MasterDetail\MasterDetailPage1MenuItem.cs">
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 </Project>

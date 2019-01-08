@@ -30,8 +30,8 @@ namespace Nudge_.View
 
             Top5ListView.ItemsSource = mt;
 
-            ns = new NotificationScheduler();
-            ns.SendWeeklyNotifications();
+            //ns = new NotificationScheduler();
+            //ns.SendWeeklyNotifications();
 
             // Pass the navigation through to the VM
             vm.Navigation = Navigation;

@@ -4,7 +4,8 @@
              x:Class="Nudge_.View.Top5Page"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
-             Padding="0">
+             Padding="0"
+             Title="Top5">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>

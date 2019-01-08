@@ -27,6 +27,32 @@ namespace Nudge_.Shared
             DaysNotificationAdvance = 7;
         }
 
+        // Send out notifications for the specified period  - after cancelling all notifications
+        public async Task<string> SendWeeklyNotifications()
+        {
+            ClearAllNotifications();
+
+            //SendTodaysRemainingDailyNotification();
+            Settings settings = await App.Database.GetSettingAsync(1);
+
+            if (settings.SendNotifications)
+            {
+                DateTime DayCountDate = DateTime.Now;
+
+                SendNotification(DayCountDate, settings);
+
+                for (int i = 0; i < DaysNotificationAdvance; i++)
+                {
+                    DayCountDate = DayCountDate.AddDays(1);
+
+                    SendNotification(DayCountDate, settings);
+                }
+            }
+
+            Console.WriteLine("kjsdfkljaskldfjalskdjf asdlkfjalksdjf aksdjfl aksdjflkasjd flkajsd ");
+            return "complete";
+        }
+
 
         Top5PageViewModel top5PageViewModel = new Top5PageViewModel();
 
@@ -57,43 +83,20 @@ namespace Nudge_.Shared
         public string SelectMessageText()
         {
             Message m = top5PageViewModel.MessagesTop5[cycle++];
-            if(cycle > 4)
+            while(m.MessageText == "Add message here ..." && cycle < 4)
+            {
+                m = top5PageViewModel.MessagesTop5[cycle++];
+            }
+            if (cycle > 4)
             {
                 cycle = 0;
             }
+            if(m.MessageText == "Add message here ...")
+            {
+                m.MessageText = DefaultMessages.DefaultMessage1.MessageText;
+            }
             return m.MessageText;
         }
-
-        // Collect current top5 
-        public Notification CreateTop5Notification(DateTime dt)
-        {
-            Notification n = new Notification
-            {
-                Title = "Have a great day",
-                Message = CreateBodyText(),
-                Vibrate = true,
-                Date = dt,
-            };
-
-            return n;
-        }
-
-        public void SendNotification()
-        {
-            //CrossLocalNotifications.Current.Show(TitleText, CreateBodyText(), _SAMPLE_ID, new DateTime());
-        }
-
-        public async void SendNotificationAsync(string _titleText, string _bodytext, int _sampleId, DateTime _dateTime)
-        {
-            await CrossNotifications.Current.Send(new Notification
-            {
-                Title = _titleText,
-                Message = _bodytext,
-                Vibrate = true,
-                Date = _dateTime
-            });
-        }
-
 
         // Send out future notifications based on settings and those already scheduled 
         public async void PrintNotifications()
@@ -101,6 +104,7 @@ namespace Nudge_.Shared
             var list = await CrossNotifications.Current.GetScheduledNotifications();
 
             int i = 0;
+            Console.WriteLine("Sending notifications : ----- ------ ------");
             foreach (Notification n in list)
             {
                 DateTime d = (DateTime) n.Date;
@@ -142,95 +146,17 @@ namespace Nudge_.Shared
             return LastNotification;
         }
 
-        // Cancel and then send out notifications for the specified period 
-        public void SendWeeklyNotifications()
-        {
-            ClearAllNotifications();
-
-            //SendTodaysRemainingDailyNotification();
-
-            DateTime DayCountDate = DateTime.Now;
-
-            SendDatesDailyNotification(DayCountDate);
-
-            for (int i = 0; i < DaysNotificationAdvance; i++)
-            {
-                DayCountDate = DayCountDate.AddDays(1);
-
-                SendDatesDailyNotification(DayCountDate);
-            }
-        }
-
-
         // Clear all the notifications
         public async void ClearAllNotifications()
         {
             await CrossNotifications.Current.CancelAll();
         }
 
-
-        //Send the notifications for a today  ---- this should be able to be deleted - ***** *** * ** 
-        public async void SendTodaysRemainingDailyNotification()
-        {
-            Settings settings = await App.Database.GetSettingAsync(1);
-
-            // Get the Application Settings 
-            DailyNumberOfNotifications = settings.MessageFrequency;
-            startTime = settings.DailyStartTime;
-            endTime = settings.DailyEndTime;
-
-            if (DailyNumberOfNotifications == 0 )
-            {
-                return;
-            }
-            if(startTime == endTime)
-            {
-                return;
-            }
-
-            DateTime Current = DateTime.Now;
-            Current = Current.Date.AddHours(startTime.Hours);
-
-            int totalNotificationHours = (endTime.Hours - startTime.Hours);
-            float timeBetweenMessagesNormal = (float)(totalNotificationHours)/ (float)(DailyNumberOfNotifications - 1);
-
-            string bodyText = CreateBodyText();
-
-            for (int i = 0; i < DailyNumberOfNotifications; i++)
-            {
-
-                DateTime dtTemp = (DateTime)Current;
-
-                Notification n = new Notification()
-                {
-                    Title = "Think through these beauties" ,
-                    Message = SelectMessageText(),
-                    Vibrate = true,
-                    Date = dtTemp
-                };
-
-                if (dtTemp > DateTime.Now)
-                {
-                    await CrossNotifications.Current.Send(n);
-                }
-
-                // If message frequency is over or under and hour
-                if (timeBetweenMessagesNormal >= 1)
-                {
-                    Current = Current.AddHours(timeBetweenMessagesNormal);
-                }
-                else
-                {
-                    Current = Current.AddMinutes(timeBetweenMessagesNormal * 60);
-                }
-            }
-        }
-
-        //OverLoad - Send the notifications for a set day
-        public async void SendDatesDailyNotification(DateTime NotificationDate)
+        // Send the notifications for a set day
+        public async void SendNotification(DateTime NotificationDate, Settings s)
         {
             // Get the Application Settings 
-            Settings settings = await App.Database.GetSettingAsync(1);
+            Settings settings = s;
 
             // Get the Application Settings 
             DailyNumberOfNotifications = settings.MessageFrequency;
@@ -249,15 +175,21 @@ namespace Nudge_.Shared
             DateTime Current = NotificationDate;
             Current = Current.Date.AddHours(startTime.Hours);
 
-            int totalNotificationHours = (endTime.Hours - startTime.Hours);
+            //int totalNotificationHours = (endTime.Hours - startTime.Hours);
+            TimeSpan notificationTime = endTime - startTime;
+            double totalNotificationHours = notificationTime.TotalHours;
             float timeBetweenMessagesNormal = (float)(totalNotificationHours) / (float)(DailyNumberOfNotifications - 1);
 
             string bodyText = CreateBodyText();
+
+            //string debug_Append = "";
 
             for (int i = 0; i < DailyNumberOfNotifications; i++)
             {
 
                 DateTime dtTemp = (DateTime)Current;
+
+                //debug_Append += " " + dtTemp.TimeOfDay;
 
                 Notification n = new Notification()
                 {
@@ -284,6 +216,5 @@ namespace Nudge_.Shared
                 }
             }
         }
-        
     }
 }

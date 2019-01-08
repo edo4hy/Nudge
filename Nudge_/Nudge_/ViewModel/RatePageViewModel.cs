@@ -61,6 +61,7 @@ namespace Nudge_.ViewModel
         {
             await GetSliders();
             await GetQuestions();
+            
         }
 
         public void AddSliderdata()
@@ -237,6 +238,7 @@ namespace Nudge_.ViewModel
             App.Database.SaveAnswerAsync(answer);
         }
 
+
         public async void RemoveSlider(RateSlider rateSlider)
         {
             rateSlider.InUse = false;
@@ -252,7 +254,7 @@ namespace Nudge_.ViewModel
         public async Task GetSliders()
         {
             List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
-
+            await Task.Delay(100);
             foreach(RateSlider r in slidersList)
             {
                 r.InUse = true;
@@ -282,8 +284,8 @@ namespace Nudge_.ViewModel
         public async Task GetQuestions()
         {
             List<Question> questionList = await App.Database.GetQuestionsAsync();
-
-            foreach(Question q in questionList)
+            await Task.Delay(100);
+            foreach (Question q in questionList)
             {
                 if (q.InUse == true)
                 {
