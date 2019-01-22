@@ -28,16 +28,18 @@ namespace Nudge_.View.Test_Delete
 
         class MasterDetailPage1MasterViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<MasterDetailPage1MenuItem> MenuItems { get; set; }
+            public ObservableCollection<ContentPage> MenuItems { get; set; }
             
             public MasterDetailPage1MasterViewModel()
             {
-                MenuItems = new ObservableCollection<MasterDetailPage1MenuItem>(new[]
+                MenuItems = new ObservableCollection<ContentPage>(new[]
                 {
                     new MasterDetailPage1MenuItem {Id = 0, Title = "Top 5 Page", TargetType = typeof(Top5Page)},
                     new MasterDetailPage1MenuItem { Id = 1, Title = "Rate Page" , TargetType = typeof(RatePage)},
                     new MasterDetailPage1MenuItem { Id = 2, Title = "Edit Rate Page" , TargetType = typeof(EditRatePage) },
-                    new MasterDetailPage1MenuItem { Id = 3, Title = "Settings", TargetType = typeof(SettingsPage) },                    //new MasterDetailPage1MenuItem { Id = 3, Title = "Page 4" },
+                    new MasterDetailPage1MenuItem { Id = 3, Title = "Settings", TargetType = typeof(SettingsPage) },   
+                    
+                    //new MasterDetailPage1MenuItem { Id = 3, Title = "Page 4" },
                     //new MasterDetailPage1MenuItem { Id = 4, Title = "Page 5" },
 
                 });

@@ -30,6 +30,9 @@ namespace Nudge_
 
             MainPage = new MasterDetailPage1();
 
+            //MainPage = new BrowseSliderTabbed();
+           
+
         }
 
         protected override void OnStart ()

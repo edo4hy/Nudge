@@ -21,6 +21,7 @@ namespace Nudge_.View
 			InitializeComponent ();
 
             BrowseQuestionViewModel vm = new BrowseQuestionViewModel();
+            //vm.Navigation = Navigation;
             QuestionsListView.ItemsSource = vm.questions;
 		}
 

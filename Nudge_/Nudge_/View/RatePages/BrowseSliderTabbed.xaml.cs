@@ -26,6 +26,22 @@ namespace Nudge_.View
             this.Children.Add(new BrowseSliders(viewModel.sliders) { Title = "Sliders", BindingContext = viewModel });
             this.Children.Add(new BrowseSliders(viewModel.slidersCreated) { Title = "Created", BindingContext = viewModel });
             this.Children.Add(new CreateSlider(viewModel) { Title = "Create slider", BindingContext = viewModel });
+
+            viewModel.Navigation = Navigation;
+        }
+
+        public BrowseSliderTabbed(RatePageViewModel rpVM)
+        {
+            InitializeComponent();
+            viewModel = new BrowseSliderViewModel(rpVM);
+
+            BindingContext = viewModel;
+
+            this.Children.Add(new BrowseSliders(viewModel.sliders) { Title = "Sliders", BindingContext = viewModel });
+            this.Children.Add(new BrowseSliders(viewModel.slidersCreated) { Title = "Created", BindingContext = viewModel });
+            this.Children.Add(new CreateSlider(viewModel) { Title = "Create slider", BindingContext = viewModel });
+
+            viewModel.Navigation = Navigation;
         }
     }
 }

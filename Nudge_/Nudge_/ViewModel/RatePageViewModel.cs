@@ -5,6 +5,8 @@ using Nudge_.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -25,6 +27,15 @@ namespace Nudge_.ViewModel
         private bool isEditPage;
 
         public INavigation Navigation;
+
+        public TrulyObservableCollection<RateSlider> RateSliders = new TrulyObservableCollection<RateSlider>();
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public Task Initialization { get; private set; }
 
@@ -255,10 +266,10 @@ namespace Nudge_.ViewModel
         {
             List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
             await Task.Delay(100);
-            foreach(RateSlider r in slidersList)
+            foreach (RateSlider r in slidersList)
             {
-                r.InUse = true;
-                if(r.InUse == true)
+                
+                if (r.InUse == true)
                 {
                     if (isEditPage == true)
                     {
@@ -280,6 +291,19 @@ namespace Nudge_.ViewModel
                 }
             }
         }
+
+        //public async Task GetSliders()
+        //{
+        //    List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
+        //    await Task.Delay(100);
+        //    foreach (RateSlider r in slidersList)
+        //    {
+        //        if (r.InUse == true)
+        //        {
+        //            RateSliders.Add(r);
+        //        }
+        //    }
+        //}
 
         public async Task GetQuestions()
         {

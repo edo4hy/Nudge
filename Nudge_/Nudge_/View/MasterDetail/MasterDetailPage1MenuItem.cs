@@ -8,14 +8,14 @@ using Xamarin.Forms;
 namespace Nudge_.View.Test_Delete
 {
 
-    public class MasterDetailPage1MenuItem
+    public class MasterDetailPage1MenuItem : ContentPage
     {
         public MasterDetailPage1MenuItem()
         {
             TargetType = typeof(ContentPage);
         }
-        public int Id { get; set; }
-        public string Title { get; set; }
+        public new int Id { get; set; }
+        public new string Title { get; set; }
 
         public Type TargetType { get; set; }
     }

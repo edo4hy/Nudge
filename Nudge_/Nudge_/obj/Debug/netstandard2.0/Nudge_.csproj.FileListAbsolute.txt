@@ -38,14 +38,10 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\N
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.xml
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csprojAssemblyReference.cache
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\CreateMessage.xaml.g.cs
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MainPage.xaml.g.cs
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MainPage1.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MessageTabbedPage.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MessageView.xaml.g.cs
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\Page1.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\SettingsPage.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\Top5Page.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csproj.CoreCompileInputs.cache
@@ -55,9 +51,6 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\N
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\HomePage.xaml.g.cs
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\HomePageDetail.xaml.g.cs
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\HomePageMaster.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePages\BrowseQuestions.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePages\BrowseQuestionTabbed.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\RatePages\BrowseSliders.xaml.g.cs
@@ -74,3 +67,4 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\V
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MasterDetail\MasterDetailPage1Detail.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MasterDetail\MasterDetailPage1Master.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\MasterDetail\Page1.xaml.g.cs
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csprojAssemblyReference.cache

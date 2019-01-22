@@ -18,10 +18,13 @@ namespace Nudge_.ViewModel
         public Entry newQuestionEntry;
         public Label questionAddedLabel;
 
+        public INavigation Navigation;
+
         public BrowseQuestionViewModel()
         {
             GetQuestions();
             addNewQuestion = new Command(AddQuestion);
+            questionTapped = new Command(QuestionTappedFunc);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -31,6 +34,12 @@ namespace Nudge_.ViewModel
         public ICommand AddNewQuestion
         {
             get { return addNewQuestion; }
+        }
+
+        ICommand questionTapped;
+        public ICommand QuestionTapped
+        {
+            get { return questionTapped; }
         }
 
         public async void GetQuestions()
@@ -70,6 +79,32 @@ namespace Nudge_.ViewModel
             await Task.Delay(5000);
 
             questionAddedLabel.IsVisible = false;
+        }
+
+        bool questionBeingExecuted = false;
+
+        public void QuestionTappedFunc(object obj)
+        {
+            if (questionBeingExecuted) return;
+            if (obj == null) return;
+
+            questionBeingExecuted = true;
+            Question question = (Question)obj;
+
+            UpdateQuestion(question);
+
+            questionBeingExecuted = false;
+        }
+
+        private async void UpdateQuestion(Question question)
+        {
+            Question oldQuestion = await App.Database.GetQuestionAsync(question.QuestionId);
+
+            oldQuestion.InUse = true;
+
+            await App.Database.SaveQuestionAsync(oldQuestion);
+
+            await Navigation.PopAsync();
         }
     }
 }

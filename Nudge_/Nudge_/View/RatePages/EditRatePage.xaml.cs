@@ -29,6 +29,18 @@ namespace Nudge_.View
 
             vm.Navigation = Navigation;
             BindingContext = vm;
+
         }
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            InitializeComponent();
+            vm = new RatePageViewModel(SliderHolder, QuestionHolder, true);
+
+            vm.Navigation = Navigation;
+            BindingContext = vm;
+
+        }
+    }
 }

@@ -129,6 +129,11 @@ namespace Nudge_.Data
             return database.Table<RateSlider>().ToListAsync();
         }
 
+        public Task<RateSlider> GetSliderAysnc(int sliderId)
+        {
+            return database.Table<RateSlider>().Where(i => i.SliderId == sliderId).FirstOrDefaultAsync();
+        }
+
         public Task<List<RateSlider>> GetSlidersInUseAsync()
         {
             return database.Table<RateSlider>().Where(i => i.InUse == true).ToListAsync();

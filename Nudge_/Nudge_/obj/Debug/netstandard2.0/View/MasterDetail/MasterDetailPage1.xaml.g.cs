@@ -20,9 +20,13 @@ namespace Nudge_.View.Test_Delete {
         private global::Nudge_.View.Test_Delete.MasterDetailPage1Master MasterPage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.NavigationPage HomePage;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MasterDetailPage1));
             MasterPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Nudge_.View.Test_Delete.MasterDetailPage1Master>(this, "MasterPage");
+            HomePage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.NavigationPage>(this, "HomePage");
         }
     }
 }

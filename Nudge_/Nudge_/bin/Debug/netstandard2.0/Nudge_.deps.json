@@ -136,7 +136,7 @@
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
@@ -157,28 +157,28 @@
     "sqlite-net-pcl/1.4.118": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-S5yWVFDWV4hq2ldntae/Iq+Oe9LMjX53XnhXrpNbxphQy4lSUMbNgAjrOZ64AO81cHC6VK/nJlGOJUNQYHO+hw==",
+      "sha512": "sha512-66wl2z26PpA/m+hY2UJudsHF3GpbbC8Scx9WvXC0MomQxrbclkb2jiavYsXH3AEXHsTAjKIWavmwKoRIPWsdAg==",
       "path": "sqlite-net-pcl/1.4.118",
       "hashPath": "sqlite-net-pcl.1.4.118.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1iFD+xBp+F4bGNX2qHqWw5khFmK6jW8U+Fo/cQYfOMssVSi2ZZEwg0CCxRr9AGPDsRnh9ZWFM/hp9K35gcc4WA==",
+      "sha512": "sha512-rz+SPgp57CAWkEfCJmWqHXMd+fSqhgYmzOdjkSbCQ3OEG0I3+vUlycElvy5zTi0GAYg5pVrmRqbquotS0985CQ==",
       "path": "sqlitepclraw.bundle_green/1.1.5",
       "hashPath": "sqlitepclraw.bundle_green.1.1.5.nupkg.sha512"
     },
     "SQLitePCLRaw.core/1.1.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-f5PoVZnZ1Y3wddUxW4Y/VVysT7H5PmoeznUVi7FC5EYq3GDV9qQVkY9PUcLYPkXF2fEa3qZjKiIsg/Oruf3dzQ==",
+      "sha512": "sha512-NViT1KDYnPAQo7yoYmkAMWzT15ZjqbLTSZp9iTVwZDz7fBC5fQ9TYebOFUIxYxrD/RvBpYB8m9PtcL8x/QbKNg==",
       "path": "sqlitepclraw.core/1.1.5",
       "hashPath": "sqlitepclraw.core.1.1.5.nupkg.sha512"
     },
     "Toasts.Forms.Plugin/3.3.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-saIl6R4GeW9MbqdZLEWm6EAl+YQARDEpjOYXtiwtHqmklaMDG7tOJmC0Qwtr6AuukgFu57L3HiLw/Eo2WRDf9g==",
+      "sha512": "sha512-Cg+uc+GPV2rfGLYl/gyW7oo5YPPZ0/jG1Bj6KRihecoOy0Ju4HfKith9pd8CIXerS9DH7x8vqV5jrPaKXEGenA==",
       "path": "toasts.forms.plugin/3.3.2",
       "hashPath": "toasts.forms.plugin.3.3.2.nupkg.sha512"
     },
@@ -192,7 +192,7 @@
     "Xamarin.Forms/3.1.0.697729": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oYfHpCY9i9wN4vLllsIhzDZY5iOCUtZ3RHxID1fiXOcf7yL9UA16NUsI8opoNmpv1Ru2lTGG9ZKKT1sYS6DLjA==",
+      "sha512": "sha512-6y1rnRKVqgRWpGy+mjlgf5cxRYiHsiGS4b51/AJxxkEyf7w1XJGzcLl4wV8Yjpv6/kKxsIBoAgqxIdFElQcNkA==",
       "path": "xamarin.forms/3.1.0.697729",
       "hashPath": "xamarin.forms.3.1.0.697729.nupkg.sha512"
     },

@@ -25,9 +25,8 @@ namespace Nudge_.View
         {
             InitializeComponent();
             SliderTitle.Text = slider.Title;
-            PositiveAnswer.Text = slider.positiveAnswer;
-            NegativeAnswer.Text = slider.negativeAnswer;
-
+            PositiveAnswer.Text = slider.PositiveAnswer;
+            NegativeAnswer.Text = slider.NegativeAnswer;
         }
 	}
 }

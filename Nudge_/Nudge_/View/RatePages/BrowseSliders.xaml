@@ -1,12 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Nudge_.View.BrowseSliders">
+             xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             xmlns:Converters="clr-namespace:Nudge_.Converters"
+             x:Class="Nudge_.View.BrowseSliders"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:FavouriteToImageConverter x:Key="boolToString"/>
+            <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
             <ListView HasUnevenRows="True"
                       x:Name="SlidersListView"
                       SelectionMode="Single">
+                <ListView.Behaviors>
+                    <behaviours:EventToCommandBehavior
+                        Source="{x:Reference SlidersListView}"
+                        EventName="ItemSelected"
+                        Command="{Binding SliderTapped}"
+                        Converter="{StaticResource SelectedItemConverter}" />
+                </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
