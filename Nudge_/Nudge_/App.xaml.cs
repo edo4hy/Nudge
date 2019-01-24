@@ -38,7 +38,9 @@ namespace Nudge_
         protected override void OnStart ()
 		{
             // Handle when your app starts
-            ns.PrintNotifications();
+            //ns.PrintNotifications();
+
+            ns.SendNotificationNow();
         }
 
 		protected async override void OnSleep ()
@@ -46,8 +48,11 @@ namespace Nudge_
             // Handle when your app sleeps
            await ns.SendWeeklyNotifications();
 
+            ns.SendNotificationNow();
+
+
             await Task.Delay(500);
-            ns.PrintNotifications();
+            //ns.PrintNotifications();
 		}
 
         protected override void OnResume()

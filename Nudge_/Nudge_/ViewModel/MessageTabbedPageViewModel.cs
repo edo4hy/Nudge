@@ -360,7 +360,6 @@ namespace Nudge_.ViewModel
                 else if (m.Type == Model.Type.Created)
                 {
                     MessagesCreated.Add(m);
-
                 }
 
                 if (m.Favourited == true)

@@ -48,8 +48,7 @@ namespace Nudge_.Shared
                     SendNotification(DayCountDate, settings);
                 }
             }
-
-            Console.WriteLine("kjsdfkljaskldfjalskdjf asdlkfjalksdjf aksdjfl aksdjflkasjd flkajsd ");
+            PrintNotifications();
             return "complete";
         }
 
@@ -151,6 +150,20 @@ namespace Nudge_.Shared
         {
             await CrossNotifications.Current.CancelAll();
         }
+
+        public async void SendNotificationNow()
+        {
+            Notification n = new Notification()
+            {
+                Title = "Test ntoification Test noitification Test noiftication ",
+                Message = SelectMessageText(),
+                Vibrate = true,
+                Date = DateTime.Now.AddSeconds(10)
+
+            };
+            await CrossNotifications.Current.Send(n);
+        }
+
 
         // Send the notifications for a set day
         public async void SendNotification(DateTime NotificationDate, Settings s)
