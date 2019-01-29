@@ -9,8 +9,9 @@ using Android.OS;
 using Android.Support.V4.App;
 
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
-using Plugin.Toasts;
+//using Plugin.Toasts;
 using Xamarin.Forms;
+using Plugin.Notifications;
 
 namespace Nudge_.Droid
 {
@@ -28,12 +29,14 @@ namespace Nudge_.Droid
             
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            DependencyService.Register<ToastNotification>(); // Register your dependency
+            //DependencyService.Register<ToastNotification>(); // Register your dependency
 
             // If you are using Android you must pass through the activity
-            ToastNotification.Init(this);
+            //ToastNotification.Init(this);
 
             LoadApplication(new App());
+
+            App.Init(new NotificationsImpl());
 
         }
     }

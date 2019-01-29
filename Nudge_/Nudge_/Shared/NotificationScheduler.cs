@@ -1,12 +1,12 @@
 ﻿using Nudge_.Model;
 using Nudge_.ViewModel;
-using Plugin.LocalNotifications;
+//using Plugin.LocalNotifications;
 using Plugin.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-using Plugin.Toasts;
+//using Plugin.Toasts;
 
 using System.Threading.Tasks;
 using Notification = Plugin.Notifications.Notification;
@@ -156,7 +156,7 @@ namespace Nudge_.Shared
             Notification n = new Notification()
             {
                 Title = "Test ntoification Test noitification Test noiftication ",
-                Message = SelectMessageText(),
+                Message = "Test Test this is a notification test, do not worry ignore this notification. It is only a test. If you were worried about this notification or notification in general then keep an eye on your notifications as there will be notification about these notifications getting sent out by the notification team soon",
                 Vibrate = true,
                 Date = DateTime.Now.AddSeconds(10)
 

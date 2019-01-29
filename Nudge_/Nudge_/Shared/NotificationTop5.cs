@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Plugin.LocalNotifications;
+//using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using System.Text;
 using Nudge_.ViewModel;
@@ -26,7 +26,7 @@ namespace Nudge_.Shared
                 notificationString += "" + m.MessageText + System.Environment.NewLine;
             }
 
-            CrossLocalNotifications.Current.Show("Daily Messages", notificationString, _SAMPLE_ID, DateTime.Now.AddHours(1));
+            //CrossLocalNotifications.Current.Show("Daily Messages", notificationString, _SAMPLE_ID, DateTime.Now.AddHours(1));
 
         }
     }

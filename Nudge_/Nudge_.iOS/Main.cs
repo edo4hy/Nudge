@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Plugin.Notifications;
 
 namespace Nudge_.iOS
 {
@@ -15,6 +16,8 @@ namespace Nudge_.iOS
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");
+
+            App.Init(new NotificationImpl());
         }
     }
 }

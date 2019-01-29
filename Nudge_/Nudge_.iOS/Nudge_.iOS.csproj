@@ -93,6 +93,11 @@
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="Notifications\AbstractAppleNotificationsImpl.cs" />
+    <Compile Include="Notifications\Extensions.cs" />
+    <Compile Include="Notifications\NotificationsImpl.cs" />
+    <Compile Include="Notifications\UILocalNotificationsImpl.cs" />
+    <Compile Include="Notifications\UNNotificationsImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,17 +152,8 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Plugin.Notifications">
-      <Version>4.0.2</Version>
-    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.4.118</Version>
-    </PackageReference>
-    <PackageReference Include="Toasts.Forms.Plugin">
-      <Version>3.3.2</Version>
-    </PackageReference>
-    <PackageReference Include="Xam.Plugins.Notifier">
-      <Version>3.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
@@ -168,4 +164,5 @@
       <Name>Nudge_</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
 </Project>

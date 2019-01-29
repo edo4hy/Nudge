@@ -7,6 +7,7 @@ using Nudge_.View;
 using Nudge_.View.Test_Delete;
 using Nudge_.Shared;
 using System.Threading.Tasks;
+using Plugin.Notifications;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Nudge_
@@ -31,8 +32,14 @@ namespace Nudge_
             MainPage = new MasterDetailPage1();
 
             //MainPage = new BrowseSliderTabbed();
-           
 
+        }
+
+        public static AbstractNotificationsImpl NotificationsImpl { get; private set; }
+
+        public static void Init(AbstractNotificationsImpl notificationImpl)
+        {
+            NotificationsImpl = notificationImpl;
         }
 
         protected override void OnStart ()
@@ -40,7 +47,7 @@ namespace Nudge_
             // Handle when your app starts
             //ns.PrintNotifications();
 
-            ns.SendNotificationNow();
+            //ns.SendNotificationNow();
         }
 
 		protected async override void OnSleep ()
@@ -48,7 +55,7 @@ namespace Nudge_
             // Handle when your app sleeps
            await ns.SendWeeklyNotifications();
 
-            ns.SendNotificationNow();
+            //ns.SendNotificationNow();
 
 
             await Task.Delay(500);

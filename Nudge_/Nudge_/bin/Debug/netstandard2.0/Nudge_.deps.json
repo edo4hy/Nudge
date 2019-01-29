@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "b45a297354c47b7379f694a704eda303091c767a"
+    "signature": "fb9e7d7f95e7c70c42303ba618183a0f2c421d7f"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,9 +10,6 @@
       "Nudge_/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "Plugin.Notifications": "4.0.2",
-          "Toasts.Forms.Plugin": "3.3.2",
-          "Xam.Plugins.Notifier": "3.0.1",
           "Xamarin.Forms": "3.1.0.697729",
           "sqlite-net-pcl": "1.4.118",
           "Xamarin.iOS": "0.0.0.0"
@@ -25,21 +22,6 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
-        }
-      },
-      "Plugin.Notifications/4.0.2": {
-        "dependencies": {
-          "NETStandard.Library": "2.0.3"
-        },
-        "runtime": {
-          "lib/netstandard1.0/Plugin.Notifications.Abstractions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netstandard1.0/Plugin.Notifications.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
         }
       },
       "sqlite-net-pcl/1.4.118": {
@@ -76,26 +58,6 @@
         },
         "runtime": {
           "lib/netstandard1.1/SQLitePCLRaw.core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Toasts.Forms.Plugin/3.3.2": {
-        "runtime": {
-          "lib/netstandard1.1/Toasts.Forms.Plugin.Abstractions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Xam.Plugins.Notifier/3.0.1": {
-        "runtime": {
-          "lib/netstandard1.0/Plugin.LocalNotifications.Abstractions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netstandard1.0/Plugin.LocalNotifications.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -147,13 +109,6 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
-    "Plugin.Notifications/4.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rRGqfKqK8yojBjG80FISrLaNsSnJoq+XjoQdXFbVqLlMqP7hee3HvzeetDuVJQgKosO55MYfWu5LURd86yU6zA==",
-      "path": "plugin.notifications/4.0.2",
-      "hashPath": "plugin.notifications.4.0.2.nupkg.sha512"
-    },
     "sqlite-net-pcl/1.4.118": {
       "type": "package",
       "serviceable": true,
@@ -174,20 +129,6 @@
       "sha512": "sha512-NViT1KDYnPAQo7yoYmkAMWzT15ZjqbLTSZp9iTVwZDz7fBC5fQ9TYebOFUIxYxrD/RvBpYB8m9PtcL8x/QbKNg==",
       "path": "sqlitepclraw.core/1.1.5",
       "hashPath": "sqlitepclraw.core.1.1.5.nupkg.sha512"
-    },
-    "Toasts.Forms.Plugin/3.3.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Cg+uc+GPV2rfGLYl/gyW7oo5YPPZ0/jG1Bj6KRihecoOy0Ju4HfKith9pd8CIXerS9DH7x8vqV5jrPaKXEGenA==",
-      "path": "toasts.forms.plugin/3.3.2",
-      "hashPath": "toasts.forms.plugin.3.3.2.nupkg.sha512"
-    },
-    "Xam.Plugins.Notifier/3.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QH/+zX9w/hMg1AOAj+a62cIJIqd4tSOSBnGGprHIhfJWHG+v+P6VvIqZSTr9z1dZDd2JfhA7Iz2KGBr4MJ2lOQ==",
-      "path": "xam.plugins.notifier/3.0.1",
-      "hashPath": "xam.plugins.notifier.3.0.1.nupkg.sha512"
     },
     "Xamarin.Forms/3.1.0.697729": {
       "type": "package",
