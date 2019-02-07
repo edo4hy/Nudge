@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Nudge_.Model;
+using Nudge_.Shared;
 
 namespace Nudge_.Data
 {
@@ -15,17 +16,19 @@ namespace Nudge_.Data
 
         public  NudgeDatabase(string dbPath)
         {
-            database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<Message>().Wait();
-            database.CreateTableAsync<Person>().Wait();
-            database.CreateTableAsync<Answer>().Wait();
+            database = DependencyService.Get<IDBInterface>().CreateConnection();
 
-            database.CreateTableAsync<Nudge_.Model.RateSlider>().Wait();
-            database.CreateTableAsync<SliderResult>().Wait();
-            database.CreateTableAsync<Question>().Wait();
-            database.CreateTableAsync<QuestionResult>().Wait();
-            database.CreateTableAsync<SliderResult>().Wait();
-            database.CreateTableAsync<Settings>().Wait();
+            //database = new SQLiteAsyncConnection(dbPath);
+            //database.CreateTableAsync<Message>().Wait();
+            //database.CreateTableAsync<Person>().Wait();
+            //database.CreateTableAsync<Answer>().Wait();
+
+            //database.CreateTableAsync<Nudge_.Model.RateSlider>().Wait();
+            //database.CreateTableAsync<SliderResult>().Wait();
+            //database.CreateTableAsync<Question>().Wait();
+            //database.CreateTableAsync<QuestionResult>().Wait();
+            //database.CreateTableAsync<SliderResult>().Wait();
+            //database.CreateTableAsync<Settings>().Wait();
         }
 
         public Task<List<Message>> GetMessagesAsync()

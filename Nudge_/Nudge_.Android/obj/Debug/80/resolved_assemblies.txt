@@ -5,6 +5,8 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\andro
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\mscorlib.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\Nudge_.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\SQLite-net.dll
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\SQLite.Net.dll
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\SQLite.Net.Platform.XamarinAndroid.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\SQLitePCLRaw.batteries_green.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\SQLitePCLRaw.batteries_v2.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\SQLitePCLRaw.core.dll
@@ -57,4 +59,5 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\andro
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\System.Threading.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\System.Reflection.Extensions.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\System.Globalization.dll
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\System.Text.Encoding.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\Mono.Security.dll

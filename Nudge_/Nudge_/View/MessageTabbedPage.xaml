@@ -11,5 +11,4 @@
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
         </ResourceDictionary>
     </TabbedPage.Resources>
-   
 </TabbedPage>

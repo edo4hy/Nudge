@@ -279,8 +279,15 @@ namespace Nudge_.ViewModel
             Message message = collection.FirstOrDefault(msg => msg.Top5 == m.Top5);
             if (message != null)
             {
-                Console.WriteLine("Deleting message from old position");
+                //Console.WriteLine("Deleting message from old position");
                 collection.Remove(message);
+            }
+
+            Message isAlreadyInList = collection.FirstOrDefault(msg => msg.MessageId == m.MessageId);
+            if (isAlreadyInList != null)
+            {
+                //Console.WriteLine("Removing old message");
+                collection.Remove(isAlreadyInList);
             }
           
             collection.Insert(top5MessageConverter.Top5NumberToIntConverter(n), m);
@@ -291,7 +298,7 @@ namespace Nudge_.ViewModel
             
             var itemPositive = MessagesPositive.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
             var itemAction = MessagesAction.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
-            var itemAffirmation = MessagesFavourited.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
+            var itemAffirmation = MessagesAffirmation.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
             var itemCreated = MessagesCreated.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());
 
             var itemFavourite = MessagesFavourited.FirstOrDefault(i => i.MessageId.ToString() == obj.ToString());

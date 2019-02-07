@@ -15,6 +15,7 @@ namespace Nudge_
 	public partial class App : Application
 	{
         static NudgeDatabase database;
+        static NudgeDatabase database2;
         static NotificationScheduler ns = new NotificationScheduler();
 
         public App ()
@@ -81,5 +82,6 @@ namespace Nudge_
                 return database;
             }
         }
+      
     }
 }

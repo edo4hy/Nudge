@@ -64,7 +64,7 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\N
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\bin\Debug\netstandard2.0\Xamarin.iOS.xml
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.csproj.CopyComplete
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.dll
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\Nudge_.pdb
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\XamlC.stamp
