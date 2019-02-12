@@ -15,7 +15,6 @@ namespace Nudge_
 	public partial class App : Application
 	{
         static NudgeDatabase database;
-        static NudgeDatabase database2;
         static NotificationScheduler ns = new NotificationScheduler();
 
         public App ()
@@ -31,6 +30,8 @@ namespace Nudge_
             //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
 
             MainPage = new MasterDetailPage1();
+
+            //MainPage = new ListViewTestPage();
 
             //MainPage = new BrowseSliderTabbed();
 

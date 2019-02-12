@@ -39,10 +39,10 @@
           "lib/netstandard1.1/SQLite-net.dll": {}
         }
       },
-      "SQLite.Net-PCL/3.1.1": {
+      "SQLite.Net-PCL/3.1.0": {
         "type": "package",
         "dependencies": {
-          "SQLite.Net.Core-PCL": "3.1.1"
+          "SQLite.Net.Core-PCL": "3.0.5"
         },
         "compile": {
           "lib/net4/SQLite.Net.Platform.Win32.dll": {},
@@ -53,7 +53,7 @@
           "lib/net40/SQLite.Net.Platform.Generic.dll": {}
         }
       },
-      "SQLite.Net.Core-PCL/3.1.1": {
+      "SQLite.Net.Core-PCL/3.1.0": {
         "type": "package",
         "compile": {
           "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll": {}
@@ -87,6 +87,60 @@
         },
         "runtime": {
           "lib/netstandard1.1/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/16.4.0.52": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Core/16.4.0.52": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "16.4.0.52"
+        },
+        "compile": {
+          "lib/netstandard1.0/Syncfusion.Core.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Syncfusion.Core.XForms.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.DataSource/16.4.0.52": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Syncfusion.DataSource.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Syncfusion.DataSource.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/16.4.0.52": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Syncfusion.GridCommon.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/16.4.0.52": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.4.0.52",
+          "Syncfusion.Xamarin.DataSource": "16.4.0.52",
+          "Syncfusion.Xamarin.GridCommon": "16.4.0.52",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/netstandard1.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Syncfusion.SfListView.XForms.dll": {}
         }
       },
       "Xamarin.Forms/3.1.0.697729": {
@@ -125,10 +179,12 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "548M6mnBSJWxsIlkQHfbzoYxpiYFXZZSL00p4GHYv8PkiqFBnnT68mW5mGEsA/ch9fDO9GkPgkFQpWiXZN7mAQ==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -269,10 +325,10 @@
         "sqlite-net-pcl.nuspec"
       ]
     },
-    "SQLite.Net-PCL/3.1.1": {
-      "sha512": "YVmGTLKH1S1SRV6T2XJv+E7JIDYSsphAEakam3Os0Cgxn6YayuhqGZh+2JKacJfw31AjpYG6Li/qcRfXcUle8Q==",
+    "SQLite.Net-PCL/3.1.0": {
+      "sha512": "u+Vvd3jN0s0qDpyU9ru7bfz6oaiFSg9j26WdkyvYJ4A/SBwMwtW/SaK++OW45a2eQiPlSmrv4w3OxffmDHc1FQ==",
       "type": "package",
-      "path": "sqlite.net-pcl/3.1.1",
+      "path": "sqlite.net-pcl/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -282,23 +338,23 @@
         "lib/monotouch/SQLite.Net.Platform.XamarinIOS.dll",
         "lib/net4/SQLite.Net.Platform.Win32.dll",
         "lib/net40/SQLite.Net.Platform.Generic.dll",
-        "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll",
+        "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/_._",
         "lib/portable-win81+wpa81/SQLite.Net.Platform.WinRT.dll",
         "lib/windowsphone8/ARM/SQLite.Net.Platform.WindowsPhone8.dll",
         "lib/windowsphone8/x86/SQLite.Net.Platform.WindowsPhone8.dll",
-        "sqlite.net-pcl.3.1.1.nupkg.sha512",
+        "sqlite.net-pcl.3.1.0.nupkg.sha512",
         "sqlite.net-pcl.nuspec"
       ]
     },
-    "SQLite.Net.Core-PCL/3.1.1": {
-      "sha512": "oNeX60ZqLqly+lxGAxvOCoGte7Fc2OabE5rOTs0clMMcrip+SMpWlvWb7cn/LxRepwQZAotSNWxxqzztasRsyQ==",
+    "SQLite.Net.Core-PCL/3.1.0": {
+      "sha512": "4Edd2N1jUFxNP6uf5xgULr4Aqw8nI9XGWgtDVUzabtrZrbAZF301TcSKFDItAVu9AvWxQDb57SUxgiFhoh4qWg==",
       "type": "package",
-      "path": "sqlite.net.core-pcl/3.1.1",
+      "path": "sqlite.net.core-pcl/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll",
-        "sqlite.net.core-pcl.3.1.1.nupkg.sha512",
+        "sqlite.net.core-pcl.3.1.0.nupkg.sha512",
         "sqlite.net.core-pcl.nuspec"
       ]
     },
@@ -373,6 +429,134 @@
         "lib/wpa81/SQLitePCLRaw.core.dll",
         "sqlitepclraw.core.1.1.5.nupkg.sha512",
         "sqlitepclraw.core.nuspec"
+      ]
+    },
+    "Syncfusion.Licensing/16.4.0.52": {
+      "sha512": "k13MY1I1n4TtCQNW+RPz1cFvT0emliqa/wcdGYYFfKhwrR/e6f1wn34c2lN5MMoz6jbq6PaScAHI9nGL23nTnQ==",
+      "type": "package",
+      "path": "syncfusion.licensing/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.16.4.0.52.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.Core/16.4.0.52": {
+      "sha512": "Ca2hy8ZVIi16sXwnooOHGeYzUk9zd/2Pt1fbpRAekW9OUJFDCHehUcG4taBaKCCXbVq5dNtL+S/DbdHXYhRkpA==",
+      "type": "package",
+      "path": "syncfusion.xamarin.core/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.Core.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.Core.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/Syncfusion.Core.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xbf",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xbf",
+        "lib/uap10.0/Syncfusion.Core.XForms.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.xml",
+        "syncfusion.xamarin.core.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.core.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.DataSource/16.4.0.52": {
+      "sha512": "ZKwNvRwttckzGf3ef3RQGjChQkHrv3+zWYR6N59NGl/5vSx2YJox0CpQoTE5gdcuYdGRe4msIi0QA46JFS9r+A==",
+      "type": "package",
+      "path": "syncfusion.xamarin.datasource/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.DataSource.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.DataSource.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.dll",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
+        "syncfusion.xamarin.datasource.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.datasource.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.GridCommon/16.4.0.52": {
+      "sha512": "xjla5hDM01jZX+RovbcTndovcWXSE2GEhCeE/ter6o/0RSH3v0H1Zn4ddkz8swN93OQKjupdLMZrI4lNtn5kng==",
+      "type": "package",
+      "path": "syncfusion.xamarin.gridcommon/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
+        "syncfusion.xamarin.gridcommon.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfListView/16.4.0.52": {
+      "sha512": "Mv6z0fwnTzfrRlwUPJcDPjfcxG65b1XJFniTaA6IATx0D2AA3aL1BXEt3L6VZclS6X4GiKR1hivm0USvZjivTg==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sflistview/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.SfListView.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfListView.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.xml",
+        "syncfusion.xamarin.sflistview.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.nuspec"
       ]
     },
     "Xamarin.Forms/3.1.0.697729": {
@@ -531,7 +715,11 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "SQLite.Net-PCL >= 3.1.1",
+      "SQLite.Net-PCL >= 3.1.0",
+      "Syncfusion.Xamarin.Core >= 16.4.0.52",
+      "Syncfusion.Xamarin.DataSource >= 16.4.0.52",
+      "Syncfusion.Xamarin.GridCommon >= 16.4.0.52",
+      "Syncfusion.Xamarin.SfListView >= 16.4.0.52",
       "Xamarin.Forms >= 3.1.0.697729",
       "sqlite-net-pcl >= 1.4.118"
     ]
@@ -585,7 +773,23 @@
           },
           "SQLite.Net-PCL": {
             "target": "Package",
-            "version": "[3.1.1, )"
+            "version": "[3.1.0, )"
+          },
+          "Syncfusion.Xamarin.Core": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Syncfusion.Xamarin.DataSource": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Syncfusion.Xamarin.GridCommon": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Syncfusion.Xamarin.SfListView": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
@@ -606,10 +810,20 @@
   },
   "logs": [
     {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "SQLite.Net-PCL 3.1.0 depends on SQLite.Net.Core-PCL (>= 3.0.5) but SQLite.Net.Core-PCL 3.0.5 was not found. An approximate best match of SQLite.Net.Core-PCL 3.1.0 was resolved.",
+      "libraryId": "SQLite.Net.Core-PCL",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'SQLite.Net-PCL 3.1.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'SQLite.Net-PCL 3.1.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "SQLite.Net-PCL",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"
@@ -619,7 +833,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'SQLite.Net.Core-PCL 3.1.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'SQLite.Net.Core-PCL 3.1.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "SQLite.Net.Core-PCL",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"

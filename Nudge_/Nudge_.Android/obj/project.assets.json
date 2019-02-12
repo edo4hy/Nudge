@@ -2,6 +2,30 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v8.0": {
+      "Microsoft.NETCore.Platforms/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NETStandard.Library/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
       "sqlite-net-pcl/1.4.118": {
         "type": "package",
         "dependencies": {
@@ -14,10 +38,10 @@
           "lib/netstandard1.1/SQLite-net.dll": {}
         }
       },
-      "SQLite.Net-PCL/3.1.1": {
+      "SQLite.Net-PCL/3.1.0": {
         "type": "package",
         "dependencies": {
-          "SQLite.Net.Core-PCL": "3.1.1"
+          "SQLite.Net.Core-PCL": "3.0.5"
         },
         "compile": {
           "lib/MonoAndroid/SQLite.Net.Platform.XamarinAndroid.dll": {}
@@ -26,7 +50,7 @@
           "lib/MonoAndroid/SQLite.Net.Platform.XamarinAndroid.dll": {}
         }
       },
-      "SQLite.Net.Core-PCL/3.1.1": {
+      "SQLite.Net.Core-PCL/3.1.0": {
         "type": "package",
         "compile": {
           "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll": {}
@@ -81,265 +105,373 @@
           "lib/MonoAndroid/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
-      "Xamarin.Android.Support.Animated.Vector.Drawable/25.4.0.2": {
+      "Syncfusion.Licensing/16.4.0.52": {
         "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.Vector.Drawable": "[25.4.0.2]"
-        },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
+          "lib/MonoAndroid10/Syncfusion.Licensing.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
-        },
-        "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Animated.Vector.Drawable.targets": {}
+          "lib/MonoAndroid10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Xamarin.Android.Support.Annotations/25.4.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Annotations.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Annotations.dll": {}
-        }
-      },
-      "Xamarin.Android.Support.Compat/25.4.0.2": {
+      "Syncfusion.Xamarin.Core/16.4.0.52": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Annotations": "[25.4.0.2]"
+          "Syncfusion.Licensing": "16.4.0.52"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Compat.dll": {}
+          "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.Core.XForms.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Compat.dll": {}
-        },
-        "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Compat.targets": {}
+          "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.Core.XForms.dll": {}
         }
       },
-      "Xamarin.Android.Support.Core.UI/25.4.0.2": {
+      "Syncfusion.Xamarin.DataSource/16.4.0.52": {
         "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]"
-        },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Core.UI.dll": {}
+          "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Core.UI.dll": {}
-        },
-        "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Core.UI.targets": {}
+          "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Xamarin.Android.Support.Core.Utils/25.4.0.2": {
+      "Syncfusion.Xamarin.GridCommon/16.4.0.52": {
         "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]"
-        },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Core.Utils.dll": {}
+          "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Core.Utils.dll": {}
-        },
-        "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Core.Utils.targets": {}
+          "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Xamarin.Android.Support.Design/25.4.0.2": {
+      "Syncfusion.Xamarin.SfListView/16.4.0.52": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.UI": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.Utils": "[25.4.0.2]",
-          "Xamarin.Android.Support.Fragment": "[25.4.0.2]",
-          "Xamarin.Android.Support.Media.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Transition": "[25.4.0.2]",
-          "Xamarin.Android.Support.v7.AppCompat": "[25.4.0.2]",
-          "Xamarin.Android.Support.v7.RecyclerView": "[25.4.0.2]"
+          "Syncfusion.Xamarin.Core": "16.4.0.52",
+          "Syncfusion.Xamarin.DataSource": "16.4.0.52",
+          "Syncfusion.Xamarin.GridCommon": "16.4.0.52",
+          "Xamarin.Forms": "2.5.1.527436"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Design.dll": {}
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Design.dll": {}
-        },
-        "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Design.targets": {}
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll": {}
         }
       },
-      "Xamarin.Android.Support.Fragment/25.4.0.2": {
+      "Xamarin.Android.Arch.Core.Common/1.1.1.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.UI": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.Utils": "[25.4.0.2]",
-          "Xamarin.Android.Support.Media.Compat": "[25.4.0.2]"
+          "Xamarin.Android.Support.Annotations": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Fragment.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Arch.Core.Common.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Fragment.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Arch.Core.Common.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Fragment.targets": {}
+          "build/monoandroid80/Xamarin.Android.Arch.Core.Common.targets": {}
         }
       },
-      "Xamarin.Android.Support.Media.Compat/25.4.0.2": {
+      "Xamarin.Android.Arch.Lifecycle.Common/1.1.1.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]"
+          "Xamarin.Android.Support.Annotations": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Media.Compat.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Arch.Lifecycle.Common.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Media.Compat.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Arch.Lifecycle.Common.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Media.Compat.targets": {}
+          "build/monoandroid80/Xamarin.Android.Arch.Lifecycle.Common.targets": {}
         }
       },
-      "Xamarin.Android.Support.Transition/25.4.0.2": {
+      "Xamarin.Android.Arch.Lifecycle.Runtime/1.1.1.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.UI": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.Utils": "[25.4.0.2]",
-          "Xamarin.Android.Support.Fragment": "[25.4.0.2]",
-          "Xamarin.Android.Support.Media.Compat": "[25.4.0.2]"
+          "Xamarin.Android.Arch.Core.Common": "[1.1.1.1]",
+          "Xamarin.Android.Arch.Lifecycle.Common": "[1.1.1.1]",
+          "Xamarin.Android.Support.Annotations": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Transition.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Arch.Lifecycle.Runtime.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Transition.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Arch.Lifecycle.Runtime.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Transition.targets": {}
+          "build/monoandroid80/Xamarin.Android.Arch.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.Android.Support.v4/25.4.0.2": {
+      "Xamarin.Android.Support.Animated.Vector.Drawable/28.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.UI": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.Utils": "[25.4.0.2]",
-          "Xamarin.Android.Support.Fragment": "[25.4.0.2]",
-          "Xamarin.Android.Support.Media.Compat": "[25.4.0.2]"
+          "Xamarin.Android.Support.Vector.Drawable": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v4.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v4.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.v4.targets": {}
+          "build/monoandroid80/Xamarin.Android.Support.Animated.Vector.Drawable.targets": {}
         }
       },
-      "Xamarin.Android.Support.v7.AppCompat/25.4.0.2": {
+      "Xamarin.Android.Support.Annotations/28.0.0.1": {
         "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.Animated.Vector.Drawable": "[25.4.0.2]",
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.UI": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.Utils": "[25.4.0.2]",
-          "Xamarin.Android.Support.Fragment": "[25.4.0.2]",
-          "Xamarin.Android.Support.Media.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Vector.Drawable": "[25.4.0.2]"
-        },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.AppCompat.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Annotations.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.AppCompat.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Annotations.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.v7.AppCompat.targets": {}
+          "build/monoandroid80/Xamarin.Android.Support.Annotations.targets": {}
         }
       },
-      "Xamarin.Android.Support.v7.CardView/25.4.0.2": {
+      "Xamarin.Android.Support.Compat/28.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Annotations": "[25.4.0.2]"
+          "Xamarin.Android.Arch.Lifecycle.Runtime": "[1.1.1.1]",
+          "Xamarin.Android.Support.Annotations": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.CardView.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Compat.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.CardView.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Compat.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.v7.CardView.targets": {}
+          "build/monoandroid80/Xamarin.Android.Support.Compat.targets": {}
         }
       },
-      "Xamarin.Android.Support.v7.MediaRouter/25.4.0.2": {
+      "Xamarin.Android.Support.Core.UI/28.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.v7.AppCompat": "[25.4.0.2]",
-          "Xamarin.Android.Support.v7.Palette": "[25.4.0.2]"
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Core.UI.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Core.UI.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.v7.MediaRouter.targets": {}
+          "build/monoandroid80/Xamarin.Android.Support.Core.UI.targets": {}
         }
       },
-      "Xamarin.Android.Support.v7.Palette/25.4.0.2": {
+      "Xamarin.Android.Support.Core.Utils/28.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.Utils": "[25.4.0.2]"
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.Palette.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Core.Utils.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.Palette.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Core.Utils.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.v7.Palette.targets": {}
+          "build/monoandroid80/Xamarin.Android.Support.Core.Utils.targets": {}
         }
       },
-      "Xamarin.Android.Support.v7.RecyclerView/25.4.0.2": {
+      "Xamarin.Android.Support.Design/28.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]",
-          "Xamarin.Android.Support.Core.UI": "[25.4.0.2]"
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.UI": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.1]",
+          "Xamarin.Android.Support.Fragment": "[28.0.0.1]",
+          "Xamarin.Android.Support.Media.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Transition": "[28.0.0.1]",
+          "Xamarin.Android.Support.v7.AppCompat": "[28.0.0.1]",
+          "Xamarin.Android.Support.v7.RecyclerView": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.RecyclerView.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Design.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.v7.RecyclerView.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Design.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.v7.RecyclerView.targets": {}
+          "build/monoandroid80/Xamarin.Android.Support.Design.targets": {}
         }
       },
-      "Xamarin.Android.Support.Vector.Drawable/25.4.0.2": {
+      "Xamarin.Android.Support.Fragment/28.0.0.1": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Support.Compat": "[25.4.0.2]"
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.UI": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.1]"
         },
         "compile": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Vector.Drawable.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Fragment.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid70/Xamarin.Android.Support.Vector.Drawable.dll": {}
+          "lib/monoandroid80/Xamarin.Android.Support.Fragment.dll": {}
         },
         "build": {
-          "build/MonoAndroid70/Xamarin.Android.Support.Vector.Drawable.targets": {}
+          "build/monoandroid80/Xamarin.Android.Support.Fragment.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.Media.Compat/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.Media.Compat.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.Media.Compat.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.Media.Compat.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.Transition/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.UI": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.1]",
+          "Xamarin.Android.Support.Fragment": "[28.0.0.1]",
+          "Xamarin.Android.Support.Media.Compat": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.Transition.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.Transition.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.Transition.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v4/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.UI": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.1]",
+          "Xamarin.Android.Support.Fragment": "[28.0.0.1]",
+          "Xamarin.Android.Support.Media.Compat": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.v4.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.v4.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.v4.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.AppCompat/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Animated.Vector.Drawable": "[28.0.0.1]",
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.UI": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.1]",
+          "Xamarin.Android.Support.Fragment": "[28.0.0.1]",
+          "Xamarin.Android.Support.Media.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Vector.Drawable": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.AppCompat.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.AppCompat.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.v7.AppCompat.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.CardView/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Annotations": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.CardView.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.CardView.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.v7.CardView.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.MediaRouter/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v7.AppCompat": "[28.0.0.1]",
+          "Xamarin.Android.Support.v7.Palette": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.v7.MediaRouter.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.Palette/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.Palette.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.Palette.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.v7.Palette.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.RecyclerView/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]",
+          "Xamarin.Android.Support.Core.UI": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.RecyclerView.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.v7.RecyclerView.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.v7.RecyclerView.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.Vector.Drawable/28.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.1]"
+        },
+        "compile": {
+          "lib/monoandroid80/Xamarin.Android.Support.Vector.Drawable.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid80/Xamarin.Android.Support.Vector.Drawable.dll": {}
+        },
+        "build": {
+          "build/monoandroid80/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
       "Xamarin.Forms/3.1.0.697729": {
@@ -374,7 +506,11 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "SQLite.Net-PCL": "3.1.1",
+          "SQLite.Net-PCL": "3.1.0",
+          "Syncfusion.Xamarin.Core": "16.4.0.52",
+          "Syncfusion.Xamarin.DataSource": "16.4.0.52",
+          "Syncfusion.Xamarin.GridCommon": "16.4.0.52",
+          "Syncfusion.Xamarin.SfListView": "16.4.0.52",
           "Xamarin.Forms": "3.1.0.697729",
           "sqlite-net-pcl": "1.4.118"
         },
@@ -388,6 +524,150 @@
     }
   },
   "libraries": {
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json"
+      ]
+    },
+    "NETStandard.Library/2.0.3": {
+      "sha512": "548M6mnBSJWxsIlkQHfbzoYxpiYFXZZSL00p4GHYv8PkiqFBnnT68mW5mGEsA/ch9fDO9GkPgkFQpWiXZN7mAQ==",
+      "type": "package",
+      "path": "netstandard.library/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/NETStandard.Library.targets",
+        "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
+        "build/netstandard2.0/ref/System.AppContext.dll",
+        "build/netstandard2.0/ref/System.Collections.Concurrent.dll",
+        "build/netstandard2.0/ref/System.Collections.NonGeneric.dll",
+        "build/netstandard2.0/ref/System.Collections.Specialized.dll",
+        "build/netstandard2.0/ref/System.Collections.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Composition.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.EventBasedAsync.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Primitives.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.TypeConverter.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.dll",
+        "build/netstandard2.0/ref/System.Console.dll",
+        "build/netstandard2.0/ref/System.Core.dll",
+        "build/netstandard2.0/ref/System.Data.Common.dll",
+        "build/netstandard2.0/ref/System.Data.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Contracts.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Debug.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.FileVersionInfo.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Process.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.StackTrace.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TextWriterTraceListener.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tools.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TraceSource.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tracing.dll",
+        "build/netstandard2.0/ref/System.Drawing.Primitives.dll",
+        "build/netstandard2.0/ref/System.Drawing.dll",
+        "build/netstandard2.0/ref/System.Dynamic.Runtime.dll",
+        "build/netstandard2.0/ref/System.Globalization.Calendars.dll",
+        "build/netstandard2.0/ref/System.Globalization.Extensions.dll",
+        "build/netstandard2.0/ref/System.Globalization.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.ZipFile.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.DriveInfo.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Primitives.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Watcher.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.IsolatedStorage.dll",
+        "build/netstandard2.0/ref/System.IO.MemoryMappedFiles.dll",
+        "build/netstandard2.0/ref/System.IO.Pipes.dll",
+        "build/netstandard2.0/ref/System.IO.UnmanagedMemoryStream.dll",
+        "build/netstandard2.0/ref/System.IO.dll",
+        "build/netstandard2.0/ref/System.Linq.Expressions.dll",
+        "build/netstandard2.0/ref/System.Linq.Parallel.dll",
+        "build/netstandard2.0/ref/System.Linq.Queryable.dll",
+        "build/netstandard2.0/ref/System.Linq.dll",
+        "build/netstandard2.0/ref/System.Net.Http.dll",
+        "build/netstandard2.0/ref/System.Net.NameResolution.dll",
+        "build/netstandard2.0/ref/System.Net.NetworkInformation.dll",
+        "build/netstandard2.0/ref/System.Net.Ping.dll",
+        "build/netstandard2.0/ref/System.Net.Primitives.dll",
+        "build/netstandard2.0/ref/System.Net.Requests.dll",
+        "build/netstandard2.0/ref/System.Net.Security.dll",
+        "build/netstandard2.0/ref/System.Net.Sockets.dll",
+        "build/netstandard2.0/ref/System.Net.WebHeaderCollection.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.Client.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.dll",
+        "build/netstandard2.0/ref/System.Net.dll",
+        "build/netstandard2.0/ref/System.Numerics.dll",
+        "build/netstandard2.0/ref/System.ObjectModel.dll",
+        "build/netstandard2.0/ref/System.Reflection.Extensions.dll",
+        "build/netstandard2.0/ref/System.Reflection.Primitives.dll",
+        "build/netstandard2.0/ref/System.Reflection.dll",
+        "build/netstandard2.0/ref/System.Resources.Reader.dll",
+        "build/netstandard2.0/ref/System.Resources.ResourceManager.dll",
+        "build/netstandard2.0/ref/System.Resources.Writer.dll",
+        "build/netstandard2.0/ref/System.Runtime.CompilerServices.VisualC.dll",
+        "build/netstandard2.0/ref/System.Runtime.Extensions.dll",
+        "build/netstandard2.0/ref/System.Runtime.Handles.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.dll",
+        "build/netstandard2.0/ref/System.Runtime.Numerics.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Formatters.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Json.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Primitives.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Xml.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.dll",
+        "build/netstandard2.0/ref/System.Runtime.dll",
+        "build/netstandard2.0/ref/System.Security.Claims.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Algorithms.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Csp.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Encoding.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Primitives.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.X509Certificates.dll",
+        "build/netstandard2.0/ref/System.Security.Principal.dll",
+        "build/netstandard2.0/ref/System.Security.SecureString.dll",
+        "build/netstandard2.0/ref/System.ServiceModel.Web.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.Extensions.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.dll",
+        "build/netstandard2.0/ref/System.Text.RegularExpressions.dll",
+        "build/netstandard2.0/ref/System.Threading.Overlapped.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.Parallel.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.dll",
+        "build/netstandard2.0/ref/System.Threading.Thread.dll",
+        "build/netstandard2.0/ref/System.Threading.ThreadPool.dll",
+        "build/netstandard2.0/ref/System.Threading.Timer.dll",
+        "build/netstandard2.0/ref/System.Threading.dll",
+        "build/netstandard2.0/ref/System.Transactions.dll",
+        "build/netstandard2.0/ref/System.ValueTuple.dll",
+        "build/netstandard2.0/ref/System.Web.dll",
+        "build/netstandard2.0/ref/System.Windows.dll",
+        "build/netstandard2.0/ref/System.Xml.Linq.dll",
+        "build/netstandard2.0/ref/System.Xml.ReaderWriter.dll",
+        "build/netstandard2.0/ref/System.Xml.Serialization.dll",
+        "build/netstandard2.0/ref/System.Xml.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlSerializer.dll",
+        "build/netstandard2.0/ref/System.Xml.dll",
+        "build/netstandard2.0/ref/System.dll",
+        "build/netstandard2.0/ref/mscorlib.dll",
+        "build/netstandard2.0/ref/netstandard.dll",
+        "build/netstandard2.0/ref/netstandard.xml",
+        "lib/netstandard1.0/_._",
+        "netstandard.library.2.0.3.nupkg.sha512",
+        "netstandard.library.nuspec"
+      ]
+    },
     "sqlite-net-pcl/1.4.118": {
       "sha512": "66wl2z26PpA/m+hY2UJudsHF3GpbbC8Scx9WvXC0MomQxrbclkb2jiavYsXH3AEXHsTAjKIWavmwKoRIPWsdAg==",
       "type": "package",
@@ -406,10 +686,10 @@
         "sqlite-net-pcl.nuspec"
       ]
     },
-    "SQLite.Net-PCL/3.1.1": {
-      "sha512": "YVmGTLKH1S1SRV6T2XJv+E7JIDYSsphAEakam3Os0Cgxn6YayuhqGZh+2JKacJfw31AjpYG6Li/qcRfXcUle8Q==",
+    "SQLite.Net-PCL/3.1.0": {
+      "sha512": "u+Vvd3jN0s0qDpyU9ru7bfz6oaiFSg9j26WdkyvYJ4A/SBwMwtW/SaK++OW45a2eQiPlSmrv4w3OxffmDHc1FQ==",
       "type": "package",
-      "path": "sqlite.net-pcl/3.1.1",
+      "path": "sqlite.net-pcl/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -419,23 +699,23 @@
         "lib/monotouch/SQLite.Net.Platform.XamarinIOS.dll",
         "lib/net4/SQLite.Net.Platform.Win32.dll",
         "lib/net40/SQLite.Net.Platform.Generic.dll",
-        "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll",
+        "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/_._",
         "lib/portable-win81+wpa81/SQLite.Net.Platform.WinRT.dll",
         "lib/windowsphone8/ARM/SQLite.Net.Platform.WindowsPhone8.dll",
         "lib/windowsphone8/x86/SQLite.Net.Platform.WindowsPhone8.dll",
-        "sqlite.net-pcl.3.1.1.nupkg.sha512",
+        "sqlite.net-pcl.3.1.0.nupkg.sha512",
         "sqlite.net-pcl.nuspec"
       ]
     },
-    "SQLite.Net.Core-PCL/3.1.1": {
-      "sha512": "oNeX60ZqLqly+lxGAxvOCoGte7Fc2OabE5rOTs0clMMcrip+SMpWlvWb7cn/LxRepwQZAotSNWxxqzztasRsyQ==",
+    "SQLite.Net.Core-PCL/3.1.0": {
+      "sha512": "4Edd2N1jUFxNP6uf5xgULr4Aqw8nI9XGWgtDVUzabtrZrbAZF301TcSKFDItAVu9AvWxQDb57SUxgiFhoh4qWg==",
       "type": "package",
-      "path": "sqlite.net.core-pcl/3.1.1",
+      "path": "sqlite.net.core-pcl/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll",
-        "sqlite.net.core-pcl.3.1.1.nupkg.sha512",
+        "sqlite.net.core-pcl.3.1.0.nupkg.sha512",
         "sqlite.net.core-pcl.nuspec"
       ]
     },
@@ -536,231 +816,552 @@
         "sqlitepclraw.provider.e_sqlite3.android.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Animated.Vector.Drawable/25.4.0.2": {
-      "sha512": "SaSUvYnc6ntGD/Rvo8O+Ks1yS5hgMFUPfPIEsBC337weZzyIeInKQJHt2myxCEER/5UutmBPlptlbn9Yki21RA==",
+    "Syncfusion.Licensing/16.4.0.52": {
+      "sha512": "k13MY1I1n4TtCQNW+RPz1cFvT0emliqa/wcdGYYFfKhwrR/e6f1wn34c2lN5MMoz6jbq6PaScAHI9nGL23nTnQ==",
       "type": "package",
-      "path": "xamarin.android.support.animated.vector.drawable/25.4.0.2",
+      "path": "syncfusion.licensing/16.4.0.52",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Animated.Vector.Drawable.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
-        "proguard/proguard.txt",
-        "xamarin.android.support.animated.vector.drawable.25.4.0.2.nupkg.sha512",
+        "lib/MonoAndroid10/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.16.4.0.52.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.Core/16.4.0.52": {
+      "sha512": "Ca2hy8ZVIi16sXwnooOHGeYzUk9zd/2Pt1fbpRAekW9OUJFDCHehUcG4taBaKCCXbVq5dNtL+S/DbdHXYhRkpA==",
+      "type": "package",
+      "path": "syncfusion.xamarin.core/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.Core.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.Core.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Core.XForms.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/Syncfusion.Core.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleCollapsedIcon.xbf",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xbf",
+        "lib/uap10.0/Syncfusion.Core.XForms.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.xml",
+        "syncfusion.xamarin.core.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.core.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.DataSource/16.4.0.52": {
+      "sha512": "ZKwNvRwttckzGf3ef3RQGjChQkHrv3+zWYR6N59NGl/5vSx2YJox0CpQoTE5gdcuYdGRe4msIi0QA46JFS9r+A==",
+      "type": "package",
+      "path": "syncfusion.xamarin.datasource/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.DataSource.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.DataSource.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.dll",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
+        "syncfusion.xamarin.datasource.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.datasource.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.GridCommon/16.4.0.52": {
+      "sha512": "xjla5hDM01jZX+RovbcTndovcWXSE2GEhCeE/ter6o/0RSH3v0H1Zn4ddkz8swN93OQKjupdLMZrI4lNtn5kng==",
+      "type": "package",
+      "path": "syncfusion.xamarin.gridcommon/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
+        "syncfusion.xamarin.gridcommon.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfListView/16.4.0.52": {
+      "sha512": "Mv6z0fwnTzfrRlwUPJcDPjfcxG65b1XJFniTaA6IATx0D2AA3aL1BXEt3L6VZclS6X4GiKR1hivm0USvZjivTg==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sflistview/16.4.0.52",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.SfListView.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfListView.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.xml",
+        "syncfusion.xamarin.sflistview.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.nuspec"
+      ]
+    },
+    "Xamarin.Android.Arch.Core.Common/1.1.1.1": {
+      "sha512": "3ijpoWgfyNeyUgbhLz4V/xAuizoz3h1Myg8Ioe1sCkl27Vl3lDN9SR30sFDDKcGgqQXJ4gtPOr9POCfvdPc63Q==",
+      "type": "package",
+      "path": "xamarin.android.arch.core.common/1.1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid80/Xamarin.Android.Arch.Core.Common.targets",
+        "build/monoandroid81/Xamarin.Android.Arch.Core.Common.targets",
+        "build/monoandroid90/Xamarin.Android.Arch.Core.Common.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/_._",
+        "lib/monoandroid71/_._",
+        "lib/monoandroid80/Xamarin.Android.Arch.Core.Common.dll",
+        "lib/monoandroid81/Xamarin.Android.Arch.Core.Common.dll",
+        "lib/monoandroid90/Xamarin.Android.Arch.Core.Common.dll",
+        "xamarin.android.arch.core.common.1.1.1.1.nupkg.sha512",
+        "xamarin.android.arch.core.common.nuspec"
+      ]
+    },
+    "Xamarin.Android.Arch.Lifecycle.Common/1.1.1.1": {
+      "sha512": "1r89dmuYDlEzUT0e7WLKBYR8FbBm9hj2c/geDlSA4voCJnnWMCkQz2fO6VYnlygpIGLGE9VyKe0DcvNCIuZmvA==",
+      "type": "package",
+      "path": "xamarin.android.arch.lifecycle.common/1.1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid80/Xamarin.Android.Arch.Lifecycle.Common.targets",
+        "build/monoandroid81/Xamarin.Android.Arch.Lifecycle.Common.targets",
+        "build/monoandroid90/Xamarin.Android.Arch.Lifecycle.Common.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/_._",
+        "lib/monoandroid71/_._",
+        "lib/monoandroid80/Xamarin.Android.Arch.Lifecycle.Common.dll",
+        "lib/monoandroid81/Xamarin.Android.Arch.Lifecycle.Common.dll",
+        "lib/monoandroid90/Xamarin.Android.Arch.Lifecycle.Common.dll",
+        "xamarin.android.arch.lifecycle.common.1.1.1.1.nupkg.sha512",
+        "xamarin.android.arch.lifecycle.common.nuspec"
+      ]
+    },
+    "Xamarin.Android.Arch.Lifecycle.Runtime/1.1.1.1": {
+      "sha512": "wNXPIo6PbxPuDdVjezZgbJVG2obPaIESa3tumft1xlDCWyTTQC/NAcOMXi7hZAoZpOYCbXGCttStuAp3jNqMcQ==",
+      "type": "package",
+      "path": "xamarin.android.arch.lifecycle.runtime/1.1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid80/Xamarin.Android.Arch.Lifecycle.Runtime.targets",
+        "build/monoandroid81/Xamarin.Android.Arch.Lifecycle.Runtime.targets",
+        "build/monoandroid90/Xamarin.Android.Arch.Lifecycle.Runtime.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/_._",
+        "lib/monoandroid71/_._",
+        "lib/monoandroid80/Xamarin.Android.Arch.Lifecycle.Runtime.dll",
+        "lib/monoandroid81/Xamarin.Android.Arch.Lifecycle.Runtime.dll",
+        "lib/monoandroid90/Xamarin.Android.Arch.Lifecycle.Runtime.dll",
+        "proguard/monoandroid80/proguard.txt",
+        "proguard/monoandroid81/proguard.txt",
+        "xamarin.android.arch.lifecycle.runtime.1.1.1.1.nupkg.sha512",
+        "xamarin.android.arch.lifecycle.runtime.nuspec"
+      ]
+    },
+    "Xamarin.Android.Support.Animated.Vector.Drawable/28.0.0.1": {
+      "sha512": "g2Cd95pNziHzTM5ChCNYGiUboZK5OfdWGv5EHa7H6GZqYWXbW7mM6WfNFIrt4MtBgfrABu3ecD5w+QdwXJBaFQ==",
+      "type": "package",
+      "path": "xamarin.android.support.animated.vector.drawable/28.0.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid71/Xamarin.Android.Support.Animated.Vector.Drawable.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Animated.Vector.Drawable.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Animated.Vector.Drawable.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Animated.Vector.Drawable.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
+        "proguard/monoandroid71/proguard.txt",
+        "proguard/monoandroid80/proguard.txt",
+        "proguard/monoandroid81/proguard.txt",
+        "xamarin.android.support.animated.vector.drawable.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.animated.vector.drawable.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Annotations/25.4.0.2": {
-      "sha512": "4Gkj6OCOJO7jn4drGZxeCCaEVHOjUu0RzsEzZaAZJzrLNqEHqoYrKwIlbsecfEpjbAcyT77Sb8wkZnZNFPdlaA==",
+    "Xamarin.Android.Support.Annotations/28.0.0.1": {
+      "sha512": "SSbE6B9G/DxaZaxEqUWIhmmNWup27gMfEs4lPoqr2kLlQb81KBOeWo0PDCJpRYNPzQxmgGs3WKhPomYA+hZbDg==",
       "type": "package",
-      "path": "xamarin.android.support.annotations/25.4.0.2",
+      "path": "xamarin.android.support.annotations/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Annotations.dll",
-        "xamarin.android.support.annotations.25.4.0.2.nupkg.sha512",
+        "build/monoandroid80/Xamarin.Android.Support.Annotations.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Annotations.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Annotations.targets",
+        "build/monoandroid90/Xamarin.Android.Support.BuildTasks.dll",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/_._",
+        "lib/monoandroid71/Xamarin.Android.Support.Annotations.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Annotations.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Annotations.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Annotations.dll",
+        "xamarin.android.support.annotations.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.annotations.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Compat/25.4.0.2": {
-      "sha512": "k+bZ2ArXV7x1U5xomEiCVRoWHAWr6VKhF6Ziqd1DdK4ZZ4W+J0Dsi5oR2QcQHhIodb7j7cfuDcBAEs0KYvOmuQ==",
+    "Xamarin.Android.Support.Compat/28.0.0.1": {
+      "sha512": "HuOh5SGC5U487NJzv9lCwlVOdPEKjlqW7s/tHCRfaoJ8qtOXzJ9UZzmmPJnwgOnSx75BkSA7H39OVwmxo3WGNA==",
       "type": "package",
-      "path": "xamarin.android.support.compat/25.4.0.2",
+      "path": "xamarin.android.support.compat/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Compat.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Compat.dll",
-        "xamarin.android.support.compat.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.Compat.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Compat.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Compat.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Compat.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/Xamarin.Android.Support.Compat.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Compat.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Compat.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Compat.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Compat.dll",
+        "xamarin.android.support.compat.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.compat.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Core.UI/25.4.0.2": {
-      "sha512": "RKU0D2joAnk9bawGoS1/AGg+2CurKd4uK+ToYyueNN0iJTs3K/ZvnUGck8FGl6Iy8Hfy6NySv51ubMlFSXATuA==",
+    "Xamarin.Android.Support.Core.UI/28.0.0.1": {
+      "sha512": "Eutx87/y/Rh2wFTfDsOwm2x6YgLABG4C4HepjJhO3xKhbhwdB1c3YOtfYwLGjoa8q2CWIzZ7WKnF8EkGj6rEew==",
       "type": "package",
-      "path": "xamarin.android.support.core.ui/25.4.0.2",
+      "path": "xamarin.android.support.core.ui/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Core.UI.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Core.UI.dll",
-        "proguard/proguard.txt",
-        "xamarin.android.support.core.ui.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.Core.UI.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Core.UI.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Core.UI.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Core.UI.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/Xamarin.Android.Support.Core.UI.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Core.UI.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Core.UI.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Core.UI.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Core.UI.dll",
+        "proguard/monoandroid71/proguard.txt",
+        "proguard/monoandroid80/proguard.txt",
+        "proguard/monoandroid81/proguard.txt",
+        "xamarin.android.support.core.ui.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.core.ui.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Core.Utils/25.4.0.2": {
-      "sha512": "ZF+yk8b1WVRfgmf3MNeUOVdd9Bq3EoIYsXjCW2sAouwbNsnPKyjwL91mYyVcoT5f8Sf0SL866GnBtRi14wQesQ==",
+    "Xamarin.Android.Support.Core.Utils/28.0.0.1": {
+      "sha512": "eHCDHOQVQP557K6mB7wGw/MYvP24cO6bw8k9ZYUAsT7eDZwkN5cL0srEuasuw9QC1XrEtwuE4C6G34QOigV3aA==",
       "type": "package",
-      "path": "xamarin.android.support.core.utils/25.4.0.2",
+      "path": "xamarin.android.support.core.utils/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Core.Utils.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Core.Utils.dll",
-        "xamarin.android.support.core.utils.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.Core.Utils.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Core.Utils.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Core.Utils.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Core.Utils.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/Xamarin.Android.Support.Core.Utils.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Core.Utils.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Core.Utils.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Core.Utils.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Core.Utils.dll",
+        "xamarin.android.support.core.utils.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.core.utils.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Design/25.4.0.2": {
-      "sha512": "V7eOsG2XYLFDcH69ZJxywa2PrgFLi2tVpmft3iJ1vHrzeagI33dAVxDuh41r+TW6NVqPwBRQ5DRkAPZjwSAkeA==",
+    "Xamarin.Android.Support.Design/28.0.0.1": {
+      "sha512": "dIlputDvYwGEtS4DX5C4JeCetn5adeytsEN2MmY7JpS0QuQ6O8Of/XBNdgezvSgAFAQa4otpEcGAvzpdzkTY9Q==",
       "type": "package",
-      "path": "xamarin.android.support.design/25.4.0.2",
+      "path": "xamarin.android.support.design/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Design.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Design.dll",
-        "proguard/proguard.txt",
-        "xamarin.android.support.design.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.Design.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Design.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Design.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Design.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.Design.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.Design.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Design.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Design.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Design.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Design.dll",
+        "proguard/monoandroid71/proguard.txt",
+        "proguard/monoandroid80/proguard.txt",
+        "proguard/monoandroid81/proguard.txt",
+        "xamarin.android.support.design.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.design.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Fragment/25.4.0.2": {
-      "sha512": "XBllQS9m18CvYj8Uzqr78p/9x2rUNOBMh/2PALayzXwhArCvXdE+pybzSi/+4jtcZc8w/06kWhqdXq/phrhBCw==",
+    "Xamarin.Android.Support.Fragment/28.0.0.1": {
+      "sha512": "6ECFrKhslOVnvz70sHdhL4WqlmqoVkPbOh/T0tCZ5tj/pMJtasuQhF0JrQHcOCquEAS+pR9qi4nYPAXxyjdjiw==",
       "type": "package",
-      "path": "xamarin.android.support.fragment/25.4.0.2",
+      "path": "xamarin.android.support.fragment/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Fragment.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Fragment.dll",
-        "xamarin.android.support.fragment.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.Fragment.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Fragment.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Fragment.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Fragment.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/Xamarin.Android.Support.Fragment.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Fragment.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Fragment.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Fragment.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Fragment.dll",
+        "xamarin.android.support.fragment.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.fragment.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Media.Compat/25.4.0.2": {
-      "sha512": "cnjIL1GoLUifD1TA3QigOn9R3yKoidzahlS5GQHVYhO3AoZ5mknqWiZ7IbU9lVFVlMbVvI65ecSiG5j4T2ufCg==",
+    "Xamarin.Android.Support.Media.Compat/28.0.0.1": {
+      "sha512": "ltZcXL0COKRNj3aCiq3V8Xgynp50UUDCNEGH1TIkL9fGgQsUYmBzGY3cHYPo5aM/6a55am2shj4Sr4cLhx6iIg==",
       "type": "package",
-      "path": "xamarin.android.support.media.compat/25.4.0.2",
+      "path": "xamarin.android.support.media.compat/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Media.Compat.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Media.Compat.dll",
-        "xamarin.android.support.media.compat.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.Media.Compat.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Media.Compat.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Media.Compat.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Media.Compat.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Media.Compat.dll",
+        "proguard/monoandroid80/proguard.txt",
+        "proguard/monoandroid81/proguard.txt",
+        "xamarin.android.support.media.compat.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.media.compat.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Transition/25.4.0.2": {
-      "sha512": "sZJTv1NRfGwjzVFW8hn4SmJsrK7EXRAvEKu8aR9HKyg8Cw4QfbYLEN4hartq7AmwKJW492ksXzWnIjp0BnKjUQ==",
+    "Xamarin.Android.Support.Transition/28.0.0.1": {
+      "sha512": "pkBJTXvfvwSC5ddtK+pSsfLzYQ8FmW3zgjObF1OE4nkx+fn2HFYE4nOy/EdQdh5PU7JsqrV80fOCUv83Q0U+2A==",
       "type": "package",
-      "path": "xamarin.android.support.transition/25.4.0.2",
+      "path": "xamarin.android.support.transition/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Transition.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Transition.dll",
-        "xamarin.android.support.transition.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.Transition.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Transition.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Transition.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Transition.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/Xamarin.Android.Support.Transition.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Transition.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Transition.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Transition.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Transition.dll",
+        "proguard/monoandroid81/proguard.txt",
+        "xamarin.android.support.transition.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.transition.nuspec"
       ]
     },
-    "Xamarin.Android.Support.v4/25.4.0.2": {
-      "sha512": "Ui29//+zltXe4Z+OmzdwjLWRGdcmCAm4sklF/As/dEwALxur8vff7/C4rIm/khJNo1ZbeKYnVseaaia/TsZeTA==",
+    "Xamarin.Android.Support.v4/28.0.0.1": {
+      "sha512": "xvsqO9dqjP7v8rqEYXr/v/KELH597nCdMwROIDqHtIsCMWeNeY33CmmBA2bRzfLpgZICvdCrg/T1v0+4BFU8Ag==",
       "type": "package",
-      "path": "xamarin.android.support.v4/25.4.0.2",
+      "path": "xamarin.android.support.v4/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.v4.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.v4.dll",
-        "xamarin.android.support.v4.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.v4.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v4.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v4.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v4.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v4.dll",
+        "xamarin.android.support.v4.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.v4.nuspec"
       ]
     },
-    "Xamarin.Android.Support.v7.AppCompat/25.4.0.2": {
-      "sha512": "A3P9Hpw8FAGuZISw3hYZE6OjJwjDRbvoEJvsey0ZXmBFI/j4w8YBlwN+SsQse1oEx1yzYAXQwnU/KIYEuHMkQw==",
+    "Xamarin.Android.Support.v7.AppCompat/28.0.0.1": {
+      "sha512": "MEkm7hZNa/nxnZ3a7E6HcpaFL07scQbbFNZ+btCNIS2cfzWKRHpxwjXJ2JhZr2GEknfbgwrxmOILmrbt6QlLlA==",
       "type": "package",
-      "path": "xamarin.android.support.v7.appcompat/25.4.0.2",
+      "path": "xamarin.android.support.v7.appcompat/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.v7.AppCompat.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.v7.AppCompat.dll",
-        "xamarin.android.support.v7.appcompat.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.v7.AppCompat.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v7.AppCompat.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v7.AppCompat.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v7.AppCompat.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v7.AppCompat.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v7.AppCompat.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v7.AppCompat.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v7.AppCompat.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v7.AppCompat.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v7.AppCompat.dll",
+        "xamarin.android.support.v7.appcompat.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.v7.appcompat.nuspec"
       ]
     },
-    "Xamarin.Android.Support.v7.CardView/25.4.0.2": {
-      "sha512": "qVTkEeV+2vMpVOzvC+Ear4ZoYOPP2IWXaRDa7Lrg6ebVgg654nE8ARJfhaRqVczg2CwlgZm++uc9gDgASMV7iA==",
+    "Xamarin.Android.Support.v7.CardView/28.0.0.1": {
+      "sha512": "cQxnwu8OWrGRz0Z300TA3NPr7ofsQ4I7tMw1NLFdKbfgPscLmPmiJiJsMcchCL/T9SVz4/3eRoUh6V1fg8iAqA==",
       "type": "package",
-      "path": "xamarin.android.support.v7.cardview/25.4.0.2",
+      "path": "xamarin.android.support.v7.cardview/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.v7.CardView.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.v7.CardView.dll",
-        "xamarin.android.support.v7.cardview.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.v7.CardView.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v7.CardView.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v7.CardView.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v7.CardView.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v7.CardView.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v7.CardView.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v7.CardView.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v7.CardView.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v7.CardView.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v7.CardView.dll",
+        "xamarin.android.support.v7.cardview.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.v7.cardview.nuspec"
       ]
     },
-    "Xamarin.Android.Support.v7.MediaRouter/25.4.0.2": {
-      "sha512": "HhNwWkbgUXE7g8wRt87AgUeBlurdczIzjeIcK8WMnXdn7iUcjF1uIh+IYjNXiY7DFVuyzew73UHRM0d8RjnM1A==",
+    "Xamarin.Android.Support.v7.MediaRouter/28.0.0.1": {
+      "sha512": "uoe/dRihug7V/SkR3v+c/3R45YjT3bevGKFt6ZB+vPPtN4rvbM+9ypNHfgi3pxX4ldvEla4cOjLnzaS/F1r/8Q==",
       "type": "package",
-      "path": "xamarin.android.support.v7.mediarouter/25.4.0.2",
+      "path": "xamarin.android.support.v7.mediarouter/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.v7.MediaRouter.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.v7.MediaRouter.dll",
-        "xamarin.android.support.v7.mediarouter.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "xamarin.android.support.v7.mediarouter.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.v7.mediarouter.nuspec"
       ]
     },
-    "Xamarin.Android.Support.v7.Palette/25.4.0.2": {
-      "sha512": "cMvjdILPDccRbAHAeKzqdCtkRHAt/lfDprc/D7oF7fFwgrzxEsv+k1oK9ix3TsQrTStnGmmbBd/Zx8xMoH9qeQ==",
+    "Xamarin.Android.Support.v7.Palette/28.0.0.1": {
+      "sha512": "EM0sfN+Nyp/SrocJF6dysaWULbY+rDn2rYNT4MIQhxaZDB71G2tD+Y08+KboyAmegDo6Iz3BhAMf5rHEoTuO4A==",
       "type": "package",
-      "path": "xamarin.android.support.v7.palette/25.4.0.2",
+      "path": "xamarin.android.support.v7.palette/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.v7.Palette.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.v7.Palette.dll",
-        "xamarin.android.support.v7.palette.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.v7.Palette.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v7.Palette.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v7.Palette.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v7.Palette.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v7.Palette.dll",
+        "xamarin.android.support.v7.palette.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.v7.palette.nuspec"
       ]
     },
-    "Xamarin.Android.Support.v7.RecyclerView/25.4.0.2": {
-      "sha512": "rBEs2Lk4P967ejGGWf+Wbk4OBuMmvv8XLbpJ2QZ+8YyXecMexzQTFaBj7DeUfqjJTSbAEhQJYltY0g7m6XYA+A==",
+    "Xamarin.Android.Support.v7.RecyclerView/28.0.0.1": {
+      "sha512": "tLMRB4+6pGI6wDEju+agdX3QSUsgzh0EBoXNV517Zy3FMhxF9SAOvLr5u4b2RNaF8E0JdNfzDKBORn116FgGYw==",
       "type": "package",
-      "path": "xamarin.android.support.v7.recyclerview/25.4.0.2",
+      "path": "xamarin.android.support.v7.recyclerview/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.v7.RecyclerView.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.v7.RecyclerView.dll",
-        "proguard/proguard.txt",
-        "xamarin.android.support.v7.recyclerview.25.4.0.2.nupkg.sha512",
+        "build/monoandroid71/Xamarin.Android.Support.v7.RecyclerView.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v7.RecyclerView.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v7.RecyclerView.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v7.RecyclerView.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v7.RecyclerView.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v7.RecyclerView.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v7.RecyclerView.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v7.RecyclerView.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v7.RecyclerView.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v7.RecyclerView.dll",
+        "proguard/monoandroid71/proguard.txt",
+        "proguard/monoandroid80/proguard.txt",
+        "proguard/monoandroid81/proguard.txt",
+        "xamarin.android.support.v7.recyclerview.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.v7.recyclerview.nuspec"
       ]
     },
-    "Xamarin.Android.Support.Vector.Drawable/25.4.0.2": {
-      "sha512": "2zAGVOqmuhp/QCvDFmXkqvx+cJ5sMHFsZuwvoPEkx6mDRDo5sfPJaQzfiODquCL6EIs/vwoW+vHOcdFRbl+TLg==",
+    "Xamarin.Android.Support.Vector.Drawable/28.0.0.1": {
+      "sha512": "e3mmsuYkgcbNqrxCD7wnlVagoBRhVfHsxEmROr8cp+rGKKqC/KaorsToqiQfDIHLK/ZfqgmE+wdOAPv3Rv0jVA==",
       "type": "package",
-      "path": "xamarin.android.support.vector.drawable/25.4.0.2",
+      "path": "xamarin.android.support.vector.drawable/28.0.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/MonoAndroid70/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
-        "build/MonoAndroid70/Xamarin.Android.Support.Vector.Drawable.targets",
-        "lib/MonoAndroid70/Xamarin.Android.Support.Vector.Drawable.dll",
-        "xamarin.android.support.vector.drawable.25.4.0.2.nupkg.sha512",
+        "build/monoandroid60/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
+        "build/monoandroid60/Xamarin.Android.Support.Vector.Drawable.targets",
+        "build/monoandroid70/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
+        "build/monoandroid70/Xamarin.Android.Support.Vector.Drawable.targets",
+        "build/monoandroid71/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
+        "build/monoandroid71/Xamarin.Android.Support.Vector.Drawable.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
+        "build/monoandroid80/Xamarin.Android.Support.Vector.Drawable.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
+        "build/monoandroid81/Xamarin.Android.Support.Vector.Drawable.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
+        "build/monoandroid90/Xamarin.Android.Support.Vector.Drawable.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.Vector.Drawable.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.Vector.Drawable.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Vector.Drawable.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Vector.Drawable.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Vector.Drawable.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Vector.Drawable.dll",
+        "xamarin.android.support.vector.drawable.28.0.0.1.nupkg.sha512",
         "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
@@ -924,13 +1525,19 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v8.0": [
+      "NETStandard.Library >= 2.0.3",
       "Nudge_ >= 1.0.0",
-      "SQLite.Net-PCL >= 3.1.1",
-      "Xamarin.Android.Support.Design >= 25.4.0.2",
-      "Xamarin.Android.Support.v4 >= 25.4.0.2",
-      "Xamarin.Android.Support.v7.AppCompat >= 25.4.0.2",
-      "Xamarin.Android.Support.v7.CardView >= 25.4.0.2",
-      "Xamarin.Android.Support.v7.MediaRouter >= 25.4.0.2",
+      "SQLite.Net-PCL >= 3.1.0",
+      "Syncfusion.Xamarin.Core >= 16.4.0.52",
+      "Syncfusion.Xamarin.DataSource >= 16.4.0.52",
+      "Syncfusion.Xamarin.GridCommon >= 16.4.0.52",
+      "Syncfusion.Xamarin.SfListView >= 16.4.0.52",
+      "Xamarin.Android.Support.Animated.Vector.Drawable >= 28.0.0.1",
+      "Xamarin.Android.Support.Design >= 28.0.0.1",
+      "Xamarin.Android.Support.v4 >= 28.0.0.1",
+      "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.1",
+      "Xamarin.Android.Support.v7.CardView >= 28.0.0.1",
+      "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.1",
       "Xamarin.Forms >= 3.1.0.697729",
       "sqlite-net-pcl >= 1.4.118"
     ]
@@ -972,29 +1579,53 @@
     "frameworks": {
       "monoandroid80": {
         "dependencies": {
+          "NETStandard.Library": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          },
           "SQLite.Net-PCL": {
             "target": "Package",
-            "version": "[3.1.1, )"
+            "version": "[3.1.0, )"
+          },
+          "Syncfusion.Xamarin.Core": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Syncfusion.Xamarin.DataSource": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Syncfusion.Xamarin.GridCommon": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Syncfusion.Xamarin.SfListView": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Xamarin.Android.Support.Animated.Vector.Drawable": {
+            "target": "Package",
+            "version": "[28.0.0.1, )"
           },
           "Xamarin.Android.Support.Design": {
             "target": "Package",
-            "version": "[25.4.0.2, )"
+            "version": "[28.0.0.1, )"
           },
           "Xamarin.Android.Support.v4": {
             "target": "Package",
-            "version": "[25.4.0.2, )"
+            "version": "[28.0.0.1, )"
           },
           "Xamarin.Android.Support.v7.AppCompat": {
             "target": "Package",
-            "version": "[25.4.0.2, )"
+            "version": "[28.0.0.1, )"
           },
           "Xamarin.Android.Support.v7.CardView": {
             "target": "Package",
-            "version": "[25.4.0.2, )"
+            "version": "[28.0.0.1, )"
           },
           "Xamarin.Android.Support.v7.MediaRouter": {
             "target": "Package",
-            "version": "[25.4.0.2, )"
+            "version": "[28.0.0.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
@@ -1007,5 +1638,17 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "SQLite.Net-PCL 3.1.0 depends on SQLite.Net.Core-PCL (>= 3.0.5) but SQLite.Net.Core-PCL 3.0.5 was not found. An approximate best match of SQLite.Net.Core-PCL 3.1.0 was resolved.",
+      "libraryId": "SQLite.Net.Core-PCL",
+      "targetGraphs": [
+        "MonoAndroid,Version=v8.0"
+      ]
+    }
+  ]
 }

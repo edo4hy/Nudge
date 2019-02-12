@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.Nudge_">
-  <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="26" />
+  <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
   <uses-permission android:name="android.permission.VIBRATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -22,6 +22,7 @@
         <category android:name="mono.android.intent.category.SEPPUKU.com.companyname.Nudge_" />
       </intent-filter>
     </receiver>
-    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+    <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT" />
+    <meta-data android:name="android.support.VERSION" android:value="26.1.0" />
   </application>
 </manifest>
