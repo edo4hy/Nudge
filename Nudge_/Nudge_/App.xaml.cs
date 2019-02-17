@@ -8,6 +8,7 @@ using Nudge_.View.Test_Delete;
 using Nudge_.Shared;
 using System.Threading.Tasks;
 using Plugin.Notifications;
+using SampleBrowser.SfListView;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Nudge_
@@ -29,12 +30,12 @@ namespace Nudge_
             //MainPage = new MessageTabbedPage();
             //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
 
-            MainPage = new MasterDetailPage1();
+            //MainPage = new MasterDetailPage1();
 
-            //MainPage = new ListViewTestPage();
+            MainPage = new View.Page1();
+
 
             //MainPage = new BrowseSliderTabbed();
-
         }
 
         public static AbstractNotificationsImpl NotificationsImpl { get; private set; }

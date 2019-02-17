@@ -13,6 +13,7 @@
       </intent-filter>
     </activity>
     <receiver android:enabled="true" android:label="Notifications Broadcast Receiver" android:name="md50847853f92b08a8cc9b9e5d5e8461f1c.AlarmBroadcastReceiver" />
+    <activity android:screenOrientation="portrait" android:name="md54f48fa357a0f1d2b5dcf16af1f050b74.SplashScreenActivity" />
     <receiver android:enabled="true" android:exported="false" android:name="md51558244f76c53b6aeda52c8a337f2c37.PowerSaveModeBroadcastReceiver" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.companyname.Nudge_.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->

@@ -14,5 +14,6 @@
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)xamarin.forms\3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props')" />
+    <Import Project="$(NuGetPackageRoot)samplebrowser.core\16.4.0.52\build\netstandard1.0\SampleBrowser.Core.props" Condition="Exists('$(NuGetPackageRoot)samplebrowser.core\16.4.0.52\build\netstandard1.0\SampleBrowser.Core.props')" />
   </ImportGroup>
 </Project>

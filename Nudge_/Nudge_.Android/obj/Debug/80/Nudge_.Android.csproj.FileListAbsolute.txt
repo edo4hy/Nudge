@@ -66,6 +66,9 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\System.C
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\System.Web.Services.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\Microsoft.CSharp.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\Mono.Security.pdb
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\FormsViewGroup.dll.mdb
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\Nudge_.Android.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\Mono.Android.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\mscorlib.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\Nudge_.pdb
@@ -88,12 +91,9 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\links
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\System.Web.Services.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\Microsoft.CSharp.pdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\Mono.Security.pdb
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\FormsViewGroup.dll.mdb
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\Nudge_.Android.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\FormsViewGroup.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\linksrc\Xamarin.Forms.Platform.Android.dll.mdb
-C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\bin\Debug\Nudge_.Android.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\FormsViewGroup.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\Nudge_.Android.dll.mdb
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_.Android\obj\Debug\80\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
