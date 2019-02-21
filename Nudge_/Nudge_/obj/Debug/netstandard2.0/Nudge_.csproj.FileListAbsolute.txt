@@ -36,3 +36,4 @@ C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\N
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\ItemReordering.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\Page1.xaml.g.cs
 C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\edwar\source\repos\xamarintest\Nudge_\Nudge_\obj\Debug\netstandard2.0\View\ListViewTest1.xaml.g.cs

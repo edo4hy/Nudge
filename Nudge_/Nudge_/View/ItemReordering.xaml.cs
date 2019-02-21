@@ -15,7 +15,7 @@ namespace SampleBrowser.SfListView
 {
     [Preserve(AllMembers = true)]
 
-    public partial class ItemReordering : SampleView
+    public partial class ItemReordering : ContentPage
     {
         public ItemReordering()
         {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<sample:SampleView x:Class="SampleBrowser.SfListView.ItemReordering"
+<ContentPage x:Class="SampleBrowser.SfListView.ItemReordering"
                   xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:local="clr-namespace:SampleBrowser.SfListView"
@@ -9,14 +9,14 @@
                   xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
                   xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
 
-    <sample:SampleView.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
             <sample:ImagePathConverter x:Key="ImagePathConverter"/>
         </ResourceDictionary>
-    </sample:SampleView.Resources>
+    </ContentPage.Resources>
 
-    <!--<sample:SampleView.Content>
+    <ContentPage.Content>
         <syncfusion:SfListView x:Name="listView"
 			ItemSize="60" BackgroundColor="#FFE8E8EC"
 			GroupHeaderSize="50"
@@ -30,7 +30,7 @@
 
             <syncfusion:SfListView.GroupHeaderTemplate>
                 <DataTemplate>
-                    <Grid BackgroundColor="{OnPlatform Android=#eeeeee, iOS=#f7f7f7, macOS=#f7f7f7, UWP=#f2f2f2}">
+                    <Grid >
                         <Label Text="{Binding Key}" 
 							FontSize="14" 
                          	TextColor="#333333"
@@ -45,7 +45,7 @@
             <syncfusion:SfListView.ItemTemplate>
                 <DataTemplate>
                     <Frame HasShadow="True" BackgroundColor="White" Padding="0"
-                           InputTransparent="{OnPlatform Default=false, Android=true}">
+                           >
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="70" />
@@ -54,8 +54,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Padding="20,15,20,15">
                                 <syncCheckBox:SfCheckBox IsChecked="{Binding IsDone}" CornerRadius="0" 
-                                                         UncheckedColor="{OnPlatform Android=#6F7771, iOS=#2d89ef, UWP=#000000}" 
-                                                         CheckedColor="{OnPlatform Android=#6F7771, iOS=#2d89ef, UWP=#2d89ef}"/>
+                                                         />
                             </Grid>
 
                             <Label x:Name="textLabel" Text="{Binding Name}"
@@ -73,16 +72,15 @@
 
                             <syncfusion:DragIndicatorView Grid.Column="2" ListView="{x:Reference listView}" HorizontalOptions="Center" VerticalOptions="Center">
                                 <Grid Padding="10, 20, 20, 20">
-                                    <local:SfImage Source="{Binding ., Converter={StaticResource ImagePathConverter }, ConverterParameter=SampleBrowser.SfListView.DragIndicator.png}"
+                                    <!--<local:SfImage Source="{Binding ., Converter={StaticResource ImagePathConverter }, ConverterParameter=SampleBrowser.SfListView.DragIndicator.png}"
 									VerticalOptions="Center" HeightRequest="60" WidthRequest="60"
-                           			HorizontalOptions="Center" />
+                           			HorizontalOptions="Center" />-->
                                 </Grid>
                             </syncfusion:DragIndicatorView>
                         </Grid>
                     </Frame>
                 </DataTemplate>
             </syncfusion:SfListView.ItemTemplate>
-
         </syncfusion:SfListView>
-    </sample:SampleView.Content>-->
-</sample:SampleView>
+    </ContentPage.Content>
+</ContentPage>

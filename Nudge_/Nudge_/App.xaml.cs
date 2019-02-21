@@ -32,8 +32,10 @@ namespace Nudge_
 
             //MainPage = new MasterDetailPage1();
 
-            MainPage = new View.Page1();
+            //MainPage = new View.ListViewTest1();
 
+            //MainPage = new ItemReordering();
+            MainPage = new ItemReordering();
 
             //MainPage = new BrowseSliderTabbed();
         }
