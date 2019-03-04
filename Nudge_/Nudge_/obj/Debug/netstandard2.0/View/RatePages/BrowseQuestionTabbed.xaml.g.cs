@@ -13,7 +13,7 @@
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePages\\BrowseQuestionTabbed.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/RatePages/BrowseQuestionTabbed.xaml")]
     public partial class BrowseQuestionTabbed : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

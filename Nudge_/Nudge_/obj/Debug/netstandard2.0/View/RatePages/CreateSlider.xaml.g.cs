@@ -13,7 +13,7 @@
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePages\\CreateSlider.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/RatePages/CreateSlider.xaml")]
     public partial class CreateSlider : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

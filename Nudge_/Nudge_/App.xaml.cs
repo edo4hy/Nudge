@@ -22,7 +22,9 @@ namespace Nudge_
 		{
 			InitializeComponent();
 
-            Application.Current.Properties.Clear();
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
+
+            //Application.Current.Properties.Clear();
 
             //MainPage = new SettingsPage();
             //MainPage = new NavigationPage(new EditRatePage());

@@ -26,20 +26,6 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "SampleBrowser.Core/16.4.0.52": {
-        "type": "package",
-        "compile": {
-          "lib/MonoAndroid10/SampleBrowser.Core.Android.dll": {},
-          "lib/MonoAndroid10/SampleBrowser.Core.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/SampleBrowser.Core.Android.dll": {},
-          "lib/MonoAndroid10/SampleBrowser.Core.dll": {}
-        },
-        "build": {
-          "build/netstandard1.0/SampleBrowser.Core.props": {}
-        }
-      },
       "sqlite-net-pcl/1.4.118": {
         "type": "package",
         "dependencies": {
@@ -572,7 +558,6 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "SQLite.Net-PCL": "3.1.1",
-          "SampleBrowser.Core": "16.4.0.52",
           "Syncfusion.Xamarin.Buttons": "16.4.0.52",
           "Syncfusion.Xamarin.Core": "16.4.0.52",
           "Syncfusion.Xamarin.GridCommon": "16.4.0.52",
@@ -607,12 +592,10 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "548M6mnBSJWxsIlkQHfbzoYxpiYFXZZSL00p4GHYv8PkiqFBnnT68mW5mGEsA/ch9fDO9GkPgkFQpWiXZN7mAQ==",
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -735,67 +718,6 @@
         "netstandard.library.nuspec"
       ]
     },
-    "SampleBrowser.Core/16.4.0.52": {
-      "sha512": "m1zKFoKReGRvv3yJ1gy4Pj7wGr7yZdYiTSiiH2Pq7fxXVK+2FSAt7uX9dLZ9jji7E7reZlfcYDNCR7otXcEl/A==",
-      "type": "package",
-      "path": "samplebrowser.core/16.4.0.52",
-      "files": [
-        ".nupkg.metadata",
-        "build/netstandard1.0/SampleBrowser.Core.props",
-        "lib/MonoAndroid10/SampleBrowser.Core.Android.dll",
-        "lib/MonoAndroid10/SampleBrowser.Core.dll",
-        "lib/Xamarin.Mac/SampleBrowser.Core.dll",
-        "lib/Xamarin.Mac/SampleBrowser.Core.macOS.dll",
-        "lib/Xamarin.iOS10/SampleBrowser.Core.dll",
-        "lib/Xamarin.iOS10/SampleBrowser.Core.iOS.dll",
-        "lib/netstandard1.0/SampleBrowser.Core.dll",
-        "lib/portable-win+net45+wp80+win81+wpa81/SampleBrowser.Core.dll",
-        "lib/uap10.0/SampleBrowser.Core.UWP.dll",
-        "lib/uap10.0/SampleBrowser.Core.UWP.pri",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/LockScreenLogo.scale-100.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/LockScreenLogo.scale-125.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/LockScreenLogo.scale-150.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/LockScreenLogo.scale-200.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/LockScreenLogo.scale-400.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/SplashScreen.scale-100.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/SplashScreen.scale-125.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/SplashScreen.scale-150.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/SplashScreen.scale-200.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/SplashScreen.scale-400.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square150x150Logo.scale-100.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square150x150Logo.scale-125.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square150x150Logo.scale-150.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square150x150Logo.scale-200.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square150x150Logo.scale-400.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.scale-100.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.scale-125.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.scale-150.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.scale-200.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.scale-400.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.targetsize-16_altform-unplated.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.targetsize-24_altform-unplated.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.targetsize-256_altform-unplated.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.targetsize-32_altform-unplated.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Square44x44Logo.targetsize-48_altform-unplated.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/StoreLogo.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Wide310x150Logo.scale-100.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Wide310x150Logo.scale-125.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Wide310x150Logo.scale-150.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Wide310x150Logo.scale-200.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Assets/Wide310x150Logo.scale-400.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Option.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Properties/Default.rd.xml",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Tags/newimage.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Tags/preview.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Tags/updated.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Tags/x_new.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/Tags/x_update.png",
-        "lib/uap10.0/SampleBrowser.Core.UWP/ViewCode.png",
-        "lib/uap10.0/SampleBrowser.Core.dll",
-        "samplebrowser.core.16.4.0.52.nupkg.sha512",
-        "samplebrowser.core.nuspec"
-      ]
-    },
     "sqlite-net-pcl/1.4.118": {
       "sha512": "66wl2z26PpA/m+hY2UJudsHF3GpbbC8Scx9WvXC0MomQxrbclkb2jiavYsXH3AEXHsTAjKIWavmwKoRIPWsdAg==",
       "type": "package",
@@ -815,12 +737,10 @@
       ]
     },
     "SQLite.Net-PCL/3.1.1": {
-      "sha512": "YVmGTLKH1S1SRV6T2XJv+E7JIDYSsphAEakam3Os0Cgxn6YayuhqGZh+2JKacJfw31AjpYG6Li/qcRfXcUle8Q==",
+      "sha512": "eIaIk+k4MwvBeKyzj1kgIegWXYZlaDAHNzsaYP7wNDgSqAdaza8FgCRun7mIZScJD/RIuKxN/b1V+bkC+/WIeA==",
       "type": "package",
       "path": "sqlite.net-pcl/3.1.1",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "lib/MonoAndroid/SQLite.Net.Platform.XamarinAndroid.dll",
         "lib/Windows8/SQLite.Net.Platform.WinRT.dll",
         "lib/Xamarin.iOS10/SQLite.Net.Platform.XamarinIOS.Unified.dll",
@@ -836,12 +756,10 @@
       ]
     },
     "SQLite.Net.Core-PCL/3.1.1": {
-      "sha512": "oNeX60ZqLqly+lxGAxvOCoGte7Fc2OabE5rOTs0clMMcrip+SMpWlvWb7cn/LxRepwQZAotSNWxxqzztasRsyQ==",
+      "sha512": "/0VdXnyj2srEh5rM1RW/snXJrVGRsxGB3xjW4EkhZIig9N/8EocZZrEr0vwRJU8a9Lz4BrweoLyKwp2evmSIzg==",
       "type": "package",
       "path": "sqlite.net.core-pcl/3.1.1",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "lib/portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1/SQLite.Net.dll",
         "sqlite.net.core-pcl.3.1.1.nupkg.sha512",
         "sqlite.net.core-pcl.nuspec"
@@ -971,11 +889,10 @@
       ]
     },
     "Syncfusion.Xamarin.Buttons/16.4.0.52": {
-      "sha512": "/2LZMhYANqf0bgWgZnASfARwc/wUQGcDgvkOqIpyK4Kk3oIkEi1P1sMW2+J/TQK6+PbQY5A1nd/n2UqgxvemBA==",
+      "sha512": "7oTyU70Rmf4EZtisfKs127aXa9NllN7ApZbp8ZIY7lim4cv0IrCS7/bJbuNqKCqCFCsbSknUg5UkJj8WaVlG9Q==",
       "type": "package",
       "path": "syncfusion.xamarin.buttons/16.4.0.52",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.Buttons.XForms.Android.dll",
         "lib/MonoAndroid10/Syncfusion.Buttons.XForms.dll",
@@ -1002,11 +919,10 @@
       ]
     },
     "Syncfusion.Xamarin.Core/16.4.0.52": {
-      "sha512": "UxMrFT/zEC/zSubNpA4l7zYA6vq04OYJw7lIAPx/awrnLhcK9CEcWNKdUP2iUGJHam5OM35uzyZA2VeBL1Qh0A==",
+      "sha512": "Ca2hy8ZVIi16sXwnooOHGeYzUk9zd/2Pt1fbpRAekW9OUJFDCHehUcG4taBaKCCXbVq5dNtL+S/DbdHXYhRkpA==",
       "type": "package",
       "path": "syncfusion.xamarin.core/16.4.0.52",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.Core.XForms.Android.dll",
         "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
@@ -1034,11 +950,10 @@
       ]
     },
     "Syncfusion.Xamarin.DataSource/16.4.0.52": {
-      "sha512": "w2HS31ZJZp3LeQhFio3RDIRuSBO05yW0F/VjKSZCYSHwViA/c6UqElac8agaHn20rV8YIDxicMp99WRh+hHzbw==",
+      "sha512": "ZKwNvRwttckzGf3ef3RQGjChQkHrv3+zWYR6N59NGl/5vSx2YJox0CpQoTE5gdcuYdGRe4msIi0QA46JFS9r+A==",
       "type": "package",
       "path": "syncfusion.xamarin.datasource/16.4.0.52",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.DataSource.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll",
@@ -1055,11 +970,10 @@
       ]
     },
     "Syncfusion.Xamarin.GridCommon/16.4.0.52": {
-      "sha512": "0Mm0xFj9MdFsXgi5Y9f0q72ZUHq85hVXeGiPpTipgH71tKX+XKoEHR2pVtgP/IuTKNosxTPFNfgh6jwQN8TciA==",
+      "sha512": "xjla5hDM01jZX+RovbcTndovcWXSE2GEhCeE/ter6o/0RSH3v0H1Zn4ddkz8swN93OQKjupdLMZrI4lNtn5kng==",
       "type": "package",
       "path": "syncfusion.xamarin.gridcommon/16.4.0.52",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
@@ -1078,11 +992,10 @@
       ]
     },
     "Syncfusion.Xamarin.SfDataGrid/16.4.0.52": {
-      "sha512": "7ejWd4L+z1IFP4ggxk0TSeXj7oga0MZNVS1MhGvUxo8jV1U0vXUqGZ7RkRhr3oYkCFJI9KA6chrZiC91CFpkiA==",
+      "sha512": "hfH/9e/Ph7lMGosieSmlViIX6mHrxRPisda2cXgIHiCkRAP/S/4lzsCo4PtnJWQLLv82Pz71iBhdCnF7HrBWwg==",
       "type": "package",
       "path": "syncfusion.xamarin.sfdatagrid/16.4.0.52",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.Data.Portable.XML",
         "lib/MonoAndroid10/Syncfusion.Data.Portable.dll",
@@ -1116,11 +1029,10 @@
       ]
     },
     "Syncfusion.Xamarin.SfListView/16.4.0.52": {
-      "sha512": "PdfZpxT5bG0TCnJ+wxu4Y3sz84qcKCJnQlXRjQi1mCohbuVScJtz8U9klSExZGU6ZvBM8MVTqYNuDoqLHIDufA==",
+      "sha512": "Mv6z0fwnTzfrRlwUPJcDPjfcxG65b1XJFniTaA6IATx0D2AA3aL1BXEt3L6VZclS6X4GiKR1hivm0USvZjivTg==",
       "type": "package",
       "path": "syncfusion.xamarin.sflistview/16.4.0.52",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll",
         "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll",
@@ -1142,11 +1054,10 @@
       ]
     },
     "Syncfusion.Xamarin.SfNumericTextBox/16.4.0.52": {
-      "sha512": "e8stkmMwybYJqWHHs02/UxVyWzmrmvC/T3VAyiRw80HD+tJDG/JZthHEROE34XiHzttZWzeWx4H6hwov9ttW6g==",
+      "sha512": "pqPnKn+VNVNgykHwvsJ/XUiXDLyT1UcLt2QzDE8QSO5Koezj4KWLDsmm8h3W2EOjUxaqTtvRFf4XDdDeLVe/kA==",
       "type": "package",
       "path": "syncfusion.xamarin.sfnumerictextbox/16.4.0.52",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.Android.dll",
         "lib/MonoAndroid10/Syncfusion.SfNumericTextBox.XForms.Android.dll",
@@ -1611,11 +1522,10 @@
       ]
     },
     "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "6y1rnRKVqgRWpGy+mjlgf5cxRYiHsiGS4b51/AJxxkEyf7w1XJGzcLl4wV8Yjpv6/kKxsIBoAgqxIdFElQcNkA==",
+      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
       "type": "package",
       "path": "xamarin.forms/3.1.0.697729",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
@@ -1644,13 +1554,11 @@
         "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
@@ -1790,35 +1698,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\edwar\\.nuget\\packages\\": {}
+    "/Users/edwardobree/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_.Android\\Nudge_.Android.csproj",
+      "projectUniqueName": "/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/Nudge_.Android.csproj",
       "projectName": "Nudge_.Android",
-      "projectPath": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_.Android\\Nudge_.Android.csproj",
-      "packagesPath": "C:\\Users\\edwar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_.Android\\obj\\",
+      "projectPath": "/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/Nudge_.Android.csproj",
+      "packagesPath": "/Users/edwardobree/.nuget/packages/",
+      "outputPath": "/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\edwar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/edwardobree/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "monoandroid80"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\Syncfusion": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid80": {
           "projectReferences": {
-            "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_\\Nudge_.csproj": {
-              "projectPath": "C:\\Users\\edwar\\source\\repos\\xamarintest\\Nudge_\\Nudge_\\Nudge_.csproj"
+            "/Users/edwardobree/xamarintest/Nudge_/Nudge_/Nudge_.csproj": {
+              "projectPath": "/Users/edwardobree/xamarintest/Nudge_/Nudge_/Nudge_.csproj"
             }
           }
         }
@@ -1894,5 +1799,16 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package SampleBrowser.Core. No packages exist with this id in source(s): nuget.org",
+      "libraryId": "SampleBrowser.Core",
+      "targetGraphs": [
+        "MonoAndroid,Version=v8.0"
+      ]
+    }
+  ]
 }

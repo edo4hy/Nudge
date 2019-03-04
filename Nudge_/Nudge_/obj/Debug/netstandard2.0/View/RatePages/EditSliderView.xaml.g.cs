@@ -13,7 +13,7 @@
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePages\\EditSliderView.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/RatePages/EditSliderView.xaml")]
     public partial class EditSliderView : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

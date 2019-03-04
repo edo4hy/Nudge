@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nudge_.View.ListViewTest1"
              xmlns:local="clr-namespace:Nudge_.Shared"
-             xmlns:sample="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
@@ -70,7 +69,7 @@
                                         SliderTemplate="{StaticResource sliderTemplate}"/>
 
             <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
-            <sample:ImagePathConverter x:Key="ImagePathConverter"/>
+<!--            <sample:ImagePathConverter x:Key="ImagePathConverter"/>-->
 
         </ResourceDictionary>
     </ContentPage.Resources>

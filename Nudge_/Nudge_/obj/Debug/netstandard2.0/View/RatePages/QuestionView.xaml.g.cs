@@ -13,7 +13,7 @@
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\RatePages\\QuestionView.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/RatePages/QuestionView.xaml")]
     public partial class QuestionView : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

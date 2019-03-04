@@ -13,7 +13,7 @@
 namespace SampleBrowser.SfListView {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\ItemReordering.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/ItemReordering.xaml")]
     public partial class ItemReordering : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

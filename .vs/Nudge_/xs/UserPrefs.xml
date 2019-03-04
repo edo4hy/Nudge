@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/App.xaml.cs">
+    <Files>
+      <File FileName="Nudge_/Nudge_/Nudge_.csproj" Line="14" Column="36" />
+      <File FileName="Nudge_/Nudge_/View/ItemReordering.xaml" Line="77" Column="19" />
+      <File FileName="Nudge_/Nudge_/View/ListViewTest1.xaml" Line="72" Column="75" />
+      <File FileName="Nudge_/Nudge_/View/ListViewTest1.xaml.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/ItemReordering.xaml.cs" Line="10" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/Page1.xaml" Line="15" Column="75" />
+      <File FileName="Nudge_/Nudge_/App.xaml" Line="8" Column="15" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="27" Column="54" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Nudge_" expanded="True">
+            <Node name="Nudge_" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True">
+                <Node name="App.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.371C2C57-0C13-42AB-8D31-892F9F85F339" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

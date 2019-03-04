@@ -13,7 +13,7 @@
 namespace Nudge_.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\ListViewTest1.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/ListViewTest1.xaml")]
     public partial class ListViewTest1 : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

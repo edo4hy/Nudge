@@ -13,7 +13,7 @@
 namespace Nudge_.View.Test_Delete {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\MasterDetail\\MasterDetailPage1Master.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/MasterDetail/MasterDetailPage1Master.xaml")]
     public partial class MasterDetailPage1Master : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

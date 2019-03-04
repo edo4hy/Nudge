@@ -7,7 +7,6 @@
 #endregion
 using System;
 using System.Collections.Generic;
-using SampleBrowser.Core;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
