@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "f26d52ff049a85dc22ab97fcb65578699bec42b8"
+    "signature": "99840589ccefe062768c3592447975ad696e5143"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,7 +16,7 @@
           "Syncfusion.Xamarin.GridCommon": "16.4.0.52",
           "Syncfusion.Xamarin.SfDataGrid": "16.4.0.52",
           "Syncfusion.Xamarin.SfListView": "16.4.0.52",
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.1.0.697729",
           "sqlite-net-pcl": "1.4.118"
         },
         "runtime": {
@@ -102,7 +102,7 @@
       "Syncfusion.Xamarin.Buttons/16.4.0.52": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "16.4.0.52",
-          "Xamarin.Forms": "3.5.0.169047"
+          "Xamarin.Forms": "3.1.0.697729"
         },
         "runtime": {
           "lib/netstandard1.0/Syncfusion.Buttons.XForms.dll": {
@@ -143,7 +143,7 @@
           "Syncfusion.Xamarin.Core": "16.4.0.52",
           "Syncfusion.Xamarin.GridCommon": "16.4.0.52",
           "Syncfusion.Xamarin.SfNumericTextBox": "16.4.0.52",
-          "Xamarin.Forms": "3.5.0.169047"
+          "Xamarin.Forms": "3.1.0.697729"
         },
         "runtime": {
           "lib/netstandard1.0/Syncfusion.Data.Portable.dll": {
@@ -161,7 +161,7 @@
           "Syncfusion.Xamarin.Core": "16.4.0.52",
           "Syncfusion.Xamarin.DataSource": "16.4.0.52",
           "Syncfusion.Xamarin.GridCommon": "16.4.0.52",
-          "Xamarin.Forms": "3.5.0.169047"
+          "Xamarin.Forms": "3.1.0.697729"
         },
         "runtime": {
           "lib/netstandard1.0/Syncfusion.SfListView.XForms.dll": {
@@ -173,7 +173,7 @@
       "Syncfusion.Xamarin.SfNumericTextBox/16.4.0.52": {
         "dependencies": {
           "Syncfusion.Xamarin.Core": "16.4.0.52",
-          "Xamarin.Forms": "3.5.0.169047"
+          "Xamarin.Forms": "3.1.0.697729"
         },
         "runtime": {
           "lib/netstandard1.0/Syncfusion.SfNumericTextBox.XForms.dll": {
@@ -182,7 +182,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.5.0.169047": {
+      "Xamarin.Forms/3.1.0.697729": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -311,12 +311,12 @@
       "path": "syncfusion.xamarin.sfnumerictextbox/16.4.0.52",
       "hashPath": "syncfusion.xamarin.sfnumerictextbox.16.4.0.52.nupkg.sha512"
     },
-    "Xamarin.Forms/3.5.0.169047": {
+    "Xamarin.Forms/3.1.0.697729": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ybupzRr8C93lEDyeCI4am3XTervm+4nhBVdb8StYS/ZRLQdvjrGyKkAonz/TGbz7Sjln05KDWwQts4moE9HUgg==",
-      "path": "xamarin.forms/3.5.0.169047",
-      "hashPath": "xamarin.forms.3.5.0.169047.nupkg.sha512"
+      "sha512": "sha512-YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
+      "path": "xamarin.forms/3.1.0.697729",
+      "hashPath": "xamarin.forms.3.1.0.697729.nupkg.sha512"
     }
   }
 }

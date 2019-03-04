@@ -1415,6 +1415,7 @@ namespace Nudge_.Droid
 			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_valueChangeMode = global::Nudge_.Droid.Resource.Styleable.SfNumericTextBox_valueChangeMode;
 			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermark = global::Nudge_.Droid.Resource.Styleable.SfNumericTextBox_watermark;
 			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermarkColor = global::Nudge_.Droid.Resource.Styleable.SfNumericTextBox_watermarkColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Nudge_.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

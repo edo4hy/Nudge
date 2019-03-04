@@ -7,7 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Support.V4.App;
-using Android.Support.V7.App;
+//using Android.Support.V7.App;
 
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 //using Plugin.Toasts;
@@ -41,5 +41,6 @@ namespace Nudge_.Droid
 
         }
     }
+    
 }
 

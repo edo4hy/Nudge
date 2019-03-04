@@ -1,26 +1,34 @@
 ﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_.iOS/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_.Android/Infrastructure/SqliteNotificationRepository.cs">
     <Files>
-      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="27" Column="13" />
-      <File FileName="../Projects/Test_Drag_Drop/Test_Drag_Drop.iOS/AppDelegate.cs" Line="27" Column="13" />
+      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="20" Column="20" />
+      <File FileName="Nudge_/Nudge_.Android/MainActivity.cs" Line="46" Column="1" />
+      <File FileName="Nudge_/Nudge_.Android/Infrastructure/AcrSqliteConnection.cs" Line="10" Column="21" />
+      <File FileName="Nudge_/Nudge_.Android/Infrastructure/SqliteNotificationRepository.cs" Line="16" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
-            <Node name="Nudge_.iOS" expanded="True">
-              <Node name="AppDelegate.cs" selected="True" />
+            <Node name="Nudge_" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Nudge_.Android" expanded="True">
+              <Node name="Infrastructure" expanded="True">
+                <Node name="SqliteNotificationRepository.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
-          <Node name="Test_Drag_Drop" expanded="True">
-            <Node name="Test_Drag_Drop.iOS" expanded="True" />
-          </Node>
+          <Node />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.371C2C57-0C13-42AB-8D31-892F9F85F339" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
