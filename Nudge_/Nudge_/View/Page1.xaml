@@ -3,16 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nudge_.View.Page1"
              xmlns:local="clr-namespace:SampleBrowser.SfListView"
-                  xmlns:sample="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
-                  xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
-                  xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
-                  xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
-                  xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
+              xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+              xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
-<!--            <sample:ImagePathConverter x:Key="ImagePathConverter"/>-->
         </ResourceDictionary>
      </ContentPage.Resources>
 
@@ -74,10 +72,10 @@
 
                             <syncfusion:DragIndicatorView Grid.Column="2" ListView="{x:Reference listView}" HorizontalOptions="Center" VerticalOptions="Center">
                                 <Grid Padding="10, 20, 20, 20">
-                                    <!--<local:SfImage Source="{Binding ., Converter={StaticResource ImagePathConverter }, ConverterParameter=SampleBrowser.SfListView.DragIndicator.png}"
+                                 <!--   <local:SfImage Source="{Binding ., Converter={StaticResource ImagePathConverter }, ConverterParameter=SampleBrowser.SfListView.DragIndicator.png}"
 									VerticalOptions="Center" HeightRequest="60" WidthRequest="60"
                            			HorizontalOptions="Center" />-->
-                                </Grid>
+                                 </Grid>
                             </syncfusion:DragIndicatorView>
                         </Grid>
                     </Frame>

@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Syncfusion.ListView.XForms.iOS;
 
 namespace Nudge_.iOS
 {
@@ -24,7 +25,7 @@ namespace Nudge_.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            SfListViewRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
     }

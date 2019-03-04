@@ -8,6 +8,8 @@
     <Compile Remove="Libraries\**" />
     <EmbeddedResource Remove="Libraries\**" />
     <None Remove="Libraries\**" />
+    <Compile Remove="View\Page1.xaml.cs" />
+    <EmbeddedResource Remove="View\Page1.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-<!--    <PackageReference Include="SampleBrowser.Core" Version="16.4.0.52" />-->
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
     <PackageReference Include="SQLite.Net-PCL" Version="3.1.1" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="16.4.0.52" />
@@ -29,7 +30,7 @@
     <PackageReference Include="Syncfusion.Xamarin.GridCommon" Version="16.4.0.52" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="16.4.0.52" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.4.0.52" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,9 +47,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ListViewTest1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\RatePages\BrowseSliders.xaml">
