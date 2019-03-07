@@ -74,17 +74,21 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-
+    <StackLayout Padding="0,40,0,10"/>
     <syncfusion:SfListView x:Name="listView"
-			ItemSize="60" BackgroundColor="#FFE8E8EC"
-			GroupHeaderSize="50"
-			AllowGroupExpandCollapse="false"
-      		DragStartMode="OnHold,OnDragIndicator"
-			IsStickyGroupHeader="false" SelectionMode="None">
+                ItemSize="60"
+			    BackgroundColor="#FFE8E8EC"
+			    ItemTemplate="{StaticResource editRatePageSelector}"
+                DragStartMode="OnHold"
+                SelectionMode="None"
+                QueryItemSize="Handle_QueryItemSize"
+               AutoFitMode="Height"
+              >
+        </syncfusion:SfListView>
 
-        <syncfusion:SfListView.Behaviors>
+       <!-- <syncfusion:SfListView.Behaviors>
             <local1:ListViewItemReorderingBehavior/>
-        </syncfusion:SfListView.Behaviors>
+        </syncfusion:SfListView.Behaviors>-->
 
         <!--Built in Cells-->
  
@@ -104,5 +108,5 @@
       </DataTemplate>
     </ListView.ItemTemplate>
     -->
-  </syncfusion:SfListView>
+ 
 </ContentPage>

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,16 +20,37 @@ namespace Nudge_.ViewModel
      * For Edit Views they are deleted through code behind the view whcih then calls
      * Remove functions in this VM and the values are update in the database
      */
-    public class RatePageViewModel : ContentPage, IAsyncInitialization
+    public partial class RatePageViewModel : ContentPage, IAsyncInitialization
     {
         StackLayout sliderHolder;
         StackLayout questionHolder;
 
         private bool isEditPage;
 
+        private bool isDeleteButtonVisible;
+
+        public bool IsDeleteButtonVisible
+        {
+            get
+            {
+                return isDeleteButtonVisible;
+            }
+            set
+            {
+                isDeleteButtonVisible = value;
+                OnPropertyChanged("IsVisible");
+            }
+        }
+
         public INavigation Navigation;
 
         public TrulyObservableCollection<RateSlider> RateSliders = new TrulyObservableCollection<RateSlider>();
+
+        public TrulyObservableCollection<RateQuestionCombo> editPageElements = new TrulyObservableCollection<RateQuestionCombo>();
+
+        public TrulyObservableCollection<RateQuestionCombo> editPageElementsAltered = new TrulyObservableCollection<RateQuestionCombo>();
+
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -45,6 +67,8 @@ namespace Nudge_.ViewModel
             //QuestionAddData();
             //AddAnswers();
             Initialization = InitializeAysnc();
+            // just a test to see if you and add both - should delete but maintian for future test atm 
+          
 
             //GetQuestions();
             //GetSliders();
@@ -55,6 +79,17 @@ namespace Nudge_.ViewModel
             addSlider = new Command(NavigateToAddSlider);
             addQuestion = new Command(NavigateToAddQuestion);
         }
+
+        public RatePageViewModel(bool isEdit) {
+
+            Initialization = InitializeAysnc();
+
+            this.isEditPage = isEdit;
+            addSlider = new Command(NavigateToAddSlider);
+            addQuestion = new Command(NavigateToAddQuestion);
+
+        }
+
 
         ICommand addSlider;
         public ICommand AddSlider
@@ -70,9 +105,11 @@ namespace Nudge_.ViewModel
 
         private async Task InitializeAysnc()
         {
-            await GetSliders();
-            await GetQuestions();
-            
+            //await GetSliders();
+            //await GetQuestions();
+
+            await GetSliderAndQuestion();
+
         }
 
         public void AddSliderdata()
@@ -262,68 +299,107 @@ namespace Nudge_.ViewModel
             await App.Database.SaveQuestionAsync(question);
         }
 
-        public async Task GetSliders()
-        {
-            List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
-            await Task.Delay(100);
-            foreach (RateSlider r in slidersList)
-            {
-                
-                if (r.InUse == true)
-                {
-                    if (isEditPage == true)
-                    {
-                        if (r == null) return;
-                        if (sliderHolder == null) return;
-                        if (sliderHolder.Children == null) return;
-
-                        sliderHolder.Children.Add(new EditSliderView(r, this));
-                    }
-                    else
-                    {
-                        if (r == null) return;
-                        if (sliderHolder == null) return;
-                        if (sliderHolder.Children == null) return;
-
-                        SliderView sw = new SliderView(r);
-                        sliderHolder.Children.Add(sw);
-                    }
-                }
-            }
-        }
-
         //public async Task GetSliders()
         //{
         //    List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
         //    await Task.Delay(100);
         //    foreach (RateSlider r in slidersList)
         //    {
+                
         //        if (r.InUse == true)
         //        {
-        //            RateSliders.Add(r);
+        //            if (isEditPage == true)
+        //            {
+        //                if (r == null) return;
+        //                if (sliderHolder == null) return;
+        //                if (sliderHolder.Children == null) return;
+
+        //                sliderHolder.Children.Add(new EditSliderView(r, this));
+        //            }
+        //            else
+        //            {
+        //                if (r == null) return;
+        //                if (sliderHolder == null) return;
+        //                if (sliderHolder.Children == null) return;
+
+        //                SliderView sw = new SliderView(r);
+        //                sliderHolder.Children.Add(sw);
+        //            }
         //        }
         //    }
         //}
 
-        public async Task GetQuestions()
+
+
+        //public async Task GetQuestions()
+        //{
+        //    List<Question> questionList = await App.Database.GetQuestionsAsync();
+        //    await Task.Delay(100);
+        //    foreach (Question q in questionList)
+        //    {
+        //        if (q.InUse == true)
+        //        {
+        //            if (isEditPage == true)
+        //            {
+        //                questionHolder.Children.Add(new EditQuestionView(q, this));
+        //            }
+        //            else
+        //            {
+        //                List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
+        //                questionHolder.Children.Add(new QuestionView(q, answerList));
+        //            }
+        //        }
+        //    }
+        //}
+
+
+        public async Task GetSliderAndQuestion()
         {
-            List<Question> questionList = await App.Database.GetQuestionsAsync();
+            List<Question> questionlist = await App.Database.GetQuestionsAsync();
             await Task.Delay(100);
-            foreach (Question q in questionList)
+            List<RateSlider> sliderlist = await App.Database.GetSlidersAysnc();
+            await Task.Delay(100);
+
+            foreach (RateSlider r in sliderlist)
             {
-                if (q.InUse == true)
+                //r.InUse = true;
+                if(r.InUse == true)
                 {
-                    if (isEditPage == true)
+                    editPageElements.Add(new RateQuestionCombo
                     {
-                        questionHolder.Children.Add(new EditQuestionView(q, this));
-                    }
-                    else
-                    {
-                        List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
-                        questionHolder.Children.Add(new QuestionView(q, answerList));
-                    }
+                        RateSlider = r,
+                        Order = r.Order,
+                    });
                 }
             }
+
+            foreach(Question q in questionlist)
+            {
+                //q.InUse = true;
+                if(q.InUse == true)
+                {
+                    editPageElements.Add(new RateQuestionCombo
+                    {
+                        Question = q,
+                        Order =   q.Order
+                    });
+                }
+            }
+
+            // Sort by Order by 
+            var a = editPageElements.OrderBy(keySelector: p => p.Order).ToList();
+            editPageElements.Clear();
+            editPageElementsAltered.Clear();
+            int i = 0;
+            foreach (var item in a)
+            {
+                i++;
+                editPageElements.Add(item);
+                editPageElementsAltered.Add(item);
+            }
+            Console.WriteLine("altered out " + i);
+
+
         }
 
         public async void GetAnswers(Question q)
@@ -348,16 +424,6 @@ namespace Nudge_.ViewModel
             await Navigation.PushAsync(new BrowseQuestionTabbed());
         }
 
-        //public void AddDivider(StackLayout holder)
-        //{
-        //    BoxView bv = new BoxView();
-        //    bv.WidthRequest = 1000;
-        //    bv.HeightRequest = 0.5;
-        //    bv.Opacity = 0.5;
-        //    bv.HorizontalOptions = LayoutOptions.Center;
-        //    bv.Color = Color.Black;
-
-        //    holder.Children.Add(bv);
-        //}
+     
     }
 }

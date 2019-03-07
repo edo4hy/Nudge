@@ -1,70 +1,100 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
+             xmlns:ViewModels="clr-namespace:Nudge_.ViewModel"
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
+             xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             xmlns:shared="clr-namespace:Nudge_.Shared"
              x:Class="Nudge_.View.EditRatePage">
     <ContentPage.Resources>
         <ResourceDictionary>
+            
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+            <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
+            
+             <DataTemplate x:Key="sliderTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10">
+                        <StackLayout Padding="0" >
+                            <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Start" WidthRequest="1000">
+                                    <StackLayout>
+                                        <Label FontSize="Medium" x:Name="SliderTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Padding="0, 10, 0, 10">
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                            <Label x:Name="NegativeAnswer" Text="{Binding NegativeAnswer}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                            <Label x:Name="PositiveAnswer" Text="{Binding PositiveAnswer}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            
+              <DataTemplate x:Key="questionTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10" >
+                        <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Start"  >
+                                <StackLayout x:Name="QuestionSearchBar" HorizontalOptions="CenterAndExpand" >
+                                    <Label FontSize="Medium" x:Name="QuestionTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            
+            <shared:EditRatePageSelector x:Key="editRatePageSelector" 
+                            QuestionTemplate="{StaticResource questionTemplate}"
+                            SliderTemplate="{StaticResource sliderTemplate}"/>
+
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout VerticalOptions="StartAndExpand">
-                <Label Text="How are you feeling" HorizontalOptions="CenterAndExpand"/>
-                <StackLayout  x:Name="SliderHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
-                    <!--<ListView HasUnevenRows="True"
-                              x:Name="SliderListView"
-                              SelectionMode="Single">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ContentView>
-                                        <StackLayout Padding="10">
-                                            <StackLayout Padding="0" >
-                                                <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
-                                                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" WidthRequest="1000">
-                                                        <StackLayout>
-                                                            <Label FontSize="Medium" x:Name="SliderTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
-                                                        </StackLayout>
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                                                                <Label x:Name="NegativeAnswer" Text="{Binding NegativeAnswer}" />
-                                                            </StackLayout>
-                                                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
-                                                                <Label x:Name="PositiveAnswer" Text="{Binding PositiveAnswer}"/>
-                                                            </StackLayout>
-                                                        </StackLayout>
-                                                    </StackLayout>
-                                                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Padding="15, 10, 0, 10">
-                                                        <Image Source="negSign.png"  HeightRequest="17" VerticalOptions="CenterAndExpand"  >
-                                                            --><!--<Image.GestureRecognizers>
-                                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                                                            </Image.GestureRecognizers>--><!--
-                                                        </Image>
-                                                    </StackLayout>
-                                                </StackLayout>
-                                            </StackLayout>
-                                            <BoxView WidthRequest="1000" HeightRequest="0.5" Opacity="0.5" HorizontalOptions="Center" Color="Black">
-                                            </BoxView>
-                                        </StackLayout>
-                                    </ContentView>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>-->
-                </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Button Text="Add Slider" Command="{Binding AddSlider}"></Button>
+        <StackLayout Padding="0">
+            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>
+                <StackLayout HeightRequest="45" Margin="-10" BackgroundColor="#2196F3">
+                    <StackLayout HeightRequest="45" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" >
+                            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <StackLayout Padding="20, 0, 0, 0">
+                                    <Label Text="Edit Rate Page" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="End" Padding="0, 5, 20, 5">
+                                <Image Source="plusSign.png"  HeightRequest="17" VerticalOptions="CenterAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Add_Elment_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
                     </StackLayout>
-                <StackLayout  x:Name="QuestionHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                    <StackLayout HeightRequest="45" x:Name="deleteButton" IsVisible="false" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image Source="Delete.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label x:Name="deleteLabel" Text="Delete Item" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" />
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button Text="Add Question" Command="{Binding AddQuestion}"></Button>
-                </StackLayout>
-            </StackLayout>
-        </ScrollView>
+
+          <syncfusion:SfListView x:Name="EditRateListView"
+                                   ItemSize="120"
+                                   AllowGroupExpandCollapse="false"
+                                   ItemTemplate="{StaticResource editRatePageSelector}"
+                                   BackgroundColor="#FFE8E8EC"
+                                   DragStartMode="OnHold"
+                                   SelectionMode="None"
+                                   AutoFitMode="Height"
+                                   ItemDragging="Handle_ItemDragging">
+                 
+            </syncfusion:SfListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

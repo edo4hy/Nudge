@@ -13,7 +13,7 @@ namespace Nudge_.Shared
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            return ((Question)item).InUse == true ? SliderTemplate : QuestionTemplate;
+            return ((RateQuestionCombo)item).RateSlider != null ? SliderTemplate : QuestionTemplate;
         }
     }
 }

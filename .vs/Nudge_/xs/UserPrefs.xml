@@ -1,32 +1,49 @@
-﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_.Android/Infrastructure/SqliteNotificationRepository.cs">
+﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/RatePage.xaml">
     <Files>
-      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="20" Column="20" />
-      <File FileName="Nudge_/Nudge_.Android/MainActivity.cs" Line="46" Column="1" />
-      <File FileName="Nudge_/Nudge_.Android/Infrastructure/AcrSqliteConnection.cs" Line="10" Column="21" />
-      <File FileName="Nudge_/Nudge_.Android/Infrastructure/SqliteNotificationRepository.cs" Line="16" Column="29" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml.cs" Line="91" Column="10" />
+      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="365" Column="34" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" Line="99" Column="13" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" Line="16" Column="15" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Node name="DragAndDrop" expanded="True">
+            <Node name="DragAndDrop" expanded="True">
+              <Node name="ViewModel" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+            <Node name="DragAndDrop.Droid" expanded="True" />
+          </Node>
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="Model" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="RatePages" expanded="True">
+                  <Node name="RatePage.xaml" expanded="True" selected="True" />
+                </Node>
               </Node>
+              <Node name="ViewModel" expanded="True" />
             </Node>
             <Node name="Nudge_.Android" expanded="True">
-              <Node name="Infrastructure" expanded="True">
-                <Node name="SqliteNotificationRepository.cs" selected="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
               </Node>
             </Node>
+            <Node name="Nudge_.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
           </Node>
-          <Node />
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.oreo_8_1" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.371C2C57-0C13-42AB-8D31-892F9F85F339" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

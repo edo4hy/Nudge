@@ -8,8 +8,8 @@ namespace Nudge_.Model
 {
     public class RateSlider : INotifyPropertyChanged
     {
-        internal string negativeAnswer;
-        internal string positiveAnswer;
+        //internal string negativeAnswer;
+        //internal string positiveAnswer;
 
         [PrimaryKey, AutoIncrement]
         public int SliderId             { get; set; }
@@ -19,6 +19,7 @@ namespace Nudge_.Model
         public bool InUse               { get; set; }
         public int Order                { get; set; }
         public bool Created             { get; set; }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

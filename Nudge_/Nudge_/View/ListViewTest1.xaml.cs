@@ -13,44 +13,81 @@ namespace Nudge_.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListViewTest1 : ContentPage
     {
-        public ObservableCollection<Question> Items { get; set; }
+        void Handle_QueryItemSize(object sender, Syncfusion.ListView.XForms.QueryItemSizeEventArgs e)
+        {
+            if (e.ItemIndex == 1)
+            {
+                e.ItemSize = 300;
+                e.Handled = true;
+            }
+        }
+
+        public ObservableCollection<RateQuestionCombo> Items { get; set; }
 
         public ListViewTest1()
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<Question>
+            Items = new ObservableCollection<RateQuestionCombo>
             {
-               new Question
+               new RateQuestionCombo
                {
-                   InUse = true,
-                   QuestionId = 101,
-                   Title = "Question 1",
+                   Question = new Question
+                   {
+                       InUse = true,
+                       QuestionId = 101,
+                       Title = "Question 1",
+                   }
                },
-               new Question
+               new RateQuestionCombo
                {
-                   InUse = true,
-                   QuestionId = 102,
-                   Title = "Question 2",
+                    Question = new Question
+                   {
+                       InUse = true,
+                       QuestionId = 102,
+                       Title = "Question 2",
+                   }
                },
-               new Question
+               new RateQuestionCombo
                {
-                   InUse = false,
-                   QuestionId = 103,
-                   Title = "Question 3",
+                   Question = new Question
+                   {
+                       InUse = false,
+                       QuestionId = 103,
+                       Title = "Question 3",
+                   },
                },
-               new Question
+               new RateQuestionCombo
                {
-                   InUse = true,
-                   QuestionId = 104,
-                   Title = "Question 4",
+                   Question = new Question
+                   {
+                      InUse = true,
+                      QuestionId = 104,
+                      Title = "Question 4",
+                   },
                },
-               new Question
+               new RateQuestionCombo
                {
-                   InUse = false,
-                   QuestionId = 105,
-                   Title = "Question 5",
+                   RateSlider = new RateSlider
+                   {
+                       InUse = true,
+                       SliderId = 112,
+                       Title = "Question one ",
+                       NegativeAnswer = " Neagtaive one ",
+                       PositiveAnswer = " Positive one"
+                   }
                },
+               new RateQuestionCombo
+               {
+                   RateSlider = new RateSlider
+                   {
+                       InUse = true,
+                       SliderId = 124,
+                       Title = "Question two",
+                       NegativeAnswer = " Negative two",
+                       PositiveAnswer = " Positive two"
+                   }
+               }
             };
 
             listView.ItemsSource = Items;

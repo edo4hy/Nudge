@@ -101,6 +101,9 @@
     <Compile Include="Notifications\UNNotificationsImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\NudgeSQLite3.db3" />
+    <BundleResource Include="Resources\Delete.png" />
+    <BundleResource Include="Resources\negSign.png" />
+    <BundleResource Include="Resources\plusSign.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
