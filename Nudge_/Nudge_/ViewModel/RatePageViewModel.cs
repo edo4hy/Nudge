@@ -78,6 +78,8 @@ namespace Nudge_.ViewModel
 
             addSlider = new Command(NavigateToAddSlider);
             addQuestion = new Command(NavigateToAddQuestion);
+            addCombo = new Command(NavigateToAddSlider);
+
         }
 
         public RatePageViewModel(bool isEdit) {
@@ -87,6 +89,8 @@ namespace Nudge_.ViewModel
             this.isEditPage = isEdit;
             addSlider = new Command(NavigateToAddSlider);
             addQuestion = new Command(NavigateToAddQuestion);
+
+            addCombo = new Command(NavigateToAddSlider);
 
         }
 
@@ -101,6 +105,12 @@ namespace Nudge_.ViewModel
         public ICommand AddQuestion
         {
             get { return addQuestion; }
+        }
+
+        ICommand addCombo;
+        public ICommand AddCombo
+        {
+            get { return addCombo; }
         }
 
         private async Task InitializeAysnc()
@@ -415,13 +425,13 @@ namespace Nudge_.ViewModel
         public async void NavigateToAddSlider()
         {
             Console.WriteLine("adding slider");
-            await Navigation.PushAsync(new BrowseSliderTabbed());
-        }
+            await Navigation.PushAsync(new BrowseSliderTabbed(this));
+        } 
 
         public async void NavigateToAddQuestion()
         {
             Console.WriteLine(" Adding Question");
-            await Navigation.PushAsync(new BrowseQuestionTabbed());
+            await Navigation.PushAsync(new BrowseQuestionTabbed(this));
         }
 
      

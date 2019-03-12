@@ -45,6 +45,8 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/R.cs.flag
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/R.txt
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/uploadflags.txt
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/res/drawable/delete.png
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/res/drawable/plussign.png
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/bin/Debug/Mono.Android.pdb
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/linksrc/Nudge_.Android.pdb
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/linksrc/Mono.Android.pdb

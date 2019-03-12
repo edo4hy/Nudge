@@ -1,40 +1,36 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/RatePage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs">
     <Files>
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml.cs" Line="91" Column="10" />
-      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="365" Column="34" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" Line="99" Column="13" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" Line="16" Column="15" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs" Line="38" Column="53" />
+      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="431" Column="50" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" Line="29" Column="90" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml.cs" Line="96" Column="12" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml.cs" Line="25" Column="60" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml" Line="7" Column="14" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml.cs" Line="19" Column="10" />
+      <File FileName="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" Line="109" Column="17" />
+      <File FileName="Nudge_/Nudge_/ViewModel/BrowseSliderViewModel.cs" Line="135" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DragAndDrop" expanded="True">
-            <Node name="DragAndDrop" expanded="True">
-              <Node name="ViewModel" expanded="True" />
-              <Node name="MainPage.xaml" expanded="True" />
-            </Node>
-            <Node name="DragAndDrop.Droid" expanded="True" />
-          </Node>
+          <Node />
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Model" expanded="True" />
+              <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
                 <Node name="RatePages" expanded="True">
-                  <Node name="RatePage.xaml" expanded="True" selected="True" />
+                  <Node name="BrowseQuestions.xaml" expanded="True" />
+                  <Node name="BrowseQuestionTabbed.xaml" expanded="True" />
+                  <Node name="EditRatePage.xaml" expanded="True" />
                 </Node>
               </Node>
-              <Node name="ViewModel" expanded="True" />
-            </Node>
-            <Node name="Nudge_.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable" expanded="True" />
+              <Node name="ViewModel" expanded="True">
+                <Node name="BrowseQuestionViewModel.cs" selected="True" />
               </Node>
+              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Nudge_.iOS" expanded="True">
-              <Node name="Resources" expanded="True" />
-            </Node>
+            <Node name="Nudge_.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>

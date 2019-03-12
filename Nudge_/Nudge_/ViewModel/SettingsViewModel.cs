@@ -34,7 +34,6 @@ namespace Nudge_.ViewModel
             Title = "Hello this is the title";
 
             Initialization = GetSettings();
-            
         }
 
 

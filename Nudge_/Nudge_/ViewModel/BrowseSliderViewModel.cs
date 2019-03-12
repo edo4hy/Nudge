@@ -77,19 +77,19 @@ namespace Nudge_.ViewModel
 
         public async void AddSlider()
         {
-            //RateSlider slider = new RateSlider
-            //{
-            //    Title = newSliderTitle.Text.ToString(),
-            //    NegativeAnswer = newSliderNegative.Text.ToString(),
-            //    PositiveAnswer = newSliderPositive.Text.ToString(),
-            //    InUse = false,
-            //    Created = true
-            //};
+            RateSlider slider = new RateSlider
+            {
+                Title = newSliderTitle.Text.ToString(),
+                NegativeAnswer = newSliderNegative.Text.ToString(),
+                PositiveAnswer = newSliderPositive.Text.ToString(),
+                InUse = false,
+                Created = true
+            };
 
             RateSlider old = await App.Database.GetSliderAysnc(3);
 
-            //slidersCreated.Add(slider);
-            // await App.Database.SaveSliderAsync(slider);
+            slidersCreated.Add(slider);
+             await App.Database.SaveSliderAsync(slider);
 
             newSliderTitle.Text = "";
             newSliderNegative.Text = "";
@@ -104,6 +104,7 @@ namespace Nudge_.ViewModel
             sliderAddedLabel.IsVisible = false;
         }
 
+
         bool sliderTappedBeingExecuted = false;
         public void SliderTappedFunc(object obj)
         {
@@ -115,13 +116,8 @@ namespace Nudge_.ViewModel
 
             UpdateSlider(slider);
 
-
-            //await App.Database.SaveSliderAsync(old);
-
-
             sliderTappedBeingExecuted = false;
 
-            //await Navigation.PopAsync();
         }
 
         private async void UpdateSlider(RateSlider slider)
@@ -129,21 +125,18 @@ namespace Nudge_.ViewModel
             RateSlider oldSlider = await App.Database.GetSliderAysnc(slider.SliderId);
 
             oldSlider.InUse = true;
-            //oldSlider.negativeAnswer = "Has been changed";
-            //oldSlider.positiveAnswer = "Has been changed";
-            //oldSlider.Title = "Has been changed";
+            oldSlider.Order = rateVM.editPageElements.Count;
 
-            
+            RateQuestionCombo rqc = new RateQuestionCombo
+            {
+                RateSlider = oldSlider
+            };
+
+            rateVM.editPageElements.Add(rqc);
 
             await App.Database.SaveSliderAsync(oldSlider);
 
-            //await Navigation.PushAsync(new NavigationPage(new EditRatePage()));
-
-            Console.WriteLine("Whats this whats this - is it the pop that is broken");
-
             await Navigation.PopAsync();
-
-             //App.Current.MainPage = new MasterDetailPage1(new EditRatePage());
          
         }
 

@@ -15,10 +15,10 @@ namespace Nudge_.View
     {
         public BrowseQuestionViewModel viewModel;
 
-        public BrowseQuestionTabbed ()
+        public BrowseQuestionTabbed (RatePageViewModel rpvm)
         {
             InitializeComponent();
-            viewModel = new BrowseQuestionViewModel();
+            viewModel = new BrowseQuestionViewModel(rpvm);
 
             viewModel.Navigation = Navigation;
             BindingContext = viewModel;

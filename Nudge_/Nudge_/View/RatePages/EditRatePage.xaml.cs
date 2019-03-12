@@ -64,7 +64,6 @@ namespace Nudge_.View
                     Console.WriteLine(r.Title + " " + r.Order + "  " + i);
                     r.Order = i++;
                 }
-
             }
         }
 
@@ -80,6 +79,7 @@ namespace Nudge_.View
             {
                 Navigation = Navigation
             };
+            BindingContext = vm;
             this.deleteButton.IsVisible = false;
             EditRateListView.ItemsSource = vm.editPageElements;
             //EditRateListView.QueryItemSize += ListView_QueryItemSize;
@@ -89,6 +89,11 @@ namespace Nudge_.View
         {
             Console.WriteLine("asdljfhasdf");
         }
+
+        //async void Handle_Tapped(object sender, System.EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new BrowseSliders());
+        //}
 
         private void ListView_QueryItemSize(object sender, Syncfusion.ListView.XForms.QueryItemSizeEventArgs e)
         {

@@ -58,27 +58,33 @@
                             QuestionTemplate="{StaticResource questionTemplate}"
                             SliderTemplate="{StaticResource sliderTemplate}"/>
 
-        </ResourceDictionary>
+     </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Padding="0">
-            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>
-                <StackLayout HeightRequest="45" Margin="-10" BackgroundColor="#2196F3">
-                    <StackLayout HeightRequest="45" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" >
-                            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <StackLayout Padding="20, 0, 0, 0">
+<!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
+                <StackLayout HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
+                    <StackLayout HeightRequest="50" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
+                            
+                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Button Text="Add Question" BackgroundColor="Gray" TextColor="Blue" Command="{Binding AddQuestion}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                     <Label Text="Edit Rate Page" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
                                 </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" HorizontalOptions="End" Padding="0, 5, 20, 5">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Button Text="Add Slider" BackgroundColor="Gray" TextColor="Blue" Command="{Binding AddSlider}"/>
+                                </StackLayout>
+                           
+                       <!--     <StackLayout Orientation="Vertical" HorizontalOptions="End" Padding="0, 5, 20, 5">
                                 <Image Source="plusSign.png"  HeightRequest="17" VerticalOptions="CenterAndExpand">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Add_Elment_Tapped" />
+                                        <TapGestureRecognizer Command="{Binding AddCombo}"  ></TapGestureRecognizer>
                                     </Image.GestureRecognizers>
                                 </Image>
-                            </StackLayout>
+                            </StackLayout>-->
                     </StackLayout>
-                    <StackLayout HeightRequest="45" x:Name="deleteButton" IsVisible="false" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout HeightRequest="50" x:Name="deleteButton" IsVisible="false" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                         <Image Source="Delete.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" HorizontalOptions="Center" />
                         <Label x:Name="deleteLabel" Text="Delete Item" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" />
                     </StackLayout>
@@ -95,6 +101,7 @@
                                    ItemDragging="Handle_ItemDragging">
                  
             </syncfusion:SfListView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

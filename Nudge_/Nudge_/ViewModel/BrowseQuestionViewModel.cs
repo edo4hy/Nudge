@@ -20,11 +20,15 @@ namespace Nudge_.ViewModel
 
         public INavigation Navigation;
 
-        public BrowseQuestionViewModel()
+        RatePageViewModel rpvm;
+
+        public BrowseQuestionViewModel(RatePageViewModel rpvm)
         {
             GetQuestions();
             addNewQuestion = new Command(AddQuestion);
             questionTapped = new Command(QuestionTappedFunc);
+
+            this.rpvm = rpvm;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -83,6 +87,7 @@ namespace Nudge_.ViewModel
 
         bool questionBeingExecuted = false;
 
+        // Called off ICommand 
         public void QuestionTappedFunc(object obj)
         {
             if (questionBeingExecuted) return;
@@ -91,16 +96,25 @@ namespace Nudge_.ViewModel
             questionBeingExecuted = true;
             Question question = (Question)obj;
 
-            UpdateQuestion(question);
+            UpdateQuestionSelected(question);
 
             questionBeingExecuted = false;
         }
 
-        private async void UpdateQuestion(Question question)
+        // Manage Question 
+        private async void UpdateQuestionSelected(Question question)
         {
             Question oldQuestion = await App.Database.GetQuestionAsync(question.QuestionId);
 
             oldQuestion.InUse = true;
+            oldQuestion.Order = rpvm.editPageElements.Count;
+
+            RateQuestionCombo rqc = new RateQuestionCombo
+            {
+                Question = oldQuestion
+            };
+
+            rpvm.editPageElements.Add(rqc);
 
             await App.Database.SaveQuestionAsync(oldQuestion);
 
