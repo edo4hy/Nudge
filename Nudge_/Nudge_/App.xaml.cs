@@ -37,8 +37,8 @@ namespace Nudge_
             //MainPage = new ListViewTest1();
 
             //MainPage = new ItemReordering();
-            MainPage = new NavigationPage(new EditRatePage());
-
+            //MainPage = new NavigationPage(new EditRatePage());
+            MainPage = new NavigationPage(new RatePage());
             //MainPage = new BrowseQuestionTabbed();
         }
 

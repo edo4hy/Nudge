@@ -25,9 +25,10 @@ namespace Nudge_.View
         public RatePage ()
 		{
 			InitializeComponent ();
-            vm = new RatePageViewModel(SliderHolder, QuestionHolder, false);
+            vm = new RatePageViewModel( false);
 
             BindingContext = vm;
+            this.RateListView.ItemsSource = vm.editPageElements;
         }
-	}
+    }
 }

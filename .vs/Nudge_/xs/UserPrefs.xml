@@ -1,15 +1,14 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/ViewModel/BrowseSliderViewModel.cs">
     <Files>
-      <File FileName="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs" Line="38" Column="53" />
-      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="431" Column="50" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" Line="29" Column="90" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml.cs" Line="96" Column="12" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml.cs" Line="25" Column="60" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml" Line="7" Column="14" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml.cs" Line="19" Column="10" />
-      <File FileName="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" Line="109" Column="17" />
-      <File FileName="Nudge_/Nudge_/ViewModel/BrowseSliderViewModel.cs" Line="135" Column="46" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" Line="22" Column="51" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/QuestionView.xaml" Line="25" Column="15" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/QuestionView.xaml.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" Line="34" Column="2" />
+      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="416" Column="10" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="53" Column="4" />
+      <File FileName="Nudge_/Nudge_/ViewModel/BrowseSliderViewModel.cs" Line="128" Column="61" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" Line="107" Column="15" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,16 +16,14 @@
           <Node />
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
                 <Node name="RatePages" expanded="True">
-                  <Node name="BrowseQuestions.xaml" expanded="True" />
-                  <Node name="BrowseQuestionTabbed.xaml" expanded="True" />
-                  <Node name="EditRatePage.xaml" expanded="True" />
+                  <Node name="QuestionView.xaml" expanded="True" />
+                  <Node name="RatePage.xaml" expanded="True" />
                 </Node>
               </Node>
               <Node name="ViewModel" expanded="True">
-                <Node name="BrowseQuestionViewModel.cs" selected="True" />
+                <Node name="BrowseSliderViewModel.cs" selected="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>

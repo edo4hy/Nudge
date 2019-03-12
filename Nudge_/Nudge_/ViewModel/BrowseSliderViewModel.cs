@@ -79,9 +79,9 @@ namespace Nudge_.ViewModel
         {
             RateSlider slider = new RateSlider
             {
-                Title = newSliderTitle.Text.ToString(),
-                NegativeAnswer = newSliderNegative.Text.ToString(),
-                PositiveAnswer = newSliderPositive.Text.ToString(),
+                Title = newSliderTitle.Text.Trim().ToString(),
+                NegativeAnswer = newSliderNegative.Text.Trim().ToString(),
+                PositiveAnswer = newSliderPositive.Text.Trim().ToString(),
                 InUse = false,
                 Created = true
             };

@@ -1,16 +1,90 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:Nudge_.Converters"
+             xmlns:ViewModels="clr-namespace:Nudge_.ViewModel"
+             xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
+             xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
+             xmlns:shared="clr-namespace:Nudge_.Shared"
              x:Class="Nudge_.View.RatePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Converters:FavouriteToImageConverter x:Key="boolToString"/>
+            <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+            <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
+            
+             <DataTemplate x:Key="sliderTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10">
+                        <StackLayout Padding="0" >
+                            <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  >
+                                    <StackLayout>
+                                        <Label FontSize="Medium" x:Name="SliderTitle" HorizontalOptions="Center" FormattedText="5" Text="{Binding Title}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Padding="0, 10, 0, 10">
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                            <Label x:Name="NegativeAnswer" Text="{Binding NegativeAnswer}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                            <Label x:Name="PositiveAnswer" Text="{Binding PositiveAnswer}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                     <StackLayout Orientation="Vertical" HorizontalOptions="Fill" >
+                                        <StackLayout Padding="5" >
+                                            <Slider x:Name="SliderValue" Maximum="100" Value="50"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            
+              <DataTemplate x:Key="questionTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10" >
+                        <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Start"  >
+                                <StackLayout x:Name="QuestionSearchBar" HorizontalOptions="CenterAndExpand" >
+                                    <Label FontSize="Medium" x:Name="QuestionTitle" HorizontalOptions="CenterAndExpand" Text="lasdjhflaksdhfasd fashdfk  alksdjfasdf aslkdjflaksdfj"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            
+            <shared:EditRatePageSelector x:Key="editRatePageSelector" 
+                            QuestionTemplate="{StaticResource questionTemplate}"
+                            SliderTemplate="{StaticResource sliderTemplate}"/>
+
+     </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout VerticalOptions="StartAndExpand">
-                <Label Text="How are you feeling" HorizontalOptions="CenterAndExpand"/>
-                <StackLayout  x:Name="SliderHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
+        <StackLayout Padding="0">
+<!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
+                <StackLayout HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
+                    <StackLayout HeightRequest="50" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
+                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="How are you today?" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout  x:Name="QuestionHolder" Orientation="Vertical" VerticalOptions="StartAndExpand">
-                </StackLayout>
-            </StackLayout>
-        </ScrollView>
+          <syncfusion:SfListView x:Name="RateListView"
+                                   ItemSize="120"
+                                   AllowGroupExpandCollapse="false"
+                                   ItemTemplate="{StaticResource editRatePageSelector}"
+                                   BackgroundColor="#FFE8E8EC"
+                                   SelectionMode="None"
+                                   AutoFitMode="Height">
+                 
+            </syncfusion:SfListView>
+            
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
