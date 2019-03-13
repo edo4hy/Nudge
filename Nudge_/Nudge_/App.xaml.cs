@@ -39,6 +39,7 @@ namespace Nudge_
             //MainPage = new ItemReordering();
             //MainPage = new NavigationPage(new EditRatePage());
             MainPage = new NavigationPage(new RatePage());
+            //MainPage = new MyPage();
             //MainPage = new BrowseQuestionTabbed();
         }
 

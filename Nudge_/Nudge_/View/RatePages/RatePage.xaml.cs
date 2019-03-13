@@ -30,5 +30,20 @@ namespace Nudge_.View
             BindingContext = vm;
             this.RateListView.ItemsSource = vm.editPageElements;
         }
+
+
+
+
+        async Task Handle_ItemAppearing(object sender, Syncfusion.ListView.XForms.ItemAppearingEventArgs e)
+        {
+            RateQuestionCombo rqc = (RateQuestionCombo)e.ItemData;
+            if(rqc.Question != null)
+            {
+                List<Answer> answers = await App.Database.GetAnswersAsync(rqc.Question.QuestionId);
+
+
+
+            }
+        }
     }
 }

@@ -172,6 +172,9 @@
 -r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.core/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll
 -r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.datasource/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll
 -r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.gridcommon/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll
+-r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.dll
+-r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.iOS.dll
+-r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox.ios/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.iOS.dll
 -r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfdatagrid/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Data.Portable.dll
 -r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfdatagrid/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.dll
 -r=/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfdatagrid/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfDataGrid.XForms.iOS.dll

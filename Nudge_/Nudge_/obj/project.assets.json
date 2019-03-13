@@ -141,6 +141,19 @@
           "lib/netstandard1.0/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfComboBox/16.4.0.52": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.4.0.52",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/netstandard1.0/Syncfusion.SfComboBox.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Syncfusion.SfComboBox.XForms.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfDataGrid/16.4.0.52": {
         "type": "package",
         "dependencies": {
@@ -591,6 +604,35 @@
         "syncfusion.xamarin.gridcommon.nuspec"
       ]
     },
+    "Syncfusion.Xamarin.SfComboBox/16.4.0.52": {
+      "sha512": "OBf4bSbyoQkDB3+obQsf2GPoG4Z/NGGq4Hvj1zOcCs9gUdmSWe/20YUVNmptXHZ2r5UVwtRY9foqhBw3sHAe+g==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfcombobox/16.4.0.52",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfComboBox.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfComboBox.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfComboBox.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.SfComboBox.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfComboBox.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfComboBox.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfComboBox.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.UWP/Properties/Syncfusion.SfComboBox.XForms.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.UWP/Syncfusion.SfComboBox.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.UWP/Themes/Generic.xaml",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.UWP/Themes/Generic.xbf",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.UWP/dropdownbuttonimage.png",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfComboBox.XForms.xml",
+        "syncfusion.xamarin.sfcombobox.16.4.0.52.nupkg.sha512",
+        "syncfusion.xamarin.sfcombobox.nuspec"
+      ]
+    },
     "Syncfusion.Xamarin.SfDataGrid/16.4.0.52": {
       "sha512": "hfH/9e/Ph7lMGosieSmlViIX6mHrxRPisda2cXgIHiCkRAP/S/4lzsCo4PtnJWQLLv82Pz71iBhdCnF7HrBWwg==",
       "type": "package",
@@ -857,6 +899,7 @@
       "Syncfusion.Xamarin.Buttons >= 16.4.0.52",
       "Syncfusion.Xamarin.Core >= 16.4.0.52",
       "Syncfusion.Xamarin.GridCommon >= 16.4.0.52",
+      "Syncfusion.Xamarin.SfComboBox >= 16.4.0.52",
       "Syncfusion.Xamarin.SfDataGrid >= 16.4.0.52",
       "Syncfusion.Xamarin.SfListView >= 16.4.0.52",
       "Xamarin.Forms >= 3.1.0.697729",
@@ -921,6 +964,10 @@
             "version": "[16.4.0.52, )"
           },
           "Syncfusion.Xamarin.GridCommon": {
+            "target": "Package",
+            "version": "[16.4.0.52, )"
+          },
+          "Syncfusion.Xamarin.SfComboBox": {
             "target": "Package",
             "version": "[16.4.0.52, )"
           },

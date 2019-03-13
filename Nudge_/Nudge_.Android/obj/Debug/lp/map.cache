@@ -16,6 +16,9 @@ Syncfusion.Data.Portable
 Syncfusion.DataSource.Portable
 Syncfusion.GridCommon.Portable
 Syncfusion.Licensing
+Syncfusion.SfComboBox.Android
+Syncfusion.SfComboBox.XForms.Android
+Syncfusion.SfComboBox.XForms
 Syncfusion.SfDataGrid.XForms.Android
 Syncfusion.SfDataGrid.XForms
 Syncfusion.SfListView.XForms.Android
@@ -47,9 +50,3 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
-netstandard
-System.Reflection.Extensions
-System.Resources.ResourceManager
-System.Diagnostics.Tools
-System.Linq.Queryable
-System.ComponentModel

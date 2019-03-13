@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+
 namespace Nudge_.ViewModel
 {
     /*
@@ -28,6 +29,8 @@ namespace Nudge_.ViewModel
         private bool isEditPage;
 
         private bool isDeleteButtonVisible;
+
+        public Syncfusion.ListView.XForms.SfListView rateListView;
 
         public bool IsDeleteButtonVisible
         {
@@ -95,6 +98,23 @@ namespace Nudge_.ViewModel
         }
 
 
+        public RatePageViewModel(bool isEdit, Syncfusion.ListView.XForms.SfListView rateListView)
+        {
+
+            Initialization = InitializeAysnc();
+
+            this.isEditPage = isEdit;
+            addSlider = new Command(NavigateToAddSlider);
+            addQuestion = new Command(NavigateToAddQuestion);
+
+            this.rateListView = rateListView;
+
+            addCombo = new Command(NavigateToAddSlider);
+            addAnswersToDropdown = new Command(AddAllAnswers);
+
+        }
+
+
         ICommand addSlider;
         public ICommand AddSlider
         {
@@ -112,6 +132,18 @@ namespace Nudge_.ViewModel
         {
             get { return addCombo; }
         }
+
+        ICommand addAnswersToDropdown;
+        public ICommand AddAnswersToDropdown
+        {
+            get { return AddAnswersToDropdown; }
+        }
+
+        public void AddAllAnswers()
+        {
+            Console.WriteLine("ljasdlkfjalksdjf");
+        }
+
 
         private async Task InitializeAysnc()
         {

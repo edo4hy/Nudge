@@ -84,6 +84,12 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>3.1.0.697729</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox.Android">
+      <Version>16.4.0.52</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DatabaseService.cs" />

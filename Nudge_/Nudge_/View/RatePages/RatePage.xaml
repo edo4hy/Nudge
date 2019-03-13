@@ -8,6 +8,8 @@
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
              xmlns:shared="clr-namespace:Nudge_.Shared"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib"
              x:Class="Nudge_.View.RatePage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -55,6 +57,31 @@
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
+                        <Grid>
+                            <combobox:SfComboBox HeightRequest="40"  MaximumDropDownHeight="200" IsEditableMode="true" >
+                                <combobox:SfComboBox.ComboBoxSource >
+                                    <ListCollection:List x:TypeArguments="x:String">
+                                        <x:String> 1920 x 1080 </x:String>
+                                        <x:String> 1680 x 1050 </x:String>
+                                        <x:String> 1600 x 900 </x:String>
+                                        <x:String> 1440 x 900 </x:String>
+                                        <x:String> 1400 x 1050 </x:String>
+                                        <x:String> 1366 x 768 </x:String>
+                                        <x:String> 1360 x 768 </x:String>
+                                        <x:String> 1280 x 1024 </x:String>
+                                        <x:String> 1280 x 960 </x:String>
+                                        <x:String> 1280 x 720 </x:String>
+                                        <x:String> 854 x 480 </x:String>
+                                        <x:String> 800 x 480 </x:String>
+                                        <x:String> 480 X 640 </x:String>
+                                        <x:String> 480 x 320 </x:String>
+                                        <x:String> 432 x 240 </x:String>
+                                        <x:String> 360 X 640 </x:String>
+                                        <x:String> 320 x 240 </x:String>
+                                    </ListCollection:List>
+                                </combobox:SfComboBox.ComboBoxSource>
+                            </combobox:SfComboBox> 
+                        </Grid>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
@@ -81,7 +108,9 @@
                                    ItemTemplate="{StaticResource editRatePageSelector}"
                                    BackgroundColor="#FFE8E8EC"
                                    SelectionMode="None"
-                                   AutoFitMode="Height">
+                                   AutoFitMode="Height"
+                                   ItemAppearing="Handle_ItemAppearing"
+                                 >
                  
             </syncfusion:SfListView>
             

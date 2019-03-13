@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace Nudge_.Model
 {
@@ -141,6 +144,23 @@ namespace Nudge_.Model
                 else
                 {
                     return;
+                }
+            }
+        }
+
+        private List<Answer> answers;
+        public  List<Answer> Answers
+        {
+             get
+            {
+                if(RateSlider != null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return answers;
+
                 }
             }
         }
