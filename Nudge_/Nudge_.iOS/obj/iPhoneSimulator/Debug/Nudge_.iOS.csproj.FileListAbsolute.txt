@@ -69,6 +69,12 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/bin/iPhoneSimulator/Debug/Nudge_.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/bin/iPhoneSimulator/Debug/Nudge_.pdb
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.csprojAssemblyReference.cache
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.csproj.CoreCompileInputs.cache
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.csproj.CopyComplete
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.exe
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.pdb
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/ibtool/_BundleResourceWithLogicalName.items
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/_PartialAppManifest.items
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/_BundleResourceWithLogicalName.items
@@ -78,9 +84,3 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/negSign.png
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/plusSign.png
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/
-/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.csprojAssemblyReference.cache
-/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.csproj.CoreCompileInputs.cache
-/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
-/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.csproj.CopyComplete
-/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.exe
-/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/Nudge_.iOS.pdb

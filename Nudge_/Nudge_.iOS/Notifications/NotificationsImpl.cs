@@ -28,5 +28,7 @@ namespace Plugin.Notifications
         public override void Vibrate(int ms) => this.impl.Vibrate(ms);
         public override Task<IEnumerable<Notification>> GetScheduledNotifications() => this.impl.GetScheduledNotifications();
         public override Task<bool> RequestPermission() => this.impl.RequestPermission();
+        public override Task CancelAll() => this.impl.CancelAll();
+        
     }
 }

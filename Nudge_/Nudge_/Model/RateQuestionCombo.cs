@@ -14,6 +14,8 @@ namespace Nudge_.Model
         public int RateQuestionComboId { get; set; }
         public int RateQuestionComboOrder { get; set; }
 
+        private int order;
+
         public string Title {
             get
             {
@@ -75,9 +77,13 @@ namespace Nudge_.Model
                 {
                     return RateSlider.Order;
                 }
-                else
+                else if(Question != null)
                 {
                     return Question.Order;
+                }
+                else
+                {
+                    return order;
                 }
             }
             set
@@ -87,10 +93,14 @@ namespace Nudge_.Model
                     RateSlider.Order = value;
                     App.Database.SaveSliderAsync(RateSlider);
                 }
-                else
+                else if(Question != null)
                 {
                     Question.Order = value;
                     App.Database.SaveQuestionAsync(Question);
+                }
+                else
+                {
+                    order = value;
                 }
             }
         }
@@ -163,7 +173,23 @@ namespace Nudge_.Model
 
                 }
             }
+            set
+            {
+                if(RateSlider != null)
+                {
+                    return;
+                }
+                else
+                {
+                    answers = value;
+                }
+            }
         }
+
+
+        public bool isButtonNotSpace;
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

@@ -54,6 +54,11 @@ namespace Nudge_.Data
             }
         }
 
+        //internal object GetSettingsAsync(int v)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         public Task<int> DeleteMessageAsync(Message message)
         {
             return database.DeleteAsync(message);

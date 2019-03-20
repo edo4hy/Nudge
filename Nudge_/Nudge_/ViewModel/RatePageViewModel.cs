@@ -82,11 +82,13 @@ namespace Nudge_.ViewModel
             addSlider = new Command(NavigateToAddSlider);
             addQuestion = new Command(NavigateToAddQuestion);
             addCombo = new Command(NavigateToAddSlider);
+            toHome = new Command(ToHomeChange);
+
 
         }
 
         public RatePageViewModel(bool isEdit) {
-
+            // Rate Page Normal 
             Initialization = InitializeAysnc();
 
             this.isEditPage = isEdit;
@@ -94,6 +96,7 @@ namespace Nudge_.ViewModel
             addQuestion = new Command(NavigateToAddQuestion);
 
             addCombo = new Command(NavigateToAddSlider);
+            toHome = new Command(ToHomeChange);
 
         }
 
@@ -111,6 +114,8 @@ namespace Nudge_.ViewModel
 
             addCombo = new Command(NavigateToAddSlider);
             addAnswersToDropdown = new Command(AddAllAnswers);
+
+            toHome = new Command(ToHomeChange);
 
         }
 
@@ -131,6 +136,13 @@ namespace Nudge_.ViewModel
         public ICommand AddCombo
         {
             get { return addCombo; }
+        }
+
+
+        ICommand toHome;
+        public ICommand ToHome
+        {
+            get { return toHome; }
         }
 
         ICommand addAnswersToDropdown;
@@ -341,13 +353,107 @@ namespace Nudge_.ViewModel
             await App.Database.SaveQuestionAsync(question);
         }
 
+        public void ToHomeChange()
+        {
+            App.Current.MainPage = new NavigationPage(new Top5Page());
+        }
+
+
+
+        public async Task GetSliderAndQuestion()
+        {
+            List<Question> questionlist = await App.Database.GetQuestionsAsync();
+            await Task.Delay(100);
+            List<RateSlider> sliderlist = await App.Database.GetSlidersAysnc();
+
+            foreach (RateSlider r in sliderlist)
+            {
+                //r.InUse = true;
+                if(r.InUse == true)
+                {
+                    editPageElements.Add(new RateQuestionCombo
+                    {
+                        RateSlider = r,
+                    });
+                }
+            }
+
+            foreach(Question q in questionlist)
+            {
+
+                //q.InUse = true;
+                if (q.InUse == true)
+                {
+                    RateQuestionCombo rccc = new RateQuestionCombo
+                    {
+                        Question = q,
+                        Answers = await App.Database.GetAnswersAsync(q.QuestionId)
+                    };
+
+                    editPageElements.Add(rccc);
+                }
+            }
+
+            //Add bottom elements 
+            editPageElements.Add(new RateQuestionCombo
+            {
+                Question = null,
+                RateSlider = null,
+                isButtonNotSpace = false,
+                Order = 1000
+            });
+
+            //editPageElements.Add(new RateQuestionCombo
+            //{
+            //    Question = null, 
+            //    isButtonNotSpace = true,
+            //    Order = 10001
+            //});
+
+            // Sort by Order by 
+            var a = editPageElements.OrderBy(keySelector: p => p.Order).ToList();
+            editPageElements.Clear();
+            editPageElementsAltered.Clear();
+            int i = 0;
+            foreach (var item in a)
+            {
+                i++;
+                editPageElements.Add(item);
+                editPageElementsAltered.Add(item);
+            }
+            Console.WriteLine("altered out " + i);
+
+        }
+
+        //public async void GetAnswers(Question q)
+        //{
+        //    List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
+            
+        //    foreach(Answer a in answerList)
+        //    {
+        //        q.Answers.Add(a);
+        //    }
+        //}
+
+        public async void NavigateToAddSlider()
+        {
+            Console.WriteLine("adding slider");
+            await Navigation.PushAsync(new BrowseSliderTabbed(this));
+        } 
+
+        public async void NavigateToAddQuestion()
+        {
+            Console.WriteLine(" Adding Question");
+            await Navigation.PushAsync(new BrowseQuestionTabbed(this));
+        }
+
         //public async Task GetSliders()
         //{
         //    List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
         //    await Task.Delay(100);
         //    foreach (RateSlider r in slidersList)
         //    {
-                
+
         //        if (r.InUse == true)
         //        {
         //            if (isEditPage == true)
@@ -394,78 +500,5 @@ namespace Nudge_.ViewModel
         //    }
         //}
 
-
-        public async Task GetSliderAndQuestion()
-        {
-            List<Question> questionlist = await App.Database.GetQuestionsAsync();
-            await Task.Delay(100);
-            List<RateSlider> sliderlist = await App.Database.GetSlidersAysnc();
-            await Task.Delay(100);
-
-            foreach (RateSlider r in sliderlist)
-            {
-                //r.InUse = true;
-                if(r.InUse == true)
-                {
-                    editPageElements.Add(new RateQuestionCombo
-                    {
-                        RateSlider = r,
-                        Order = r.Order,
-                    });
-                }
-            }
-
-            foreach(Question q in questionlist)
-            {
-                //q.InUse = true;
-                if(q.InUse == true)
-                {
-                    editPageElements.Add(new RateQuestionCombo
-                    {
-                        Question = q,
-                        Order =   q.Order
-                    });
-                }
-            }
-
-            // Sort by Order by 
-            var a = editPageElements.OrderBy(keySelector: p => p.Order).ToList();
-            editPageElements.Clear();
-            editPageElementsAltered.Clear();
-            int i = 0;
-            foreach (var item in a)
-            {
-                i++;
-                editPageElements.Add(item);
-                editPageElementsAltered.Add(item);
-            }
-            Console.WriteLine("altered out " + i);
-
-
-        }
-
-        public async void GetAnswers(Question q)
-        {
-            List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
-            
-            foreach(Answer a in answerList)
-            {
-                q.Answers.Add(a);
-            }
-        }
-
-        public async void NavigateToAddSlider()
-        {
-            Console.WriteLine("adding slider");
-            await Navigation.PushAsync(new BrowseSliderTabbed(this));
-        } 
-
-        public async void NavigateToAddQuestion()
-        {
-            Console.WriteLine(" Adding Question");
-            await Navigation.PushAsync(new BrowseQuestionTabbed(this));
-        }
-
-     
     }
 }

@@ -20,6 +20,8 @@ namespace Nudge_.Shared
         TimeSpan startTime = new TimeSpan();
         TimeSpan endTime = new TimeSpan();
 
+        //int notificationId = 12001;
+
         int DaysNotificationAdvance;
 
         public NotificationScheduler()
@@ -27,8 +29,32 @@ namespace Nudge_.Shared
             DaysNotificationAdvance = 7;
         }
 
+
+        // Test method to send a test Notification
+        public async void SendNotificationNow()
+        {
+            ClearAllNotifications();
+
+            DateTime dt = DateTime.Now;
+            dt.AddSeconds(10);
+
+            Notification n = new Notification()
+            {
+                Title = "Test ntoification Test noitification Test noiftication ",
+                Message = "Test Test this is a notification test, do not worry ignore this notification. It is only a test. If you were worried about this notification or notification in general then keep an eye on your notifications as there will be notification about these notifications getting sent out by the notification team soon",
+                Vibrate = true,
+                Date = dt
+
+            };
+            await CrossNotifications.Current.Send(n);
+
+            var lsit = await CrossNotifications.Current.GetScheduledNotifications();
+            Console.WriteLine("asdklfjasldf");
+        }
+
+
         // Send out notifications for the specified period  - after cancelling all notifications
-        public async Task<string> SendWeeklyNotifications()
+        public async void SendWeeklyNotifications()
         {
             ClearAllNotifications();
 
@@ -48,8 +74,8 @@ namespace Nudge_.Shared
                     SendNotification(DayCountDate, settings);
                 }
             }
+
             PrintNotifications();
-            return "complete";
         }
 
 
@@ -102,10 +128,12 @@ namespace Nudge_.Shared
         {
             var list = await CrossNotifications.Current.GetScheduledNotifications();
 
+            if (list == null) return;
             int i = 0;
             Console.WriteLine("Sending notifications : ----- ------ ------");
             foreach (Notification n in list)
             {
+                if (n.Date == null) continue;
                 DateTime d = (DateTime) n.Date;
                 Console.WriteLine(++i + "    " + n.Date);
             }
@@ -148,21 +176,12 @@ namespace Nudge_.Shared
         // Clear all the notifications
         public async void ClearAllNotifications()
         {
+            if (CrossNotifications.Current == null) return;
+           
             await CrossNotifications.Current.CancelAll();
         }
 
-        public async void SendNotificationNow()
-        {
-            Notification n = new Notification()
-            {
-                Title = "Test ntoification Test noitification Test noiftication ",
-                Message = "Test Test this is a notification test, do not worry ignore this notification. It is only a test. If you were worried about this notification or notification in general then keep an eye on your notifications as there will be notification about these notifications getting sent out by the notification team soon",
-                Vibrate = true,
-                Date = DateTime.Now.AddSeconds(10)
-
-            };
-            await CrossNotifications.Current.Send(n);
-        }
+      
 
 
         // Send the notifications for a set day
@@ -173,8 +192,11 @@ namespace Nudge_.Shared
 
             // Get the Application Settings 
             DailyNumberOfNotifications = settings.MessageFrequency;
+
+
             startTime = settings.DailyStartTime;
             endTime = settings.DailyEndTime;
+
 
             if (DailyNumberOfNotifications == 0)
             {
@@ -197,6 +219,8 @@ namespace Nudge_.Shared
 
             //string debug_Append = "";
 
+           
+
             for (int i = 0; i < DailyNumberOfNotifications; i++)
             {
 
@@ -207,9 +231,10 @@ namespace Nudge_.Shared
                 Notification n = new Notification()
                 {
                     Title = "Think through these beauties",
-                    Message = SelectMessageText(),
+                    Message = "Test notification message",
                     Vibrate = true,
-                    Date = dtTemp
+                    Date = dtTemp,
+                    //Id = notificationId++,
 
                 };
 
@@ -224,10 +249,49 @@ namespace Nudge_.Shared
                     Current = Current.AddHours(timeBetweenMessagesNormal);
                 }
                 else
-                {
                     Current = Current.AddMinutes(timeBetweenMessagesNormal * 60);
                 }
+
+            Console.WriteLine("Test");
             }
+
+
+
+
+        // test 
+        // Send the notifications for a set day
+        public async void SendNotification2()
+        {
+            // Get the Application Settings 
+   
+            //for (int i = 0; i < 5; i++)
+            //{
+
+                DateTime dtTemp = DateTime.Now.AddSeconds(5);
+
+            //debug_Append += " " + dtTemp.TimeOfDay;
+
+
+
+            Notification n = new Notification()
+                {
+                    Title = "Think through these beauties",
+                    Message = "Test notification message",
+                    Vibrate = true,
+                    Date = dtTemp,
+                    Id = 10011,
+                       
+
+                };
+
+                if (dtTemp > DateTime.Now)
+                {
+                    await CrossNotifications.Current.Send(n);
+                }
+
+        
+            //}
+            
         }
     }
 }

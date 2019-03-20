@@ -15,15 +15,22 @@ namespace Plugin.Notifications
         public abstract Task<int> GetBadge();
         public abstract Task SetBadge(int value);
         public abstract void Vibrate(int ms);
+        public abstract Task CancelAll();
+
+        //public virtual async Task CancelAll()
+        //{
+        //    var notifications = await this.GetScheduledNotifications();
 
 
-        public virtual async Task CancelAll()
-        {
-            var notifications = await this.GetScheduledNotifications();
-            foreach (var notification in notifications)
-            {
-                await this.Cancel(notification.Id.Value);
-            }
-        }
+          
+        //    foreach (var notification in notifications)
+        //    {
+        //        if(notification.Id != null)
+        //        {
+        //            await this.Cancel(notification.Id.Value);
+
+        //        }
+        //    }
+        //}
     }
 }

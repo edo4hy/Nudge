@@ -40,7 +40,8 @@ C:/Users/edwar/source/repos/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/V
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Nudge_.deps.json
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Nudge_.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Nudge_.pdb
-/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/Nudge_.csprojAssemblyReference.cache
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Xamarin.iOS.dll
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Xamarin.iOS.pdb
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/CreateMessage.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/ItemReordering.xaml.g.cs
@@ -51,6 +52,7 @@ C:/Users/edwar/source/repos/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/V
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/MasterDetail/Page1.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/MessageTabbedPage.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/MessageView.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/MyPage.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/BrowseQuestions.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/BrowseQuestionTabbed.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/BrowseSliders.xaml.g.cs
@@ -69,6 +71,6 @@ C:/Users/edwar/source/repos/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/V
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/Nudge_.AssemblyInfoInputs.cache
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/Nudge_.AssemblyInfo.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/Nudge_.csproj.CopyComplete
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/Nudge_.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/Nudge_.pdb
-/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/MyPage.xaml.g.cs

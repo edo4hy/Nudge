@@ -17,7 +17,7 @@ namespace Nudge_.Model
         public bool Created      { get; set; }
 
 
-        public ObservableCollection<Answer> Answers = new ObservableCollection<Answer>();
+        //public ObservableCollection<Answer> Answers = new ObservableCollection<Answer>();
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

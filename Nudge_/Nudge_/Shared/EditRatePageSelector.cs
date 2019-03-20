@@ -10,10 +10,29 @@ namespace Nudge_.Shared
     {
         public DataTemplate SliderTemplate { get; set; }
         public DataTemplate QuestionTemplate { get; set; }
+        public DataTemplate ButtonTemplate { get; set; }
+        public DataTemplate SpaceTemplate { get; set; }
+
+        //protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+        //{
+        //    return ((RateQuestionCombo)item).RateSlider != null ? SliderTemplate : QuestionTemplate;
+        //}
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            return ((RateQuestionCombo)item).RateSlider != null ? SliderTemplate : QuestionTemplate;
+            RateQuestionCombo rcq = (RateQuestionCombo)item;
+
+            if (rcq.RateSlider != null) return SliderTemplate;
+            if (rcq.Question != null) return QuestionTemplate;
+
+            if (rcq.isButtonNotSpace)
+            {
+                return ButtonTemplate;
+            }
+            else
+            {
+                return SpaceTemplate;
+            }
         }
     }
 }

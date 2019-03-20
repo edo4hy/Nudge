@@ -1,6 +1,6 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/bin/iPhoneSimulator/Debug/Nudge_.iOS.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/mscorlib.dll
-/Users/edwardobree/.nuget/packages/xamarin.forms/3.5.0.169047/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll
+/Users/edwardobree/.nuget/packages/xamarin.forms/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/Facades/netstandard.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/System.Core.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/System.dll
@@ -19,10 +19,10 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/System.ServiceModel.Internals.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/System.Web.Services.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/System.Xml.Linq.dll
-/Users/edwardobree/.nuget/packages/xamarin.forms/3.5.0.169047/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll
-/Users/edwardobree/.nuget/packages/xamarin.forms/3.5.0.169047/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll
+/Users/edwardobree/.nuget/packages/xamarin.forms/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll
+/Users/edwardobree/.nuget/packages/xamarin.forms/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Nudge_.dll
-/Users/edwardobree/.nuget/packages/xamarin.forms/3.5.0.169047/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
+/Users/edwardobree/.nuget/packages/xamarin.forms/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
 /Users/edwardobree/.nuget/packages/syncfusion.xamarin.sflistview/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/Facades/System.Resources.ResourceManager.dll
@@ -54,4 +54,9 @@
 /Users/edwardobree/.nuget/packages/sqlitepclraw.bundle_green/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll
 /Users/edwardobree/.nuget/packages/sqlitepclraw.provider.sqlite3.ios_unified/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll
 /Users/edwardobree/.nuget/packages/syncfusion.xamarin.buttons/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.dll
+/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.15/lib/mono/Xamarin.iOS/Facades/System.Xml.ReaderWriter.dll
+/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.iOS.dll
 /Users/edwardobree/.nuget/packages/syncfusion.xamarin.sflistview/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll
+/Users/edwardobree/.nuget/packages/syncfusion.xamarin.buttons/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.iOS.dll
+/Users/edwardobree/.nuget/packages/syncfusion.xamarin.core/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll

@@ -1,54 +1,58 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/Shared/NotificationScheduler.cs">
     <Files>
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" Line="112" Column="36" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" Line="42" Column="17" />
-      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="141" Column="9" />
-      <File FileName="Nudge_/Nudge_/Model/RateQuestionCombo.cs" Line="161" Column="35" />
-      <File FileName="Nudge_/Nudge_/Data/NudgeDatabase.cs" Line="108" Column="21" />
+      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" Line="237" Column="17" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="87" Column="42" />
+      <File FileName="Nudge_/Nudge_/Notification/Notification.cs" Line="18" Column="1" />
+      <File FileName="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" Line="24" Column="1" />
+      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
+      <File FileName="Source Not Available" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ComboBoxSample" expanded="True">
-            <Node name="ComboBoxSample" expanded="True">
-              <Node name="MainPage.xaml" expanded="True" />
-            </Node>
-          </Node>
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Converters" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Model" expanded="True" />
-              <Node name="View" expanded="True">
-                <Node name="RatePages" expanded="True">
-                  <Node name="QuestionView.xaml" expanded="True" />
-                  <Node name="RatePage.xaml" expanded="True" />
-                </Node>
-                <Node name="MyPage.xaml" expanded="True" />
+              <Node name="Notification" expanded="True" />
+              <Node name="Shared" expanded="True">
+                <Node name="NotificationScheduler.cs" selected="True" />
               </Node>
-              <Node name="ViewModel" expanded="True">
-                <Node name="RatePageViewModel.cs" selected="True" />
-              </Node>
+              <Node name="ViewModel" expanded="True" />
               <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Nudge_.iOS" expanded="True" />
+            <Node name="Nudge_.Android" expanded="True">
+              <Node name="Notifications" expanded="True" />
+            </Node>
+            <Node name="Nudge_.iOS" expanded="True">
+              <Node name="Notifications" expanded="True" />
+            </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.371C2C57-0C13-42AB-8D31-892F9F85F339" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.371C2C57-0C13-42AB-8D31-892F9F85F339" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" relfile="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" line="144" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" relfile="Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" line="42" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Model/RateQuestionCombo.cs" relfile="Nudge_/Nudge_/Model/RateQuestionCombo.cs" line="163" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Model/RateQuestionCombo.cs" relfile="Nudge_/Nudge_/Model/RateQuestionCombo.cs" line="61" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Model/RateQuestionCombo.cs" relfile="Nudge_/Nudge_/Model/RateQuestionCombo.cs" line="66" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" relfile="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" line="118" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" relfile="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" line="30" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" relfile="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" line="85" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Shared/NotificationScheduler.cs" relfile="Nudge_/Nudge_/Shared/NotificationScheduler.cs" line="298" column="27" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/Notifications/AlarmBroadcastReceiver.cs" relfile="Nudge_/Nudge_.Android/Notifications/AlarmBroadcastReceiver.cs" line="22" column="13" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Shared/NotificationScheduler.cs" relfile="Nudge_/Nudge_/Shared/NotificationScheduler.cs" line="134" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Shared/NotificationScheduler.cs" relfile="Nudge_/Nudge_/Shared/NotificationScheduler.cs" line="52" column="47" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Shared/NotificationScheduler.cs" relfile="Nudge_/Nudge_/Shared/NotificationScheduler.cs" line="236" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

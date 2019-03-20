@@ -14,18 +14,18 @@ using Nudge_.ViewModel;
 
 namespace Nudge_.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RatePage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class RatePage : ContentPage
+    {
         ObservableCollection<RateSlider> sliders = new ObservableCollection<RateSlider>();
-        RatePageViewModel vm;
+        public RatePageViewModel vm;
 
         public int Id = 0;
 
-        public RatePage ()
-		{
-			InitializeComponent ();
-            vm = new RatePageViewModel( false);
+        public RatePage()
+        {
+            InitializeComponent();
+            vm = new RatePageViewModel(false);
 
             BindingContext = vm;
             this.RateListView.ItemsSource = vm.editPageElements;
@@ -33,17 +33,5 @@ namespace Nudge_.View
 
 
 
-
-        async Task Handle_ItemAppearing(object sender, Syncfusion.ListView.XForms.ItemAppearingEventArgs e)
-        {
-            RateQuestionCombo rqc = (RateQuestionCombo)e.ItemData;
-            if(rqc.Question != null)
-            {
-                List<Answer> answers = await App.Database.GetAnswersAsync(rqc.Question.QuestionId);
-
-
-
-            }
-        }
     }
 }

@@ -6,27 +6,27 @@
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              x:Class=" Nudge_.View.MyPage">
     <StackLayout  Padding="30">
-        <ListView Margin="0,20,0,0">
-    <ListView.ItemsSource>
-        <x:Array Type="{x:Type local:Message}">
-            <local:Message />
-            <local:Message  />
-            <local:Message  />
-            <local:Message  />
-            <local:Message />
-            <local:Message  />
-            <local:Message  />
-            <local:Message  />
-            <local:Message />
-            <local:Message  />
+        <ListView Margin="0,20,0,0" x:Name="ListView">
+ <!--   <ListView.ItemsSource>
+        <x:Array Type="{x:Type local:RateQuestionCombo}">
+            <local:RateQuestionCombo />
+            <local:RateQuestionCombo  />
+            <local:RateQuestionCombo  />
+            <local:RateQuestionCombo  />
+            <local:RateQuestionCombo />
+            <local:RateQuestionCombo  />
+            <local:RateQuestionCombo  />
+            <local:RateQuestionCombo  />
+            <local:RateQuestionCombo />
+            <local:RateQuestionCombo  />
         </x:Array>
-    </ListView.ItemsSource>
+    </ListView.ItemsSource>-->
     <ListView.ItemTemplate>
         <DataTemplate>
             <ViewCell>
                 <Grid>
-                    <combobox:SfComboBox HeightRequest="40" x:Name="comboBox" IsEditableMode="true">
-            <combobox:SfComboBox.ComboBoxSource>
+                    <combobox:SfComboBox HeightRequest="40" x:Name="comboBox" IsEditableMode="true" DataSource="{Binding Answers}">
+   <!--         <combobox:SfComboBox.ComboBoxSource>
                 <ListCollection:List x:TypeArguments="x:String">
                     <x:String>1920 x 1080</x:String> 
                     <x:String>1680 x 1050</x:String>
@@ -46,7 +46,7 @@
                     <x:String>360 X 640</x:String>
                     <x:String>320 x 240</x:String>
                 </ListCollection:List>
-            </combobox:SfComboBox.ComboBoxSource>
+            </combobox:SfComboBox.ComboBoxSource>-->
         </combobox:SfComboBox>
                 </Grid>
             </ViewCell>
