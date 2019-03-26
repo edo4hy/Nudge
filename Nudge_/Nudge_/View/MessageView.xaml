@@ -1,10 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
              x:Class="Nudge_.View.MessageView"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
+             
              >
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -13,22 +16,27 @@
         </ResourceDictionary>
     </ContentPage.Resources>
    
-    <StackLayout 
-            Padding="10">
-        <ListView 
-            HasUnevenRows="True"
+    <StackLayout Padding="10">
+        <SearchBar x:Name="filterText" HeightRequest="40"
+           Placeholder="Search here to filter"
+           TextChanged="Handle_TextChanged" Grid.Row="0"/>
+        <syncfusion:SfListView 
             x:Name="MessagesListView"
             SelectionMode="Single"
+            TapCommand="{Binding MessageTapCommand}"
+            AutoFitMode="Height"
+            
             >
-            <ListView.Behaviors>
+   <!--     <syncfusion:SfListView.Behaviors>
                 <behaviours:EventToCommandBehavior
                     Source="{x:Reference MessagesListView}"
                     EventName="ItemSelected"
                     Command="{Binding MessageTapCommand}"
                     Converter="{StaticResource SelectedItemConverter}" 
+                    
                     />
-            </ListView.Behaviors>
-            <ListView.ItemTemplate>
+            </syncfusion:SfListView.Behaviors>-->
+            <syncfusion:SfListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ContentView>
@@ -40,7 +48,7 @@
                                     </StackLayout>
                                     <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Padding="0, 5, 0, 5">
                                         <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="12" VerticalOptions="CenterAndExpand">
-                                            <Image.GestureRecognizers>
+                                           <Image.GestureRecognizers>
                                                 <TapGestureRecognizer 
                                                     Command="{Binding Path=BindingContext.StarTapCommand, Source={x:Reference MessagesListView}}" 
                                                     CommandParameter="{Binding MessageId}"/>
@@ -55,7 +63,7 @@
                         </ContentView>
                     </ViewCell>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView >
     </StackLayout>
 </ContentPage>

@@ -10,8 +10,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Nudge_.View;
 using System.Threading.Tasks;
+using Syncfusion.ListView.XForms;
+
+
 
 namespace Nudge_.ViewModel
 {
@@ -55,8 +57,8 @@ namespace Nudge_.ViewModel
             get { return starTapCommand; }
         }
 
-        ICommand messageTapCommand;
-        public ICommand MessageTapCommand
+        Command<Syncfusion.ListView.XForms.ItemTappedEventArgs> messageTapCommand;
+        public Command<Syncfusion.ListView.XForms.ItemTappedEventArgs> MessageTapCommand
         {
             get { return messageTapCommand; }
         }
@@ -75,7 +77,7 @@ namespace Nudge_.ViewModel
 
             GetMessages();
             starTapCommand = new Command(StarTapped);
-            messageTapCommand = new Command(MessageTapped);
+            messageTapCommand = new Command<Syncfusion.ListView.XForms.ItemTappedEventArgs>(MessageTapped);
             addNewMessage = new Command(MessageAdded);
         }
 
@@ -86,7 +88,7 @@ namespace Nudge_.ViewModel
 
             GetMessages();
             starTapCommand = new Command(StarTapped);
-            messageTapCommand = new Command(MessageTappedSelectedFromTop5);
+            messageTapCommand = new Command<Syncfusion.ListView.XForms.ItemTappedEventArgs>(MessageTapped);
             addNewMessage = new Command(MessageAdded);
 
             Navigation =  top5VM.Navigation;
@@ -167,7 +169,8 @@ namespace Nudge_.ViewModel
         {
             if (messageTappedBeingExecuted) return;
             messageTappedBeingExecuted = true;
-            Message message = (Message)obj;
+            Syncfusion.ListView.XForms.ItemTappedEventArgs sendObj = (Syncfusion.ListView.XForms.ItemTappedEventArgs)obj;
+            Message message = (Message)sendObj.ItemData;
 
             selectedMessage = message;
 
@@ -239,6 +242,8 @@ namespace Nudge_.ViewModel
             }
 
             messageTappedBeingExecuted = false;
+
+            OnPropertyChanged("Top5Changed");
         }
 
         private async void UpdateTop5InDatabase(Top5Number n, Message m)

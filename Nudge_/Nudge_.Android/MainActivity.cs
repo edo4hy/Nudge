@@ -24,7 +24,6 @@ namespace Nudge_.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            
 
             base.OnCreate(bundle);
             
@@ -33,13 +32,22 @@ namespace Nudge_.Droid
             //DependencyService.Register<ToastNotification>(); // Register your dependency
 
             // If you are using Android you must pass through the activity
-            //ToastNotification.Init(this);
 
-            LoadApplication(new App());
+            if (Intent.HasExtra("JobId"))
+            {
+                LoadApplication(new App(true));
+            }
+            else
+            {
+                // normal laod
+                LoadApplication(new App());
+            }
+
 
             App.Init(new NotificationsImpl());
 
         }
+
     }
     
 }

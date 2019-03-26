@@ -84,6 +84,28 @@ namespace Nudge_.ViewModel
             }
         }
 
+        bool showTop5Check = false;
+        public bool ShowTop5Check
+        {
+            get { return showTop5Check; }
+            set { 
+                    showTop5Check = value;
+                    SaveSetting(CollectSettings());
+                    OnPropertyChanged();
+                }
+        }
+
+        bool showRatePage = false;
+        public bool ShowRatePage
+        {
+            get { return showRatePage; }
+            set { 
+                    showRatePage = value;
+                    SaveSetting(CollectSettings());
+                    OnPropertyChanged();
+                }
+        }
+
         int messageFrequency = 0;
         //int messageFrequencyTemp = 0;
         int checkCount = 0;
@@ -116,6 +138,8 @@ namespace Nudge_.ViewModel
             Settings setting = new Settings
             {
                 SendNotifications = SendNotifications,
+                ShowTop5CheckPage = ShowTop5Check,
+                ShowRatePage = ShowRatePage,
                 MessageFrequency = MessageFrequency,
                 DailyStartTime = StartTime,
                 DailyEndTime = EndTime
@@ -140,6 +164,8 @@ namespace Nudge_.ViewModel
             EndTime = appSettings.DailyEndTime;
             MessageFrequency = appSettings.MessageFrequency;
             SendNotifications = appSettings.SendNotifications;
+            ShowTop5Check = appSettings.ShowTop5CheckPage;
+            showRatePage = appSettings.ShowRatePage;
 
         }
     }

@@ -29,7 +29,16 @@ namespace Nudge_.Model
             }
         }
 
-        public Top5Number Top5      { get; set; }
+        private Top5Number _top5;
+        public Top5Number Top5
+        {
+            get { return _top5; }
+            set
+            {
+                _top5 = value;
+                OnPropertyChanged("Top5Changed");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         //public List<string> Tags { get; set; }

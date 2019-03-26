@@ -18,6 +18,8 @@ namespace Nudge_.ViewModel
         public TrulyObservableCollection<Message> MessagesTop5 = new TrulyObservableCollection<Message>();
         public TrulyObservableCollection<Message> MessagesTop5Unordered = new TrulyObservableCollection<Message>();
 
+        public TrulyObservableCollection<Top5Check> MessageCheckTop5 = new TrulyObservableCollection<Top5Check>();
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -28,6 +30,7 @@ namespace Nudge_.ViewModel
         public Message selectedMessage;
 
         bool top5IsTapped;
+        public bool isCheckPage;
 
         Top5MessageConverter tpConverter = new Top5MessageConverter();
 
@@ -36,6 +39,16 @@ namespace Nudge_.ViewModel
             GetTop5Messages();
 
             top5Selection = new Command(Top5Tapped);
+            toHome = new Command(ToHomeChange);
+        }
+
+        public Top5PageViewModel(bool checkPage)
+        {
+            isCheckPage = checkPage;
+
+            GetTop5Messages();
+            top5Selection = new Command(Top5Tapped);
+            toHome = new Command(ToHomeChange);
         }
 
         ICommand top5Selection;
@@ -43,6 +56,12 @@ namespace Nudge_.ViewModel
         public ICommand Top5Selection
         {
             get { return top5Selection; }
+        }
+
+        ICommand toHome;
+        public ICommand ToHome
+        {
+            get { return toHome; }
         }
 
         async void Top5Tapped(object obj)
@@ -91,6 +110,14 @@ namespace Nudge_.ViewModel
                     if (tpConverter.Top5NumberToIntConverter(m.Top5) == i)
                     {
                         //Console.WriteLine("Adding true message _____");
+                        if (isCheckPage) 
+                        {
+                            MessageCheckTop5.Add(new Top5Check
+                            {
+                                message = m
+                            });
+                        }
+
                         MessagesTop5.Add(m);
                         hasBeenSet = true;
                         count++;
@@ -104,5 +131,29 @@ namespace Nudge_.ViewModel
                 }
             }
         }
+
+        public void CheckBoxClicked()
+        {
+            int checkCount = 0;
+            foreach(Top5Check tp in MessageCheckTop5) 
+            { 
+                if(tp.Top5Checked == true)
+                {
+                    checkCount++;
+                }
+
+                if(checkCount == 5)
+                {
+                    App.Current.MainPage = new NavigationPage(new Top5Page());
+                }
+            }
+        }
+
+
+        public void ToHomeChange()
+        {
+            App.Current.MainPage = new NavigationPage(new Top5Page());
+        }
+
     }
 }

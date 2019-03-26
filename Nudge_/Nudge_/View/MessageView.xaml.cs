@@ -53,5 +53,32 @@ namespace Nudge_.View
         //    ((ListView)sender).SelectedItem = null;
 
         //}
+        SearchBar searchBar = null;
+        void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            searchBar = (sender as SearchBar);
+            if (MessagesListView.DataSource != null)
+            {
+                this.MessagesListView.DataSource.Filter = FilterContacts;
+                this.MessagesListView.DataSource.RefreshFilter();
+            }
+        }
+
+        private bool FilterContacts(object obj)
+        {
+            if (searchBar == null || searchBar.Text == null)
+                return true;
+
+            var message = obj as Message;
+            if (message.MessageText == null) return false;
+            if (message.MessageText.ToLower().Contains(searchBar.Text.ToLower()))
+                return true;
+
+            if (message.Author == null) return false;
+            if ( message.Author.ToLower().Contains(searchBar.Text.ToLower()))
+                return true;
+            else
+                return false;
+        }
     }
 }

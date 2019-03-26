@@ -9,7 +9,7 @@ using Syncfusion.XForms.iOS.Buttons;
 using Plugin.Notifications;
 
 using UserNotifications;
-
+using Nudge_.View;
 
 namespace Nudge_.iOS
 {
@@ -82,6 +82,15 @@ namespace Nudge_.iOS
 
             // reset our badge
             UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+
+            if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active))
+            {
+
+            }
+            else
+            {
+                App.Current.MainPage = new Top5CheckPage();
+            }
         }
     }
 }

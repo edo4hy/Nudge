@@ -6,6 +6,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.App;
+using Nudge_.Droid;
 //using Android.Support.V7.App;
 
 
@@ -56,6 +57,22 @@ namespace Plugin.Notifications
             {
                 var launchIntent = Application.Context.PackageManager.GetLaunchIntentForPackage(Application.Context.PackageName);
                 launchIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+                //launchIntent.PutExtra("JobID", 233);
+                //launchIntent.PutExtra("NotificationId", 235);
+
+                var intent = new Intent();
+                launchIntent.PutExtra("JobId", true);
+                intent.PutExtra("NotificationId", true);
+                intent.AddFlags(ActivityFlags.ClearTop);
+
+                Random random = new Random();
+                int pushCount = random.Next(9999 - 1000) + 1000;
+
+                intent.AddFlags(ActivityFlags.ClearTop);
+                var pendingIntent = PendingIntent.GetActivity(Application.Context, pushCount, intent, PendingIntentFlags.Immutable);
+
+
+
                 foreach (var pair in notification.Metadata)
                 {
                     launchIntent.PutExtra(pair.Key, pair.Value);
@@ -66,6 +83,7 @@ namespace Plugin.Notifications
                     .SetContentTitle(notification.Title)
                     .SetContentText(notification.Message)
                     .SetSmallIcon(AppIconResourceId)
+                    //.SetContentIntent(pendingIntent
                     .SetContentIntent(Android.App.TaskStackBuilder
                         .Create(Application.Context)
                         .AddNextIntent(launchIntent)
@@ -110,6 +128,7 @@ namespace Plugin.Notifications
                     .SetContentText(notification.Message)
                     .SetSmallIcon(AppIconResourceId)
                     .SetChannelId(CHANNEL_ID)
+                     //.SetContentIntent(pendingIntent
                     .SetContentIntent(Android.App.TaskStackBuilder
                         .Create(Application.Context)
                         .AddNextIntent(launchIntent)

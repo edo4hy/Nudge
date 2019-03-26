@@ -12,7 +12,10 @@ using SampleBrowser.SfListView;
 using Nudge_.Model;
 using UIKit;
 using Foundation;
-using UserNotifications;
+using Android.Content.PM;
+//using UIKit;
+//using Foundation;
+//using UserNotifications;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Nudge_
@@ -30,7 +33,7 @@ namespace Nudge_
 
             //Application.Current.Properties.Clear();
 
-            //MainPage = new SettingsPage();
+
             //MainPage = new NavigationPage(new EditRatePage());
             //MainPage = new MainPage1();
             //MainPage = new MessageTabbedPage();
@@ -40,24 +43,42 @@ namespace Nudge_
 
             //MainPage = new ListViewTest1();
 
+            
             //MainPage = new ItemReordering();
+
+            MainPage = new NavigationPage(new Top5CheckPage()) { Title = "Check in" };
             //MainPage = new NavigationPage(new EditRatePage());
-            MainPage = new NavigationPage(new RatePage());
+            //MainPage = new NavigationPage(new RatePage());
             //MainPage = new MyPage();
             //MainPage = new BrowseQuestionTabbed();
 
-            if(App.database.GetSettingAsync(1) == null)
+            //MainPage = new SettingsPage();
+
+            if (App.database.GetSettingAsync(1) == null)
             {
                 Settings settings = new Settings
                 {
                     SettingId = 1,
                     SendNotifications = false,
                     DailyStartTime = new TimeSpan(7, 0, 0),
-                    DailyEndTime = new TimeSpan(20, 0, 0)
+                    DailyEndTime = new TimeSpan(20, 0, 0),
+                    ShowRatePage = true,
+                    ShowTop5CheckPage = true
                 };
 
                  App.database.SaveSettingsAsync(settings);
             }
+
+        }
+
+        // If opened from notification - set in the MainActivity and AppDeligate respectively 
+        public App(bool t)
+        {
+            InitializeComponent();
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
+
+            MainPage = new NavigationPage(new Top5CheckPage()) { Title = "Check in" };
         }
 
         public static AbstractNotificationsImpl NotificationsImpl { get; private set; }
@@ -67,7 +88,7 @@ namespace Nudge_
             NotificationsImpl = notificationImpl;
         }
 
-        protected async override void OnStart ()
+        protected async override void OnStart()
         {
             // Handle when your app starts
 
@@ -76,7 +97,10 @@ namespace Nudge_
 
 
 
-            //ns.SendNotificationNow();
+            ns.SendNotificationNow();
+
+
+         
 
             //ns.PrintNotifications();
 
@@ -84,10 +108,21 @@ namespace Nudge_
 
             //ns.SendNotification2();
 
-            ns.SendWeeklyNotifications();
+            //ns.SendWeeklyNotifications();
 
-           
 
+            //if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active)) 
+            //{
+            //    //Console.WriteLine("This should be when you open from the normal option ");
+
+            //    App.Current.MainPage = new MyPage();
+            //}
+            //else
+            //{
+            //    //Console.WriteLine("Open when you press the notification");
+
+            //    App.Current.MainPage = new Top5Page();
+            //}
             Console.WriteLine("aklsdjflasdf");
   
         }
@@ -147,6 +182,8 @@ namespace Nudge_
             UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
         }
+
+
 
     }
 }

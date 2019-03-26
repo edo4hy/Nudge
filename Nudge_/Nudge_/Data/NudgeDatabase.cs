@@ -19,7 +19,10 @@ namespace Nudge_.Data
             database = DependencyService.Get<IDBInterface>().CreateConnection();
 
             //database = new SQLiteAsyncConnection(dbPath);
-            //database.CreateTableAsync<Message>().Wait();
+            if(database.Table<Message>() == null) {
+                //database.CreateTableAsync<Message>().Wait();
+            }
+
             //database.CreateTableAsync<Person>().Wait();
             //database.CreateTableAsync<Answer>().Wait();
 
@@ -28,7 +31,11 @@ namespace Nudge_.Data
             //database.CreateTableAsync<Question>().Wait();
             //database.CreateTableAsync<QuestionResult>().Wait();
             //database.CreateTableAsync<SliderResult>().Wait();
+            //database.DropTableAsync<Settings>().Wait();
+
             //database.CreateTableAsync<Settings>().Wait();
+
+
         }
 
         public Task<List<Message>> GetMessagesAsync()

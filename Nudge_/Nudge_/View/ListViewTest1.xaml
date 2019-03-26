@@ -7,7 +7,10 @@
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
              xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             xmlns:local1="clr-namespace:SampleBrowser.SfListView">
+             xmlns:local1="clr-namespace:SampleBrowser.SfListView"
+             xmlns:ViewModel="clr-namespace:Nudge_.ViewModel.MessageTabbedPageViewModel"
+             xmlns:Converters="clr-namespace:Nudge_.Converters"
+             xmlns:behaviours="clr-namespace:Nudge_.Behaviours">
     
     
     <ContentPage.Resources>
@@ -64,12 +67,15 @@
                 </ViewCell>
             </DataTemplate>
 
-            <local:EditRatePageSelector x:Key="editRatePageSelector" 
+          <!--  <local:EditRatePageSelector x:Key="editRatePageSelector" 
                                         QuestionTemplate="{StaticResource questionTemplate}"
                                         SliderTemplate="{StaticResource sliderTemplate}"/>
-
+-->
             <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
 <!--            <sample:ImagePathConverter x:Key="ImagePathConverter"/>-->
+             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
+            <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+            
 
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -77,14 +83,30 @@
     <StackLayout Padding="0,40,0,10"/>
     <syncfusion:SfListView x:Name="listView"
                 ItemSize="60"
+                        
 			    BackgroundColor="#FFE8E8EC"
-			    ItemTemplate="{StaticResource editRatePageSelector}"
                 DragStartMode="OnHold"
                 SelectionMode="None"
                 QueryItemSize="Handle_QueryItemSize"
-               AutoFitMode="Height"
+                AutoFitMode="Height"
+               
               >
-        </syncfusion:SfListView>
+             <!--   <syncfusion:SfListView.Behaviors>
+                    <behaviours:EventToCommandBehavior EventName="ItemTapped"
+                                      Command="{Binding MessageTapCommand}"
+                                      Converter="{StaticResource SelectedItemConverter}" >
+                    </behaviours:EventToCommandBehavior>
+                </syncfusion:SfListView.Behaviors>-->
+                  <syncfusion:SfListView.ItemTemplate>
+                          <DataTemplate>
+                            <ViewCell>
+                              <StackLayout>
+                                <Label Text="alskdjflkasdjflkjasdf"/>
+                              </StackLayout>
+                            </ViewCell>
+                          </DataTemplate>
+                        </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
 
        <!-- <syncfusion:SfListView.Behaviors>
             <local1:ListViewItemReorderingBehavior/>
@@ -94,19 +116,8 @@
  
     
     <!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
+ 
+  
+
  
 </ContentPage>

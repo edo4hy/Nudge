@@ -14,6 +14,9 @@ namespace Nudge_.Model
         public bool SendNotifications { get; set; }
         public int MessageFrequency { get; set; }
 
+        public bool ShowTop5CheckPage { get; set; }
+        public bool ShowRatePage { get; set; }
+
         public int DailyStartTime_Hours { get; set; }
         public int DailyStartTime_Minutes { get; set; }
         public int DailyStartTime_Seconds { get; set; }
