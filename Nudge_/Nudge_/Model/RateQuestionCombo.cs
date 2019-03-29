@@ -23,9 +23,11 @@ namespace Nudge_.Model
                 {
                     return RateSlider.Title;
                 }
-                else
+                else if(Question != null)
                 {
                     return Question.Title;
+                }else{
+                    return null;
                 }
             }
             set
@@ -34,7 +36,7 @@ namespace Nudge_.Model
                 {
                     RateSlider.Title = value;
                 }
-                else
+                else if(Question != null)
                 {
                     Question.Title = value;
                 }
@@ -189,8 +191,18 @@ namespace Nudge_.Model
 
         public bool isButtonNotSpace;
 
-
-
+        private string comboTextField = "";
+        public string ComboTextField
+        {
+            get
+            {
+                return comboTextField;
+            }
+            set
+            {
+                comboTextField = value;
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Nudge_.View.Test_Delete
+namespace Nudge_.View.MasterDetail
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetailPage1Detail : ContentPage

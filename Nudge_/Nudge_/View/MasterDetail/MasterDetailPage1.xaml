@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Nudge_.View.Test_Delete.MasterDetailPage1"
-             xmlns:pages="clr-namespace:Nudge_.View.Test_Delete"
+             x:Class="Nudge_.View.MasterDetail.MasterDetailPage1"
+             xmlns:pages="clr-namespace:Nudge_.View.MasterDetail"
                   xmlns:pages1="clr-namespace:Nudge_.View">
   <MasterDetailPage.Master>
     <pages:MasterDetailPage1Master x:Name="MasterPage" />

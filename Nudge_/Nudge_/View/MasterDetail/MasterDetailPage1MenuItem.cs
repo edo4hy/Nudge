@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Nudge_.View.Test_Delete
+namespace Nudge_.View.MasterDetail
 {
 
     public class MasterDetailPage1MenuItem : ContentPage

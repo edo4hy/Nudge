@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.MasterDetail.MasterDetailPage1.xaml", "View/MasterDetail/MasterDetailPage1.xaml", typeof(global::Nudge_.View.Test_Delete.MasterDetailPage1))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.MasterDetail.MasterDetailPage1.xaml", "View/MasterDetail/MasterDetailPage1.xaml", typeof(global::Nudge_.View.MasterDetail.MasterDetailPage1))]
 
-namespace Nudge_.View.Test_Delete {
+namespace Nudge_.View.MasterDetail {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/MasterDetail/MasterDetailPage1.xaml")]
     public partial class MasterDetailPage1 : global::Xamarin.Forms.MasterDetailPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Nudge_.View.Test_Delete.MasterDetailPage1Master MasterPage;
+        private global::Nudge_.View.MasterDetail.MasterDetailPage1Master MasterPage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.NavigationPage HomePage;
@@ -25,7 +25,7 @@ namespace Nudge_.View.Test_Delete {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MasterDetailPage1));
-            MasterPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Nudge_.View.Test_Delete.MasterDetailPage1Master>(this, "MasterPage");
+            MasterPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Nudge_.View.MasterDetail.MasterDetailPage1Master>(this, "MasterPage");
             HomePage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.NavigationPage>(this, "HomePage");
         }
     }

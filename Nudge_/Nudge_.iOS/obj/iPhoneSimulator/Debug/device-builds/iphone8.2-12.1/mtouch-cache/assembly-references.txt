@@ -48,14 +48,14 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.16/lib/mono/Xamarin.iOS/Facades/System.Diagnostics.Tools.dll
 /Users/edwardobree/.nuget/packages/syncfusion.licensing/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Licensing.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.16/lib/mono/Xamarin.iOS/Facades/System.Text.Encoding.dll
+/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.16/lib/mono/Xamarin.iOS/Facades/System.Xml.ReaderWriter.dll
 /Users/edwardobree/.nuget/packages/syncfusion.xamarin.buttons/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.dll
 /Users/edwardobree/.nuget/packages/sqlite-net-pcl/1.4.118/lib/netstandard1.1/SQLite-net.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.16/lib/mono/Xamarin.iOS/Facades/System.Collections.Concurrent.dll
 /Users/edwardobree/.nuget/packages/sqlitepclraw.core/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.core.dll
 /Users/edwardobree/.nuget/packages/sqlitepclraw.bundle_green/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll
 /Users/edwardobree/.nuget/packages/sqlitepclraw.provider.sqlite3.ios_unified/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll
-/Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.dll
-/Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.16/lib/mono/Xamarin.iOS/Facades/System.Xml.ReaderWriter.dll
 /Users/edwardobree/.nuget/packages/syncfusion.xamarin.sfcombobox/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfComboBox.XForms.iOS.dll
 /Users/edwardobree/.nuget/packages/syncfusion.xamarin.sflistview/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll
 /Users/edwardobree/.nuget/packages/syncfusion.xamarin.buttons/16.4.0.52/lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.iOS.dll

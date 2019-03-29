@@ -1,7 +1,7 @@
 ﻿using Nudge_.Data.Model;
 using Nudge_.Model;
 using Nudge_.View;
-using Nudge_.View.Test_Delete;
+using Nudge_.View.MasterDetail;
 
 using System;
 using System.Collections.Generic;

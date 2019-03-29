@@ -63,11 +63,11 @@ namespace Nudge_.ViewModel
             get { return messageTapCommand; }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
 
         public MessageTabbedPageViewModel()
@@ -88,7 +88,7 @@ namespace Nudge_.ViewModel
 
             GetMessages();
             starTapCommand = new Command(StarTapped);
-            messageTapCommand = new Command<Syncfusion.ListView.XForms.ItemTappedEventArgs>(MessageTapped);
+            messageTapCommand = new Command<Syncfusion.ListView.XForms.ItemTappedEventArgs>(MessageTappedSelectedFromTop5);
             addNewMessage = new Command(MessageAdded);
 
             Navigation =  top5VM.Navigation;
@@ -123,7 +123,10 @@ namespace Nudge_.ViewModel
             if (messageTappedBeingExecuted) return;
             messageTappedBeingExecuted = true;
 
-            Message message = (Message)obj;
+            Syncfusion.ListView.XForms.ItemTappedEventArgs sendObj = (Syncfusion.ListView.XForms.ItemTappedEventArgs)obj;
+            Message message = (Message)sendObj.ItemData;
+
+            //Message message = (Message)obj;
 
             if (top5MessageConverter.Top5NumberToIntConverter(top5VM.selectedMessage.Top5) == 0)
             {

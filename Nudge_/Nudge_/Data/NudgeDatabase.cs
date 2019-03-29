@@ -24,6 +24,7 @@ namespace Nudge_.Data
             }
 
             //database.CreateTableAsync<Person>().Wait();
+            //database.DropTableAsync<Answer>().Wait();
             //database.CreateTableAsync<Answer>().Wait();
 
             //database.CreateTableAsync<Nudge_.Model.RateSlider>().Wait();

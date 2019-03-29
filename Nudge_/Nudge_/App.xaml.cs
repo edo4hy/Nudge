@@ -4,7 +4,7 @@ using Xamarin.Forms.Xaml;
 using Nudge_.Data;
 using System.IO;
 using Nudge_.View;
-using Nudge_.View.Test_Delete;
+using Nudge_.View.MasterDetail;
 using Nudge_.Shared;
 using System.Threading.Tasks;
 using Plugin.Notifications;
@@ -46,9 +46,10 @@ namespace Nudge_
             
             //MainPage = new ItemReordering();
 
-            MainPage = new NavigationPage(new Top5CheckPage()) { Title = "Check in" };
+            //MainPage = new NavigationPage(new Top5CheckPage()) { Title = "Check in" };
             //MainPage = new NavigationPage(new EditRatePage());
-            //MainPage = new NavigationPage(new RatePage());
+            //MainPage = new NavigationPage(new EditRatePage());
+            MainPage = new RatePage();
             //MainPage = new MyPage();
             //MainPage = new BrowseQuestionTabbed();
 
@@ -97,7 +98,7 @@ namespace Nudge_
 
 
 
-            ns.SendNotificationNow();
+            //ns.SendNotificationNow();
 
 
          

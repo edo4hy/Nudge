@@ -12,6 +12,7 @@ namespace Nudge_.Shared
         public DataTemplate QuestionTemplate { get; set; }
         public DataTemplate ButtonTemplate { get; set; }
         public DataTemplate SpaceTemplate { get; set; }
+        public DataTemplate QuestionTemplateNoAnswers { get; set; }
 
         //protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         //{
@@ -23,7 +24,17 @@ namespace Nudge_.Shared
             RateQuestionCombo rcq = (RateQuestionCombo)item;
 
             if (rcq.RateSlider != null) return SliderTemplate;
-            if (rcq.Question != null) return QuestionTemplate;
+            if (rcq.Question != null)
+            {
+                if(rcq.Answers.Count == 0)
+                {
+                    return QuestionTemplateNoAnswers;
+                }
+                else
+                {
+                    return QuestionTemplate;
+                }
+            } 
 
             if (rcq.isButtonNotSpace)
             {

@@ -12,6 +12,7 @@ namespace Nudge_.Model
         public int AnswerId     { get; set; }
         public int QuestionId   { get; set; }
         public string AnswerText    { get; set; }
+        public int AnswerCount { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

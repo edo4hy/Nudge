@@ -28,10 +28,22 @@ namespace Nudge_.View
             vm = new RatePageViewModel(false);
 
             BindingContext = vm;
+            vm.rateListView = RateListView;
             this.RateListView.ItemsSource = vm.editPageElements;
         }
 
+        void Handle_SelectionChanged(object sender, Syncfusion.XForms.ComboBox.SelectionChangedEventArgs e)
+        {
+            
+
+            //throw new NotImplementedException();
+        }
+
+        void Handle_ValueChanged(object sender, Syncfusion.XForms.ComboBox.ValueChangedEventArgs e)
+        {
+            Console.WriteLine("aksjdflaksd");
 
 
+        }
     }
 }

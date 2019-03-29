@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Nudge_.View;
 using Xamarin.Forms.Xaml;
 using Nudge_.Converters;
+using Nudge_.View.MasterDetail;
 
 namespace Nudge_.ViewModel
 {
@@ -144,7 +145,7 @@ namespace Nudge_.ViewModel
 
                 if(checkCount == 5)
                 {
-                    App.Current.MainPage = new NavigationPage(new Top5Page());
+                    App.Current.MainPage = new MasterDetailPage1();
                 }
             }
         }
@@ -152,7 +153,7 @@ namespace Nudge_.ViewModel
 
         public void ToHomeChange()
         {
-            App.Current.MainPage = new NavigationPage(new Top5Page());
+            App.Current.MainPage = new MasterDetailPage1();
         }
 
     }

@@ -2,6 +2,7 @@
 using Nudge_.Data.Model;
 using Nudge_.Model;
 using Nudge_.View;
+using Nudge_.View.MasterDetail;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -56,11 +57,11 @@ namespace Nudge_.ViewModel
 
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
         public Task Initialization { get; private set; }
 
@@ -83,7 +84,7 @@ namespace Nudge_.ViewModel
             addQuestion = new Command(NavigateToAddQuestion);
             addCombo = new Command(NavigateToAddSlider);
             toHome = new Command(ToHomeChange);
-
+            saveAnswers = new Command(SaveAnswersSave);
 
         }
 
@@ -97,7 +98,7 @@ namespace Nudge_.ViewModel
 
             addCombo = new Command(NavigateToAddSlider);
             toHome = new Command(ToHomeChange);
-
+            saveAnswers = new Command(SaveAnswersSave);
         }
 
 
@@ -116,6 +117,7 @@ namespace Nudge_.ViewModel
             addAnswersToDropdown = new Command(AddAllAnswers);
 
             toHome = new Command(ToHomeChange);
+            saveAnswers = new Command(SaveAnswersSave);
 
         }
 
@@ -138,11 +140,16 @@ namespace Nudge_.ViewModel
             get { return addCombo; }
         }
 
-
         ICommand toHome;
         public ICommand ToHome
         {
             get { return toHome; }
+        }
+
+        ICommand saveAnswers;
+        public ICommand SaveAnswers
+        {
+            get { return saveAnswers; }
         }
 
         ICommand addAnswersToDropdown;
@@ -355,9 +362,56 @@ namespace Nudge_.ViewModel
 
         public void ToHomeChange()
         {
-            App.Current.MainPage = new NavigationPage(new Top5Page());
+            App.Current.MainPage = new MasterDetailPage1();
         }
 
+        public void SaveAnswersSave()
+        {
+            Console.WriteLine(rateListView.Children.Count());
+
+            // Find if the answer exists - Either add new or add count. 
+           foreach(RateQuestionCombo rqc in rateListView.DataSource.Items )
+            {
+                if (rqc.Question == null) continue;
+
+                if (rqc.ComboTextField == "") continue;
+
+                if(rqc.Answers.Count < 1)
+                {
+                    App.Database.SaveAnswerAsync(new Answer
+                    {
+                        AnswerText = rqc.ComboTextField,
+                        QuestionId = rqc.Question.QuestionId,
+                    });
+                    
+                }
+                else
+                {
+
+                    bool AnswerAlreadyExists = false;
+                    foreach(Answer af in rqc.Answers)
+                    {
+                        if (af.AnswerText.ToLower().CompareTo(rqc.ComboTextField.ToLower()) == 0)
+                        {
+                            AnswerAlreadyExists = true;
+                            af.AnswerCount = af.AnswerCount++;
+                            App.Database.SaveAnswerAsync(af);
+                        }
+                    }
+
+                    if (!AnswerAlreadyExists)
+                    {
+                        Answer ans = new Answer(){
+                            AnswerText = rqc.ComboTextField,
+                            QuestionId = rqc.Question.QuestionId
+                        };
+                        App.Database.SaveAnswerAsync(ans);
+                    }
+                }
+            }
+
+            App.Current.MainPage = new MasterDetailPage1();
+        }
 
 
         public async Task GetSliderAndQuestion()
@@ -380,28 +434,33 @@ namespace Nudge_.ViewModel
 
             foreach(Question q in questionlist)
             {
-
                 //q.InUse = true;
                 if (q.InUse == true)
                 {
                     RateQuestionCombo rccc = new RateQuestionCombo
                     {
                         Question = q,
-                        Answers = await App.Database.GetAnswersAsync(q.QuestionId)
+                        Answers = await App.Database.GetAnswersAsync(q.QuestionId),
+
                     };
 
+                
                     editPageElements.Add(rccc);
                 }
             }
 
             //Add bottom elements 
-            editPageElements.Add(new RateQuestionCombo
+            if(isEditPage == false)
             {
-                Question = null,
-                RateSlider = null,
-                isButtonNotSpace = false,
-                Order = 1000
-            });
+                editPageElements.Add(new RateQuestionCombo
+                {
+                    Question = null,
+                    RateSlider = null,
+                    isButtonNotSpace = false,
+                    Order = 1000
+                });
+            }
+       
 
             //editPageElements.Add(new RateQuestionCombo
             //{

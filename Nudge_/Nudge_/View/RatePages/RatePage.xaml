@@ -65,16 +65,56 @@
                         <Grid>
                             <combobox:SfComboBox 
                                     HeightRequest="40" 
-                                    
                                     BackgroundColor="#FFE8E8E0" 
                                     MaximumDropDownHeight="200" 
                                     IsEditableMode="true"  
                                     AllowFiltering="true"
                                     DropDownFooterViewHeight="40"
-                                    DataSource="{Binding Answers}">
+                                    DataSource="{Binding Answers}"
+                                    ShowSuggestionsOnFocus="true"
+                                    SelectionChanged="Handle_SelectionChanged"
+                                    ValueChanged="Handle_ValueChanged"
+                                    Text="{Binding ComboTextField}"
+                                    DisplayMemberPath="AnswerText"
+                                    
+                                   >
+                                <combobox:SfComboBox.ItemTemplate BackgroundColor="#FFE8E8E0">
+                                    <DataTemplate>
+                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="#FFE8E8E0">
+                                            <Label Text="{Binding AnswerText}"/>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </combobox:SfComboBox.ItemTemplate>
+                            </combobox:SfComboBox> 
+                        </Grid>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="questionTemplateNoAnswers">
+                <ViewCell>
+                    <StackLayout Padding="10" >
+                        <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Start"  >
+                                <StackLayout x:Name="QuestionSearchBar" HorizontalOptions="CenterAndExpand" >
+                                    <Label FontSize="Medium" x:Name="QuestionTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <Grid>
+                           <combobox:SfComboBox 
+                                    HeightRequest="40" 
+                                    BackgroundColor="#FFE8E8E0" 
+                                    MaximumDropDownHeight="200" 
+                                    IsEditableMode="true"  
+                                    AllowFiltering="true"
+                                    DropDownFooterViewHeight="40"
+                                    Text="{Binding ComboTextField}"
+                                    DisplayMemberPath="AnswerText"
+                                    >
                                 <combobox:SfComboBox.ItemTemplate  BackgroundColor="#FFE8E8E0">
                                     <DataTemplate>
-                                        <StackLayout Orientation="Horizontal" BackgroundColor="#FFE8E8E0">
+                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="#FFE8E8E0">
                                             <Label Text="{Binding AnswerText}"/>
                                             </StackLayout>
                                         </DataTemplate>
@@ -111,6 +151,7 @@
             
             <shared:EditRatePageSelector x:Key="editRatePageSelector" 
                             QuestionTemplate="{StaticResource questionTemplate}"
+                            QuestionTemplateNoAnswers="{StaticResource questionTemplateNoAnswers}"
                             SliderTemplate="{StaticResource sliderTemplate}"
                             ButtonTemplate="{StaticResource buttonTemplate}"
                             SpaceTemplate="{StaticResource spaceTemplate}"/>
@@ -142,7 +183,7 @@
                 </syncfusion:SfListView>
                 <StackLayout Orientation="Horizontal" Padding="0,0,0,20"  BackgroundColor="#FFE8E8EC">
                     <StackLayout Padding="20,5,20,5" Orientation="Vertical" BackgroundColor="#FFE8E8EC" HorizontalOptions="StartAndExpand">
-                        <Button CornerRadius="20" BackgroundColor="#204e99" WidthRequest="120" TextColor="White" Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Save"/>
+                        <Button CornerRadius="20" BackgroundColor="#204e99" WidthRequest="120" TextColor="White" Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.SaveAnswers}" Text="Save"/>
                     </StackLayout>
                     <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
                  <!--       <buttons:SfButton Command="{Binding Path=BindingContext.ToHome}"

@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.MasterDetail.MasterDetailPage1Master.xaml", "View/MasterDetail/MasterDetailPage1Master.xaml", typeof(global::Nudge_.View.Test_Delete.MasterDetailPage1Master))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Nudge_.View.MasterDetail.MasterDetailPage1Master.xaml", "View/MasterDetail/MasterDetailPage1Master.xaml", typeof(global::Nudge_.View.MasterDetail.MasterDetailPage1Master))]
 
-namespace Nudge_.View.Test_Delete {
+namespace Nudge_.View.MasterDetail {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View/MasterDetail/MasterDetailPage1Master.xaml")]
