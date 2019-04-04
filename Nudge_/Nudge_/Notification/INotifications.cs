@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using UserNotifications;
 
 namespace Plugin.Notifications
 {
@@ -18,6 +18,10 @@ namespace Plugin.Notifications
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<Notification>> GetScheduledNotifications();
+
+
+
+        Task<IEnumerable<UNNotificationRequest>> GetScheduledNotificationsIos();
 
 
         /// <summary>

@@ -62,5 +62,11 @@ namespace Nudge_.View
         {
 
         }
+
+        protected override void OnDisappearing() { base.OnDisappearing();
+
+            NotificationScheduler ns = new NotificationScheduler();
+            ns.SendWeeklyNotifications();
+           }
     }
 }

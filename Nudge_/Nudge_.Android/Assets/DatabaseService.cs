@@ -26,7 +26,7 @@ namespace SQLiteTutorial.Droid
 
         public SQLiteAsyncConnection CreateConnection()
         {
-            var sqliteFilename = "NudgeSQLite3.db3";
+            var sqliteFilename = "NudgeSQLite.db3";
             string documentsDirectoryPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsDirectoryPath, sqliteFilename);
 

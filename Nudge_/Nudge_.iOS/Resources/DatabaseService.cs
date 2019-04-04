@@ -21,7 +21,7 @@ namespace SQLiteTutorial.iOS
 
         public SQLiteAsyncConnection CreateConnection()
         {
-            var sqliteFilename = "NudgeSQLite3.db3";
+            var sqliteFilename = "NudgeSQLite.db3";
 
             string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
@@ -35,7 +35,7 @@ namespace SQLiteTutorial.iOS
             // This is where we copy in the pre-created database
             if (!File.Exists(path))
             {
-                var existingDb = NSBundle.MainBundle.PathForResource("NudgeSQLite3", "db3");
+                var existingDb = NSBundle.MainBundle.PathForResource("NudgeSQLite", "db3");
                 File.Copy(existingDb, path);
             }
 

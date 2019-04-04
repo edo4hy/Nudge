@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using UserNotifications;
 
 namespace Plugin.Notifications
 {
@@ -49,6 +49,11 @@ namespace Plugin.Notifications
 
                 return dt;
             }
+        }
+
+        public static explicit operator UNNotificationContent(Notification v)
+        {
+            throw new NotImplementedException();
         }
 
         /*

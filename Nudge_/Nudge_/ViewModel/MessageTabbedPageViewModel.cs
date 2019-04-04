@@ -41,6 +41,7 @@ namespace Nudge_.ViewModel
 
         public Label messageCreatedLabel;
         public Entry newMessageEntry;
+        public Entry newMessageAuthor;
 
         INavigation Navigation;
 
@@ -102,7 +103,7 @@ namespace Nudge_.ViewModel
                 MessageText = newMessageEntry.Text.ToString(),
                 Type = Model.Type.Created,
                 Top5 = Top5Number.none,
-                Author = "Me"
+                Author = newMessageAuthor.Text.ToString()
             };
 
             MessagesCreated.Add(newMessage);
@@ -391,134 +392,6 @@ namespace Nudge_.ViewModel
             }
         }
 
-        public async void AddData()
-        {
-            TrulyObservableCollection<Message> Messages = new TrulyObservableCollection<Message>();
 
-            Message hightestIdMessage = await App.Database.GetHighestId();
-            int highestId = 0;
-            if (hightestIdMessage != null)
-            {
-                highestId = hightestIdMessage.MessageId;
-            }
-
-
-            Message message = new Message
-            {
-                MessageText = "Message 1 ",
-                Author = "Edo4hy",
-                Type = Model.Type.Action,
-                Top5 = Top5Number.none,
-
-                Favourited = true,
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Message 2 _ message message message message message message message message message message message message",
-                Author = "Edo4hy",
-                Type = Model.Type.Action,
-                Top5 = Top5Number.none,
-                Favourited = true,
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Message 3 _l",
-                Author = "Edo4hy",
-                Type = Model.Type.Action,
-                Top5 = Top5Number.none,
-                Favourited = true,
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind",
-                Author = "Dr. Seuss",
-                Type = Model.Type.PositiveMessage,
-                Top5 = Top5Number.none,
-                Favourited = true
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Message 5 hello there words words words lost in all the words I have all the words but what are the words",
-                Author = "Bruce Lee",
-                Type = Model.Type.PositiveMessage,
-                Top5 = Top5Number.none,
-                Favourited = true
-            };
-            Messages.Add(message);
-
-
-            message = new Message
-            {
-                MessageText = "Message 6 never eat meat always eat fish never eat chicken always eat bread",
-                Author = "Me",
-                Type = Model.Type.Created,
-                Top5 = Top5Number.none,
-                Favourited = true
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Message 7 two witches watch two watches which witch is watching which watch",
-                Author = "",
-                Type = Model.Type.Affirmation,
-                Top5 = Top5Number.none,
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Message 8 olive oil ",
-                Author = "Me",
-                Type = Model.Type.Action,
-                Top5 = Top5Number.none,
-                Favourited = true
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Message 9 why wait for everyone else to have their fun with the olives",
-                Author = "Me",
-                Type = Model.Type.Affirmation,
-                Top5 = Top5Number.none,
-                Favourited = true
-            };
-            Messages.Add(message);
-
-            message = new Message
-            {
-                MessageText = "Ministers like panic its a subsitution for achievement",
-                Author = "Me",
-                Type = Model.Type.Action,
-                Top5 = Top5Number.none,
-                Favourited = true
-            };
-            Messages.Add(message);
-
-
-            message = new Message
-            {
-                MessageText = "Message 11 alway believe in your soul you got the power to knonw you're indistructable always believing, thatchers gold ",
-                Author = "Me",
-                Type = Model.Type.PositiveMessage,
-                Top5 = Top5Number.none,
-                Favourited = true
-            };
-            Messages.Add(message);
-
-            foreach (Message m in Messages)
-            {
-                await App.Database.SaveMessageAsync(m);
-            }
-        }
     }
 }

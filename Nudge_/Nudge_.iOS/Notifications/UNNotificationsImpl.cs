@@ -69,6 +69,17 @@ namespace Plugin.Notifications
             return tcs.Task;
         }
 
+        public override Task<IEnumerable<UNNotificationRequest>> GetScheduledNotificationsIos()
+        {
+            var tcss = new TaskCompletionSource<IEnumerable<UNNotificationRequest>>();
+            UIApplication.SharedApplication.InvokeOnMainThread(async () =>
+            {
+                var requests = await UNUserNotificationCenter.Current.GetPendingNotificationRequestsAsync();
+                var notifications = requests.Select(x => new Notification());
+                tcss.TrySetResult(requests);
+            });
+            return tcss.Task;
+        }
 
         public override Task<bool> RequestPermission()
         {
@@ -95,6 +106,7 @@ namespace Plugin.Notifications
                 Title = native.Content.Title,
                 Message = native.Content.Body,
                 Sound = native.Content.Sound.ToString(),
+                Vibrate = true,
                 Date = (native.Trigger as UNCalendarNotificationTrigger)?.NextTriggerDate.ToDateTime() ?? DateTime.MinValue,
                 Metadata = native.Content.UserInfo.FromNsDictionary()
             };

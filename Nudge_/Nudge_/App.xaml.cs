@@ -55,7 +55,7 @@ namespace Nudge_
 
             //MainPage = new SettingsPage();
 
-            if (App.database.GetSettingAsync(1) == null)
+            if (App.Database.GetSettingAsync(1) == null)
             {
                 Settings settings = new Settings
                 {
@@ -89,7 +89,7 @@ namespace Nudge_
             NotificationsImpl = notificationImpl;
         }
 
-        protected async override void OnStart()
+        protected override void OnStart()
         {
             // Handle when your app starts
 
@@ -109,7 +109,7 @@ namespace Nudge_
 
             //ns.SendNotification2();
 
-            //ns.SendWeeklyNotifications();
+            ns.SendWeeklyNotifications();
 
 
             //if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active)) 
@@ -154,7 +154,7 @@ namespace Nudge_
                 if (database == null)
                 {
                     database = new NudgeDatabase(
-                        Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NudgeSQLite3.db3"));
+                        Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NudgeSQLite.db3"));
                 }
                 return database;
             }
@@ -183,8 +183,5 @@ namespace Nudge_
             UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
         }
-
-
-
     }
 }

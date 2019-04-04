@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Foundation;
 using UIKit;
-
+using UserNotifications;
 
 namespace Plugin.Notifications
 {
@@ -87,6 +87,7 @@ namespace Plugin.Notifications
                 Message = native.AlertBody,
                 Sound = native.SoundName,
                 Date = native.FireDate.ToDateTime(),
+                Vibrate = true,
                 Metadata = native.UserInfo.FromNsDictionary()
             };
 
@@ -97,6 +98,11 @@ namespace Plugin.Notifications
             }
 
             return plugin;
+        }
+
+        public override Task<IEnumerable<UNNotificationRequest>> GetScheduledNotificationsIos()
+        {
+            throw new NotImplementedException();
         }
     }
 }

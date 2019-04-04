@@ -28,7 +28,21 @@ namespace Nudge_.View
         {
             InitializeComponent();
             MessagesListView.ItemsSource = items;
+           
+        }
 
+        public MessageView(TrulyObservableCollection<Message> items, bool setPadding)
+        {
+            InitializeComponent();
+            MessagesListView.ItemsSource = items;
+
+            if (setPadding)
+            {
+                if (Device.RuntimePlatform == Device.iOS)
+                {
+                    Padding = new Thickness(0, 35, 0, 0);
+                }
+            }
         }
 
         //private async Task MessagesListView_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)

@@ -23,7 +23,7 @@ namespace Nudge_.View
             InitializeComponent();
             vm.newMessageEntry = newMessageEntry;
             vm.messageCreatedLabel = messageAddedLabel;
-
+            vm.newMessageAuthor = newMessageAuthor;
         }
 	}
 }

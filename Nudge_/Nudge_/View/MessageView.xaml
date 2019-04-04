@@ -15,6 +15,7 @@
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
    
     <StackLayout Padding="10">
         <SearchBar x:Name="filterText" HeightRequest="40"

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UIKit;
-
+using UserNotifications;
 
 namespace Plugin.Notifications
 {
@@ -27,6 +27,7 @@ namespace Plugin.Notifications
         public override Task SetBadge(int value) => this.impl.SetBadge(value);
         public override void Vibrate(int ms) => this.impl.Vibrate(ms);
         public override Task<IEnumerable<Notification>> GetScheduledNotifications() => this.impl.GetScheduledNotifications();
+        public override Task<IEnumerable<UNNotificationRequest>> GetScheduledNotificationsIos() => this.impl.GetScheduledNotificationsIos();
         public override Task<bool> RequestPermission() => this.impl.RequestPermission();
         public override Task CancelAll() => this.impl.CancelAll();
         
