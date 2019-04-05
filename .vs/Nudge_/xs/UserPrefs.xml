@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/Shared/NotificationScheduler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/Top5CheckPage.xaml.cs">
     <Files>
       <File FileName="Nudge_/Nudge_.iOS/Notifications/UILocalNotificationsImpl.cs" Line="88" Column="61" />
       <File FileName="Nudge_/Nudge_.iOS/Notifications/NotificationsImpl.cs" Line="35" Column="2" />
       <File FileName="Nudge_/Nudge_.iOS/Notifications/UNNotificationsImpl.cs" Line="108" Column="41" />
-      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="94" Column="44" />
-      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" Line="230" Column="37" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="81" Column="1" />
+      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" Line="183" Column="1" />
       <File FileName="Nudge_/Nudge_.iOS/Notifications/AbstractAppleNotificationsImpl.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,12 +16,12 @@
             <Node name="Nudge_" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Notification" expanded="True" />
-              <Node name="Shared" expanded="True">
-                <Node name="NotificationScheduler.cs" selected="True" />
-              </Node>
+              <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
                 <Node name="RatePages" expanded="True" />
-                <Node name="Top5CheckPage.xaml" expanded="True" />
+                <Node name="Top5CheckPage.xaml" expanded="True">
+                  <Node name="Top5CheckPage.xaml.cs" selected="True" />
+                </Node>
                 <Node name="Top5Page.xaml" expanded="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
@@ -36,8 +37,8 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.12931e97c26943b7dc9064642db55f3f9db1f3c6" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.371C2C57-0C13-42AB-8D31-892F9F85F339" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" relfile="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" line="34" column="1" />
