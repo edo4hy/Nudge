@@ -39,6 +39,7 @@ namespace Nudge_.View
 
         void Handle_StateChanged(object sender, Syncfusion.XForms.Buttons.StateChangedEventArgs e)
         {
+           
             vm.CheckBoxClicked();
         }
     }

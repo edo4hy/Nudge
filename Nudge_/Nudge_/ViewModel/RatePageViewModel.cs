@@ -173,179 +173,6 @@ namespace Nudge_.ViewModel
 
         }
 
-        public void AddSliderdata()
-        {
-            RateSlider slider = new RateSlider
-            {
-                Title = "Slider One",
-                NegativeAnswer = "Bad",
-                PositiveAnswer = "Good",
-            };
-
-            App.Database.SaveSliderAsync(slider);
-
-            slider = new RateSlider
-            {
-                Title = "Slider Two",
-                NegativeAnswer = "Bad_1",
-                PositiveAnswer = "Good_2",
-            };
-            App.Database.SaveSliderAsync(slider);
-
-
-            slider = new RateSlider
-            {
-                Title = "Slider Three",
-                NegativeAnswer = "Bad 3",
-                PositiveAnswer = "Good_3"
-            };
-            App.Database.SaveSliderAsync(slider);
-
-
-            slider = new RateSlider
-            {
-                Title = "Slider Four",
-                NegativeAnswer = "Bad 4",
-                PositiveAnswer = "Good_4"
-            };
-            App.Database.SaveSliderAsync(slider);
-
-
-            slider = new RateSlider
-            {
-                Title = "Slider Five",
-                NegativeAnswer = "Bad_5",
-                PositiveAnswer = "Good_5"
-            };
-            App.Database.SaveSliderAsync(slider);
-
-        }
-
-        public void QuestionAddData()
-        {
-            Question question = new Question
-            {
-                Title = "Question One",
-                InUse = true,
-                Order = 1
-            };
-
-            App.Database.SaveQuestionAsync(question);
-
-            question = new Question
-            {
-                Title = "Question 2   -- pos3",
-                InUse = true,
-                Order = 3
-            };
-            App.Database.SaveQuestionAsync(question);
-
-            question = new Question
-            {
-                Title = "Question 3  -- pos 2",
-                InUse = true,
-                Order = 2
-            };
-            App.Database.SaveQuestionAsync(question);
-
-            question = new Question
-            {
-                Title = "Question 4",
-                InUse = true,
-                Order = 4
-            };
-
-            App.Database.SaveQuestionAsync(question);
-
-        }
-
-        public void AddAnswers()
-        {
-            Answer answer = new Answer
-            {
-                QuestionId = 1,
-                AnswerText = "Answer 1"
-            };
-
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 1,
-                AnswerText = "Answer 2"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 1,
-                AnswerText = "Answer 2"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 1,
-                AnswerText = "Answer 3"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 1,
-                AnswerText = "Answer 4"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 2,
-                AnswerText = "Answer 1  QQ2"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 2,
-                AnswerText = "Answer 2 QQ2"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 2,
-                AnswerText = "Answer 3 QQ2"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 3,
-                AnswerText = "Answer 1 QQ3"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 3,
-                AnswerText = "Answer 2 QQ3"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 4,
-                AnswerText = "Answer 1 QQ4"
-            };
-            App.Database.SaveAnswerAsync(answer);
-
-            answer = new Answer
-            {
-                QuestionId = 4,
-                AnswerText = "Answer 1 QQ4"
-            };
-            App.Database.SaveAnswerAsync(answer);
-        }
 
 
         public async void RemoveSlider(RateSlider rateSlider)
@@ -462,13 +289,6 @@ namespace Nudge_.ViewModel
             }
        
 
-            //editPageElements.Add(new RateQuestionCombo
-            //{
-            //    Question = null, 
-            //    isButtonNotSpace = true,
-            //    Order = 10001
-            //});
-
             // Sort by Order by 
             var a = editPageElements.OrderBy(keySelector: p => p.Order).ToList();
             editPageElements.Clear();
@@ -484,15 +304,6 @@ namespace Nudge_.ViewModel
 
         }
 
-        //public async void GetAnswers(Question q)
-        //{
-        //    List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
-            
-        //    foreach(Answer a in answerList)
-        //    {
-        //        q.Answers.Add(a);
-        //    }
-        //}
 
         public async void NavigateToAddSlider()
         {
@@ -506,58 +317,10 @@ namespace Nudge_.ViewModel
             await Navigation.PushAsync(new BrowseQuestionTabbed(this));
         }
 
-        //public async Task GetSliders()
-        //{
-        //    List<RateSlider> slidersList = await App.Database.GetSlidersAysnc();
-        //    await Task.Delay(100);
-        //    foreach (RateSlider r in slidersList)
-        //    {
-
-        //        if (r.InUse == true)
-        //        {
-        //            if (isEditPage == true)
-        //            {
-        //                if (r == null) return;
-        //                if (sliderHolder == null) return;
-        //                if (sliderHolder.Children == null) return;
-
-        //                sliderHolder.Children.Add(new EditSliderView(r, this));
-        //            }
-        //            else
-        //            {
-        //                if (r == null) return;
-        //                if (sliderHolder == null) return;
-        //                if (sliderHolder.Children == null) return;
-
-        //                SliderView sw = new SliderView(r);
-        //                sliderHolder.Children.Add(sw);
-        //            }
-        //        }
-        //    }
-        //}
 
 
 
-        //public async Task GetQuestions()
-        //{
-        //    List<Question> questionList = await App.Database.GetQuestionsAsync();
-        //    await Task.Delay(100);
-        //    foreach (Question q in questionList)
-        //    {
-        //        if (q.InUse == true)
-        //        {
-        //            if (isEditPage == true)
-        //            {
-        //                questionHolder.Children.Add(new EditQuestionView(q, this));
-        //            }
-        //            else
-        //            {
-        //                List<Answer> answerList = await App.Database.GetAnswersAsync(q.QuestionId);
-        //                questionHolder.Children.Add(new QuestionView(q, answerList));
-        //            }
-        //        }
-        //    }
-        //}
+
 
     }
 }

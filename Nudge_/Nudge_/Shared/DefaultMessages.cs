@@ -19,5 +19,7 @@ namespace Nudge_.Shared
         public static string lastMessage2Title = "We haven't seen you in a few days";
         public static string lastMessage2Body = "Log into the app to keep on sending out Nudges";
 
+        public static string ratePageTitle = "How are you today?";
+
     }
 }

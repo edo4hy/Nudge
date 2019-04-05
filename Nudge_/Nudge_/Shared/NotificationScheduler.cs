@@ -10,6 +10,7 @@ using Xamarin.Forms;
 
 using System.Threading.Tasks;
 using Notification = Plugin.Notifications.Notification;
+using UIKit;
 
 namespace Nudge_.Shared
 {
@@ -20,7 +21,7 @@ namespace Nudge_.Shared
         TimeSpan endTime = new TimeSpan();
         Random rn;
 
-        int notificationLimit = 61;
+        int notificationLimit = 60;
         int notificationsSentOut = 0;
         bool notLimitReached = false;
         bool lastMessagesSent = false;
@@ -124,6 +125,11 @@ namespace Nudge_.Shared
 
                     };
 
+                    if(Device.RuntimePlatform == Device.iOS)
+                    {
+                        n.Sound = UILocalNotification.DefaultSoundName;
+                    }
+
                     if (n.Date > DateTime.Now)
                     {
                         await CrossNotifications.Current.Send(n);
@@ -161,8 +167,6 @@ namespace Nudge_.Shared
 
                         };
 
-                        await CrossNotifications.Current.Send(ln);
-
                         Notification ln2 = new Notification()
                         {
                             Title = DefaultMessages.lastMessage2Title,
@@ -171,6 +175,14 @@ namespace Nudge_.Shared
                             Date = dtTemp.AddDays(2),
                             Id = SendId++
                         };
+
+                        if (Device.RuntimePlatform == Device.iOS)
+                        {
+                            ln.Sound = UILocalNotification.DefaultSoundName;
+                            ln2.Sound = UILocalNotification.DefaultSoundName;
+                        }
+
+                        await CrossNotifications.Current.Send(ln);
 
                         await CrossNotifications.Current.Send(ln2);
 
@@ -226,6 +238,7 @@ namespace Nudge_.Shared
                 Title = "Think through these beauties",
                 Message = "Test notification message 7869876v 0909",
                 Vibrate = true,
+                Sound = UILocalNotification.DefaultSoundName,
                 Date = dt,
                 Id = rn.Next(1002, 999999)
 

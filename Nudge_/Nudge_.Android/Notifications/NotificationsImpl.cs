@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
@@ -7,6 +8,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.App;
 using Nudge_.Droid;
+using UIKit;
+using UserNotifications;
 //using Android.Support.V7.App;
 
 
@@ -57,8 +60,6 @@ namespace Plugin.Notifications
             {
                 var launchIntent = Application.Context.PackageManager.GetLaunchIntentForPackage(Application.Context.PackageName);
                 launchIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
-                //launchIntent.PutExtra("JobID", 233);
-                //launchIntent.PutExtra("NotificationId", 235);
 
                 var intent = new Intent();
                 launchIntent.PutExtra("JobId", true);
@@ -117,7 +118,7 @@ namespace Plugin.Notifications
                     NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", Android.App.NotificationImportance.High);
                     notificationChannel.EnableLights(true);
                     notificationChannel.EnableVibration(true);
-                    notificationChannel.SetVibrationPattern(new long[] { 100, 200, 300, 400, 500, 400, 300, 200, 400 });
+                    notificationChannel.SetVibrationPattern(new long[] { 100, 200, 300, 400, 500 });
                     notificationChannel.Description = "channel 1";
                     
 
@@ -231,8 +232,11 @@ namespace Plugin.Notifications
                 .Cancel(notificationId);
         }
 
+        public override Task<IEnumerable<UNNotificationRequest>> GetScheduledNotificationsIos() {
 
-      
+            throw new NotImplementedException();
+        }
+
     }
     
 }

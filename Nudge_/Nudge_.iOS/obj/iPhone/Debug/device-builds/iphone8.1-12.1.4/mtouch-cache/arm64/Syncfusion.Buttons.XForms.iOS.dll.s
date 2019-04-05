@@ -69446,7 +69446,7 @@ _mono_aot_file_info:
 	.long 592,8360,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 212,217,131,31,66,189,144,9,66,71,236,190,142,25,218,17
+	.byte 86,47,99,176,210,94,143,255,236,96,26,201,150,140,200,255
 	.globl _mono_aot_module_Syncfusion_Buttons_XForms_iOS_info
 	.align 3
 _mono_aot_module_Syncfusion_Buttons_XForms_iOS_info:

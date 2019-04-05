@@ -110,6 +110,7 @@ namespace Nudge_.ViewModel
             await App.Database.SaveMessageAsync(newMessage);
 
             newMessageEntry.Text = "";
+            newMessageAuthor.Text = "";
 
             messageCreatedLabel.IsVisible = true;
 

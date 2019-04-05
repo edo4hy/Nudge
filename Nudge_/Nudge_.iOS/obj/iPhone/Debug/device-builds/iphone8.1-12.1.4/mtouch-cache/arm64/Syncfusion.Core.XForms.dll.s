@@ -66422,7 +66422,7 @@ _mono_aot_file_info:
 	.long 680,8224,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 20,240,253,77,22,138,87,197,102,102,132,9,107,211,60,241
+	.byte 155,24,96,197,78,162,147,12,147,137,178,230,246,227,231,115
 	.globl _mono_aot_module_Syncfusion_Core_XForms_info
 	.align 3
 _mono_aot_module_Syncfusion_Core_XForms_info:

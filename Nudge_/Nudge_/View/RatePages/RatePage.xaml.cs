@@ -30,6 +30,9 @@ namespace Nudge_.View
             BindingContext = vm;
             vm.rateListView = RateListView;
             this.RateListView.ItemsSource = vm.editPageElements;
+
+            NavigationPage.SetHasBackButton(this, false);
+           
         }
 
         void Handle_SelectionChanged(object sender, Syncfusion.XForms.ComboBox.SelectionChangedEventArgs e)

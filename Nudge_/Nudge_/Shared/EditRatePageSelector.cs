@@ -26,7 +26,7 @@ namespace Nudge_.Shared
             if (rcq.RateSlider != null) return SliderTemplate;
             if (rcq.Question != null)
             {
-                if(rcq.Answers.Count == 0)
+                if(rcq.Answers == null || rcq.Answers.Count == 0)
                 {
                     return QuestionTemplateNoAnswers;
                 }

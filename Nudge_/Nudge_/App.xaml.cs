@@ -25,35 +25,17 @@ namespace Nudge_
         static NudgeDatabase database;
         static NotificationScheduler ns = new NotificationScheduler();
 
-        public App ()
+        public App()
         {
             InitializeComponent();
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
 
-            //Application.Current.Properties.Clear();
+            MainPage = new NavigationPage(new RatePage() { Title = DefaultMessages.ratePageTitle }) {
+                BarTextColor = ColourScheme.headerTextColour,
+                BarBackgroundColor = ColourScheme.headerColour
+            };
 
-
-            //MainPage = new NavigationPage(new EditRatePage());
-            //MainPage = new MainPage1();
-            //MainPage = new MessageTabbedPage();
-            //MainPage = new NavigationPage(new Top5Page()) { Title = "Top 5" };
-
-            //MainPage = new MasterDetailPage1();
-
-            //MainPage = new ListViewTest1();
-
-            
-            //MainPage = new ItemReordering();
-
-            //MainPage = new NavigationPage(new Top5CheckPage()) { Title = "Check in" };
-            //MainPage = new NavigationPage(new EditRatePage());
-            //MainPage = new NavigationPage(new EditRatePage());
-            MainPage = new RatePage();
-            //MainPage = new MyPage();
-            //MainPage = new BrowseQuestionTabbed();
-
-            //MainPage = new SettingsPage();
 
             if (App.Database.GetSettingAsync(1) == null)
             {

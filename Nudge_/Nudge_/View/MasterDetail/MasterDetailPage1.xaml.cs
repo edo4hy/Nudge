@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Nudge_.Shared;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,13 +16,18 @@ namespace Nudge_.View.MasterDetail
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+           
         }
 
         public MasterDetailPage1(ContentPage page)
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
-            Detail = new NavigationPage(page);
+            Detail = new NavigationPage(page)
+            {
+                BarBackgroundColor = ColourScheme.headerColour,
+                BarTextColor = ColourScheme.headerTextColour
+            };
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

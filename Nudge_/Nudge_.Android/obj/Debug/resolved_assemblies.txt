@@ -57,6 +57,7 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/Xamarin.Forms.Platform.Android.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/Xamarin.Forms.Platform.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/Xamarin.Forms.Xaml.dll
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/Xamarin.iOS.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.Net.Http.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.Runtime.Serialization.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.ServiceModel.Internals.dll
@@ -68,7 +69,6 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.IO.Compression.FileSystem.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.ComponentModel.Composition.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.Web.Services.dll
-/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/Xamarin.iOS.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.Runtime.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.Collections.Concurrent.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/obj/Debug/android/assets/System.Collections.dll

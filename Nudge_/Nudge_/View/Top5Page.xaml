@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nudge_.View.Top5Page"
@@ -10,8 +10,23 @@
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+    
+            <Style TargetType="ContentView">
+                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
+            </Style>
+            <Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
+            </Style>
+        
+            <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
+            </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
+  
+        
+ 
     <ContentPage.Content>
 
         <StackLayout>
