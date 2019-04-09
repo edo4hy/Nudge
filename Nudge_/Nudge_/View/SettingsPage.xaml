@@ -3,7 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
              Title="{Binding Title}"
-             x:Class="Nudge_.View.SettingsPage">
+             x:Class="Nudge_.View.SettingsPage"
+             xmlns:Converters="clr-namespace:Nudge_.Converters"
+               >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:WeekButtonColourConverter x:Key="colourConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout Padding="20">
             <Label Text="Send Notifications"/>
@@ -17,10 +25,63 @@
             
             <Label  x:Name="SliderDisplay" Text="{Binding Source={x:Reference FrequencyPicker}, Path=Value, StringFormat='Frequency {0:F0}'}"/>
             <Slider x:Name="FrequencyPicker"  Value="{Binding MessageFrequency } " Maximum="50" Minimum="0" ValueChanged="FrequencyPicker_SelectedIndexChanged"/>
+            
             <Label Text="Start time:"/>
-            <TimePicker x:Name="DailyStartTime" Time="{Binding StartTime}" IsVisible="True" PropertyChanged="DailyStartTime_PropertyChanged" ></TimePicker>
+            <TimePicker x:Name="DailyStartTime" Time="{Binding StartTime}" IsVisible="True" ></TimePicker>
+            
             <Label Text="End time:"/>
-            <TimePicker x:Name="DailyEndTime"  Time="{Binding EndTime}" IsVisible="True" PropertyChanged="DailyEndTime_PropertyChanged" ></TimePicker>
+            <TimePicker x:Name="DailyEndTime"  Time="{Binding EndTime}" IsVisible="True" ></TimePicker>
+            
+            <Label Text="Pause Notifications"/>
+            <Picker x:Name="PausePicker" SelectedItem="{Binding DelayTime}" IsVisible="true" >
+                  <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                    <x:String>11</x:String>
+                    <x:String>12</x:String>
+                    <x:String>13</x:String>
+                    <x:String>14</x:String>
+                    <x:String>15</x:String>
+                    <x:String>16</x:String>
+                    <x:String>17</x:String>
+                    <x:String>18</x:String>
+                    <x:String>19</x:String>
+                    <x:String>20</x:String>
+                    <x:String>21</x:String>
+                    <x:String>22</x:String>
+                    <x:String>23</x:String>
+                    <x:String>24</x:String>
+                  </Picker.Items>
+            </Picker>
+            
+            <Label Text="Notification days" Margin="0,20,0,0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                  <Button Command="{Binding WeekButton}" CommandParameter="monday" TextColor="{Binding MonNotify, Converter={StaticResource colourConverter}}" x:Name="monday" Text="M" Grid.Column="0" />
+                  <Button Command="{Binding WeekButton}" CommandParameter="tuesday" TextColor="{Binding TueNotify, Converter={StaticResource colourConverter}}" x:Name="tuesday" Text="T"  Grid.Column="1" />
+                  <Button Command="{Binding WeekButton}" CommandParameter="wednesday" TextColor="{Binding WedNotify, Converter={StaticResource colourConverter}}" x:Name="wednesday" Text="W"  Grid.Column="2" />
+                  <Button Command="{Binding WeekButton}" CommandParameter="thursday" TextColor="{Binding ThurNotify, Converter={StaticResource colourConverter}}" x:Name="thursday" Text="T"  Grid.Column="3" />
+                  <Button Command="{Binding WeekButton}" CommandParameter="friday" TextColor="{Binding FriNotify, Converter={StaticResource colourConverter}}" x:Name="friday" Text="F"  Grid.Column="4" />
+                  <Button Command="{Binding WeekButton}" CommandParameter="saturday" TextColor="{Binding SatNotify, Converter={StaticResource colourConverter}}" x:Name="saturday" Text="S"  Grid.Column="5" />
+                  <Button Command="{Binding WeekButton}" CommandParameter="sunday" TextColor="{Binding SunNotify, Converter={StaticResource colourConverter}}" x:Name="sunday" Text="S"  Grid.Column="6" />
+            </Grid>
+            <Label Text="No notifications will be sent, all days have been turned off" x:Name="dayWarning" TextColor="#1d75f9" IsVisible="{Binding AllDaysOff}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -108,6 +108,10 @@
     <BundleResource Include="Resources\negSign.png" />
     <BundleResource Include="Resources\plusSign.png" />
     <BundleResource Include="Resources\NudgeSQLite.db3" />
+    <BundleResource Include="Resources\CompleteCheck.mp3" />
+    <Compile Include="AudioServices\AudioPlayerService_iOS.cs" />
+    <BundleResource Include="Resources\starEmpty.png" />
+    <BundleResource Include="Resources\starFull.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -203,4 +207,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AudioServices\" />
+  </ItemGroup>
 </Project>

@@ -13,12 +13,15 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 //using Plugin.Toasts;
 using Xamarin.Forms;
 using Plugin.Notifications;
+using Android.Media;
+
 
 namespace Nudge_.Droid
 {
-    [Activity(Label = "Nudge_", Icon = "@drawable/bin2", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Nudge_", Icon = "@drawable/bin2", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation), ]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+       
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -43,6 +46,7 @@ namespace Nudge_.Droid
                 LoadApplication(new App());
             }
 
+           
 
             App.Init(new NotificationsImpl());
 

@@ -68,6 +68,7 @@ namespace Nudge_.iOS
 
             App.Init(new NotificationsImpl());
 
+
             return base.FinishedLaunching(app, options);
         }
 

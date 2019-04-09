@@ -10,15 +10,16 @@ using Nudge_.ViewModel;
 using Nudge_.Model;
 using Nudge_.Data.Model;
 using Nudge_.Shared;
+using Foundation;
 
 namespace Nudge_.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Top5CheckPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Top5CheckPage : ContentPage
+    {
         Top5PageViewModel vm;
         NotificationScheduler ns;
-
+        AudioPlayerServiceImpl audioPlayer;
         public Top5CheckPage()
         {
             vm = new Top5PageViewModel(true);
@@ -35,12 +36,15 @@ namespace Nudge_.View
 
             // Pass the navigation through to the VM
             vm.Navigation = Navigation;
+
+            audioPlayer = new AudioPlayerServiceImpl(DependencyService.Get<IAudioPlayerService>());
         }
 
-        void Handle_StateChanged(object sender, Syncfusion.XForms.Buttons.StateChangedEventArgs e)
+        public async void Handle_StateChanged(object sender, Syncfusion.XForms.Buttons.StateChangedEventArgs e)
         {
-           
+            audioPlayer.PlayBasic();
+
             vm.CheckBoxClicked();
         }
     }
-} 
+}

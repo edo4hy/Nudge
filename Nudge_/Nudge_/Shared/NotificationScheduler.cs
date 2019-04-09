@@ -50,7 +50,9 @@ namespace Nudge_.Shared
 
             if (settings.SendNotifications)
             {
-                DateTime DayCountDate = DateTime.Now;
+                DateTime DayCountDate = FindNextValidDay(settings, DateTime.Now, 0);
+
+                if (DayCountDate == new DateTime())  return;
 
                 SendNotification(DayCountDate, settings, sendId++);
 
@@ -58,7 +60,12 @@ namespace Nudge_.Shared
                 {
                     // 64 is the max number of notifications which can be held - 
                     if (lastMessagesSent) continue; 
-                    DayCountDate = DayCountDate.AddDays(1);
+
+                    DayCountDate = FindNextValidDay(settings, DayCountDate.AddDays(1), 0);
+                    if(DayCountDate == new DateTime()) 
+                    { 
+                    return; 
+                    }
 
                     sendId = sendId + DailyNumberOfNotifications + 1;
 
@@ -68,6 +75,37 @@ namespace Nudge_.Shared
             }
             await Task.Delay(1000);
             PrintNotifications();
+        }
+
+        public DateTime FindNextValidDay(Settings setting, DateTime date, int dayCount)
+        {
+            if (dayCount > 6) return new DateTime();
+            switch (date.DayOfWeek.ToString())
+            {
+                case "Monday":
+                    if (setting.MonNotify) return date;
+                    else return FindNextValidDay(setting, date.AddDays(1), ++dayCount);
+                case "Tuesday":
+                    if (setting.TueNotify) return date;
+                    else return FindNextValidDay(setting, date.AddDays(1), ++dayCount);
+                case "Wednesday":
+                    if (setting.WedNotify) return date;
+                    else return FindNextValidDay(setting, date.AddDays(1), ++dayCount);
+                case "Thursday":
+                    if (setting.ThurNotify) return date;
+                    else return FindNextValidDay(setting, date.AddDays(1), ++dayCount);
+                case "Friday":
+                    if (setting.FriNotify) return date;
+                    else return FindNextValidDay(setting, date.AddDays(1), ++dayCount);
+                case "Saturday":
+                    if (setting.SatNotify) return date;
+                    else return FindNextValidDay(setting, date.AddDays(1), ++dayCount);
+                case "Sunday":
+                    if (setting.SunNotify) return date;
+                    else return FindNextValidDay(setting, date.AddDays(1), ++dayCount);
+                default:
+                    return new DateTime();
+            }
         }
 
 
@@ -117,7 +155,7 @@ namespace Nudge_.Shared
 
                     Notification n = new Notification()
                     {
-                        Title = "Check in quickly get a",
+                        Title = "Check in, get a Nudge",
                         Message = SelectMessageText(),
                         Vibrate = true,
                         Date = dtTemp,
@@ -130,7 +168,7 @@ namespace Nudge_.Shared
                         n.Sound = UILocalNotification.DefaultSoundName;
                     }
 
-                    if (n.Date > DateTime.Now)
+                    if (n.Date > DateTime.Now && n.Date > settings.DelayNotification)
                     {
                         await CrossNotifications.Current.Send(n);
                         notificationsSentOut++;

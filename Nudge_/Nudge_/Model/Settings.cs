@@ -29,9 +29,41 @@ namespace Nudge_.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+        public bool PlayNoiseOnCheckIn { get; set; }
+
+        public bool _monNotify = false;
+        public bool MonNotify { 
+            get {
+                return _monNotify;
+
+            }
+            set
+            {
+                _monNotify = value;
+            
+            } }
+        public bool TueNotify { get; set; }
+        public bool WedNotify { get; set; }
+        public bool ThurNotify { get; set; }
+        public bool FriNotify { get; set; }
+        public bool SatNotify { get; set; }
+        public bool SunNotify { get; set; }
+
+        public DateTime DelayNotification { get; set; }
+
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
 

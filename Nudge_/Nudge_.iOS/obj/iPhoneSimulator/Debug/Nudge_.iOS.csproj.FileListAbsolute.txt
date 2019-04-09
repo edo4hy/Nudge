@@ -84,3 +84,5 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/negSign.png
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/plusSign.png
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/starEmpty.png
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/optimized/starFull.png

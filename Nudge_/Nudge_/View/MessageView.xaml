@@ -28,6 +28,7 @@
             AutoFitMode="Height"
             
             >
+            
    <!--     <syncfusion:SfListView.Behaviors>
                 <behaviours:EventToCommandBehavior
                     Source="{x:Reference MessagesListView}"

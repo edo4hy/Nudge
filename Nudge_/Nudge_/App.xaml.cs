@@ -42,11 +42,18 @@ namespace Nudge_
                 Settings settings = new Settings
                 {
                     SettingId = 1,
-                    SendNotifications = false,
+                    SendNotifications = true,
                     DailyStartTime = new TimeSpan(7, 0, 0),
                     DailyEndTime = new TimeSpan(20, 0, 0),
                     ShowRatePage = true,
-                    ShowTop5CheckPage = true
+                    ShowTop5CheckPage = true,
+                    MonNotify = true,
+                    TueNotify = true,
+                    WedNotify = true,
+                    ThurNotify = true, 
+                    FriNotify = true, 
+                    SatNotify = true,
+                    SunNotify = true, 
                 };
 
                  App.database.SaveSettingsAsync(settings);
