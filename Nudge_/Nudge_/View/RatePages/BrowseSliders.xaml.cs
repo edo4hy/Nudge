@@ -16,6 +16,7 @@ namespace Nudge_.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BrowseSliders : ContentPage
 	{
+        TrulyObservableCollection<RateSlider> items;
 		public BrowseSliders ()
 		{
 			InitializeComponent ();
@@ -27,6 +28,19 @@ namespace Nudge_.View
         {
             InitializeComponent();
             SlidersListView.ItemsSource = col;
+            items = col;
         }
-	}
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            InitializeComponent();
+            SlidersListView.ItemsSource = items;
+
+
+            OnPropertyChanged();
+
+        }
+    }
 }

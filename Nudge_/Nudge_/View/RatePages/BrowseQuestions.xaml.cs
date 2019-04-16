@@ -25,11 +25,25 @@ namespace Nudge_.View
             //QuestionsListView.ItemsSource = vm.questions;
 		}
 
+        TrulyObservableCollection<Question> items;
+
         public BrowseQuestions(TrulyObservableCollection<Question> col)
         {
             InitializeComponent();
 
             QuestionsListView.ItemsSource = col;
+            items = col;
         }
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            InitializeComponent();
+            QuestionsListView.ItemsSource = items;
+
+            OnPropertyChanged();
+
+        }
+
+    }
 }

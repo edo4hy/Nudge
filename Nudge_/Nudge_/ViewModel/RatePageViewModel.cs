@@ -166,9 +166,7 @@ namespace Nudge_.ViewModel
 
         private async Task InitializeAysnc()
         {
-            //await GetSliders();
-            //await GetQuestions();
-
+         
             await GetSliderAndQuestion();
 
         }
@@ -316,11 +314,6 @@ namespace Nudge_.ViewModel
             Console.WriteLine(" Adding Question");
             await Navigation.PushAsync(new BrowseQuestionTabbed(this));
         }
-
-
-
-
-
 
     }
 }

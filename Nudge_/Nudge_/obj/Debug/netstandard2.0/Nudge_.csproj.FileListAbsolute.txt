@@ -54,12 +54,7 @@ C:/Users/edwar/source/repos/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/V
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/BrowseSliderTabbed.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/CreateQuestion.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/CreateSlider.xaml.g.cs
-/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditQuestionView.xaml.g.cs
-/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditRatePage.xaml.g.cs
-/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditSliderView.xaml.g.cs
-/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/QuestionView.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/RatePage.xaml.g.cs
-/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/SliderView.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/SettingsPage.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/Top5CheckPage.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/Top5Page.xaml.g.cs
@@ -80,3 +75,10 @@ C:/Users/edwar/source/repos/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/V
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Mono.Android.pdb
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/MessageViewCreated.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/EditMessage.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditRatePage.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/__EditQuestionView.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/__EditSliderView.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/__QuestionView.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/__SliderView.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditQuestionPage.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditSliderPage.xaml.g.cs

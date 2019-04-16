@@ -1,8 +1,11 @@
 ﻿using Nudge_.Data.Model;
 using Nudge_.Model;
+using Nudge_.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -18,6 +21,9 @@ namespace Nudge_.ViewModel
         public Entry newQuestionEntry;
         public Label questionAddedLabel;
 
+        public Question questionBeingEdited;
+        public Entry editQuestionEntry;
+
         public INavigation Navigation;
 
         RatePageViewModel rpvm;
@@ -27,12 +33,55 @@ namespace Nudge_.ViewModel
             GetQuestions();
             addNewQuestion = new Command(AddQuestion);
             questionTapped = new Command<object>(QuestionTappedFunc);
+            editQuestionPressed = new Command<object>(NavigateToEditQuestion);
+
+            saveQuestion = new Command(SaveQuestionEdit);
+            cancelEdit = new Command(CancelQuestionEdit);
+            deleteQuestion = new Command(DeleteQuestionEdit);
 
             this.rpvm = rpvm;
         }
 
+
+        public async void SaveQuestionEdit()
+        {
+            if (questionBeingEdited == null) return;
+
+            Question q = questionBeingEdited;
+            q.Title = editQuestionEntry.Text;
+
+            await App.Database.SaveQuestionAsync(q);
+
+            questionsCreated.FirstOrDefault(qs => qs.QuestionId == q.QuestionId).Title = editQuestionEntry.Text;
+
+            OnPropertyChanged();
+
+            await Navigation.PopModalAsync();
+        }
+
+
+        public async void CancelQuestionEdit() {
+            await Navigation.PopModalAsync();
+        }
+
+        public async void DeleteQuestionEdit()
+        {
+            Question oldQuestion = questionsCreated.FirstOrDefault(q => q.QuestionId == questionBeingEdited.QuestionId);
+
+            questionsCreated.Remove(oldQuestion);
+
+            await App.Database.DeleteQuestionAsync(oldQuestion);
+
+            await Navigation.PopModalAsync();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         ICommand addNewQuestion;
 
         public ICommand AddNewQuestion
@@ -44,6 +93,30 @@ namespace Nudge_.ViewModel
         public ICommand QuestionTapped
         {
             get { return questionTapped; }
+        }
+
+        ICommand editQuestionPressed;
+        public ICommand EditQuestionPressed
+        {
+            get { return editQuestionPressed; }
+        }
+
+        ICommand saveQuestion;
+        public ICommand SaveQuestion
+        {
+            get { return saveQuestion; }
+        }
+
+        ICommand cancelEdit;
+        public ICommand CancelEdit
+        {
+            get { return cancelEdit; }
+        }
+
+        ICommand deleteQuestion;
+        public ICommand DeleteQuestion
+        {
+            get { return deleteQuestion; }
         }
 
         public async void GetQuestions()
@@ -62,7 +135,12 @@ namespace Nudge_.ViewModel
                 }
             }
         }
-        
+
+        public async void NavigateToEditQuestion(object o)
+        {
+            await Navigation.PushModalAsync(new EditQuestionPage(this, o));
+        }
+
         public async void AddQuestion()
         {
             Question newQuestion = new Question

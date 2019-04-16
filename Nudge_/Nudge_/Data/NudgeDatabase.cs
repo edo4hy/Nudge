@@ -118,6 +118,11 @@ namespace Nudge_.Data
             }
         }
 
+        public Task<int> DeleteQuestionAsync(Question question)
+        {
+            return database.DeleteAsync(question);
+        }
+
         public Task<List<Answer>> GetAnswersAsync(int questionId)
         {
             return database.Table<Answer>().Where(i => i.QuestionId == questionId).ToListAsync();
@@ -166,6 +171,12 @@ namespace Nudge_.Data
                 return database.InsertAsync(slider);
             }
         }
+
+        public Task<int> DeleteSliderAsync(RateSlider slider)
+        {
+            return database.DeleteAsync(slider);
+        }
+
 
         public Task<List<Settings>> GetSettingsAsync()
         {

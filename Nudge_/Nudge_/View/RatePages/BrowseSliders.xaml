@@ -1,9 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
              x:Class="Nudge_.View.BrowseSliders"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
+             xmlns:colours="clr-namespace:Nudge_.Shared"
              >
 
     <ContentPage.Resources>
@@ -15,17 +18,38 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <ListView HasUnevenRows="True"
+            <syncfusion:SfListView
                       x:Name="SlidersListView"
-                      SelectionMode="Single">
-                <ListView.Behaviors>
+                      SelectionMode="Single"
+                      AutoFitMode="Height"
+                      AllowSwiping="true"
+                      SwipeOffset="80"
+                      SwipeThreshold="30"
+                      TapCommand="{Binding SliderTapped}">
+         <!--       <ListView.Behaviors>
                     <behaviours:EventToCommandBehavior
                         Source="{x:Reference SlidersListView}"
                         EventName="ItemSelected"
                         Command="{Binding SliderTapped}"
                         Converter="{StaticResource SelectedItemConverter}" />
-                </ListView.Behaviors>
-                <ListView.ItemTemplate>
+                </ListView.Behaviors>-->
+                
+                <syncfusion:SfListView.RightSwipeTemplate>
+                  <DataTemplate x:Name="RightSwipeTemplate">
+                    <Grid BackgroundColor="{Binding Source={x:Static colours:ColourScheme.editButtonColour }}" HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <Label Grid.Row="0"
+                                HeightRequest="50"
+                                WidthRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                BackgroundColor="Transparent"
+                                Text="Edit" />
+                        <Grid.GestureRecognizers>
+                               <TapGestureRecognizer Command="{Binding Path=BindingContext.EditSliderPressed, Source={x:Reference SlidersListView} }" CommandParameter="{Binding .}" />
+                       </Grid.GestureRecognizers>
+                    </Grid>
+                  </DataTemplate>
+                </syncfusion:SfListView.RightSwipeTemplate>
+                
+                <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="20">
@@ -43,8 +67,8 @@
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+               </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

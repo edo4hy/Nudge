@@ -36,7 +36,7 @@ namespace Nudge_
                 BarBackgroundColor = ColourScheme.headerColour
             };
 
-            //MainPage = new NavigationPage(new MessageTabbedPage());
+            //MainPage = new NavigationPage(new BrowseQuestionTabbed(new ViewModel.RatePageViewModel(true)));
 
 
             if (App.Database.GetSettingAsync(1) == null)

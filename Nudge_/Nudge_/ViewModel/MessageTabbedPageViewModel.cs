@@ -131,10 +131,9 @@ namespace Nudge_.ViewModel
             await App.Database.SaveMessageAsync(m);
 
             Message mOld = MessagesCreated.FirstOrDefault(ms => ms.MessageId == m.MessageId);
+            mOld.Author = editMessageAuthor.Text;
+            mOld.MessageText = editMessageEntry.Text;
 
-            MessagesCreated.Remove(mOld);
-
-            MessagesCreated.Add(m);
 
             OnPropertyChanged();
 

@@ -132,10 +132,10 @@
       <DependentUpon>BrowseSliderTabbed.xaml</DependentUpon>
     </Compile>
     <Compile Update="View\RatePages\EditRatePage.xaml.cs">
-      <DependentUpon>EditRatePage.xaml</DependentUpon>
+      <DependentUpon>__EditRatePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="View\RatePages\EditQuestionView.xaml.cs">
-      <DependentUpon>EditQuestionView.xaml</DependentUpon>
+      <DependentUpon>__EditQuestionView.xaml</DependentUpon>
     </Compile>
     <Compile Update="View\MasterDetail\MasterDetailPage1MenuItem.cs">
       <SubType>Code</SubType>

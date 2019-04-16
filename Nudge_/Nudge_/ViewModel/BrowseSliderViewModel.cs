@@ -6,6 +6,7 @@ using Nudge_.View.MasterDetail;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -25,6 +26,11 @@ namespace Nudge_.ViewModel
 
         public INavigation Navigation;
 
+        public RateSlider sliderBeingEdited;
+        public Entry editSliderTitle;
+        public Entry editSliderNeg;
+        public Entry editSliderPos;
+
         public BrowseSliderViewModel()
         {
             GetSliders();
@@ -42,6 +48,11 @@ namespace Nudge_.ViewModel
 
             Navigation = rpVM.Navigation;
             this.rateVM = rpVM;
+
+            editSliderPressed = new Command<object>(NavigateToEditSlider);
+            saveSlider = new Command(SaveSliderEdit);
+            cancelEdit = new Command(CancelSliderEdit);
+            deleteSlider = new Command(DeleteSliderEdit);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -57,6 +68,74 @@ namespace Nudge_.ViewModel
         {
             get { return sliderTapped; }
         }
+
+
+        ICommand editSliderPressed;
+        public ICommand EditSliderPressed
+        {
+            get { return editSliderPressed; }
+        }
+
+        ICommand saveSlider;
+        public ICommand SaveSlider
+        {
+            get { return saveSlider; }
+        }
+
+        ICommand cancelEdit;
+        public ICommand CancelEdit
+        {
+            get { return cancelEdit; }
+        }
+
+        ICommand deleteSlider;
+        public ICommand DeleteSlider
+        {
+            get { return deleteSlider; }
+        }
+
+        public async void SaveSliderEdit()
+        {
+            if (sliderBeingEdited == null) return;
+
+            RateSlider r = sliderBeingEdited;
+            r.Title = editSliderTitle.Text;
+            r.NegativeAnswer = editSliderNeg.Text;
+            r.PositiveAnswer = editSliderPos.Text;
+
+            RateSlider rs = slidersCreated.FirstOrDefault(rl => rl.SliderId == r.SliderId);
+            rs.Title = editSliderTitle.Text;
+            rs.NegativeAnswer = editSliderNeg.Text;
+            rs.PositiveAnswer = editSliderPos.Text;
+
+            await App.Database.SaveSliderAsync(rs);
+
+            await Navigation.PopModalAsync();
+
+        }
+
+        public async void NavigateToEditSlider(object o)
+        {
+            await Navigation.PushModalAsync(new EditSliderPage(this, o));
+        }
+
+        public async void CancelSliderEdit() {
+            await Navigation.PopModalAsync();
+        }
+
+        public async void DeleteSliderEdit()
+        {
+            RateSlider oldSlider = slidersCreated.FirstOrDefault(s => s.SliderId == sliderBeingEdited.SliderId);
+
+            slidersCreated.Remove(oldSlider);
+
+            await App.Database.DeleteSliderAsync(oldSlider);
+
+            await Navigation.PopModalAsync();
+
+        }
+
+
 
         public async void GetSliders()
         {

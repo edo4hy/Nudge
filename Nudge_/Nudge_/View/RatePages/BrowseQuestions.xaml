@@ -49,7 +49,7 @@
                                 BackgroundColor="Transparent"
                                 Text="Edit" />
                         <Grid.GestureRecognizers>
-<!--                               <TapGestureRecognizer Command="{Binding Path=BindingContext.EditButtonPressed, Source={x:Reference MessagesListView} }" CommandParameter="{Binding .}" />-->
+                               <TapGestureRecognizer Command="{Binding Path=BindingContext.EditQuestionPressed, Source={x:Reference QuestionsListView} }" CommandParameter="{Binding .}" />
                        </Grid.GestureRecognizers>
                     </Grid>
                   </DataTemplate>
