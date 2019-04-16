@@ -36,6 +36,8 @@ namespace Nudge_
                 BarBackgroundColor = ColourScheme.headerColour
             };
 
+            //MainPage = new NavigationPage(new MessageTabbedPage());
+
 
             if (App.Database.GetSettingAsync(1) == null)
             {
@@ -69,6 +71,7 @@ namespace Nudge_
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
 
             MainPage = new NavigationPage(new Top5CheckPage()) { Title = "Check in" };
+
         }
 
         public static AbstractNotificationsImpl NotificationsImpl { get; private set; }

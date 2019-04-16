@@ -14,7 +14,16 @@ namespace Nudge_.Model
     {
         [PrimaryKey, AutoIncrement]
         public int MessageId        { get; set; }
-        public string MessageText   { get; set; }
+        public string _messageText;
+        public string MessageText
+        {
+            get { return _messageText; }
+            set
+            {
+                _messageText = value;
+                OnPropertyChanged("MessageEdited");
+            }
+        }
         public string Author        { get; set; }
         public Type Type            { get; set; }
 

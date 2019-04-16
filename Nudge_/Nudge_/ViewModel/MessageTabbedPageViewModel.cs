@@ -43,8 +43,18 @@ namespace Nudge_.ViewModel
         public Entry newMessageEntry;
         public Entry newMessageAuthor;
 
+        public Entry editMessageEntry;
+        public Entry editMessageAuthor;
+
+        public Message MessageBeingEdited;
+
         INavigation Navigation;
 
+        ICommand editButtonPressed;
+        public ICommand EditButtonPressed
+        {
+            get { return editButtonPressed; }
+        }
 
         ICommand addNewMessage;
         public ICommand AddNewMessage
@@ -57,6 +67,25 @@ namespace Nudge_.ViewModel
         {
             get { return starTapCommand; }
         }
+
+        ICommand cancelEdit;
+        public ICommand CancelEdit
+        {
+            get { return cancelEdit; }
+        }
+
+        ICommand saveMessage;
+        public ICommand SaveMessage
+        {
+            get { return saveMessage; }
+        }
+
+        ICommand deleteMessage;
+        public ICommand DeleteMessage
+        {
+            get { return deleteMessage; }
+        }
+
 
         Command<Syncfusion.ListView.XForms.ItemTappedEventArgs> messageTapCommand;
         public Command<Syncfusion.ListView.XForms.ItemTappedEventArgs> MessageTapCommand
@@ -71,7 +100,7 @@ namespace Nudge_.ViewModel
         //}
 
 
-        public MessageTabbedPageViewModel()
+        public MessageTabbedPageViewModel(INavigation navigation)
         {
             //AddData();
             //App.Database.DeleteAllMessagesDatabase();
@@ -80,6 +109,52 @@ namespace Nudge_.ViewModel
             starTapCommand = new Command(StarTapped);
             messageTapCommand = new Command<Syncfusion.ListView.XForms.ItemTappedEventArgs>(MessageTapped);
             addNewMessage = new Command(MessageAdded);
+
+            editButtonPressed = new Command<object>(EditMessageModal);
+            saveMessage = new Command(SaveMessageEdit);
+            cancelEdit = new Command(CancelMessageEditAsync);
+            deleteMessage = new Command(DeleteMessageEdit);
+
+            this.Navigation = navigation;
+
+        }
+
+        
+        public async void SaveMessageEdit()
+        {
+            if (MessageBeingEdited == null) return;
+
+            Message m = MessageBeingEdited;
+            m.MessageText = editMessageEntry.Text;
+            m.Author = editMessageAuthor.Text;
+
+            await App.Database.SaveMessageAsync(m);
+
+            Message mOld = MessagesCreated.FirstOrDefault(ms => ms.MessageId == m.MessageId);
+
+            MessagesCreated.Remove(mOld);
+
+            MessagesCreated.Add(m);
+
+            OnPropertyChanged();
+
+            await Navigation.PopModalAsync();
+        }
+
+        public void CancelMessageEditAsync()
+        {
+           Navigation.PopModalAsync();
+        }
+
+        public async void DeleteMessageEdit()
+        {
+
+            Message mOld = MessagesCreated.FirstOrDefault(ms => ms.MessageId == MessageBeingEdited.MessageId);
+
+            MessagesCreated.Remove(mOld);
+            await App.Database.DeleteMessageAsync(MessageBeingEdited);
+
+            await Navigation.PopModalAsync();
         }
 
         public MessageTabbedPageViewModel(Top5PageViewModel top5VM)
@@ -91,10 +166,19 @@ namespace Nudge_.ViewModel
             starTapCommand = new Command(StarTapped);
             messageTapCommand = new Command<Syncfusion.ListView.XForms.ItemTappedEventArgs>(MessageTappedSelectedFromTop5);
             addNewMessage = new Command(MessageAdded);
+            editButtonPressed = new Command(EditMessageModal);
+
 
             Navigation =  top5VM.Navigation;
             this.top5VM = top5VM;
         }
+
+        public async void EditMessageModal(object o)
+        {
+            OnPropertyChanged();
+            await Navigation.PushModalAsync(new EditMessage(this, o));
+        }
+
 
         private async void MessageAdded()
         {
@@ -268,7 +352,6 @@ namespace Nudge_.ViewModel
 
             m.Top5 = n;
             await App.Database.SaveMessageAsync(m);
-
         }
 
         private void UpdateTop5Local(Top5Number n, Message m, TrulyObservableCollection<Message> collection)

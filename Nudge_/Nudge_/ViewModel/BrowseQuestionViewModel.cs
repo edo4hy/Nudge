@@ -26,7 +26,7 @@ namespace Nudge_.ViewModel
         {
             GetQuestions();
             addNewQuestion = new Command(AddQuestion);
-            questionTapped = new Command(QuestionTappedFunc);
+            questionTapped = new Command<object>(QuestionTappedFunc);
 
             this.rpvm = rpvm;
         }
@@ -92,9 +92,9 @@ namespace Nudge_.ViewModel
         {
             if (questionBeingExecuted) return;
             if (obj == null) return;
-
+            Syncfusion.ListView.XForms.ItemTappedEventArgs obj2 = (Syncfusion.ListView.XForms.ItemTappedEventArgs)obj;
             questionBeingExecuted = true;
-            Question question = (Question)obj;
+            Question question = (Question)obj2.ItemData;
 
             UpdateQuestionSelected(question);
 

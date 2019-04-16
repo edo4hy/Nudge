@@ -10,6 +10,9 @@
     <None Remove="Libraries\**" />
     <Compile Remove="View\Page1.xaml.cs" />
     <EmbeddedResource Remove="View\Page1.xaml" />
+    <Compile Remove="View\MessageViewCreated %28copy%29.xaml.cs" />
+    <EmbeddedResource Remove="View\MessageViewCreated %28copy%29.xaml" />
+    <Compile Remove="View\MessageViewCreated %28another copy%29.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>

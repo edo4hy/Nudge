@@ -78,3 +78,5 @@ C:/Users/edwar/source/repos/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/V
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/Nudge_.csproj.CopyComplete
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Mono.Android.dll
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/bin/Debug/netstandard2.0/Mono.Android.pdb
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/MessageViewCreated.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/EditMessage.xaml.g.cs

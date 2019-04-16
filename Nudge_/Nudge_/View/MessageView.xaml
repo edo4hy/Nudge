@@ -26,18 +26,8 @@
             SelectionMode="Single"
             TapCommand="{Binding MessageTapCommand}"
             AutoFitMode="Height"
-            
             >
-            
-   <!--     <syncfusion:SfListView.Behaviors>
-                <behaviours:EventToCommandBehavior
-                    Source="{x:Reference MessagesListView}"
-                    EventName="ItemSelected"
-                    Command="{Binding MessageTapCommand}"
-                    Converter="{StaticResource SelectedItemConverter}" 
-                    
-                    />
-            </syncfusion:SfListView.Behaviors>-->
+
             <syncfusion:SfListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
