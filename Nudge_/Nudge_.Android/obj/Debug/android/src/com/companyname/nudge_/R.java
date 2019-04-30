@@ -3150,6 +3150,8 @@ containing a value of this type.
         public static final int cardview_light_background=0x7f0d0001;
         public static final int cardview_shadow_end_color=0x7f0d0002;
         public static final int cardview_shadow_start_color=0x7f0d0003;
+        /**      <color name="colorPrimaryDark">#2196F3</color>
+         */
         public static final int colorAccent=0x7f0d004e;
         public static final int colorPrimary=0x7f0d004c;
         public static final int colorPrimaryDark=0x7f0d004d;

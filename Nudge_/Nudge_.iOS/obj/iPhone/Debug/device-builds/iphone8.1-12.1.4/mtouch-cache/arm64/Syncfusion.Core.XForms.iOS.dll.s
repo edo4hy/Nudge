@@ -18957,7 +18957,7 @@ _mono_aot_file_info:
 	.long 152,2656,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 97,69,104,38,237,239,207,8,243,231,217,142,152,166,60,199
+	.byte 216,230,13,165,210,153,163,112,141,145,143,153,239,27,149,58
 	.globl _mono_aot_module_Syncfusion_Core_XForms_iOS_info
 	.align 3
 _mono_aot_module_Syncfusion_Core_XForms_iOS_info:

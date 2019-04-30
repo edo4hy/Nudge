@@ -21922,7 +21922,7 @@ _mono_aot_file_info:
 	.long 176,2808,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 27,222,74,24,70,55,117,221,236,137,241,100,81,55,124,28
+	.byte 86,131,146,145,95,51,201,183,91,76,81,4,18,200,137,27
 	.globl _mono_aot_module_Syncfusion_SfListView_XForms_iOS_info
 	.align 3
 _mono_aot_module_Syncfusion_SfListView_XForms_iOS_info:

@@ -39,7 +39,7 @@
                                                    FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
                                     </StackLayout>
                                     <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Padding="0, 5, 0, 5">
-                                        <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="12" VerticalOptions="CenterAndExpand">
+                                        <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="15" VerticalOptions="CenterAndExpand">
                                            <Image.GestureRecognizers>
                                                 <TapGestureRecognizer 
                                                     Command="{Binding Path=BindingContext.StarTapCommand, Source={x:Reference MessagesListView}}" 

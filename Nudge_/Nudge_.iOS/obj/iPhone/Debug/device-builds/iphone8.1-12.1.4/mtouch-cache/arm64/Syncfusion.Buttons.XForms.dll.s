@@ -71160,7 +71160,7 @@ _mono_aot_file_info:
 	.long 704,5880,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 138,215,228,24,144,66,59,45,29,74,236,111,232,69,16,149
+	.byte 240,63,25,245,188,108,167,224,26,113,8,190,133,117,33,173
 	.globl _mono_aot_module_Syncfusion_Buttons_XForms_info
 	.align 3
 _mono_aot_module_Syncfusion_Buttons_XForms_info:

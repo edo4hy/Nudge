@@ -39,7 +39,13 @@ namespace Nudge_.View.MasterDetail
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
 
-            Detail = new NavigationPage(page);
+
+            Detail = new NavigationPage(page)
+            {
+                BarBackgroundColor = ColourScheme.headerColour,
+                BarTextColor = ColourScheme.headerTextColour
+            };
+            
             IsPresented = false;
 
             MasterPage.ListView.SelectedItem = null;

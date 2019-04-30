@@ -136,6 +136,8 @@ namespace Nudge_.ViewModel
         public void CheckBoxClicked()
         {
             int checkCount = 0;
+            int top5Count = MessagesTop5Unordered.Count;
+
             foreach(Top5Check tp in MessageCheckTop5) 
             { 
                 if(tp.Top5Checked == true)
@@ -143,7 +145,7 @@ namespace Nudge_.ViewModel
                     checkCount++;
                 }
 
-                if(checkCount == 5)
+                if(checkCount == top5Count)
                 {
                     App.Current.MainPage = new MasterDetailPage1();
                 }
@@ -154,6 +156,7 @@ namespace Nudge_.ViewModel
         public void ToHomeChange()
         {
             App.Current.MainPage = new MasterDetailPage1();
+           
         }
 
     }

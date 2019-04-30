@@ -31,17 +31,20 @@ namespace Nudge_
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
 
-            MainPage = new NavigationPage(new RatePage() { Title = DefaultMessages.ratePageTitle }) {
+            MainPage = new NavigationPage(new RatePage() { 
+                Title = DefaultMessages.ratePageTitle }) {
                 BarTextColor = ColourScheme.headerTextColour,
                 BarBackgroundColor = ColourScheme.headerColour
             };
 
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
             //MainPage = new NavigationPage(new BrowseQuestionTabbed(new ViewModel.RatePageViewModel(true)));
 
+            MainPage = new NavigationPage(new EditRatePage());
 
-            if (App.Database.GetSettingAsync(1) == null)
-            {
-                Settings settings = new Settings
+            //if (App.Database.GetSettingAsync(1) == null)
+            //{
+            Settings settings = new Settings
                 {
                     SettingId = 1,
                     SendNotifications = true,
@@ -59,7 +62,7 @@ namespace Nudge_
                 };
 
                  App.database.SaveSettingsAsync(settings);
-            }
+            //}
 
         }
 
@@ -70,7 +73,12 @@ namespace Nudge_
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
 
-            MainPage = new NavigationPage(new Top5CheckPage()) { Title = "Check in" };
+            MainPage = new NavigationPage(new Top5CheckPage()) 
+            { 
+                Title = "Check in",
+                BarBackgroundColor = ColourScheme.headerColour,
+                BarTextColor = ColourScheme.headerTextColour
+            };
 
         }
 

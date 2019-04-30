@@ -15,61 +15,41 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-
         <StackLayout>
-            <ListView 
-                 HasUnevenRows="True"
-                 
-                 ItemsSource="{Binding MessagesTop5}"
-                 x:Name="Top5ListView"  
-                 >
-            <!--      <ListView.Behaviors>
-                     <behaviours:EventToCommandBehavior
-                        Source="{x:Reference Top5ListView}"
-                        EventName="ItemSelected"
-                        Command="{Binding Top5Selection}"
-                        Converter="{StaticResource SelectedItemConverter}" 
-                        />
-                </ListView.Behaviors>-->
+            <ListView HasUnevenRows="True"
+                      ItemsSource="{Binding MessagesTop5}"
+                      x:Name="Top5ListView" 
+                      >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ContentView>
                                    <Grid>
-                                    <Grid.ColumnDefinitions>
-                                         <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="40" />
-                                       
-                                    </Grid.ColumnDefinitions>
-                                   
-                                    <Grid Grid.Column="0">
-                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
-                                            <Label Text="{Binding MessageText}" FontAttributes="Bold" /> 
-                                            <Label Text="{Binding Author}" />
-                                            <!--<Label Text="{Binding Top5}" />-->
-                                        </StackLayout>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="40" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
+                                                <Label Text="{Binding MessageText}" FontAttributes="Bold" /> 
+                                                <Label Text="{Binding Author}" />
+                                            </StackLayout>
                                         </Grid>
-                                     <Grid Grid.Column="1" Padding="5">
-                                        <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
-                                    </Grid>
+                                        <Grid Grid.Column="1" Padding="5">
+                                            <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
+                                        </Grid>
                                     </Grid>
                                 </ContentView>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <StackLayout Orientation="Horizontal" Padding="0,0,0,10"  BackgroundColor="#FFE8E8EC">
-                    <StackLayout Padding="20,5,20,5" Orientation="Vertical" BackgroundColor="#FFE8E8EC" HorizontalOptions="StartAndExpand">
-                    </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="0,0,0,10">
+                    <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="StartAndExpand"></StackLayout>
                     <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
-                 <!--       <buttons:SfButton Command="{Binding Path=BindingContext.ToHome}"
-                                               Padding="5" CornerRadius="20"  WidthRequest="150" Text="Skip" IsCheckable="True"/>-->
                         <Button CornerRadius="20" BackgroundColor="#204e99" WidthRequest="120" TextColor="White" Command="{Binding Source={x:Reference Top5ListView}, Path=BindingContext.ToHome}" Text="Skip"/>
-                     </StackLayout>
-                </StackLayout>
- 
+                    </StackLayout>
+               </StackLayout>
         </StackLayout>
-
-
     </ContentPage.Content>
 </ContentPage>

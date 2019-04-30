@@ -32,9 +32,9 @@ namespace Nudge_.Data
             //database.CreateTableAsync<Question>().Wait();
             //database.CreateTableAsync<QuestionResult>().Wait();
             //database.CreateTableAsync<SliderResult>().Wait();
-            //database.DropTableAsync<Settings>().Wait();
+            database.DropTableAsync<Settings>().Wait();
 
-            //database.CreateTableAsync<Settings>().Wait();
+            database.CreateTableAsync<Settings>().Wait();
 
 
         }

@@ -188,6 +188,7 @@ namespace Nudge_.ViewModel
         public void ToHomeChange()
         {
             App.Current.MainPage = new MasterDetailPage1();
+         
         }
 
         public void SaveAnswersSave()

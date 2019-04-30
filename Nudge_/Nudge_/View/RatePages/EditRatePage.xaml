@@ -108,13 +108,13 @@
                 <StackLayout HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
                     <StackLayout x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
                         <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Text="Add Question" HeightRequest="30" Margin="0,7.5,0,7.5" WidthRequest="110" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}"/>
+                            <Button Text="Change Questions" HeightRequest="30" Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                             <Label Text="" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
                         </StackLayout>
                         <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Text="Add Slider" HeightRequest="30" Margin="0,7.5,0,7.5" WidthRequest="110" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddSlider}"/>
+                            <Button Text=" Change Sliders " HeightRequest="30" Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddSlider}"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout Padding="20, 5, 20, 5" Margin="10" HeightRequest="50" x:Name="deleteButton" IsVisible="false" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">

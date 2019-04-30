@@ -10,25 +10,9 @@
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
-    
-            <Style TargetType="ContentView">
-                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-            </Style>
-            <Style TargetType="StackLayout">
-                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-            </Style>
-        
-            <Style TargetType="ListView">
-                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-            </Style>
-            
         </ResourceDictionary>
     </ContentPage.Resources>
-  
-        
- 
     <ContentPage.Content>
-
         <StackLayout>
             <ListView 
                  HasUnevenRows="True"
@@ -58,9 +42,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
- 
         </StackLayout>
-
-
     </ContentPage.Content>
 </ContentPage>

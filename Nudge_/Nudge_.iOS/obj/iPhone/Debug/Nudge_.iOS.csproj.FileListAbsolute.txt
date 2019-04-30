@@ -84,3 +84,5 @@
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhone/Debug/Nudge_.iOS.csproj.CopyComplete
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhone/Debug/Nudge_.iOS.exe
 /Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhone/Debug/Nudge_.iOS.pdb
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.4/optimized/starEmpty.png
+/Users/edwardobree/xamarintest/Nudge_/Nudge_.iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.4/optimized/starFull.png

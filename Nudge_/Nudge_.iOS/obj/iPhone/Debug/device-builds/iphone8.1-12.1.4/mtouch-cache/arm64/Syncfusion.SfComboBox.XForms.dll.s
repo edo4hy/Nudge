@@ -48719,7 +48719,7 @@ _mono_aot_file_info:
 	.long 568,4672,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 154,44,152,139,86,17,38,25,78,197,205,204,15,3,128,78
+	.byte 28,81,135,15,169,55,193,113,74,37,8,92,212,105,27,188
 	.globl _mono_aot_module_Syncfusion_SfComboBox_XForms_info
 	.align 3
 _mono_aot_module_Syncfusion_SfComboBox_XForms_info:

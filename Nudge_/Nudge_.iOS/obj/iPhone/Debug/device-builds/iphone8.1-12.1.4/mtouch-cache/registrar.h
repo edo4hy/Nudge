@@ -12,6 +12,7 @@
 #import <GLKit/GLKit.h>
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 @class UIApplicationDelegate;
@@ -34,6 +35,8 @@
 @class Foundation_NSAsyncDispatcher;
 @class __MonoMac_NSAsyncActionDispatcher;
 @class __MonoMac_NSAsyncSynchronizationContextDispatcher;
+@class AVAudioPlayerDelegate;
+@class AVFoundation_InternalAVAudioPlayerDelegate;
 @class Xamarin_Forms_Platform_iOS_FormsApplicationDelegate;
 @class AppDelegate;
 @class OpenTK_Platform_iPhoneOS_CADisplayLinkTimeSource;
@@ -211,6 +214,11 @@
 @end
 
 @interface UIWebViewDelegate : NSObject<UIWebViewDelegate> {
+}
+	-(id) init;
+@end
+
+@interface AVAudioPlayerDelegate : NSObject<AVAudioPlayerDelegate> {
 }
 	-(id) init;
 @end

@@ -13,6 +13,9 @@
     <Compile Remove="View\MessageViewCreated %28copy%29.xaml.cs" />
     <EmbeddedResource Remove="View\MessageViewCreated %28copy%29.xaml" />
     <Compile Remove="View\MessageViewCreated %28another copy%29.xaml.cs" />
+    <Compile Remove="View\RatePages\EditQuestionView.xaml.cs" />
+    <Compile Remove="View\RatePages\EditSliderView.xaml.cs" />
+    <EmbeddedResource Remove="View\RatePages\__EditQuestionView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,12 +59,6 @@
     <EmbeddedResource Update="View\CreateMessage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\ItemReordering.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\ListViewTest1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\RatePages\BrowseSliders.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -74,9 +71,6 @@
     <EmbeddedResource Update="View\RatePages\BrowseQuestionTabbed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePages\EditSliderView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\MessagePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -86,13 +80,7 @@
     <EmbeddedResource Update="View\MessageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePages\QuestionView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\RatePages\RatePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\RatePages\SliderView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\MasterDetail\MasterDetailPage1.xaml">
@@ -104,18 +92,12 @@
     <EmbeddedResource Update="View\MasterDetail\MasterDetailPage1Master.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\MasterDetail\Page1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\Top5Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\ItemReordering.xaml.cs">
-      <DependentUpon>ItemReordering.xaml</DependentUpon>
-    </Compile>
     <Compile Update="View\RatePages\BrowseQuestions.xaml.cs">
       <DependentUpon>BrowseQuestions.xaml</DependentUpon>
     </Compile>
@@ -133,9 +115,6 @@
     </Compile>
     <Compile Update="View\RatePages\EditRatePage.xaml.cs">
       <DependentUpon>__EditRatePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="View\RatePages\EditQuestionView.xaml.cs">
-      <DependentUpon>__EditQuestionView.xaml</DependentUpon>
     </Compile>
     <Compile Update="View\MasterDetail\MasterDetailPage1MenuItem.cs">
       <SubType>Code</SubType>
