@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             xmlns:Converters="clr-namespace:Nudge_.Converters"
+             x:Class="Nudge_.View.BrowseQuestionsCreated"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
+             xmlns:colours="clr-namespace:Nudge_.Shared"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:FavouriteToImageConverter x:Key="boolToString"/>
+            <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <syncfusion:SfListView 
+                      x:Name="QuestionsListView"
+                      SelectionMode="Single"
+                      AutoFitMode="Height"
+                      AllowSwiping="true"
+                      SwipeOffset="80"
+                      SwipeThreshold="30"
+                      TapCommand="{Binding QuestionTapped}"
+                      
+                >
+                
+
+<!--               <SfListView.Behaviors>
+                    <behaviours:EventToCommandBehavior
+                        Source="{x:Reference QuestionsListView}"
+                        EventName="ItemSelected"
+                        Command="{Binding QuestionTapped}"
+                        Converter="{StaticResource SelectedItemConverter}"
+                        CommandParameter="{Binding .}"/>
+                </SfListView.Behaviors>
+                -->
+               <syncfusion:SfListView.RightSwipeTemplate>
+                  <DataTemplate x:Name="RightSwipeTemplate">
+                    <Grid BackgroundColor="{Binding Source={x:Static colours:ColourScheme.editButtonColour }}" HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <Label Grid.Row="0"
+                                HeightRequest="50"
+                                WidthRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                BackgroundColor="Transparent"
+                                Text="Edit" />
+                        <Grid.GestureRecognizers>
+                               <TapGestureRecognizer Command="{Binding Path=BindingContext.EditQuestionPressed, Source={x:Reference QuestionsListView} }" CommandParameter="{Binding .}" />
+                       </Grid.GestureRecognizers>
+                    </Grid>
+                  </DataTemplate>
+                </syncfusion:SfListView.RightSwipeTemplate>
+                
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20">
+                                <StackLayout>
+                                    <Label FontSize="Medium" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                    <Label FontSize="Small" Text="{Binding Author}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                 </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

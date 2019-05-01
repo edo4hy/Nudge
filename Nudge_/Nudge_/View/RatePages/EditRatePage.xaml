@@ -8,6 +8,7 @@
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
              xmlns:shared="clr-namespace:Nudge_.Shared"
+             xmlns:colours="clr-namespace:Nudge_.Shared"
              x:Class="Nudge_.View.EditRatePage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -15,6 +16,13 @@
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
             <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
+    
+                   
+            <Style TargetType="StackLayout" Class="HeaderColours">
+                <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.headerColour}" />
+            </Style>
+       
+     
             
              <DataTemplate x:Key="sliderTemplate">
                 <ViewCell>
@@ -103,21 +111,21 @@
      </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Padding="0">
+        <StackLayout StyleClass="HeaderColours" Padding="0">
 <!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
-                <StackLayout HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
-                    <StackLayout x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
-                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Text="Change Questions" HeightRequest="30" Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}"/>
+                <StackLayout StyleClass="HeaderColours" HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
+                    <StackLayout StyleClass="HeaderColours" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
+                        <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                            <Button Text=" Change Questions " HeightRequest="30" Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}"/>
                         </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                             <Label Text="" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
                         </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
                             <Button Text=" Change Sliders " HeightRequest="30" Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddSlider}"/>
                         </StackLayout>
                     </StackLayout>
-                    <StackLayout Padding="20, 5, 20, 5" Margin="10" HeightRequest="50" x:Name="deleteButton" IsVisible="false" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout StyleClass="HeaderColours" Padding="20, 5, 20, 5" Margin="10" HeightRequest="50" x:Name="deleteButton" IsVisible="false" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                         <Image Source="Delete.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center" HorizontalOptions="Center" />
                         <Label x:Name="deleteLabel" Text="Delete Item" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" />
                     </StackLayout>

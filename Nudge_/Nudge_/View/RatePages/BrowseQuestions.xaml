@@ -23,37 +23,8 @@
                       x:Name="QuestionsListView"
                       SelectionMode="Single"
                       AutoFitMode="Height"
-                      AllowSwiping="true"
-                      SwipeOffset="80"
-                      SwipeThreshold="30"
                       TapCommand="{Binding QuestionTapped}"
-                      
                 >
-                
-
-<!--               <SfListView.Behaviors>
-                    <behaviours:EventToCommandBehavior
-                        Source="{x:Reference QuestionsListView}"
-                        EventName="ItemSelected"
-                        Command="{Binding QuestionTapped}"
-                        Converter="{StaticResource SelectedItemConverter}"
-                        CommandParameter="{Binding .}"/>
-                </SfListView.Behaviors>
-                -->
-               <syncfusion:SfListView.RightSwipeTemplate>
-                  <DataTemplate x:Name="RightSwipeTemplate">
-                    <Grid BackgroundColor="{Binding Source={x:Static colours:ColourScheme.editButtonColour }}" HorizontalOptions="Fill" VerticalOptions="Fill">
-                        <Label Grid.Row="0"
-                                HeightRequest="50"
-                                WidthRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                                BackgroundColor="Transparent"
-                                Text="Edit" />
-                        <Grid.GestureRecognizers>
-                               <TapGestureRecognizer Command="{Binding Path=BindingContext.EditQuestionPressed, Source={x:Reference QuestionsListView} }" CommandParameter="{Binding .}" />
-                       </Grid.GestureRecognizers>
-                    </Grid>
-                  </DataTemplate>
-                </syncfusion:SfListView.RightSwipeTemplate>
                 
                 <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>

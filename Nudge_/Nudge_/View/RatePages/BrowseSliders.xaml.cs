@@ -17,7 +17,7 @@ namespace Nudge_.View
 	public partial class BrowseSliders : ContentPage
 	{
         TrulyObservableCollection<RateSlider> items;
-		public BrowseSliders ()
+		public BrowseSliders()
 		{
 			InitializeComponent ();
             BrowseSliderViewModel vm = new BrowseSliderViewModel();

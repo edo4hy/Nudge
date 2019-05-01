@@ -190,8 +190,9 @@ namespace Nudge_.ViewModel
             if (sliderTappedBeingExecuted) return;
             if (obj == null) return;
 
+            Syncfusion.ListView.XForms.ItemTappedEventArgs obj2 = (Syncfusion.ListView.XForms.ItemTappedEventArgs)obj;
             sliderTappedBeingExecuted = true;
-            RateSlider slider = (RateSlider)obj;
+            RateSlider slider = (RateSlider)obj2.ItemData;
 
             UpdateSlider(slider);
 
@@ -202,6 +203,13 @@ namespace Nudge_.ViewModel
         private async void UpdateSlider(RateSlider slider)
         {
             RateSlider oldSlider = await App.Database.GetSliderAysnc(slider.SliderId);
+
+            // Check to see if already exists on the Edit page
+            foreach(RateQuestionCombo r in rateVM.editPageElements) {
+                if (r.RateSlider == null) continue;
+                if (r.RateSlider.SliderId == oldSlider.SliderId) return;
+            }
+
 
             oldSlider.InUse = true;
             oldSlider.Order = rateVM.editPageElements.Count;

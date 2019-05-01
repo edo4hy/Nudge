@@ -171,32 +171,50 @@ namespace Nudge_.ViewModel
             if (questionBeingExecuted) return;
             if (obj == null) return;
             Syncfusion.ListView.XForms.ItemTappedEventArgs obj2 = (Syncfusion.ListView.XForms.ItemTappedEventArgs)obj;
+          
+
             questionBeingExecuted = true;
             Question question = (Question)obj2.ItemData;
 
-            UpdateQuestionSelected(question);
+            UpdateQuestionSelected(question, obj);
 
             questionBeingExecuted = false;
         }
 
         // Manage Question 
-        private async void UpdateQuestionSelected(Question question)
+        private async void UpdateQuestionSelected(Question question, object obj)
         {
             Question oldQuestion = await App.Database.GetQuestionAsync(question.QuestionId);
 
-            oldQuestion.InUse = true;
-            oldQuestion.Order = rpvm.editPageElements.Count;
-
-            RateQuestionCombo rqc = new RateQuestionCombo
+            // Check to see if already exists on the Edit page
+            bool alreadyExist = false;
+            foreach (RateQuestionCombo q in rpvm.editPageElements)
             {
-                Question = oldQuestion
-            };
+                if (q.Question == null) continue;
+                if (q.Question.QuestionId == oldQuestion.QuestionId) alreadyExist = true; 
+            }
 
-            rpvm.editPageElements.Add(rqc);
+            if (alreadyExist)
+            {
+                Syncfusion.ListView.XForms.ItemTappedEventArgs obj2 = (Syncfusion.ListView.XForms.ItemTappedEventArgs)obj;
+               
+            }
+            else
+            {
+                oldQuestion.InUse = true;
+                oldQuestion.Order = rpvm.editPageElements.Count;
 
-            await App.Database.SaveQuestionAsync(oldQuestion);
+                RateQuestionCombo rqc = new RateQuestionCombo
+                {
+                    Question = oldQuestion
+                };
 
-            await Navigation.PopAsync();
+                rpvm.editPageElements.Add(rqc);
+
+                await App.Database.SaveQuestionAsync(oldQuestion);
+
+                await Navigation.PopAsync();
+            }
         }
     }
 }

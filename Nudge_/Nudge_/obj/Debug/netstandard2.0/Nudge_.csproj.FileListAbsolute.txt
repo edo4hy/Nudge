@@ -74,3 +74,5 @@ C:/Users/edwar/source/repos/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/V
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditRatePage.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditQuestionPage.xaml.g.cs
 /Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/EditSliderPage.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/BrowseQuestionsCreated.xaml.g.cs
+/Users/edwardobree/xamarintest/Nudge_/Nudge_/obj/Debug/netstandard2.0/View/RatePages/BrowseSlidersCreated.xaml.g.cs

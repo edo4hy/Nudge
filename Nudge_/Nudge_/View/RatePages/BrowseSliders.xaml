@@ -22,32 +22,8 @@
                       x:Name="SlidersListView"
                       SelectionMode="Single"
                       AutoFitMode="Height"
-                      AllowSwiping="true"
-                      SwipeOffset="80"
-                      SwipeThreshold="30"
-                      TapCommand="{Binding SliderTapped}">
-         <!--       <ListView.Behaviors>
-                    <behaviours:EventToCommandBehavior
-                        Source="{x:Reference SlidersListView}"
-                        EventName="ItemSelected"
-                        Command="{Binding SliderTapped}"
-                        Converter="{StaticResource SelectedItemConverter}" />
-                </ListView.Behaviors>-->
                 
-                <syncfusion:SfListView.RightSwipeTemplate>
-                  <DataTemplate x:Name="RightSwipeTemplate">
-                    <Grid BackgroundColor="{Binding Source={x:Static colours:ColourScheme.editButtonColour }}" HorizontalOptions="Fill" VerticalOptions="Fill">
-                        <Label Grid.Row="0"
-                                HeightRequest="50"
-                                WidthRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                                BackgroundColor="Transparent"
-                                Text="Edit" />
-                        <Grid.GestureRecognizers>
-                               <TapGestureRecognizer Command="{Binding Path=BindingContext.EditSliderPressed, Source={x:Reference SlidersListView} }" CommandParameter="{Binding .}" />
-                       </Grid.GestureRecognizers>
-                    </Grid>
-                  </DataTemplate>
-                </syncfusion:SfListView.RightSwipeTemplate>
+                      TapCommand="{Binding SliderTapped}">
                 
                 <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>

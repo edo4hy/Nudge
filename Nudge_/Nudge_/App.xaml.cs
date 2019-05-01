@@ -8,7 +8,6 @@ using Nudge_.View.MasterDetail;
 using Nudge_.Shared;
 using System.Threading.Tasks;
 using Plugin.Notifications;
-using SampleBrowser.SfListView;
 using Nudge_.Model;
 using UIKit;
 using Foundation;
