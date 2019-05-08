@@ -43,8 +43,8 @@ namespace Nudge_.Shared
         {
             ClearAllNotifications();
 
-            //SendTodaysRemainingDailyNotification();
             Settings settings = await App.Database.GetSettingAsync(1);
+            if (settings == null) return;
 
             int sendId = rn.Next(100, 9999999);
 

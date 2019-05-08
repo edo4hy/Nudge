@@ -13,5 +13,12 @@ namespace Nudge_.Shared
 
         public static Color editButtonColour = Color.FromHex("#0066ff");
 
+        public static Color infoTextColour = Color.FromHex("#0066ff");
+        public static Color infoTextColourDark = Color.FromHex("#23262b");
+
+        public static Color entryFeildColour = Color.FromHex("#fcfcfc");
+
+        public static Color primaryButtonColour = Color.FromHex("#0066ff");
+        public static Color primaryButtonTextColour = Color.FromHex("#F5F5F5");
     }
 }

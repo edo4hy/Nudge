@@ -28,17 +28,29 @@ namespace Nudge_.View
 
         public MessageViewCreated(TrulyObservableCollection<Message> items)
         {
-            InitializeComponent(); 
+            InitializeComponent();
             MessagesListView.ItemsSource = items;
 
         }
 
+        public async void ShowNoMessagesMessage(TrulyObservableCollection<Message> items)
+        {
+            if (items.Count > 0)
+            {
+                createMessageText.IsVisible = false;
+            }
+            else
+            {
+                createMessageText.IsVisible = true;
+            }
+        }
 
         public MessageViewCreated(TrulyObservableCollection<Message> items, bool setPadding)
         {
             InitializeComponent();
             MessagesListView.ItemsSource = items;
             Items = items;
+
             if (setPadding)
             {
                 if (Device.RuntimePlatform == Device.iOS)
@@ -54,32 +66,13 @@ namespace Nudge_.View
             InitializeComponent();
             MessagesListView.ItemsSource = Items;
 
+            ShowNoMessagesMessage(Items);
+
             OnPropertyChanged();
             
         }
 
-        //private async Task MessagesListView_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    if (e == null)
-        //        return;
-        //    var action = await DisplayActionSheet("ActionSheet: SavePhoto?", "Cancel", "Delete", "Photo Roll", "Email");
-        //    Debug.WriteLine("Action: " + action);
-        //}
-
-
-        //async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        //{
-        //    Console.WriteLine("We are in here ");
-        //    if (e.Item == null)
-        //        return;
-        //    var action = await DisplayActionSheet("ActionSheet: SavePhoto?", "Cancel", "Delete", "Photo Roll", "Email");
-        //    Debug.WriteLine("Action: " + action);
-        //    await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-        //    //Deselect Item
-        //    ((ListView)sender).SelectedItem = null;
-
-        //}
+ 
         SearchBar searchBar = null;
         void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {

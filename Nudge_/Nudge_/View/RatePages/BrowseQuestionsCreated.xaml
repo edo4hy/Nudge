@@ -19,6 +19,9 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout Padding="2">
+                <Label Text="To Edit, press and swipe question to the left" HorizontalTextAlignment="Center" TextColor="{x:Static colours:ColourScheme.infoTextColour }"/>
+            </StackLayout>
             <syncfusion:SfListView 
                       x:Name="QuestionsListView"
                       SelectionMode="Single"

@@ -10,6 +10,8 @@ using Plugin.Notifications;
 
 using UserNotifications;
 using Nudge_.View;
+using Xamarin.Forms;
+using Nudge_.Shared;
 
 namespace Nudge_.iOS
 {
@@ -86,11 +88,32 @@ namespace Nudge_.iOS
 
             if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active))
             {
-
+                if(App.Current.MainPage == null)
+                {
+                    App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+                    {
+                        Title = DefaultMessages.checkInPageTitle
+                    })
+                    {
+                        BarTextColor = ColourScheme.headerTextColour,
+                        BarBackgroundColor = ColourScheme.headerColour
+                    };
+                }
+                else
+                {
+                    App.Current.MainPage = App.Current.MainPage;
+                }
             }
             else
             {
-                App.Current.MainPage = new Top5CheckPage();
+                App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+                {
+                    Title = DefaultMessages.checkInPageTitle
+                })
+                {
+                    BarTextColor = ColourScheme.headerTextColour,
+                    BarBackgroundColor = ColourScheme.headerColour
+                };
             }
         }
     }

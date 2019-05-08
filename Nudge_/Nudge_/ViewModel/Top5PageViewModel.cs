@@ -10,6 +10,7 @@ using Nudge_.View;
 using Xamarin.Forms.Xaml;
 using Nudge_.Converters;
 using Nudge_.View.MasterDetail;
+using Nudge_.Shared;
 
 namespace Nudge_.ViewModel
 {
@@ -133,7 +134,7 @@ namespace Nudge_.ViewModel
             }
         }
 
-        public void CheckBoxClicked()
+        public async void CheckBoxClicked()
         {
             int checkCount = 0;
             int top5Count = MessagesTop5Unordered.Count;
@@ -147,17 +148,23 @@ namespace Nudge_.ViewModel
 
                 if(checkCount == top5Count)
                 {
-                    App.Current.MainPage = new MasterDetailPage1();
+                    ToHomeChange();
                 }
             }
         }
 
 
-        public void ToHomeChange()
+        public async void ToHomeChange()
         {
-            App.Current.MainPage = new MasterDetailPage1();
-           
+            Settings s = await App.Database.GetSettingAsync(1);
+            if (s.ShowRatePage == true)
+            {
+                App.Current.MainPage = new NavigationPage(new RatePage() { Title = DefaultMessages.checkInPageTitle });
+            }
+            else
+            {
+                App.Current.MainPage = new MasterDetailPage1();
+            }
         }
-
     }
 }

@@ -20,6 +20,8 @@
             <Button Command="{Binding AddNewMessage}" Text="Add" HorizontalOptions="End"/>
             <Label TextColor="Red" IsVisible="False" x:Name="messageAddedLabel" HorizontalOptions="Center"
                    Text="New Message has been added, check the Created tab"/>
+            <Label TextColor="Red" IsVisible="False" x:Name="messageNoText" HorizontalOptions="Center"
+                   Text="New message must contain text"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

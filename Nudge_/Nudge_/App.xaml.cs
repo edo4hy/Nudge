@@ -12,6 +12,7 @@ using Nudge_.Model;
 using UIKit;
 using Foundation;
 using Android.Content.PM;
+using System.Collections.Generic;
 //using UIKit;
 //using Foundation;
 //using UserNotifications;
@@ -29,41 +30,52 @@ namespace Nudge_
             InitializeComponent();
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
+           
 
-            MainPage = new NavigationPage(new RatePage() { 
-                Title = DefaultMessages.ratePageTitle }) {
+            if (database.GetSettingAsync(1) == null)
+            {
+                Settings settings = new Settings
+                    {
+                        SettingId = 1,
+                        SendNotifications = true,
+                        DailyStartTime = new TimeSpan(7, 0, 0),
+                        DailyEndTime = new TimeSpan(20, 0, 0),
+                        ShowRatePage = true,
+                        ShowTop5CheckPage = true,
+                        MonNotify = true,
+                        TueNotify = true,
+                        WedNotify = true,
+                        ThurNotify = true, 
+                        FriNotify = true, 
+                        SatNotify = true,
+                        SunNotify = true, 
+                    };
+
+                 App.database.SaveSettingsAsync(settings);
+            }
+
+            //MainPage = new NavigationPage(new RatePage()
+            //{
+            //    Title = DefaultMessages.ratePageTitle
+            //})
+            //{
+            //    BarTextColor = ColourScheme.headerTextColour,
+            //    BarBackgroundColor = ColourScheme.headerColour
+            //};
+
+            MainPage = new NavigationPage(new Top5CheckPage()
+            {
+                Title = DefaultMessages.checkInPageTitle
+            })
+            {
                 BarTextColor = ColourScheme.headerTextColour,
                 BarBackgroundColor = ColourScheme.headerColour
             };
 
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
-            //MainPage = new NavigationPage(new BrowseQuestionTabbed(new ViewModel.RatePageViewModel(true)));
-
-            MainPage = new NavigationPage(new EditRatePage());
-
-            //if (App.Database.GetSettingAsync(1) == null)
-            //{
-            Settings settings = new Settings
-                {
-                    SettingId = 1,
-                    SendNotifications = true,
-                    DailyStartTime = new TimeSpan(7, 0, 0),
-                    DailyEndTime = new TimeSpan(20, 0, 0),
-                    ShowRatePage = true,
-                    ShowTop5CheckPage = true,
-                    MonNotify = true,
-                    TueNotify = true,
-                    WedNotify = true,
-                    ThurNotify = true, 
-                    FriNotify = true, 
-                    SatNotify = true,
-                    SunNotify = true, 
-                };
-
-                 App.database.SaveSettingsAsync(settings);
-            //}
 
         }
+
 
         // If opened from notification - set in the MainActivity and AppDeligate respectively 
         public App(bool t)
@@ -72,13 +84,14 @@ namespace Nudge_
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
 
-            MainPage = new NavigationPage(new Top5CheckPage()) 
+            MainPage = new NavigationPage(new Top5CheckPage()
+            {
+                Title = DefaultMessages.checkInPageTitle
+            })
             { 
-                Title = "Check in",
                 BarBackgroundColor = ColourScheme.headerColour,
                 BarTextColor = ColourScheme.headerTextColour
             };
-
         }
 
         public static AbstractNotificationsImpl NotificationsImpl { get; private set; }
@@ -90,59 +103,18 @@ namespace Nudge_
 
         protected override void OnStart()
         {
-            // Handle when your app starts
-
-
-            //await NotificationsImpl.CancelAll();
-
-
-
-            //ns.SendNotificationNow();
-
-
-         
-
-            //ns.PrintNotifications();
-
-            //sendLocalNotificationFromHere();
-
-            //ns.SendNotification2();
-
             ns.SendWeeklyNotifications();
-
-
-            //if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active)) 
-            //{
-            //    //Console.WriteLine("This should be when you open from the normal option ");
-
-            //    App.Current.MainPage = new MyPage();
-            //}
-            //else
-            //{
-            //    //Console.WriteLine("Open when you press the notification");
-
-            //    App.Current.MainPage = new Top5Page();
-            //}
-            Console.WriteLine("aklsdjflasdf");
   
         }
 
         protected override void OnSleep ()
         {
-            // Handle when your app sleeps
-           //await ns.SendWeeklyNotifications();
-
-            //ns.SendNotificationNow();
-
-
-            //await Task.Delay(500);
-            //ns.PrintNotifications();
+         
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
-            //ns.PrintNotifications();
+
         }
 
 
@@ -160,27 +132,27 @@ namespace Nudge_
         }
 
 
-        public void sendLocalNotificationFromHere()
-        {
-            // create the notification
-            var notification = new UILocalNotification();
+        //public void sendLocalNotificationFromHere()
+        //{
+        //    // create the notification
+        //    var notification = new UILocalNotification();
 
-            // set the fire date (the date time in which it will fire)
-            notification.FireDate = NSDate.FromTimeIntervalSinceNow(5);
+        //    // set the fire date (the date time in which it will fire)
+        //    notification.FireDate = NSDate.FromTimeIntervalSinceNow(5);
 
-            // configure the alert
-            notification.AlertAction = "View Alert";
-            notification.AlertBody = "Your one minute alert has fired!";
+        //    // configure the alert
+        //    notification.AlertAction = "View Alert";
+        //    notification.AlertBody = "Your one minute alert has fired!";
 
-            // modify the badge
-            notification.ApplicationIconBadgeNumber = 1;
+        //    // modify the badge
+        //    notification.ApplicationIconBadgeNumber = 1;
 
-            // set the sound to be the default sound
-            notification.SoundName = UILocalNotification.DefaultSoundName;
+        //    // set the sound to be the default sound
+        //    notification.SoundName = UILocalNotification.DefaultSoundName;
 
-            // schedule it
-            UIApplication.SharedApplication.ScheduleLocalNotification(notification);
+        //    // schedule it
+        //    UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
-        }
+        //}
     }
 }

@@ -32,9 +32,9 @@ namespace Nudge_.Data
             //database.CreateTableAsync<Question>().Wait();
             //database.CreateTableAsync<QuestionResult>().Wait();
             //database.CreateTableAsync<SliderResult>().Wait();
-            database.DropTableAsync<Settings>().Wait();
+            //database.DropTableAsync<Settings>().Wait();
 
-            database.CreateTableAsync<Settings>().Wait();
+            //database.CreateTableAsync<Settings>().Wait();
 
 
         }
@@ -128,6 +128,12 @@ namespace Nudge_.Data
             return database.Table<Answer>().Where(i => i.QuestionId == questionId).ToListAsync();
         }
 
+        public Task<List<Answer>> GetAnswersAsync()
+        {
+            return database.Table<Answer>().ToListAsync();
+        }
+
+
         public Task<Answer> GetAnswerAsync(int id)
         {
             return database.Table<Answer>().Where(i => i.AnswerId == id).FirstOrDefaultAsync();
@@ -185,7 +191,7 @@ namespace Nudge_.Data
 
         public Task<Settings> GetSettingAsync(int id)
         {
-            return database.Table<Settings>().Where(i => i.SettingId == id).FirstOrDefaultAsync();
+            return database.Table<Settings>().FirstOrDefaultAsync();
         }
 
         public Task<int> SaveSettingsAsync(Settings setting)

@@ -1,26 +1,37 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/CreateMessage.xaml">
     <Files>
-      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="11" Column="1" />
-      <File FileName="Nudge_/Nudge_/ViewModel/BrowseSliderViewModel.cs" Line="193" Column="119" />
-      <File FileName="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" Line="193" Column="50" />
-      <File FileName="Nudge_/Nudge_/View/Components/ClickUpdateListView.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1.xaml" Line="7" Column="1" />
+      <File FileName="Nudge_/Nudge_/ViewModel/MessageTabbedPageViewModel.cs" Line="215" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/MessageViewCreated.xaml" Line="86" Column="41" />
+      <File FileName="Nudge_/Nudge_/View/MessageViewCreated.xaml.cs" Line="57" Column="1" />
+      <File FileName="Nudge_/Nudge_/Shared/ColourScheme.cs" Line="17" Column="72" />
+      <File FileName="Nudge_/Nudge_/View/MessageTabbedPage.xaml.cs" Line="33" Column="9" />
+      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="19" Column="1" />
+      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="84" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml" Line="24" Column="78" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Model" expanded="True" />
+              <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="Components" expanded="True" />
-                <Node name="MasterDetail" expanded="True">
-                  <Node name="MasterDetailPage1.xaml" selected="True" />
-                </Node>
+                <Node name="CreateMessage.xaml" expanded="True" selected="True" />
+                <Node name="MessageTabbedPage.xaml" expanded="True" />
+                <Node name="MessageView.xaml" expanded="True" />
+                <Node name="MessageViewCreated.xaml" expanded="True" />
               </Node>
+              <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
             </Node>
             <Node name="Nudge_.Android" expanded="True" />
-            <Node name="Nudge_.iOS" expanded="True" />
+            <Node name="Nudge_.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -28,7 +39,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.371C2C57-0C13-42AB-8D31-892F9F85F339" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BEBF0206-90BF-4A19-BBAB-3695C867DBCD" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
@@ -36,6 +47,9 @@
       <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" relfile="Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" line="31" column="1" />
       <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" relfile="Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" line="39" column="1" />
       <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/EditMessage.xaml" relfile="Nudge_/Nudge_/View/EditMessage.xaml" line="28" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/App.xaml.cs" relfile="Nudge_/Nudge_/App.xaml.cs" line="85" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/MainActivity.cs" relfile="Nudge_/Nudge_.Android/MainActivity.cs" line="41" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/MainActivity.cs" relfile="Nudge_/Nudge_.Android/MainActivity.cs" line="46" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

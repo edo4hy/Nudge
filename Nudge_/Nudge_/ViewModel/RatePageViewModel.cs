@@ -191,10 +191,8 @@ namespace Nudge_.ViewModel
          
         }
 
-        public void SaveAnswersSave()
+        public async void SaveAnswersSave()
         {
-            Console.WriteLine(rateListView.Children.Count());
-
             // Find if the answer exists - Either add new or add count. 
            foreach(RateQuestionCombo rqc in rateListView.DataSource.Items )
             {
@@ -204,7 +202,7 @@ namespace Nudge_.ViewModel
 
                 if(rqc.Answers.Count < 1)
                 {
-                    App.Database.SaveAnswerAsync(new Answer
+                    await App.Database.SaveAnswerAsync(new Answer
                     {
                         AnswerText = rqc.ComboTextField,
                         QuestionId = rqc.Question.QuestionId,
@@ -213,7 +211,6 @@ namespace Nudge_.ViewModel
                 }
                 else
                 {
-
                     bool AnswerAlreadyExists = false;
                     foreach(Answer af in rqc.Answers)
                     {
@@ -221,20 +218,22 @@ namespace Nudge_.ViewModel
                         {
                             AnswerAlreadyExists = true;
                             af.AnswerCount = af.AnswerCount++;
-                            App.Database.SaveAnswerAsync(af);
+                            await App.Database.SaveAnswerAsync(af);
                         }
                     }
 
                     if (!AnswerAlreadyExists)
                     {
-                        Answer ans = new Answer(){
+                        Answer ans = new Answer() {
                             AnswerText = rqc.ComboTextField,
                             QuestionId = rqc.Question.QuestionId
                         };
-                        App.Database.SaveAnswerAsync(ans);
+                       await  App.Database.SaveAnswerAsync(ans);
                     }
                 }
             }
+
+            List<Answer> testAnswers = await App.Database.GetAnswersAsync(1);
 
             App.Current.MainPage = new MasterDetailPage1();
         }
@@ -267,10 +266,9 @@ namespace Nudge_.ViewModel
                     {
                         Question = q,
                         Answers = await App.Database.GetAnswersAsync(q.QuestionId),
-
                     };
 
-                
+
                     editPageElements.Add(rccc);
                 }
             }

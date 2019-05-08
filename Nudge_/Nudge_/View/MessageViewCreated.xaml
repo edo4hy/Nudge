@@ -16,11 +16,11 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
-   
-    <StackLayout Padding="10">
-        <SearchBar x:Name="filterText" HeightRequest="40"
-           Placeholder="Search here to filter"
-           TextChanged="Handle_TextChanged" Grid.Row="0"/>
+     <SearchBar x:Name="filterText" WidthRequest="1000" HeightRequest="40"
+                Placeholder="Search here to filter"
+                TextChanged="Handle_TextChanged" Grid.Row="0"/>
+    <StackLayout Padding="0">
+          
         <syncfusion:SfListView 
             x:Name="MessagesListView"
             SelectionMode="Single"
@@ -83,5 +83,6 @@
                 </DataTemplate>
             </syncfusion:SfListView.ItemTemplate>
         </syncfusion:SfListView >
+        <Label x:Name="createMessageText" IsVisible="true" TextColor="{x:Static colours:ColourScheme.infoTextColourDark}" Text="Create a message in the Create Tab" HorizontalTextAlignment="Center" />
     </StackLayout>
 </ContentPage>

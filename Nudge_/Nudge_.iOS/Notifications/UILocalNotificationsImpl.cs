@@ -11,7 +11,7 @@ namespace Plugin.Notifications
     public class UILocalNotificationsImpl : AbstractAppleNotificationsImpl
     {
         const string NOTIFICATION_ID_KEY = "NotificationID";
-
+        const string NOTIFICATION_CATEGORY = "NudgeCat";
 
         public override Task Cancel(int notificationId)
         {
@@ -49,6 +49,7 @@ namespace Plugin.Notifications
                 AlertTitle = notification.Title,
                 AlertBody = notification.Message,
                 SoundName = UILocalNotification.DefaultSoundName,
+                Category = NOTIFICATION_CATEGORY,
                 UserInfo = notification.Metadata.ToNsDictionary()
             };
             return this.Invoke(() => UIApplication.SharedApplication.ScheduleLocalNotification(not));

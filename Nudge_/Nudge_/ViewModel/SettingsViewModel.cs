@@ -369,8 +369,8 @@ namespace Nudge_.ViewModel
 
         public async Task GetSettings()
         {
-            List<Settings> SettingsList = await App.Database.GetSettingsAsync();
-            Settings appSettings = SettingsList[0];
+            Settings appSettings = await App.Database.GetSettingAsync(1);
+         
 
             StartTime = appSettings.DailyStartTime;
             EndTime = appSettings.DailyEndTime;

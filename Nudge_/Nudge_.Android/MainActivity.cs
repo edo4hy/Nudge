@@ -46,8 +46,6 @@ namespace Nudge_.Droid
                 LoadApplication(new App());
             }
 
-           
-
             App.Init(new NotificationsImpl());
 
         }

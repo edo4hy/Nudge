@@ -24,6 +24,7 @@ namespace Nudge_.View
             vm.newMessageEntry = newMessageEntry;
             vm.messageCreatedLabel = messageAddedLabel;
             vm.newMessageAuthor = newMessageAuthor;
+            vm.messageNoText = messageNoText;
         }
 	}
 }

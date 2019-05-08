@@ -40,6 +40,7 @@ namespace Nudge_.ViewModel
         Top5MessageConverter top5MessageConverter = new Top5MessageConverter();
 
         public Label messageCreatedLabel;
+        public Label messageNoText;
         public Entry newMessageEntry;
         public Entry newMessageAuthor;
 
@@ -47,6 +48,8 @@ namespace Nudge_.ViewModel
         public Entry editMessageAuthor;
 
         public Message MessageBeingEdited;
+
+        public Label createMessageLabel;
 
         INavigation Navigation;
 
@@ -181,25 +184,55 @@ namespace Nudge_.ViewModel
 
         private async void MessageAdded()
         {
-            Message newMessage = new Message
+            if (newMessageEntry == null) return;
+            if (newMessageAuthor == null) return;
+
+            if(newMessageEntry.Text == null || newMessageEntry.Text == "")
             {
-                MessageText = newMessageEntry.Text.ToString(),
-                Type = Model.Type.Created,
-                Top5 = Top5Number.none,
-                Author = newMessageAuthor.Text.ToString()
-            };
+                //No Message Text
+                messageNoText.IsVisible = true;
 
-            MessagesCreated.Add(newMessage);
-            await App.Database.SaveMessageAsync(newMessage);
+                await Task.Delay(5000);
 
-            newMessageEntry.Text = "";
-            newMessageAuthor.Text = "";
+                messageNoText.IsVisible = false;
+            }
+            else
+            {
+                // Save the New Message
+                Message newMessage;
+                if (newMessageAuthor.Text == null || newMessageAuthor.Text == "")
+                {
+                    newMessage = new Message
+                    {
+                        MessageText = newMessageEntry.Text.ToString(),
+                        Type = Model.Type.Created,
+                        Top5 = Top5Number.none
+                    };
+                }
+                else
+                {
+                    newMessage = new Message
+                    {
+                        MessageText = newMessageEntry.Text.ToString(),
+                        Type = Model.Type.Created,
+                        Top5 = Top5Number.none,
+                        Author = newMessageAuthor.Text.ToString()
+                    };
+                }
 
-            messageCreatedLabel.IsVisible = true;
 
-            await Task.Delay(5000);
+                MessagesCreated.Add(newMessage);
+                await App.Database.SaveMessageAsync(newMessage);
 
-            messageCreatedLabel.IsVisible = false;
+                newMessageEntry.Text = "";
+                newMessageAuthor.Text = "";
+
+                messageCreatedLabel.IsVisible = true;
+
+                await Task.Delay(5000);
+
+                messageCreatedLabel.IsVisible = false;
+            }
         }
 
         // Called when Message is tapped from the browse page - when first coming from the top 5 selection. 
@@ -253,6 +286,7 @@ namespace Nudge_.ViewModel
             Navigation.PopAsync();
         }
 
+        // Adds message to Top5
         private async void MessageTapped(object obj)
         {
             if (messageTappedBeingExecuted) return;
@@ -334,6 +368,7 @@ namespace Nudge_.ViewModel
             OnPropertyChanged("Top5Changed");
         }
 
+        // Suport Message Tapped
         private async void UpdateTop5InDatabase(Top5Number n, Message m)
         {
             Message old = await App.Database.GetMessageByTop5(n);
@@ -353,6 +388,7 @@ namespace Nudge_.ViewModel
             await App.Database.SaveMessageAsync(m);
         }
 
+        // Suport Message Tapped
         private void UpdateTop5Local(Top5Number n, Message m, TrulyObservableCollection<Message> collection)
         {
             Message message = collection.FirstOrDefault(msg => msg.Top5 == n);
@@ -365,6 +401,7 @@ namespace Nudge_.ViewModel
             collection.Add(m);
         }
 
+        // Suport Message Tapped
         private void UpdateTop5LocalInTop5VM(Top5Number n, Message m, TrulyObservableCollection<Message> collection)
         {
 
@@ -473,8 +510,19 @@ namespace Nudge_.ViewModel
                     MessagesTop5.Add(m);
                 }
             }
+
+            //if (createMessageLabel != null)
+            //{
+            //    if (MessagesCreated.Count == 0)
+            //    {
+            //        createMessageLabel.IsVisible = true;
+                   
+            //    }
+            //    else if(MessagesCreated.Count > 0)
+            //    {
+            //        createMessageLabel.IsVisible = false;
+            //    }
+            //}
         }
-
-
     }
 }
