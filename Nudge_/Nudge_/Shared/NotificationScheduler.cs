@@ -268,7 +268,7 @@ namespace Nudge_.Shared
         {
             ClearAllNotifications();
 
-            DateTime dt = DateTime.Now.AddSeconds(5);
+            DateTime dt = DateTime.Now.AddSeconds(20);
             //dt.AddSeconds(10);
 
             Notification n = new Notification()

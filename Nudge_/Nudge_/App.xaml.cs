@@ -11,7 +11,7 @@ using Plugin.Notifications;
 using Nudge_.Model;
 using UIKit;
 using Foundation;
-using Android.Content.PM;
+//using Android.Content.PM;
 using System.Collections.Generic;
 //using UIKit;
 //using Foundation;
@@ -104,7 +104,7 @@ namespace Nudge_
         protected override void OnStart()
         {
             ns.SendWeeklyNotifications();
-  
+
         }
 
         protected override void OnSleep ()

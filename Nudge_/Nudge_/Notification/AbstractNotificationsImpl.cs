@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UserNotifications;
+using UserNotifications;
 
 namespace Plugin.Notifications
 {

@@ -9,10 +9,11 @@ using Android.Runtime;
 using Android.Support.V4.App;
 using Nudge_.Droid;
 using UIKit;
+//using UserNotifications;
+using Android.Support.V7.App;
 using UserNotifications;
-//using Android.Support.V7.App;
-
-
+//using UserNotifications;
+//using Android.Support.V4.App;
 
 namespace Plugin.Notifications
 {
@@ -79,7 +80,7 @@ namespace Plugin.Notifications
                     launchIntent.PutExtra(pair.Key, pair.Value);
                 }
 
-                var builder = new NotificationCompat.Builder(Application.Context)
+                var builder = new Android.Support.V4.App.NotificationCompat.Builder(Application.Context)
                     .SetAutoCancel(true)
                     .SetContentTitle(notification.Title)
                     .SetContentText(notification.Message)
@@ -120,7 +121,7 @@ namespace Plugin.Notifications
                     notificationChannel.EnableVibration(true);
                     notificationChannel.SetVibrationPattern(new long[] { 100, 200, 300, 400, 500 });
                     notificationChannel.Description = "channel 1";
-                    
+
 
 
                     Android.App.Notification.Builder builder1 = new Android.App.Notification.Builder(Application.Context, CHANNEL_ID)
@@ -129,7 +130,7 @@ namespace Plugin.Notifications
                     .SetContentText(notification.Message)
                     .SetSmallIcon(AppIconResourceId)
                     .SetChannelId(CHANNEL_ID)
-                     //.SetContentIntent(pendingIntent
+                    //.SetContentIntent(pendingIntent
                     .SetContentIntent(Android.App.TaskStackBuilder
                         .Create(Application.Context)
                         .AddNextIntent(launchIntent)
@@ -140,6 +141,7 @@ namespace Plugin.Notifications
 
                     not = builder1.Build();
                 }
+
 
                 mNotificationManager
                     .Notify(notification.Id.Value, not)

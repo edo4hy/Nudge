@@ -12,6 +12,7 @@ using UserNotifications;
 using Nudge_.View;
 using Xamarin.Forms;
 using Nudge_.Shared;
+using HockeyApp.iOS;
 
 namespace Nudge_.iOS
 {
@@ -29,7 +30,7 @@ namespace Nudge_.iOS
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
 
-      
+        private string AppId = "964d1e9dd25b44ca88a778f16fcbe1aa";
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -40,6 +41,16 @@ namespace Nudge_.iOS
             SfListViewRenderer.Init();
             SfButtonRenderer.Init();
 
+
+            //Set up HockeyApp
+
+            var manager = BITHockeyManager.SharedHockeyManager;
+            manager.Configure(AppId);
+            manager.StartManager();
+            manager.Authenticator.AuthenticateInstallation(); // This line is obsolete in crash only builds
+
+            //-------
+
             if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
             {
                 var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
@@ -49,24 +60,24 @@ namespace Nudge_.iOS
                 app.RegisterUserNotificationSettings(notificationSettings);
             }
 
-            if (options != null)
-            {
-                // check for a local notification
-                if (options.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
-                {
-                    var localNotification = options[UIApplication.LaunchOptionsLocalNotificationKey] as UILocalNotification;
-                    if (localNotification != null)
-                    {
-                        UIAlertController okayAlertController = UIAlertController.Create(localNotification.AlertAction, localNotification.AlertBody, UIAlertControllerStyle.Alert);
-                        okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            //if (options != null)
+            //{
+            //    // check for a local notification
+            //    if (options.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
+            //    {
+            //        var localNotification = options[UIApplication.LaunchOptionsLocalNotificationKey] as UILocalNotification;
+            //        if (localNotification != null)
+            //        {
+            //            UIAlertController okayAlertController = UIAlertController.Create(localNotification.AlertAction, localNotification.AlertBody, UIAlertControllerStyle.Alert);
+            //            okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-                        Window.RootViewController.PresentViewController(okayAlertController, true, null);
+            //            Window.RootViewController.PresentViewController(okayAlertController, true, null);
 
-                        // reset our badge
-                        UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
-                    }
-                }
-            }
+            //            // reset our badge
+            //            UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+            //        }
+            //    }
+            //}
 
             App.Init(new NotificationsImpl());
 
@@ -77,44 +88,55 @@ namespace Nudge_.iOS
 
         public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
         {
-            // show an alert
-            UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
-            okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            NSUserDefaults.StandardUserDefaults.Synchronize();
 
-            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
+            //App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+            //{
+            //    Title = DefaultMessages.checkInPageTitle
+            //})
+            //{
+            //    BarTextColor = ColourScheme.headerTextColour,
+            //    BarBackgroundColor = ColourScheme.headerColour
+            //};
 
-            // reset our badge
-            UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+            //// show an alert
+            //UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
+            //okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-            if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active))
-            {
-                if(App.Current.MainPage == null)
-                {
-                    App.Current.MainPage = new NavigationPage(new Top5CheckPage()
-                    {
-                        Title = DefaultMessages.checkInPageTitle
-                    })
-                    {
-                        BarTextColor = ColourScheme.headerTextColour,
-                        BarBackgroundColor = ColourScheme.headerColour
-                    };
-                }
-                else
-                {
-                    App.Current.MainPage = App.Current.MainPage;
-                }
-            }
-            else
-            {
-                App.Current.MainPage = new NavigationPage(new Top5CheckPage()
-                {
-                    Title = DefaultMessages.checkInPageTitle
-                })
-                {
-                    BarTextColor = ColourScheme.headerTextColour,
-                    BarBackgroundColor = ColourScheme.headerColour
-                };
-            }
+            //UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
+
+            //// reset our badge
+            //UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+
+            //if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active))
+            //{
+            //    if(App.Current.MainPage == null)
+            //    {
+            //        App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+            //        {
+            //            Title = DefaultMessages.checkInPageTitle
+            //        })
+            //        {
+            //            BarTextColor = ColourScheme.headerTextColour,
+            //            BarBackgroundColor = ColourScheme.headerColour
+            //        };
+            //    }
+            //    else
+            //    {
+            //        App.Current.MainPage = App.Current.MainPage;
+            //    }
+            //}
+            //else
+            //{
+            //    App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+            //    {
+            //        Title = DefaultMessages.checkInPageTitle
+            //    })
+            //    {
+            //        BarTextColor = ColourScheme.headerTextColour,
+            //        BarBackgroundColor = ColourScheme.headerColour
+            //    };
+            //}
         }
     }
 }

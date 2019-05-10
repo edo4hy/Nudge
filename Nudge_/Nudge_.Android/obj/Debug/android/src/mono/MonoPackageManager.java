@@ -5,6 +5,7 @@ import java.lang.String;
 import java.util.Locale;
 import java.util.HashSet;
 import java.util.zip.*;
+import java.util.Arrays;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -30,8 +31,7 @@ public class MonoPackageManager {
 						android.content.Intent.ACTION_TIMEZONE_CHANGED
 				);
 				context.registerReceiver (new mono.android.app.NotifyTimeZoneChanges (), timezoneChangedFilter);
-				
-				System.loadLibrary("monodroid");
+
 				Locale locale       = Locale.getDefault ();
 				String language     = locale.getLanguage () + "-" + locale.getCountry ();
 				String filesDir     = context.getFilesDir ().getAbsolutePath ();
@@ -45,6 +45,8 @@ public class MonoPackageManager {
 				String externalLegacyDir = new java.io.File (
 							external0,
 							"../legacy/Android/data/" + context.getPackageName () + "/files/.__override__").getAbsolutePath ();
+
+				System.loadLibrary("monodroid");
 
 				Runtime.init (
 						language,
@@ -61,7 +63,9 @@ public class MonoPackageManager {
 							externalLegacyDir
 						},
 						MonoPackageManager_Resources.Assemblies,
-						context.getPackageName ());
+						context.getPackageName (),
+						android.os.Build.VERSION.SDK_INT,
+						mono.android.app.XamarinAndroidEnvironmentVariables.Variables);
 				
 				mono.android.app.ApplicationRegistration.registerApplications ();
 				
@@ -108,6 +112,8 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "Nudge_.Android.dll" comes first in this list. */
 		"Nudge_.Android.dll",
 		"FormsViewGroup.dll",
+		"HockeySDK.AndroidBindings.dll",
+		"HockeySDK.dll",
 		"Nudge_.dll",
 		"SQLite-net.dll",
 		"SQLite.Net.dll",
@@ -136,16 +142,34 @@ class MonoPackageManager_Resources {
 		"Syncfusion.SfNumericTextBox.XForms.Android.dll",
 		"Syncfusion.SfNumericTextBox.XForms.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
+		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
+		"Xamarin.Android.Arch.Lifecycle.LiveData.Core.dll",
+		"Xamarin.Android.Arch.Lifecycle.LiveData.dll",
 		"Xamarin.Android.Arch.Lifecycle.Runtime.dll",
+		"Xamarin.Android.Arch.Lifecycle.ViewModel.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Annotations.dll",
+		"Xamarin.Android.Support.AsyncLayoutInflater.dll",
+		"Xamarin.Android.Support.Collections.dll",
 		"Xamarin.Android.Support.Compat.dll",
+		"Xamarin.Android.Support.CoordinaterLayout.dll",
 		"Xamarin.Android.Support.Core.UI.dll",
 		"Xamarin.Android.Support.Core.Utils.dll",
+		"Xamarin.Android.Support.CursorAdapter.dll",
+		"Xamarin.Android.Support.CustomTabs.dll",
+		"Xamarin.Android.Support.CustomView.dll",
 		"Xamarin.Android.Support.Design.dll",
+		"Xamarin.Android.Support.DocumentFile.dll",
+		"Xamarin.Android.Support.DrawerLayout.dll",
 		"Xamarin.Android.Support.Fragment.dll",
+		"Xamarin.Android.Support.Interpolator.dll",
+		"Xamarin.Android.Support.Loader.dll",
+		"Xamarin.Android.Support.LocalBroadcastManager.dll",
 		"Xamarin.Android.Support.Media.Compat.dll",
+		"Xamarin.Android.Support.Print.dll",
+		"Xamarin.Android.Support.SlidingPaneLayout.dll",
+		"Xamarin.Android.Support.SwipeRefreshLayout.dll",
 		"Xamarin.Android.Support.Transition.dll",
 		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
@@ -154,6 +178,8 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.Palette.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
+		"Xamarin.Android.Support.VersionedParcelable.dll",
+		"Xamarin.Android.Support.ViewPager.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
@@ -162,5 +188,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_26";
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_28";
 }

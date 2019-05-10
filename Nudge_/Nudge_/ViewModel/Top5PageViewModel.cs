@@ -149,6 +149,18 @@ namespace Nudge_.ViewModel
                 if(checkCount == top5Count)
                 {
                     ToHomeChange();
+
+                    HockeyApp.MetricsManager.TrackEvent(
+
+                        "All check boxes Clicked",
+                        new Dictionary<string, string>
+                        {
+                            {"Time", DateTime.UtcNow.ToString()}
+                        },
+                            new Dictionary<string, double>
+                            {
+                                {"value", 2.5}
+                            });
                 }
             }
         }

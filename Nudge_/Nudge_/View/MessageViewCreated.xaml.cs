@@ -35,6 +35,8 @@ namespace Nudge_.View
 
         public async void ShowNoMessagesMessage(TrulyObservableCollection<Message> items)
         {
+            if (items == null) return;
+
             if (items.Count > 0)
             {
                 createMessageText.IsVisible = false;

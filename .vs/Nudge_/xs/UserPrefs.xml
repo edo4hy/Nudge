@@ -1,56 +1,42 @@
-﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/CreateMessage.xaml">
+﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Library/Frameworks/Xamarin.Android.framework/Versions/9.2.3-0/lib/xamarin.android/xbuild/Xamarin/Android/Xamarin.Android.Common.targets">
     <Files>
-      <File FileName="Nudge_/Nudge_/ViewModel/MessageTabbedPageViewModel.cs" Line="215" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MessageViewCreated.xaml" Line="86" Column="41" />
-      <File FileName="Nudge_/Nudge_/View/MessageViewCreated.xaml.cs" Line="57" Column="1" />
-      <File FileName="Nudge_/Nudge_/Shared/ColourScheme.cs" Line="17" Column="72" />
-      <File FileName="Nudge_/Nudge_/View/MessageTabbedPage.xaml.cs" Line="33" Column="9" />
-      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="19" Column="1" />
-      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="84" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml" Line="24" Column="78" />
+      <File FileName="Nudge_/Nudge_.Android/Properties/AndroidManifest.xml" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_.Android/Notifications/INotificationRepository.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_.Android/Notifications/Helpers.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_.Android/Notifications/AlarmBroadcastReceiver.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_.Android/Notifications/Services.cs" Line="11" Column="2" />
+      <File FileName="Nudge_/Nudge_.Android/Notifications/NotificationsImpl.cs" Line="12" Column="27" />
+      <File FileName="Nudge_/Nudge_.Android/Resources/values/styles.xml" Line="1" Column="18" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml.cs" Line="32" Column="6" />
+      <File FileName="Nudge_/Nudge_.Android/Infrastructure/AcrSqliteConnection.cs" Line="1" Column="14" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="14" Column="28" />
+      <File FileName="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" Line="5" Column="25" />
+      <File FileName="../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="2721" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Model" expanded="True" />
-              <Node name="Shared" expanded="True" />
-              <Node name="View" expanded="True">
-                <Node name="CreateMessage.xaml" expanded="True" selected="True" />
-                <Node name="MessageTabbedPage.xaml" expanded="True" />
-                <Node name="MessageView.xaml" expanded="True" />
-                <Node name="MessageViewCreated.xaml" expanded="True" />
-              </Node>
-              <Node name="ViewModel" expanded="True" />
+              <Node name="Notification" expanded="True" />
               <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Nudge_.Android" expanded="True" />
-            <Node name="Nudge_.iOS" expanded="True">
-              <Node name="Resources" expanded="True" />
+            <Node name="Nudge_.Android" expanded="True" selected="True">
+              <Node name="Infrastructure" expanded="True" />
+              <Node name="Notifications" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BEBF0206-90BF-4A19-BBAB-3695C867DBCD" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9FDB0280-904E-46E1-ACFB-E50F5B47B778" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" relfile="Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" line="24" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" relfile="Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" line="31" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" relfile="Nudge_/Nudge_/View/MessageViewEdit.xaml.cs" line="39" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/EditMessage.xaml" relfile="Nudge_/Nudge_/View/EditMessage.xaml" line="28" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/App.xaml.cs" relfile="Nudge_/Nudge_/App.xaml.cs" line="85" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/MainActivity.cs" relfile="Nudge_/Nudge_.Android/MainActivity.cs" line="41" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_.Android/MainActivity.cs" relfile="Nudge_/Nudge_.Android/MainActivity.cs" line="46" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

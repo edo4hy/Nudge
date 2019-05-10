@@ -50,7 +50,7 @@ namespace Plugin.Notifications
                 AlertBody = notification.Message,
                 SoundName = UILocalNotification.DefaultSoundName,
                 Category = NOTIFICATION_CATEGORY,
-                UserInfo = notification.Metadata.ToNsDictionary()
+                UserInfo = notification.Metadata.ToNsDictionary(),
             };
             return this.Invoke(() => UIApplication.SharedApplication.ScheduleLocalNotification(not));
         }

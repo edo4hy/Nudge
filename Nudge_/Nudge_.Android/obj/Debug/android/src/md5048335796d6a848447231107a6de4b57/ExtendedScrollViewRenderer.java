@@ -2,7 +2,7 @@ package md5048335796d6a848447231107a6de4b57;
 
 
 public class ExtendedScrollViewRenderer
-	extends md51558244f76c53b6aeda52c8a337f2c37.ScrollViewRenderer
+	extends md55dd9fc6ed71531afc8730347a2a7e0e2.ScrollViewRenderer
 	implements
 		mono.android.IGCUserPeer
 {
