@@ -25,11 +25,12 @@ namespace Nudge_
         static NudgeDatabase database;
         static NotificationScheduler ns = new NotificationScheduler();
 
+        private string syncfusionKey = "OTk2MDFAMzEzNzJlMzEyZTMwWWdKZ0Vub1dIZlVOUkk4RS84aFV4ZVlDM2tyeStWdS9ueWRYRFpXbGZ0QT0=";
+
         public App()
         {
             InitializeComponent();
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
            
 
             if (database.GetSettingAsync(1) == null)
@@ -74,6 +75,9 @@ namespace Nudge_
 
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
 
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+
+
         }
 
 
@@ -82,7 +86,6 @@ namespace Nudge_
         {
             InitializeComponent();
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQyNzJAMzEzNjJlMzQyZTMwU2NlWklUa1NuQWVndnJrRWtNazZEUVFtSzQ4RkJxSVBEYjB2cWtIbVprMD0=");
 
             MainPage = new NavigationPage(new Top5CheckPage()
             {
@@ -92,6 +95,9 @@ namespace Nudge_
                 BarBackgroundColor = ColourScheme.headerColour,
                 BarTextColor = ColourScheme.headerTextColour
             };
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+
         }
 
         public static AbstractNotificationsImpl NotificationsImpl { get; private set; }
@@ -103,20 +109,15 @@ namespace Nudge_
 
         protected override void OnStart()
         {
+
             ns.SendWeeklyNotifications();
-
         }
 
-        protected override void OnSleep ()
+        protected override void OnSleep()
         {
-         
+            base.OnSleep();
+            ns.SendWeeklyNotifications();
         }
-
-        protected override void OnResume()
-        {
-
-        }
-
 
         public static NudgeDatabase Database
         {
@@ -131,28 +132,5 @@ namespace Nudge_
             }
         }
 
-
-        //public void sendLocalNotificationFromHere()
-        //{
-        //    // create the notification
-        //    var notification = new UILocalNotification();
-
-        //    // set the fire date (the date time in which it will fire)
-        //    notification.FireDate = NSDate.FromTimeIntervalSinceNow(5);
-
-        //    // configure the alert
-        //    notification.AlertAction = "View Alert";
-        //    notification.AlertBody = "Your one minute alert has fired!";
-
-        //    // modify the badge
-        //    notification.ApplicationIconBadgeNumber = 1;
-
-        //    // set the sound to be the default sound
-        //    notification.SoundName = UILocalNotification.DefaultSoundName;
-
-        //    // schedule it
-        //    UIApplication.SharedApplication.ScheduleLocalNotification(notification);
-
-        //}
     }
 }

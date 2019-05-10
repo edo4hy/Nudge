@@ -128,7 +128,7 @@ namespace Nudge_.ViewModel
                 if (hasBeenSet == false)
                 {
                     //Console.WriteLine("Adding fake message +++++++");
-                    MessagesTop5.Add(new Message { MessageText = "Add message here ...", Author = "Temp", Top5 = tpConverter.IntToTop5NumberConverter(i + 1) });
+                    MessagesTop5.Add(new Message { MessageText = "Click to add message here ...", Top5 = tpConverter.IntToTop5NumberConverter(i + 1) });
                     count++;
                 }
             }
