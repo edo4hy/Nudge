@@ -31,29 +31,27 @@ namespace Nudge_
         {
             InitializeComponent();
 
-           
+            //if (database.GetSettingAsync(1) == null)
+            //{
+            //    Settings settings = new Settings
+            //        {
+            //            SettingId = 1,
+            //            SendNotifications = true,
+            //            DailyStartTime = new TimeSpan(7, 0, 0),
+            //            DailyEndTime = new TimeSpan(20, 0, 0),
+            //            ShowRatePage = true,
+            //            ShowTop5CheckPage = true,
+            //            MonNotify = true,
+            //            TueNotify = true,
+            //            WedNotify = true,
+            //            ThurNotify = true, 
+            //            FriNotify = true, 
+            //            SatNotify = true,
+            //            SunNotify = true, 
+            //        };
 
-            if (database.GetSettingAsync(1) == null)
-            {
-                Settings settings = new Settings
-                    {
-                        SettingId = 1,
-                        SendNotifications = true,
-                        DailyStartTime = new TimeSpan(7, 0, 0),
-                        DailyEndTime = new TimeSpan(20, 0, 0),
-                        ShowRatePage = true,
-                        ShowTop5CheckPage = true,
-                        MonNotify = true,
-                        TueNotify = true,
-                        WedNotify = true,
-                        ThurNotify = true, 
-                        FriNotify = true, 
-                        SatNotify = true,
-                        SunNotify = true, 
-                    };
-
-                 App.database.SaveSettingsAsync(settings);
-            }
+            //     App.database.SaveSettingsAsync(settings);
+            //}
 
             //MainPage = new NavigationPage(new RatePage()
             //{
@@ -82,23 +80,23 @@ namespace Nudge_
 
 
         // If opened from notification - set in the MainActivity and AppDeligate respectively 
-        public App(bool t)
-        {
-            InitializeComponent();
+        //public App(bool t)
+        //{
+        //    InitializeComponent();
 
 
-            MainPage = new NavigationPage(new Top5CheckPage()
-            {
-                Title = DefaultMessages.checkInPageTitle
-            })
-            { 
-                BarBackgroundColor = ColourScheme.headerColour,
-                BarTextColor = ColourScheme.headerTextColour
-            };
+        //    MainPage = new NavigationPage(new Top5CheckPage()
+        //    {
+        //        Title = DefaultMessages.checkInPageTitle
+        //    })
+        //    { 
+        //        BarBackgroundColor = ColourScheme.headerColour,
+        //        BarTextColor = ColourScheme.headerTextColour
+        //    };
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+        //    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
 
-        }
+        //}
 
         public static AbstractNotificationsImpl NotificationsImpl { get; private set; }
 
@@ -109,14 +107,26 @@ namespace Nudge_
 
         protected override void OnStart()
         {
-
-            ns.SendWeeklyNotifications();
+            base.OnStart();
+            if(ns != null)
+            {
+                ns.SendWeeklyNotifications();
+                ns.SendNotificationNow();
+            }
         }
 
         protected override void OnSleep()
         {
             base.OnSleep();
-            ns.SendWeeklyNotifications();
+            if(ns != null)
+            {
+                ns.SendWeeklyNotifications();
+            }
+        }
+
+        protected override void OnResume ()
+        {
+            // Handle when your app resumes
         }
 
         public static NudgeDatabase Database

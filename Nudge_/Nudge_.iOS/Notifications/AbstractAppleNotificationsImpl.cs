@@ -8,7 +8,9 @@ namespace Plugin.Notifications
 {
     public abstract class AbstractAppleNotificationsImpl : AbstractNotificationsImpl
     {
-        public override Task<int> GetBadge()
+      
+
+    public override Task<int> GetBadge()
         {
             var tcs = new TaskCompletionSource<int>();
             UIApplication.SharedApplication.InvokeOnMainThread(() =>

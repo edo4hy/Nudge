@@ -418,8 +418,9 @@ namespace Nudge_.ViewModel
                 //Console.WriteLine("Removing old message");
                 collection.Remove(isAlreadyInList);
             }
-          
-            collection.Insert(top5MessageConverter.Top5NumberToIntConverter(n), m);
+
+            collection.Add(m);
+            //collection.Insert(top5MessageConverter.Top5NumberToIntConverter(n), m);
         }
 
         private async void StarTapped(object obj)

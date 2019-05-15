@@ -7,14 +7,14 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Nudge_.View;
-using Xamarin.Forms.Xaml;
+//using Xamarin.Forms.Xaml;
 using Nudge_.Converters;
 using Nudge_.View.MasterDetail;
 using Nudge_.Shared;
 
 namespace Nudge_.ViewModel
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Top5PageViewModel : ContentPage, INotifyPropertyChanged
     {
         public TrulyObservableCollection<Message> MessagesTop5 = new TrulyObservableCollection<Message>();
@@ -74,7 +74,6 @@ namespace Nudge_.ViewModel
                 selectedMessage = (Message)obj;
                 MessageTabbedPage messageTabbedPage = new MessageTabbedPage(this);
 
-                //CrossLocalNotifications.Current.Show("Title", "Body asldkjflaksjdfl;kasd ");
 
                 await Navigation.PushAsync(messageTabbedPage);
 
@@ -128,7 +127,7 @@ namespace Nudge_.ViewModel
                 if (hasBeenSet == false)
                 {
                     //Console.WriteLine("Adding fake message +++++++");
-                    MessagesTop5.Add(new Message { MessageText = "Click to add message here ...", Top5 = tpConverter.IntToTop5NumberConverter(i + 1) });
+                    MessagesTop5.Add(new Message { MessageText = DefaultMessages.top5DefaultMessage, Top5 = tpConverter.IntToTop5NumberConverter(i + 1) });
                     count++;
                 }
             }
@@ -150,17 +149,17 @@ namespace Nudge_.ViewModel
                 {
                     ToHomeChange();
 
-                    HockeyApp.MetricsManager.TrackEvent(
+                    //HockeyApp.MetricsManager.TrackEvent(
 
-                        "All check boxes Clicked",
-                        new Dictionary<string, string>
-                        {
-                            {"Time", DateTime.UtcNow.ToString()}
-                        },
-                            new Dictionary<string, double>
-                            {
-                                {"value", 2.5}
-                            });
+                        //"All check boxes Clicked",
+                        //new Dictionary<string, string>
+                        //{
+                        //    {"Time", DateTime.UtcNow.ToString()}
+                        //},
+                            //new Dictionary<string, double>
+                            //{
+                            //    {"value", 2.5}
+                            //});
                 }
             }
         }

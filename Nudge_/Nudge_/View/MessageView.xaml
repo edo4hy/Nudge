@@ -21,11 +21,13 @@
         <SearchBar x:Name="filterText" HeightRequest="40"
            Placeholder="Search here to filter"
            TextChanged="Handle_TextChanged" Grid.Row="0"/>
+        
         <syncfusion:SfListView 
             x:Name="MessagesListView"
             SelectionMode="Single"
             TapCommand="{Binding MessageTapCommand}"
             AutoFitMode="Height"
+           
             >
 
             <syncfusion:SfListView.ItemTemplate>
@@ -35,17 +37,23 @@
                             <StackLayout Padding="0" >
                                 <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
                                     <StackLayout Orientation="Vertical" HorizontalOptions="Start">
+                                 
                                         <Label Text="{Binding MessageText}"
                                                    FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
                                     </StackLayout>
                                     <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Padding="0, 5, 0, 5">
-                                        <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="15" VerticalOptions="CenterAndExpand">
-                                           <Image.GestureRecognizers>
-                                                <TapGestureRecognizer 
-                                                    Command="{Binding Path=BindingContext.StarTapCommand, Source={x:Reference MessagesListView}}" 
-                                                    CommandParameter="{Binding MessageId}"/>
-                                            </Image.GestureRecognizers>
-                                        </Image>
+                                    <!--    <StackLayout.GestureRecognizers>
+                                             <TapGestureRecognizer 
+                                                        Command="{Binding Path=BindingContext.StarTapCommand, Source={x:Reference MessagesListView}}" 
+                                                        CommandParameter="{Binding MessageId}"/>
+                                        </StackLayout.GestureRecognizers>  -->
+                                        <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="25" VerticalOptions="CenterAndExpand">
+                                               <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        Command="{Binding Path=BindingContext.StarTapCommand, Source={x:Reference MessagesListView}}" 
+                                                        CommandParameter="{Binding MessageId}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
                                     </StackLayout>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Padding="10, -5, 0, 10">

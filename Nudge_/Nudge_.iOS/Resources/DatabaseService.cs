@@ -17,6 +17,8 @@ namespace SQLiteTutorial.iOS
     {
         public DatabaseService()
         {
+            global::Xamarin.Forms.Forms.Init();
+
         }
 
         public SQLiteAsyncConnection CreateConnection()

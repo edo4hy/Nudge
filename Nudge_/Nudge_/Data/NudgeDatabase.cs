@@ -16,12 +16,13 @@ namespace Nudge_.Data
 
         public  NudgeDatabase(string dbPath)
         {
+
             database = DependencyService.Get<IDBInterface>().CreateConnection();
 
             //database = new SQLiteAsyncConnection(dbPath);
-            if(database.Table<Message>() == null) {
+           
                 //database.CreateTableAsync<Message>().Wait();
-            }
+            
 
             //database.CreateTableAsync<Person>().Wait();
             //database.DropTableAsync<Answer>().Wait();

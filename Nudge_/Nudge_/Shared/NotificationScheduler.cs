@@ -268,7 +268,7 @@ namespace Nudge_.Shared
         {
             ClearAllNotifications();
 
-            DateTime dt = DateTime.Now.AddSeconds(20);
+            DateTime dt = DateTime.Now.AddSeconds(10);
             //dt.AddSeconds(10);
 
             Notification n = new Notification()
@@ -340,7 +340,7 @@ namespace Nudge_.Shared
         public string SelectMessageText()
         {
             Message m = top5PageViewModel.MessagesTop5[cycle++];
-            while(m.MessageText == "Add message here ..." && cycle < 4)
+            while(m.MessageText == DefaultMessages.top5DefaultMessage && cycle < 4)
             {
                 m = top5PageViewModel.MessagesTop5[cycle++];
             }
@@ -348,7 +348,7 @@ namespace Nudge_.Shared
             {
                 cycle = 0;
             }
-            if(m.MessageText == "Add message here ...")
+            if(m.MessageText == DefaultMessages.top5DefaultMessage)
             {
                 m.MessageText = DefaultMessages.DefaultMessage1.MessageText;
             }

@@ -160,8 +160,6 @@ namespace Nudge_.Droid
 			global::HockeyApp.Resource.Style.HockeyApp_ButtonStyle = global::Nudge_.Droid.Resource.Style.HockeyApp_ButtonStyle;
 			global::HockeyApp.Resource.Style.HockeyApp_EditTextStyle = global::Nudge_.Droid.Resource.Style.HockeyApp_EditTextStyle;
 			global::HockeyApp.Resource.Style.HockeyApp_SingleLineInputStyle = global::Nudge_.Droid.Resource.Style.HockeyApp_SingleLineInputStyle;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::Nudge_.Droid.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::Nudge_.Droid.Resource.String.Hello;
 			global::Syncfusion.Buttons.XForms.Android.Resource.Animation.btn_checkbox_indeterminate_to_checked_box_inner_merged_animation = global::Nudge_.Droid.Resource.Animation.btn_checkbox_indeterminate_to_checked_box_inner_merged_animation;
 			global::Syncfusion.Buttons.XForms.Android.Resource.Animation.btn_checkbox_indeterminate_to_checked_icon_null_animation = global::Nudge_.Droid.Resource.Animation.btn_checkbox_indeterminate_to_checked_icon_null_animation;
 			global::Syncfusion.Buttons.XForms.Android.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::Nudge_.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;

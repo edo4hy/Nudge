@@ -22,5 +22,7 @@ namespace Nudge_.Shared
         public static string ratePageTitle = "How are you today?";
         public static string checkInPageTitle = "Check in";
 
+        public static string top5DefaultMessage = "Click to add message here ...";
+
     }
 }

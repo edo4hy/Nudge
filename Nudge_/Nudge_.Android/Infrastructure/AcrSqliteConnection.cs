@@ -7,8 +7,9 @@ namespace Plugin.Notifications.Infrastructure
 {
     public class AcrSqliteConnection : SQLiteConnectionWithLock
     {
+
         public AcrSqliteConnection() :
-            base(new SQLiteConnectionString(
+            base( new SQLiteConnectionString(
                 Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "notifications.db"),
                 true
             ), SQLiteOpenFlags.Create | SQLiteOpenFlags.FullMutex | SQLiteOpenFlags.ReadWrite)

@@ -14,6 +14,8 @@ namespace Nudge_.Shared
         public Action OnFinishedPlaying { get; set; }
         public AudioPlayerService_iOS()
         {
+            //global::Xamarin.Forms.Forms.Init();
+
         }
 
         public void Play(string pathToAudioFile)

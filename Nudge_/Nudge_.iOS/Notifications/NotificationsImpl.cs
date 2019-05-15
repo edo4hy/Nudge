@@ -14,6 +14,8 @@ namespace Plugin.Notifications
 
         public NotificationsImpl()
         {
+            //global::Xamarin.Forms.Forms.Init();
+
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
                 this.impl = new UNNotificationsImpl();
             else
