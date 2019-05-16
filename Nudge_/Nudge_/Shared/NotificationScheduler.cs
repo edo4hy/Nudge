@@ -284,6 +284,11 @@ namespace Nudge_.Shared
             await CrossNotifications.Current.Send(n);
 
             var lsit = await CrossNotifications.Current.GetScheduledNotifications();
+
+
+            await Task.Delay(1000);
+
+            PrintNotifications();
             Console.WriteLine("asdklfjasldf");
         }
 

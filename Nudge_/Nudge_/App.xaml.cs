@@ -110,7 +110,7 @@ namespace Nudge_
             base.OnStart();
             if(ns != null)
             {
-                ns.SendWeeklyNotifications();
+                //ns.SendWeeklyNotifications();
                 ns.SendNotificationNow();
             }
         }
