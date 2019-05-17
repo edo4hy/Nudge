@@ -1,12 +1,10 @@
 ﻿using Nudge_.Model;
 using Nudge_.ViewModel;
-//using Plugin.LocalNotifications;
 using Plugin.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-//using Plugin.Toasts;
 
 using System.Threading.Tasks;
 using Notification = Plugin.Notifications.Notification;
@@ -188,7 +186,6 @@ namespace Nudge_.Shared
                     {
                         Current = Current.AddMinutes(timeBetweenMessagesNormal * 60);
                     }
-
                 }
                 else
                 {
@@ -233,7 +230,6 @@ namespace Nudge_.Shared
         // Send out future notifications based on settings and those already scheduled 
         public async void PrintNotifications()
         {
-           
             if(Device.RuntimePlatform == Device.iOS)
             {
                 var list = await CrossNotifications.Current.GetScheduledNotificationsIos();
@@ -344,7 +340,19 @@ namespace Nudge_.Shared
         // Select one of the Messages from the Top 5
         public string SelectMessageText()
         {
+            if (top5PageViewModel == null || top5PageViewModel.MessagesTop5 == null) 
+                return DefaultMessages.DefaultMessage1.MessageText;
+
+            if(cycle > 4)
+            {
+                cycle = 0;
+                return DefaultMessages.DefaultMessage1.MessageText;
+            }
+
+
             Message m = top5PageViewModel.MessagesTop5[cycle++];
+            if (m == null) return DefaultMessages.DefaultMessage1.MessageText;
+
             while(m.MessageText == DefaultMessages.top5DefaultMessage && cycle < 4)
             {
                 m = top5PageViewModel.MessagesTop5[cycle++];

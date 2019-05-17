@@ -70,6 +70,8 @@ namespace Nudge_.iOS
                 app.RegisterUserNotificationSettings(notificationSettings);
             }
 
+
+            // posibly need to comment out to get the messages to open - ---- 
             if (options != null)
             {
                 // check for a local notification

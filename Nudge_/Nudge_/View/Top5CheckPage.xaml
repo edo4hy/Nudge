@@ -35,7 +35,7 @@
                                                 <Label Text="{Binding Author}" />
                                             </StackLayout>
                                         </Grid>
-                                        <Grid Grid.Column="1" Padding="5">
+                                        <Grid Grid.Column="1" Padding="5" IsVisible="{Binding Top5Checked}">
                                             <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
                                         </Grid>
                                     </Grid>

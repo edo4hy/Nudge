@@ -53,6 +53,8 @@ namespace Nudge_
             //     App.database.SaveSettingsAsync(settings);
             //}
 
+            //MainPage = new BrowseSliderTabbed();
+
             //MainPage = new NavigationPage(new RatePage()
             //{
             //    Title = DefaultMessages.ratePageTitle
@@ -110,8 +112,8 @@ namespace Nudge_
             base.OnStart();
             if(ns != null)
             {
-                //ns.SendWeeklyNotifications();
-                ns.SendNotificationNow();
+                ns.SendWeeklyNotifications();
+                //ns.SendNotificationNow();
             }
         }
 

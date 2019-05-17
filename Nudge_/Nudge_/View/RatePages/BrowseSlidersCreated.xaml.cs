@@ -22,13 +22,16 @@ namespace Nudge_.View
 			InitializeComponent ();
             BrowseSliderViewModel vm = new BrowseSliderViewModel();
             SlidersListView.ItemsSource = vm.sliders;
-		}
+
+           
+        }
 
         public BrowseSlidersCreated(TrulyObservableCollection<RateSlider> col)
         {
             InitializeComponent();
             SlidersListView.ItemsSource = col;
             items = col;
+        
         }
 
 
@@ -37,7 +40,6 @@ namespace Nudge_.View
             base.OnAppearing();
             InitializeComponent();
             SlidersListView.ItemsSource = items;
-
 
             OnPropertyChanged();
 

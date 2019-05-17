@@ -1,6 +1,7 @@
 ﻿using Nudge_.Behaviours;
 using Nudge_.Data.Model;
 using Nudge_.Model;
+using Nudge_.Shared;
 using Nudge_.View;
 using Nudge_.View.MasterDetail;
 using System;
@@ -284,7 +285,20 @@ namespace Nudge_.ViewModel
                     Order = 1000
                 });
             }
-       
+
+
+            // Add the default message 
+            if (editPageElements.Count == 1)
+            {
+                editPageElements.Add(new RateQuestionCombo
+                {
+                    Question = null,
+                    RateSlider = null,
+                    NoRatePageMessage = DefaultMessages.ratePageNoRatesMessage,
+                    Order = 0
+
+                });
+            }
 
             // Sort by Order by 
             var a = editPageElements.OrderBy(keySelector: p => p.Order).ToList();
@@ -298,6 +312,8 @@ namespace Nudge_.ViewModel
                 editPageElementsAltered.Add(item);
             }
             Console.WriteLine("altered out " + i);
+
+       
 
         }
 

@@ -13,6 +13,7 @@ namespace Nudge_.Shared
         public DataTemplate ButtonTemplate { get; set; }
         public DataTemplate SpaceTemplate { get; set; }
         public DataTemplate QuestionTemplateNoAnswers { get; set; }
+        public DataTemplate NoRatePageMessage { get; set; }
 
         //protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         //{
@@ -39,6 +40,10 @@ namespace Nudge_.Shared
             if (rcq.isButtonNotSpace)
             {
                 return ButtonTemplate;
+            }
+            else if(rcq.NoRatePageMessage != null)
+            {
+                return NoRatePageMessage;
             }
             else
             {

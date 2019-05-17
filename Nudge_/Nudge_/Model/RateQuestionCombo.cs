@@ -192,6 +192,9 @@ namespace Nudge_.Model
         public bool isButtonNotSpace;
 
         private string comboTextField = "";
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string ComboTextField
         {
             get
@@ -203,6 +206,19 @@ namespace Nudge_.Model
                 comboTextField = value;
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        public string noRatePageMessage;
+        public string NoRatePageMessage
+        {
+            get
+            {
+                return noRatePageMessage;
+            }
+            set
+            {
+                noRatePageMessage = value;
+            }
+        }
     }
 }

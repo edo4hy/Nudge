@@ -74,7 +74,6 @@ namespace Nudge_.ViewModel
                 selectedMessage = (Message)obj;
                 MessageTabbedPage messageTabbedPage = new MessageTabbedPage(this);
 
-
                 await Navigation.PushAsync(messageTabbedPage);
 
                 top5IsTapped = false;
@@ -131,35 +130,29 @@ namespace Nudge_.ViewModel
                     count++;
                 }
             }
+
+            if(isCheckPage && msgs.Count < 1)
+            {
+                MessageCheckTop5.Add(new Top5Check {message = new Message { MessageText = DefaultMessages.checkInNoMessagesMessage }, Top5Checked = false });
+            }
         }
 
-        public async void CheckBoxClicked()
+
+        public void CheckBoxClicked()
         {
             int checkCount = 0;
-            int top5Count = MessagesTop5Unordered.Count;
+            int top5Count = MessageCheckTop5.Count;
 
-            foreach(Top5Check tp in MessageCheckTop5) 
-            { 
-                if(tp.Top5Checked == true)
+            foreach (Top5Check tp in MessageCheckTop5)
+            {
+                if (tp.Top5Checked == true)
                 {
                     checkCount++;
                 }
 
-                if(checkCount == top5Count)
+                if (checkCount == top5Count)
                 {
                     ToHomeChange();
-
-                    //HockeyApp.MetricsManager.TrackEvent(
-
-                        //"All check boxes Clicked",
-                        //new Dictionary<string, string>
-                        //{
-                        //    {"Time", DateTime.UtcNow.ToString()}
-                        //},
-                            //new Dictionary<string, double>
-                            //{
-                            //    {"value", 2.5}
-                            //});
                 }
             }
         }

@@ -182,12 +182,21 @@
                 </ViewCell>
             </DataTemplate>
             
+              <DataTemplate x:Key="noRatePageMessage">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="20">
+                        <Label Text="{Binding NoRatePageMessage}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            
             <shared:EditRatePageSelector x:Key="editRatePageSelector" 
                             QuestionTemplate="{StaticResource questionTemplate}"
                             QuestionTemplateNoAnswers="{StaticResource questionTemplateNoAnswers}"
                             SliderTemplate="{StaticResource sliderTemplate}"
                             ButtonTemplate="{StaticResource buttonTemplate}"
-                            SpaceTemplate="{StaticResource spaceTemplate}"/>
+                            SpaceTemplate="{StaticResource spaceTemplate}"
+                            NoRatePageMessage="{StaticResource noRatePageMessage}"/>
 
      </ResourceDictionary>
     </ContentPage.Resources>

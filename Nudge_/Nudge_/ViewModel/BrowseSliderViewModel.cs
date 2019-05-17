@@ -156,6 +156,10 @@ namespace Nudge_.ViewModel
 
         public async void AddSlider()
         {
+            if (newSliderTitle == null) return;
+            if (newSliderNegative == null) return;
+            if (newSliderPositive == null) return;
+
             RateSlider slider = new RateSlider
             {
                 Title = newSliderTitle.Text.Trim().ToString(),

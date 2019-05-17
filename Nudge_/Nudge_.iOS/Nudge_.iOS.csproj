@@ -65,10 +65,11 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-       <CodesignKey>iPhone Distribution: edward obree (S6Q9HMC2QC)</CodesignKey>
+       <CodesignKey>iPhone Developer: edward obree (FTVJQAGCK6)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
        <CodesignKey>iPhone Developer: edward obree (FTVJQAGCK6)</CodesignKey>
        <MtouchLink>None</MtouchLink>
+       <CodesignProvision>Nudge Dev WildCard</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
