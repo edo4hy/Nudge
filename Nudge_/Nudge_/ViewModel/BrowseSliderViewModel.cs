@@ -160,31 +160,47 @@ namespace Nudge_.ViewModel
             if (newSliderNegative == null) return;
             if (newSliderPositive == null) return;
 
-            RateSlider slider = new RateSlider
+            if(newSliderTitle.Text == null || newSliderTitle.Text.Trim() == "" 
+                || newSliderNegative.Text == null || newSliderNegative.Text.Trim() == "" 
+                || newSliderPositive.Text == null || newSliderPositive.Text.Trim() == "")
             {
-                Title = newSliderTitle.Text.Trim().ToString(),
-                NegativeAnswer = newSliderNegative.Text.Trim().ToString(),
-                PositiveAnswer = newSliderPositive.Text.Trim().ToString(),
-                InUse = false,
-                Created = true
-            };
+                sliderAddedLabel.Text = "All fields must have text";
+                sliderAddedLabel.IsVisible = true;
 
-            RateSlider old = await App.Database.GetSliderAysnc(3);
+                await Task.Delay(5000);
 
-            slidersCreated.Add(slider);
-             await App.Database.SaveSliderAsync(slider);
+                sliderAddedLabel.IsVisible = false;
+            }
+            else
+            {
+                // If all entries have a value 
+                RateSlider slider = new RateSlider
+                {
+                    Title = newSliderTitle.Text.Trim().ToString(),
+                    NegativeAnswer = newSliderNegative.Text.Trim().ToString(),
+                    PositiveAnswer = newSliderPositive.Text.Trim().ToString(),
+                    InUse = false,
+                    Created = true
+                };
 
-            newSliderTitle.Text = "";
-            newSliderNegative.Text = "";
-            newSliderPositive.Text = "";
+                RateSlider old = await App.Database.GetSliderAysnc(3);
 
-            Console.WriteLine("Add new slider to database");
+                slidersCreated.Add(slider);
+                await App.Database.SaveSliderAsync(slider);
 
-            sliderAddedLabel.IsVisible = true;
+                newSliderTitle.Text = "";
+                newSliderNegative.Text = "";
+                newSliderPositive.Text = "";
 
-            await Task.Delay(5000);
+                Console.WriteLine("Add new slider to database");
 
-            sliderAddedLabel.IsVisible = false;
+                sliderAddedLabel.Text = "New Slider has been addded";
+                sliderAddedLabel.IsVisible = true;
+
+                await Task.Delay(5000);
+
+                sliderAddedLabel.IsVisible = false;
+            }
         }
 
 

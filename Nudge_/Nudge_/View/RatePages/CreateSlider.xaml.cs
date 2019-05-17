@@ -1,4 +1,6 @@
-﻿using Nudge_.ViewModel;
+﻿using Nudge_.Data.Model;
+using Nudge_.Model;
+using Nudge_.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace Nudge_.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CreateSlider : ContentPage
 	{
-		public CreateSlider ()
+        TrulyObservableCollection<RateSlider> items;
+        BrowseSliderViewModel vm;
+
+        public CreateSlider ()
 		{
 			InitializeComponent ();
 		}
@@ -22,10 +27,29 @@ namespace Nudge_.View
         {
             InitializeComponent();
             BindingContext = vm;
+            this.vm = vm;
+
+            SlidersListView.ItemsSource = vm.slidersCreated;
+            items = vm.slidersCreated;
+
             vm.newSliderTitle = sliderTitle;
             vm.newSliderNegative = sliderNeg;
             vm.newSliderPositive = sliderPos;
             vm.sliderAddedLabel = sliderAddedLabel;
         }
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            InitializeComponent();
+            SlidersListView.ItemsSource = items;
+
+            OnPropertyChanged();
+
+            vm.newSliderTitle = sliderTitle;
+            vm.newSliderNegative = sliderNeg;
+            vm.newSliderPositive = sliderPos;
+            vm.sliderAddedLabel = sliderAddedLabel;
+        }
+    }
 }
