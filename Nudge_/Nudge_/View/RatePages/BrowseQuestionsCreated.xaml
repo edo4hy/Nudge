@@ -19,9 +19,14 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="2">
-                <Label Text="To Edit, press and swipe question to the left" HorizontalTextAlignment="Center" TextColor="{x:Static colours:ColourScheme.infoTextColour }"/>
+            <StackLayout Padding="20">
+                <Label FontSize="Large" Text="Add a question"
+                    HorizontalOptions="CenterAndExpand" />
+                <Entry Placeholder="Enter new question" x:Name="newQuestionEntry" />
+                <Button Command="{Binding AddNewQuestion}"  Text="Add" HorizontalOptions="End"></Button>
+                <Label TextColor="Red" IsVisible="False" x:Name="questionAddedLabel" HorizontalOptions="Center" Text="Question has been addded"/>
             </StackLayout>
+            <BoxView HeightRequest="1" BackgroundColor="Gray"/>
             <syncfusion:SfListView 
                       x:Name="QuestionsListView"
                       SelectionMode="Single"

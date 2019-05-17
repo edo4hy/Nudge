@@ -1,16 +1,15 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/BrowseSliders.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs">
     <Files>
-      <File FileName="Nudge_/Nudge_/ViewModel/BrowseSliderViewModel.cs" Line="195" Column="65" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml.cs" Line="43" Column="32" />
-      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditSliderPage.xaml" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" />
       <File FileName="Nudge_/Nudge_/View/RatePages/BrowseSlidersCreated.xaml" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/CreateQuestion.xaml" />
       <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseSlidersCreated.xaml.cs" Line="24" Column="13" NotebookId="1" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseSliders.xaml" NotebookId="1" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml.cs" Line="28" Column="15" />
+      <File FileName="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" Line="146" Column="32" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionsCreated.xaml" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionsCreated.xaml.cs" Line="40" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/CreateQuestion.xaml.cs" Line="25" Column="13" NotebookId="1" />
+      <File FileName="Nudge_/Nudge_/ViewModel/BrowseSliderViewModel.cs" Line="195" Column="65" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,14 +18,15 @@
             <Node name="Nudge_" expanded="True">
               <Node name="View" expanded="True">
                 <Node name="RatePages" expanded="True">
+                  <Node name="BrowseQuestionsCreated.xaml" expanded="True" />
                   <Node name="BrowseQuestionTabbed.xaml" expanded="True" />
-                  <Node name="BrowseSliders.xaml" expanded="True" selected="True" />
-                  <Node name="BrowseSliderTabbed.xaml" expanded="True" />
-                  <Node name="CreateSlider.xaml" expanded="True" />
-                  <Node name="EditSliderPage.xaml" expanded="True" />
+                  <Node name="BrowseSlidersCreated.xaml" expanded="True" />
+                  <Node name="CreateQuestion.xaml" expanded="True" />
                 </Node>
               </Node>
-              <Node name="ViewModel" expanded="True" />
+              <Node name="ViewModel" expanded="True">
+                <Node name="BrowseQuestionViewModel.cs" selected="True" />
+              </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
             <Node name="Nudge_.iOS" expanded="True" />
@@ -47,7 +47,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/edwardobree/Projects/Nudge Back up /Test/Nudge_/Nudge_/Shared/NotificationScheduler.cs" line="308" column="1" />
-      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/View/RatePages/BrowseSlidersCreated.xaml.cs" relfile="Nudge_/Nudge_/View/RatePages/BrowseSlidersCreated.xaml.cs" line="23" column="1" />
+      <Breakpoint file="/Users/edwardobree/xamarintest/Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" relfile="Nudge_/Nudge_/ViewModel/BrowseQuestionViewModel.cs" line="148" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

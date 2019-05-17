@@ -16,6 +16,7 @@ namespace Nudge_.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BrowseQuestionsCreated : ContentPage
 	{
+        BrowseQuestionViewModel vm;
 		public BrowseQuestionsCreated ()
 		{
 			InitializeComponent ();
@@ -27,12 +28,16 @@ namespace Nudge_.View
 
         TrulyObservableCollection<Question> items;
 
-        public BrowseQuestionsCreated(TrulyObservableCollection<Question> col)
+        public BrowseQuestionsCreated(TrulyObservableCollection<Question> col, BrowseQuestionViewModel vm)
         {
             InitializeComponent();
+            this.vm = vm;
 
             QuestionsListView.ItemsSource = col;
             items = col;
+            vm.newQuestionEntry = newQuestionEntry;
+            vm.questionAddedLabel = questionAddedLabel;
+
         }
 
         protected override void OnAppearing()
@@ -40,6 +45,9 @@ namespace Nudge_.View
             base.OnAppearing();
             InitializeComponent();
             QuestionsListView.ItemsSource = items;
+
+            vm.newQuestionEntry = newQuestionEntry;
+            vm.questionAddedLabel = questionAddedLabel;
 
             OnPropertyChanged();
 

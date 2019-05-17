@@ -143,6 +143,18 @@ namespace Nudge_.ViewModel
 
         public async void AddQuestion()
         {
+            if (newQuestionEntry == null) return;
+
+            if(newQuestionEntry.Text == null || newQuestionEntry.Text.Trim() == "")
+            {
+                questionAddedLabel.Text = "Question must have text";
+                questionAddedLabel.IsVisible = true;
+
+                await Task.Delay(5000);
+
+                questionAddedLabel.IsVisible = false;
+            }
+
             Question newQuestion = new Question
             {
                 Title = newQuestionEntry.Text.ToString(),
@@ -156,6 +168,7 @@ namespace Nudge_.ViewModel
 
             Console.WriteLine("Add quesiton to database");
 
+            questionAddedLabel.Text = "Question has been added";
             questionAddedLabel.IsVisible = true;
 
             await Task.Delay(5000);
