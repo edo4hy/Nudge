@@ -85,10 +85,10 @@ namespace Nudge_.View
             //EditRateListView.QueryItemSize += ListView_QueryItemSize;
         }
 
-        void Add_Elment_Tapped(object sender, System.EventArgs e)
-        {
-            Console.WriteLine("asdljfhasdf");
-        }
+        //void Add_Elment_Tapped(object sender, System.EventArgs e)
+        //{
+        //    Console.WriteLine("asdljfhasdf");
+        //}
 
         //async void Handle_Tapped(object sender, System.EventArgs e)
         //{
@@ -114,7 +114,8 @@ namespace Nudge_.View
         //        Navigation = Navigation
         //    };
         //    BindingContext = vm;
-
+        //    this.deleteButton.IsVisible = false;
+        //    EditRateListView.ItemsSource = vm.editPageElements;
         //}
 
         void Handle_QueryItemSize(object sender, Syncfusion.ListView.XForms.QueryItemSizeEventArgs e)

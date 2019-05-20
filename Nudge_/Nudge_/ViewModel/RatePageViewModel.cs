@@ -32,6 +32,8 @@ namespace Nudge_.ViewModel
 
         private bool isDeleteButtonVisible;
 
+        public static int ratePageOrderInt = 0;
+
         public Syncfusion.ListView.XForms.SfListView rateListView;
 
         public bool IsDeleteButtonVisible
@@ -242,6 +244,9 @@ namespace Nudge_.ViewModel
 
         public async Task GetSliderAndQuestion()
         {
+            editPageElements.Clear();
+            editPageElementsAltered.Clear();
+
             List<Question> questionlist = await App.Database.GetQuestionsAsync();
             await Task.Delay(100);
             List<RateSlider> sliderlist = await App.Database.GetSlidersAysnc();
@@ -282,7 +287,7 @@ namespace Nudge_.ViewModel
                     Question = null,
                     RateSlider = null,
                     isButtonNotSpace = false,
-                    Order = 1000
+                    Order = 10000
                 });
             }
 
@@ -307,13 +312,14 @@ namespace Nudge_.ViewModel
             int i = 0;
             foreach (var item in a)
             {
-                i++;
+               
+                item.Order =  i++;
                 editPageElements.Add(item);
                 editPageElementsAltered.Add(item);
             }
             Console.WriteLine("altered out " + i);
 
-       
+            ratePageOrderInt = i;
 
         }
 

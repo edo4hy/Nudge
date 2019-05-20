@@ -16,13 +16,10 @@
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
             <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
-    
                    
             <Style TargetType="StackLayout" Class="HeaderColours">
                 <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.headerColour}" />
             </Style>
-       
-     
             
              <DataTemplate x:Key="sliderTemplate">
                 <ViewCell>
@@ -78,15 +75,22 @@
             
             <DataTemplate x:Key="questionTemplateNoAnswers">
                 <ViewCell>
-                    <StackLayout Padding="10" >
-                        <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
-                            <StackLayout Orientation="Vertical" HorizontalOptions="Start"  >
-                                <StackLayout x:Name="QuestionSearchBar" HorizontalOptions="CenterAndExpand" >
-                                    <Label FontSize="Medium" x:Name="QuestionTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                     <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Padding="10" >
+                            <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Start"  >
+                                    <StackLayout x:Name="QuestionSearchBar" HorizontalOptions="CenterAndExpand" >
+                                        <Label FontSize="Medium" x:Name="QuestionTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
-                    </StackLayout>
+                        <Frame Grid.Row="1" OutlineColor="#E4E4E4" HasShadow="true" HeightRequest="1"/> 
+                    </Grid>
                 </ViewCell>
             </DataTemplate>
             

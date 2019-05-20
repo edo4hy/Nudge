@@ -17,11 +17,6 @@
     <ContentPage.Content>
         <StackLayout Padding="0">
             
-<!--        <Grid>-->
-            <!--<Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="1"/>
-            </Grid.RowDefinitions>-->
             <StackLayout  Padding="0">
                 <Label HorizontalOptions="Center" FontSize="Large" Text="Create Sliders" />
                 <Entry x:Name="sliderTitle" Placeholder="Enter slider title"/>

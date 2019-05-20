@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Nudge_.ViewModel;
 using SQLite;
 
 namespace Nudge_.Model
@@ -26,7 +27,28 @@ namespace Nudge_.Model
                 OnPropertyChanged("QuestionEdited");
             }
         }
-        public bool InUse       { get; set; }
+        public bool _inUse;
+        public bool InUse
+        {
+            get
+            {
+                return _inUse;
+            }
+            set
+            {
+                if(!_inUse)
+                {
+                    Order = RatePageViewModel.ratePageOrderInt;
+                }
+                if(value == false)
+                {
+                    Order = 0; 
+                }
+                _inUse = value;
+                App.Database.SaveQuestionAsync(this);
+                OnPropertyChanged("QuestionAdded");
+            }
+        }
         public int Order        { get; set; }
         public bool Created      { get; set; }
 

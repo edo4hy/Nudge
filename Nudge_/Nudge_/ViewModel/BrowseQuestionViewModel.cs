@@ -38,6 +38,7 @@ namespace Nudge_.ViewModel
             saveQuestion = new Command(SaveQuestionEdit);
             cancelEdit = new Command(CancelQuestionEdit);
             deleteQuestion = new Command(DeleteQuestionEdit);
+            questionChecked = new Command(QuestionIsChecked);
 
             this.rpvm = rpvm;
         }
@@ -119,6 +120,12 @@ namespace Nudge_.ViewModel
             get { return deleteQuestion; }
         }
 
+        ICommand questionChecked;
+        public ICommand QuestionChecked
+        {
+            get { return questionChecked; }
+        }
+
         public async void GetQuestions()
         {
             List<Question> questionList = await App.Database.GetQuestionsAsync();
@@ -194,6 +201,11 @@ namespace Nudge_.ViewModel
             questionBeingExecuted = false;
         }
 
+        public void QuestionIsChecked(object obj)
+        {
+            if (obj == null) return;
+        }
+
         // Manage Question 
         private async void UpdateQuestionSelected(Question question, object obj)
         {
@@ -227,6 +239,23 @@ namespace Nudge_.ViewModel
                 await App.Database.SaveQuestionAsync(oldQuestion);
 
                 await Navigation.PopAsync();
+            }
+        }
+
+
+        public async void QuestionToBeAddedToRatePage()
+        {
+           await rpvm.GetSliderAndQuestion();
+        }
+
+        public void QuestionToBeAddedRatePageCreated()
+        {
+            foreach(Question q in questionsCreated)
+            {
+                if(q.InUse == true)
+                {
+                    App.Database.SaveQuestionAsync(q);
+                }
             }
         }
     }

@@ -23,7 +23,7 @@ namespace Nudge_.View
             viewModel.Navigation = Navigation;
             BindingContext = viewModel;
 
-            this.Children.Add(new BrowseQuestions(viewModel.questions) { Title = "Questions", BindingContext = viewModel });
+            this.Children.Add(new BrowseQuestions(viewModel.questions, viewModel) { Title = "Questions", BindingContext = viewModel });
             this.Children.Add(new BrowseQuestionsCreated(viewModel.questionsCreated, viewModel) { Title = "Created", BindingContext = viewModel });
             //this.Children.Add(new CreateQuestion(viewModel) { Title = "Create", BindingContext = viewModel });
 

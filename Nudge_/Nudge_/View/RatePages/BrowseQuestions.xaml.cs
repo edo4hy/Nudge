@@ -15,8 +15,10 @@ namespace Nudge_.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BrowseQuestions : ContentPage
-	{
-		public BrowseQuestions ()
+    {
+      
+
+        public BrowseQuestions ()
 		{
 			InitializeComponent ();
 
@@ -26,10 +28,12 @@ namespace Nudge_.View
 		}
 
         TrulyObservableCollection<Question> items;
+        BrowseQuestionViewModel vm;
 
-        public BrowseQuestions(TrulyObservableCollection<Question> col)
+        public BrowseQuestions(TrulyObservableCollection<Question> col, BrowseQuestionViewModel vm)
         {
             InitializeComponent();
+            this.vm = vm;
 
             QuestionsListView.ItemsSource = col;
             items = col;
@@ -43,6 +47,11 @@ namespace Nudge_.View
 
             OnPropertyChanged();
 
+        }
+
+        void Handle_StateChanged(object sender, Syncfusion.XForms.Buttons.StateChangedEventArgs e)
+        {
+            vm.QuestionToBeAddedToRatePage();
         }
 
     }
