@@ -7,6 +7,8 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              xmlns:colours="clr-namespace:Nudge_.Shared"
+             xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             
              >
 
     <ContentPage.Resources>
@@ -66,12 +68,28 @@
                 <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="20">
-                                <StackLayout>
-                                    <Label FontSize="Medium" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
-                                    <Label FontSize="Small" Text="{Binding Author}"/>
+                             <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="40" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="0">
+                                <StackLayout Padding="20">
+                                    <StackLayout>
+                                        <Label FontSize="Medium" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                        <Label FontSize="Small" Text="{Binding Author}"/>
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
+                                </Grid>
+                                <Grid Grid.Column="1" Padding="5" IsVisible="{Binding Top5Checked}">
+                                    <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
+                                </Grid>
+                                <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="true" HeightRequest="1"/> 
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                  </syncfusion:SfListView.ItemTemplate>

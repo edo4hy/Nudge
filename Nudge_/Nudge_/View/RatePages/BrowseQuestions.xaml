@@ -50,7 +50,7 @@
                                     <syncCheckBox:SfCheckBox IsChecked="{Binding InUse}" 
                                                              CornerRadius="0" StateChanged="Handle_StateChanged" />
                                 </Grid>
-                                <Frame Grid.Row="1"  OutlineColor="#E4E4E4" HasShadow="true" HeightRequest="1"/> 
+                                <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="true" HeightRequest="1"/> 
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

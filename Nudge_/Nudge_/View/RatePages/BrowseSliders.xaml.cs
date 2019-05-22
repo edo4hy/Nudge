@@ -17,16 +17,18 @@ namespace Nudge_.View
 	public partial class BrowseSliders : ContentPage
 	{
         TrulyObservableCollection<RateSlider> items;
+        BrowseSliderViewModel vm;
 		public BrowseSliders()
 		{
 			InitializeComponent ();
-            BrowseSliderViewModel vm = new BrowseSliderViewModel();
+            vm = new BrowseSliderViewModel();
             SlidersListView.ItemsSource = vm.sliders;
 		}
 
-        public BrowseSliders(TrulyObservableCollection<RateSlider> col)
+        public BrowseSliders(TrulyObservableCollection<RateSlider> col, BrowseSliderViewModel vm)
         {
             InitializeComponent();
+            this.vm = vm;
             SlidersListView.ItemsSource = col;
             items = col;
         }
@@ -41,6 +43,11 @@ namespace Nudge_.View
 
             OnPropertyChanged();
 
+        }
+
+        void Handle_StateChanged(object sender, Syncfusion.XForms.Buttons.StateChangedEventArgs e)
+        {
+            vm.SliderToBeAddedToRatePage();
         }
     }
 }

@@ -6,7 +6,10 @@
              xmlns:Converters="clr-namespace:Nudge_.Converters"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
-             xmlns:colours="clr-namespace:Nudge_.Shared">
+             xmlns:colours="clr-namespace:Nudge_.Shared"
+             xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             
+             >
     
         <ContentPage.Resources>
         <ResourceDictionary>
@@ -17,7 +20,7 @@
     <ContentPage.Content>
         <StackLayout Padding="0">
             
-            <StackLayout  Padding="0">
+            <StackLayout  Padding="10">
                 <Label HorizontalOptions="Center" FontSize="Large" Text="Create Sliders" />
                 <Entry x:Name="sliderTitle" Placeholder="Enter slider title"/>
                 <StackLayout Orientation="Horizontal">
@@ -68,19 +71,35 @@
                     <syncfusion:SfListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Padding="20">
-                                    <StackLayout>
-                                        <Label FontSize="Medium" x:Name="SliderTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="40" />
+                                    </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <StackLayout Padding="20">
+                                        <StackLayout>
+                                            <Label FontSize="Medium" x:Name="SliderTitle" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+                                                <Label x:Name="NegativeAnswer"  Text="{Binding NegativeAnswer}"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                                <Label x:Name="PositiveAnswer" Text="{Binding PositiveAnswer}"/>
+                                            </StackLayout>
+                                        </StackLayout >
                                     </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
-                                            <Label x:Name="NegativeAnswer"  Text="{Binding NegativeAnswer}"/>
-                                        </StackLayout>
-                                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
-                                            <Label x:Name="PositiveAnswer" Text="{Binding PositiveAnswer}"/>
-                                        </StackLayout>
-                                    </StackLayout >
-                                </StackLayout>
+                                 </Grid>
+                                <Grid Grid.Column="1" Padding="5">
+                                    <syncCheckBox:SfCheckBox IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
+                                </Grid>
+                                <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="True" HeightRequest="1"/> 
+                            </Grid>
                             </ViewCell>
                         </DataTemplate>
                    </syncfusion:SfListView.ItemTemplate>

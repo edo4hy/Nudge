@@ -169,9 +169,7 @@ namespace Nudge_.ViewModel
 
         private async Task InitializeAysnc()
         {
-         
             await GetSliderAndQuestion();
-
         }
 
 
@@ -323,7 +321,7 @@ namespace Nudge_.ViewModel
 
         }
 
-
+    
         public async void NavigateToAddSlider()
         {
             Console.WriteLine("adding slider");

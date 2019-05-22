@@ -14,7 +14,9 @@ namespace Nudge_.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CreateSlider : ContentPage
-	{
+    {
+       
+
         TrulyObservableCollection<RateSlider> items;
         BrowseSliderViewModel vm;
 
@@ -50,6 +52,11 @@ namespace Nudge_.View
             vm.newSliderNegative = sliderNeg;
             vm.newSliderPositive = sliderPos;
             vm.sliderAddedLabel = sliderAddedLabel;
+        }
+
+        void Handle_StateChanged(object sender, Syncfusion.XForms.Buttons.StateChangedEventArgs e)
+        {
+            vm.SliderToBeAddedToRatePage();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Nudge_.View
 
             BindingContext = viewModel;
 
-            this.Children.Add(new BrowseSliders(viewModel.sliders) { Title = "Sliders", BindingContext = viewModel });
+            this.Children.Add(new BrowseSliders(viewModel.sliders, viewModel) { Title = "Sliders", BindingContext = viewModel });
             //this.Children.Add(new BrowseSlidersCreated(viewModel.slidersCreated) { Title = "Created", BindingContext = viewModel });
             this.Children.Add(new CreateSlider(viewModel) { Title = "Create", BindingContext = viewModel });
 
@@ -37,7 +37,7 @@ namespace Nudge_.View
 
             BindingContext = viewModel;
 
-            this.Children.Add(new BrowseSliders(viewModel.sliders) { Title = "Sliders", BindingContext = viewModel });
+            this.Children.Add(new BrowseSliders(viewModel.sliders, viewModel) { Title = "Sliders", BindingContext = viewModel });
             //this.Children.Add(new BrowseSlidersCreated(viewModel.slidersCreated) { Title = "Created", BindingContext = viewModel });
             this.Children.Add(new CreateSlider(viewModel) { Title = "Create", BindingContext = viewModel });
 

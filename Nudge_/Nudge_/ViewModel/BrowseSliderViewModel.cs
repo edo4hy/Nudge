@@ -132,14 +132,14 @@ namespace Nudge_.ViewModel
             await App.Database.DeleteSliderAsync(oldSlider);
 
             await Navigation.PopModalAsync();
-
         }
-
 
 
         public async void GetSliders()
         {
             List<RateSlider> sliderList = await App.Database.GetSlidersAysnc();
+
+            if (sliderList.Count < 1) return;
 
             foreach (RateSlider r in sliderList)
             {
@@ -244,8 +244,13 @@ namespace Nudge_.ViewModel
             await App.Database.SaveSliderAsync(oldSlider);
 
             await Navigation.PopAsync();
-         
         }
+
+        public async void SliderToBeAddedToRatePage()
+        {
+            await rateVM.GetSliderAndQuestion();
+        }
+
 
     }
 }
