@@ -32,6 +32,7 @@ namespace Nudge_.View
             this.RateListView.ItemsSource = vm.editPageElements;
 
             NavigationPage.SetHasBackButton(this, false);
+            vm.saveButton = SaveButton;
            
         }
 

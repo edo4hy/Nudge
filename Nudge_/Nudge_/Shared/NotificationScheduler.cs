@@ -35,11 +35,19 @@ namespace Nudge_.Shared
             Console.WriteLine(p);
         }
 
+        public void resetAllNotificationVariables()
+        {
+            notificationsSentOut = 0;
+            notLimitReached = false;
+            lastMessagesSent = false;
+            cycle = 0;
+        }
 
         // Send out notifications for the specified period  - after cancelling all notifications
         public async void SendWeeklyNotifications()
         {
             ClearAllNotifications();
+            resetAllNotificationVariables();
 
             Settings settings = await App.Database.GetSettingAsync(1);
             if (settings == null) return;
@@ -153,7 +161,7 @@ namespace Nudge_.Shared
 
                     Notification n = new Notification()
                     {
-                        Title = "Check in, get a Nudge",
+                        Title = DefaultMessages.notificationHeader,
                         Message = SelectMessageText(),
                         Vibrate = true,
                         Date = dtTemp,
@@ -272,7 +280,7 @@ namespace Nudge_.Shared
                 Title = "Think through these beauties",
                 Message = "Test notification message 7869876v 0909",
                 Vibrate = true,
-                Sound = UILocalNotification.DefaultSoundName,
+                //Sound = UILocalNotification.DefaultSoundName,
                 Date = dt,
                 Id = rn.Next(1002, 999999)
 
@@ -337,7 +345,7 @@ namespace Nudge_.Shared
 
 
         int cycle = 0; 
-        // Select one of the Messages from the Top 5
+        // Select one of the Messages from the Top 5 to send out in notification
         public string SelectMessageText()
         {
             if (top5PageViewModel == null || top5PageViewModel.MessagesTop5 == null) 
@@ -349,9 +357,15 @@ namespace Nudge_.Shared
                 return DefaultMessages.DefaultMessage1.MessageText;
             }
 
-
-            Message m = top5PageViewModel.MessagesTop5[cycle++];
-            if (m == null) return DefaultMessages.DefaultMessage1.MessageText;
+            Message m;
+            if (top5PageViewModel.MessagesTop5[cycle]!= null)
+            {
+                m = top5PageViewModel.MessagesTop5[cycle++];
+            }
+            else
+            {
+                return DefaultMessages.DefaultMessage1.MessageText;
+            }
 
             while(m.MessageText == DefaultMessages.top5DefaultMessage && cycle < 4)
             {

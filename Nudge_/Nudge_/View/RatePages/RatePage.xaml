@@ -158,7 +158,7 @@
                 <ViewCell>
                    <StackLayout Margin="0,-10,0,0" Orientation="Horizontal" Padding="0,0,0,20"  BackgroundColor="#FFE8E8EC">
                         <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Button CornerRadius="20" BackgroundColor="{x:Static colours:ColourScheme.primaryButtonColour}" WidthRequest="120" 
+                            <Button  CornerRadius="20" BackgroundColor="{x:Static colours:ColourScheme.primaryButtonColour}" WidthRequest="120" 
                                     TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}" 
                                     Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Save"/>
                        
@@ -224,7 +224,7 @@
                 </syncfusion:SfListView>
                 <StackLayout Orientation="Horizontal" Padding="0,0,0,20" >
                     <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                        <Button  Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.SaveAnswers}" Text="Save"/>
+                        <Button x:Name="SaveButton" Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.SaveAnswers}" Text="Save"/>
                     </StackLayout>
                     <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
                  <!--       <buttons:SfButton Command="{Binding Path=BindingContext.ToHome}"

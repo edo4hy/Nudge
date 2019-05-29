@@ -22,7 +22,7 @@ namespace Nudge_.Shared
 
         // Rate Page 
         public static string ratePageTitle = "How are you today?";
-        public static string ratePageNoRatesMessage = "This page will display your Sliders and Questions to help you become more aware of your mood, the causes and trigger and your thought cycle. You can add Sliders and Questions from the Edit Rate Page";
+        public static string ratePageNoRatesMessage = "This page will display your Sliders and Questions to help you become more aware of your mood as well as the causes and triggers of your thought cycles. You can add Sliders and Questions from the Edit Rate Page";
 
         // Check in Page
         public static string checkInPageTitle = "Check in";
@@ -30,6 +30,9 @@ namespace Nudge_.Shared
 
 
         public static string top5DefaultMessage = "Click to add message here ...";
+
+
+        public static string notificationHeader = "Check in, get a Nudge";
 
     }
 }

@@ -32,6 +32,8 @@ namespace Nudge_.ViewModel
 
         private bool isDeleteButtonVisible;
 
+        public Button saveButton;
+
         public static int ratePageOrderInt = 0;
 
         public Syncfusion.ListView.XForms.SfListView rateListView;
@@ -301,6 +303,8 @@ namespace Nudge_.ViewModel
                     Order = 0
 
                 });
+
+                if (saveButton != null) saveButton.IsVisible = false;
             }
 
             // Sort by Order by 

@@ -98,57 +98,57 @@ namespace Nudge_.iOS
         }
 
 
-        //public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
-        //{
-        //    NSUserDefaults.StandardUserDefaults.Synchronize();
+        public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
+        {
+            NSUserDefaults.StandardUserDefaults.Synchronize();
 
-        //    //App.Current.MainPage = new NavigationPage(new Top5CheckPage()
-        //    //{
-        //    //    Title = DefaultMessages.checkInPageTitle
-        //    //})
-        //    //{
-        //    //    BarTextColor = ColourScheme.headerTextColour,
-        //    //    BarBackgroundColor = ColourScheme.headerColour
-        //    //};
+            App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+            {
+                Title = DefaultMessages.checkInPageTitle
+            })
+            {
+                BarTextColor = ColourScheme.headerTextColour,
+                BarBackgroundColor = ColourScheme.headerColour
+            };
 
-        //    //// show an alert
-        //    //UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
-        //    //okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            // show an alert
+            UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
+            okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-        //    //UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
+            UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
 
-        //    //// reset our badge
-        //    //UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+            // reset our badge
+            UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
 
-        //    //if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active))
-        //    //{
-        //    //    if(App.Current.MainPage == null)
-        //    //    {
-        //    //        App.Current.MainPage = new NavigationPage(new Top5CheckPage()
-        //    //        {
-        //    //            Title = DefaultMessages.checkInPageTitle
-        //    //        })
-        //    //        {
-        //    //            BarTextColor = ColourScheme.headerTextColour,
-        //    //            BarBackgroundColor = ColourScheme.headerColour
-        //    //        };
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        App.Current.MainPage = App.Current.MainPage;
-        //    //    }
-        //    //}
-        //    //else
-        //    //{
-        //    //    App.Current.MainPage = new NavigationPage(new Top5CheckPage()
-        //    //    {
-        //    //        Title = DefaultMessages.checkInPageTitle
-        //    //    })
-        //    //    {
-        //    //        BarTextColor = ColourScheme.headerTextColour,
-        //    //        BarBackgroundColor = ColourScheme.headerColour
-        //    //    };
-        //    //}
-        //}
+            if (UIApplication.SharedApplication.ApplicationState.Equals(UIApplicationState.Active))
+            {
+                if(App.Current.MainPage == null)
+                {
+                    App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+                    {
+                        Title = DefaultMessages.checkInPageTitle
+                    })
+                    {
+                        BarTextColor = ColourScheme.headerTextColour,
+                        BarBackgroundColor = ColourScheme.headerColour
+                    };
+                }
+                else
+                {
+                    App.Current.MainPage = App.Current.MainPage;
+                }
+            }
+            else
+            {
+                App.Current.MainPage = new NavigationPage(new Top5CheckPage()
+                {
+                    Title = DefaultMessages.checkInPageTitle
+                })
+                {
+                    BarTextColor = ColourScheme.headerTextColour,
+                    BarBackgroundColor = ColourScheme.headerColour
+                };
+            }
+        }
     }
 }
