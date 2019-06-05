@@ -133,7 +133,7 @@ namespace Nudge_.ViewModel
 
             if(isCheckPage && msgs.Count < 1)
             {
-                MessageCheckTop5.Add(new Top5Check {message = new Message { MessageText = DefaultMessages.checkInNoMessagesMessage }, Top5Checked = false });
+                MessageCheckTop5.Add(new Top5Check {message = new Message { MessageText = DefaultMessages.checkInNoMessagesMessage }, IsTop5Message = true });
             }
         }
 

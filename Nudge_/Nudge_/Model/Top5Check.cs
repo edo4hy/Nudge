@@ -82,6 +82,19 @@ namespace Nudge_.Model
             }
         }
 
+        private bool _isNoTop5Message;
+        public bool IsTop5Message
+        {
+            get
+            {
+                return _isNoTop5Message;
+            }
+            set
+            {
+                _isNoTop5Message = value;
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
