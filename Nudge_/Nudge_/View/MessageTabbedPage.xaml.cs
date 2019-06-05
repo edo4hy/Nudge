@@ -27,7 +27,6 @@ namespace Nudge_.View
             this.Children.Add(new MessageView(viewModel.MessagesAction) { Title = "Actions", BindingContext = viewModel });
             this.Children.Add(new MessageView(viewModel.MessagesAffirmation) { Title = "Affirmations", BindingContext = viewModel });
             this.Children.Add(new MessageView(viewModel.MessagesFavourited) { Title = "Favourites", BindingContext = viewModel });
-            this.Children.Add(new MessageViewCreated(viewModel.MessagesCreated, true) { Title = "Created", BindingContext = viewModel });
             this.Children.Add(new CreateMessage(viewModel) { Title = "Create", BindingContext = viewModel });
         }
 
@@ -43,7 +42,6 @@ namespace Nudge_.View
             this.Children.Add(new MessageView(viewModel.MessagesAction) { Title = "Actions", BindingContext = viewModel });
             this.Children.Add(new MessageView(viewModel.MessagesAffirmation) { Title = "Affirmations", BindingContext = viewModel });
             this.Children.Add(new MessageView(viewModel.MessagesFavourited) { Title = "Favourites", BindingContext = viewModel });
-            this.Children.Add(new MessageViewCreated(viewModel.MessagesCreated) { Title = "Created", BindingContext = viewModel });
             this.Children.Add(new CreateMessage(viewModel) { Title = "Create", BindingContext = viewModel });
         }
     }

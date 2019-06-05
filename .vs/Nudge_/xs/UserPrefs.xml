@@ -1,29 +1,23 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/Top5CheckPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/CreateMessage.xaml">
     <Files>
-      <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml" />
-      <File FileName="Nudge_/Nudge_/Shared/EditRatePageSelector.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/Shared/CheckInPageSelector.cs" Line="27" Column="41" />
-      <File FileName="Nudge_/Nudge_/Model/Top5Check.cs" Line="85" Column="39" />
-      <File FileName="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs" Line="130" Column="29" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" NotebookId="1" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" />
+      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml" />
+      <File FileName="Nudge_/Nudge_/Shared/DefaultVariables.cs" Line="14" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Model" expanded="True" />
               <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
                 <Node name="RatePages" expanded="True" />
-                <Node name="Top5CheckPage.xaml" expanded="True" selected="True" />
-                <Node name="Top5Page.xaml" expanded="True" />
+                <Node name="CreateMessage.xaml" selected="True" />
+                <Node name="MessageTabbedPage.xaml" expanded="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
-              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Nudge_.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -36,7 +30,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.721F7C81-1C9A-4E5D-9950-799721A6627C" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9FDB0280-904E-46E1-ACFB-E50F5B47B778" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
