@@ -1,23 +1,33 @@
-﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/CreateMessage.xaml">
+﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/RatePage.xaml">
     <Files>
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionsCreated.xaml.cs" Line="58" Column="48" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseSliders.xaml.cs" Line="50" Column="46" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml.cs" Line="59" Column="15" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml.cs" Line="135" Column="14" />
+      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="201" Column="37" />
       <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" />
-      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml" />
-      <File FileName="Nudge_/Nudge_/Shared/DefaultVariables.cs" Line="14" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" Line="31" Column="44" />
+      <File FileName="Nudge_/Nudge_/Model/RateSlider.cs" Line="46" Column="7" />
+      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
+              <Node name="Model" expanded="True" />
               <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="RatePages" expanded="True" />
-                <Node name="CreateMessage.xaml" selected="True" />
-                <Node name="MessageTabbedPage.xaml" expanded="True" />
+                <Node name="RatePages" expanded="True">
+                  <Node name="RatePage.xaml" selected="True" />
+                </Node>
               </Node>
               <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
             </Node>
+            <Node name="Nudge_.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -30,7 +40,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9FDB0280-904E-46E1-ACFB-E50F5B47B778" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BEBF0206-90BF-4A19-BBAB-3695C867DBCD" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

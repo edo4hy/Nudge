@@ -17,6 +17,9 @@ namespace Nudge_.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EditRatePage : ContentPage
     {
+
+        private bool firstLoad = true;
+
         public async void Handle_ItemDragging(object sender, Syncfusion.ListView.XForms.ItemDraggingEventArgs e)
         {
             //var viewModel = this.listView.BindingContext as ViewModel;
@@ -122,5 +125,19 @@ namespace Nudge_.View
         {
             throw new NotImplementedException();
         }
+
+
+        override async protected void OnAppearing()
+        {
+            if (firstLoad)
+            {
+                firstLoad = false;
+            }
+            else
+            {
+                base.OnAppearing();
+                await vm.GetSliderAndQuestion();
+            }
+        }   
     }
 }

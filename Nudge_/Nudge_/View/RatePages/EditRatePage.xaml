@@ -129,18 +129,45 @@
      </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout StyleClass="HeaderColours" Padding="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength">
+                                <On Platform="iOS">30</On>
+                                <On Platform="Android">40</On>
+                            </OnPlatform>
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+           
+<!--        <StackLayout StyleClass="HeaderColours" Padding="0">-->
 <!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
-                <StackLayout StyleClass="HeaderColours" HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
+                <StackLayout Grid.Row="0" StyleClass="HeaderColours" HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
                     <StackLayout StyleClass="HeaderColours" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
                         <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Text=" Change Questions " HeightRequest="30" Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}"/>
+                            <Button Text=" Change Questions "  Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}">
+                             <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">30</On>
+                                        <On Platform="Android">40</On>
+                                    </OnPlatform>
+                                </Button.HeightRequest>
+                            </Button>
                         </StackLayout>
                         <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                             <Label Text="" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
                         </StackLayout>
                         <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Text=" Change Sliders " HeightRequest="30" Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddSlider}"/>
+                            <Button Text=" Change Sliders " Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddSlider}">
+                                <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">30</On>
+                                        <On Platform="Android">40</On>
+                                    </OnPlatform>
+                                </Button.HeightRequest>
+                            </Button>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout StyleClass="HeaderColours" Padding="20, 5, 20, 5" Margin="10" HeightRequest="50" x:Name="deleteButton" IsVisible="false" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
@@ -157,10 +184,12 @@
                                    DragStartMode="OnHold"
                                    SelectionMode="None"
                                    AutoFitMode="Height"
-                                   ItemDragging="Handle_ItemDragging">
+                                   ItemDragging="Handle_ItemDragging"
+                                 Grid.Row="1">
                  
             </syncfusion:SfListView>
             
-        </StackLayout>
+<!--        </StackLayout>-->
+             </Grid>
     </ContentPage.Content>
 </ContentPage>

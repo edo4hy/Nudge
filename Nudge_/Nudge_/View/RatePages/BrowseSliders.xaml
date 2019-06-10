@@ -19,7 +19,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+       
             <syncfusion:SfListView
                       x:Name="SlidersListView"
                       SelectionMode="Single"
@@ -64,6 +64,6 @@
                     </DataTemplate>
                </syncfusion:SfListView.ItemTemplate>
             </syncfusion:SfListView>
-        </StackLayout>
+       
     </ContentPage.Content>
 </ContentPage>

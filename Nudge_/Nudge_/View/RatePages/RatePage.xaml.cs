@@ -30,9 +30,10 @@ namespace Nudge_.View
             BindingContext = vm;
             vm.rateListView = RateListView;
             this.RateListView.ItemsSource = vm.editPageElements;
+            
 
             NavigationPage.SetHasBackButton(this, false);
-            vm.saveButton = SaveButton;
+            //vm.saveButton = SaveButton;
            
         }
 

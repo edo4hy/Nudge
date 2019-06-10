@@ -55,7 +55,7 @@ namespace Nudge_.View
         // On Checkbox click initiate the changes in the RatePage 
         void Handle_StateChanged(object sender, Syncfusion.XForms.Buttons.StateChangedEventArgs e)
         {
-            vm.QuestionToBeAddedToRatePage();
+            //vm.QuestionToBeAddedToRatePage();
         }
     }
 }

@@ -40,7 +40,7 @@
              <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#204e99" />
                 <Setter Property="WidthRequest" Value="120"/>
-                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="CornerRadius" Value="5"/>
                 <Setter Property="TextColor" Value="White" />
             </Style>
            <!--  <Style TargetType="SfListView">
@@ -71,7 +71,7 @@
                                     </StackLayout>
                                      <StackLayout Orientation="Vertical" HorizontalOptions="Fill" >
                                         <StackLayout Padding="5" >
-                                            <Slider x:Name="SliderValue"  Maximum="100" Value="50"/>
+                                            <Slider  Maximum="100" Value="{Binding RateValue, Mode='TwoWay'}"/>
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
@@ -190,7 +190,7 @@
                 </ViewCell>
             </DataTemplate>
             
-            <shared:EditRatePageSelector x:Key="editRatePageSelector" 
+     <shared:EditRatePageSelector x:Key="editRatePageSelector" 
                             QuestionTemplate="{StaticResource questionTemplate}"
                             QuestionTemplateNoAnswers="{StaticResource questionTemplateNoAnswers}"
                             SliderTemplate="{StaticResource sliderTemplate}"
@@ -201,9 +201,20 @@
      </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content >
-
+        <ContentView>
             
-        <StackLayout Padding="0">
+        
+           
+                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    
+                
+               
+            
+              
 <!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
               <!--  <StackLayout HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
                     <StackLayout HeightRequest="50" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
@@ -211,28 +222,33 @@
                             <Label Text="How are you today?" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
                         </StackLayout>
                     </StackLayout>
+                                       ItemTemplate="{StaticResource editRatePageSelector}"
+                //
                 </StackLayout>-->
                 <syncfusion:SfListView x:Name="RateListView"
                                        ItemSize="120"
-                                       AllowGroupExpandCollapse="false"
-                                       ItemTemplate="{StaticResource editRatePageSelector}"
                                        SelectionMode="None"
                                        AutoFitMode="Height"
+                                       ItemTemplate="{StaticResource editRatePageSelector}"
                                        Margin="0, 0, 0, -10"
+                                       Grid.Row="0"
                                      >
-                     
+               
                 </syncfusion:SfListView>
-                <StackLayout Orientation="Horizontal" Padding="0,0,0,20" >
-                    <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                
+             <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0,0,0,20" >
+                    <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
                         <Button x:Name="SaveButton" Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.SaveAnswers}" Text="Save"/>
                     </StackLayout>
-                    <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                    <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
                  <!--       <buttons:SfButton Command="{Binding Path=BindingContext.ToHome}"
                                                Padding="5" CornerRadius="20"  WidthRequest="150" Text="Skip" IsCheckable="True"/>-->
                         <Button  Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Skip"/>
                      </StackLayout>
                 </StackLayout>
-            </StackLayout>
-      
+               </Grid>
+        </ContentView>
     </ContentPage.Content>
 </ContentPage>
+
+

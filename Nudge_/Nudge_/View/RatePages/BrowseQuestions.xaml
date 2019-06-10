@@ -8,7 +8,7 @@
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              xmlns:colours="clr-namespace:Nudge_.Shared"
              xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             
+             BackgroundColor="#FFE8E8EC"
              >
 
     <ContentPage.Resources>
@@ -17,15 +17,14 @@
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-
+    
+<!--                      SelectionMode="Single"-->
+    
 
     <ContentPage.Content>
-        <StackLayout>
             <syncfusion:SfListView 
                       x:Name="QuestionsListView"
-                      SelectionMode="Single"
                       AutoFitMode="Height"
-                      
                 >
 <!--                TapCommand="{Binding QuestionTapped}"-->
                 <syncfusion:SfListView.ItemTemplate>
@@ -56,6 +55,5 @@
                     </DataTemplate>
                  </syncfusion:SfListView.ItemTemplate>
             </syncfusion:SfListView>
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -85,8 +85,8 @@
                                     </StackLayout>
                                 </StackLayout>
                                 </Grid>
-                                <Grid Grid.Column="1" Padding="5" IsVisible="{Binding Top5Checked}">
-                                    <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
+                                <Grid Grid.Column="1" Padding="5" >
+                                    <syncCheckBox:SfCheckBox IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
                                 </Grid>
                                 <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="true" HeightRequest="1"/> 
                             </Grid>

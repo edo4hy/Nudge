@@ -43,6 +43,8 @@ namespace Nudge_.Model
         public int Order                { get; set; }
         public bool Created             { get; set; }
 
+      
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

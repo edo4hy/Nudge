@@ -188,6 +188,19 @@ namespace Nudge_.Model
             }
         }
 
+        private int _rateValue = 50;
+        public int RateValue
+        {
+            get
+            {
+                return _rateValue;
+            }
+            set
+            {
+                _rateValue = value;
+            }
+        }
+
 
         public bool isButtonNotSpace;
 

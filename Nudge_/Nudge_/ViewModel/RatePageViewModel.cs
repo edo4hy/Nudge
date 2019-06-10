@@ -38,6 +38,7 @@ namespace Nudge_.ViewModel
 
         public Syncfusion.ListView.XForms.SfListView rateListView;
 
+
         public bool IsDeleteButtonVisible
         {
             get
@@ -197,6 +198,11 @@ namespace Nudge_.ViewModel
         public async void SaveAnswersSave()
         {
             // Find if the answer exists - Either add new or add count. 
+            if(rateListView == null)
+            {
+                App.Current.MainPage = new MasterDetailPage1();
+            }
+
            foreach(RateQuestionCombo rqc in rateListView.DataSource.Items )
             {
                 if (rqc.Question == null) continue;
@@ -293,7 +299,9 @@ namespace Nudge_.ViewModel
 
 
             // Add the default message 
-            if (editPageElements.Count == 1)
+            if (editPageElements.Count == 1 
+                    && editPageElements[0].Question == null 
+                    && editPageElements[0].RateSlider == null)
             {
                 editPageElements.Add(new RateQuestionCombo
                 {

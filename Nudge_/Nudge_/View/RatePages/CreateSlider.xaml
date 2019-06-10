@@ -44,7 +44,7 @@
                       AllowSwiping="true"
                       SwipeOffset="80"
                       SwipeThreshold="30"
-                      TapCommand="{Binding SliderTapped}">
+                      >
          <!--       <ListView.Behaviors>
                     <behaviours:EventToCommandBehavior
                         Source="{x:Reference SlidersListView}"

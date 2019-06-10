@@ -358,6 +358,14 @@ namespace Nudge_.Shared
             }
 
             Message m;
+            if (cycle > top5PageViewModel.MessagesTop5.Count)
+            {
+                cycle = 0;
+            }
+
+            if (cycle > top5PageViewModel.MessagesTop5.Count) return DefaultMessages.DefaultMessage1.MessageText;
+            if (top5PageViewModel.MessagesTop5.Count == 0) return DefaultMessages.DefaultMessage1.MessageText;
+
             if (top5PageViewModel.MessagesTop5[cycle]!= null)
             {
                 m = top5PageViewModel.MessagesTop5[cycle++];
