@@ -24,8 +24,8 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
-                                    <Label Text="{Binding MessageText}" FontAttributes="Bold" /> 
-                                    <Label Text="{Binding Author}" />
+                                    <Label Text="{Binding MessageText}" /> 
+                                    <Label Text="{Binding Author}" FontAttributes="Bold" FontSize="Small" />
                                 </StackLayout>
                             </Grid>
                             <Grid Grid.Column="1" Padding="5">
@@ -41,7 +41,7 @@
                      <ContentView>
                         <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20" Spacing="5">
                             <Label Text="{Binding MessageText}" /> 
-                            <Label Text="{Binding Author}" />
+                            <Label Text="{Binding Author}" FontAttributes="Bold" FontSize="Small" />
                         </StackLayout>
                     </ContentView>
                 </ViewCell>
@@ -85,9 +85,9 @@
                     </ListView.ItemTemplate>-->
                 </ListView>
                 <StackLayout Orientation="Horizontal" Padding="0,0,0,10">
-                    <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="StartAndExpand"></StackLayout>
-                    <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
-                        <Button CornerRadius="20" BackgroundColor="#204e99" WidthRequest="120" TextColor="White" Command="{Binding Source={x:Reference Top5ListView}, Path=BindingContext.ToHome}" Text="Skip"/>
+                    <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="StartAndExpand"></StackLayout>
+                    <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                        <Button CornerRadius="5" BackgroundColor="#204e99" WidthRequest="120" TextColor="White" Command="{Binding Source={x:Reference Top5ListView}, Path=BindingContext.ToHome}" Text="Skip"/>
                     </StackLayout>
                </StackLayout>
         </StackLayout>

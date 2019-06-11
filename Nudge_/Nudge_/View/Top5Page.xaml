@@ -33,8 +33,8 @@
                             <ViewCell>
                                 <ContentView>
                                     <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
-                                        <Label Text="{Binding MessageText}" FontAttributes="Bold" />
-                                        <Label Text="{Binding Author}" />
+                                        <Label Text="{Binding MessageText}"  />
+                                        <Label Text="{Binding Author}" FontSize="Small" FontAttributes="Bold" />
                                         <!--<Label Text="{Binding Top5}" />-->
                                     </StackLayout>
                                 </ContentView>

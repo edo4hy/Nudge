@@ -20,5 +20,10 @@ namespace Nudge_.Shared
 
         public static Color primaryButtonColour = Color.FromHex("#0066ff");
         public static Color primaryButtonTextColour = Color.FromHex("#F5F5F5");
+
+        public static Color comboBoxBackgroundColour = Color.FromHex("#F5F5F5");
+
+        public static Color masterDetailSidebarBackgroundColour = Color.FromHex("#ECECEC");
+
     }
 }

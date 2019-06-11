@@ -94,7 +94,7 @@
                         <Grid>
                             <combobox:SfComboBox 
                                     HeightRequest="40" 
-                                    BackgroundColor="#FFE8E8E0" 
+                                    BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}" 
                                     MaximumDropDownHeight="200" 
                                     IsEditableMode="true"  
                                     AllowFiltering="true"
@@ -107,9 +107,9 @@
                                     DisplayMemberPath="AnswerText"
                                     
                                    >
-                                <combobox:SfComboBox.ItemTemplate BackgroundColor="#FFE8E8E0">
+                                <combobox:SfComboBox.ItemTemplate BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
                                     <DataTemplate>
-                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="#FFE8E8E0">
+                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
                                             <Label Text="{Binding AnswerText}"/>
                                             </StackLayout>
                                         </DataTemplate>
@@ -133,7 +133,7 @@
                         <Grid>
                            <combobox:SfComboBox 
                                     HeightRequest="40" 
-                                    BackgroundColor="#FFE8E8E0" 
+                                    BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}" 
                                     MaximumDropDownHeight="200" 
                                     IsEditableMode="true"  
                                     AllowFiltering="true"
@@ -141,9 +141,9 @@
                                     Text="{Binding ComboTextField}"
                                     DisplayMemberPath="AnswerText"
                                     >
-                                <combobox:SfComboBox.ItemTemplate  BackgroundColor="#FFE8E8E0">
+                                <combobox:SfComboBox.ItemTemplate  BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
                                     <DataTemplate>
-                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="#FFE8E8E0">
+                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
                                             <Label Text="{Binding AnswerText}"/>
                                             </StackLayout>
                                         </DataTemplate>

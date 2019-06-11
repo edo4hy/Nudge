@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nudge_.View.MasterDetail.MasterDetailPage1Master"
              Title="Menu"
-              xmlns:colours="clr-namespace:Nudge_.Shared"
+             xmlns:colours="clr-namespace:Nudge_.Shared"
+             
+            
              >
-  <StackLayout>
+  <StackLayout BackgroundColor="{x:Static colours:ColourScheme.headerColour}">
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
-              ItemsSource="{Binding MenuItems}">
+              ItemsSource="{Binding MenuItems}"
+              BackgroundColor="{x:Static colours:ColourScheme.masterDetailSidebarBackgroundColour}">
       <ListView.Header>
         <Grid BackgroundColor="{x:Static colours:ColourScheme.headerColour}">
           <Grid.ColumnDefinitions>
@@ -35,7 +38,7 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="{x:Static colours:ColourScheme.masterDetailSidebarBackgroundColour}" Padding="15,10" HorizontalOptions="FillAndExpand">
               <Label VerticalOptions="FillAndExpand" 
                     VerticalTextAlignment="Center" 
                     Text="{Binding Title}" 
