@@ -25,7 +25,7 @@ namespace Nudge_
         static NudgeDatabase database;
         static NotificationScheduler ns = new NotificationScheduler();
 
-        private string syncfusionKey = "OTk2MDFAMzEzNzJlMzEyZTMwWWdKZ0Vub1dIZlVOUkk4RS84aFV4ZVlDM2tyeStWdS9ueWRYRFpXbGZ0QT0=";
+        private string syncfusionKey = "MTEzMzA0QDMxMzcyZTMxMmUzMGdnaDV0cWJuaDIyOXowT2tRU0F6WlAyczVRWTltSXBFOWlxa0FMeHpid2s9";
 
         public App()
         {
@@ -64,6 +64,8 @@ namespace Nudge_
             //    BarBackgroundColor = ColourScheme.headerColour
             //};
 
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+
             MainPage = new NavigationPage(new Top5CheckPage()
             {
                 Title = DefaultMessages.checkInPageTitle
@@ -75,30 +77,30 @@ namespace Nudge_
 
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+          
 
 
         }
 
 
         // If opened from notification - set in the MainActivity and AppDeligate respectively 
-        //public App(bool t)
-        //{
-        //    InitializeComponent();
+        public App(bool t)
+        {
+            InitializeComponent();
 
 
-        //    MainPage = new NavigationPage(new Top5CheckPage()
-        //    {
-        //        Title = DefaultMessages.checkInPageTitle
-        //    })
-        //    { 
-        //        BarBackgroundColor = ColourScheme.headerColour,
-        //        BarTextColor = ColourScheme.headerTextColour
-        //    };
+            MainPage = new NavigationPage(new Top5CheckPage()
+            {
+                Title = DefaultMessages.checkInPageTitle
+            })
+            { 
+                BarBackgroundColor = ColourScheme.headerColour,
+                BarTextColor = ColourScheme.headerTextColour
+            };
 
-        //    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
 
-        //}
+        }
 
         public static AbstractNotificationsImpl NotificationsImpl { get; private set; }
 

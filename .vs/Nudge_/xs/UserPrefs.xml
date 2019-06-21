@@ -1,38 +1,38 @@
-﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/Shared/ColourScheme.cs">
+﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_.Android/MainActivity.cs">
     <Files>
-      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="201" Column="37" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml.cs" Line="31" Column="44" />
-      <File FileName="Nudge_/Nudge_/Model/RateSlider.cs" Line="46" Column="7" />
-      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/Top5Page.xaml" />
       <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml" />
-      <File FileName="Nudge_/Nudge_/Shared/ColourScheme.cs" Line="30" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Detail.xaml" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1.xaml" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Master.xaml" />
+      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="87" Column="5" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseSliders.xaml" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" />
+      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="152" Column="1" />
+      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" Line="357" Column="41" />
+      <File FileName="Nudge_/Nudge_.Android/MainActivity.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Model" expanded="True" />
-              <Node name="Shared" expanded="True">
-                <Node name="ColourScheme.cs" selected="True" />
-              </Node>
-              <Node name="View" expanded="True">
-                <Node name="MasterDetail" expanded="True" />
-                <Node name="RatePages" expanded="True">
-                  <Node name="BrowseQuestionsCreated.xaml" expanded="True" />
-                  <Node name="BrowseSliders.xaml" expanded="True" />
-                  <Node name="CreateSlider.xaml" expanded="True" />
-                  <Node name="EditRatePage.xaml" expanded="True" />
-                  <Node name="RatePage.xaml" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True">
+                  <Node name="Syncfusion.Xamarin.Buttons" expanded="True">
+                    <Node name="Syncfusion.Xamarin.Core" expanded="True" />
+                  </Node>
+                  <Node name="Syncfusion.Xamarin.Core" expanded="True" />
+                  <Node name="Syncfusion.Xamarin.SfComboBox" expanded="True">
+                    <Node name="Syncfusion.Xamarin.Core" expanded="True" />
+                  </Node>
                 </Node>
               </Node>
+              <Node name="Shared" expanded="True" />
               <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="Nudge_.Android" expanded="True">
+              <Node name="Packages" expanded="True" />
+              <Node name="MainActivity.cs" selected="True" />
             </Node>
             <Node name="Nudge_.iOS" expanded="True" />
           </Node>

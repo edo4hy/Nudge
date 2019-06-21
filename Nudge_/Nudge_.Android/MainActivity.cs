@@ -40,15 +40,15 @@ namespace Nudge_.Droid
 
             // If you are using Android you must pass through the activity
 
-            //if (Intent.HasExtra("JobId"))
-            //{
-            //    LoadApplication(new App(true));
-            //}
-            //else
-            //{
+            if (Intent.HasExtra("JobId"))
+            {
+                LoadApplication(new App(true));
+            }
+            else
+            {
                 // normal laod
                 LoadApplication(new App());
-            //}
+            }
 
             App.Init(new NotificationsImpl());
 

@@ -84,7 +84,7 @@
                                     <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
                                         <StackLayout Orientation="Vertical" HorizontalOptions="Start">
                                             <Label Text="{Binding MessageText}"
-                                                       FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                                                        VerticalOptions="CenterAndExpand"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Padding="0, 5, 0, 5">
                                             <Image Source="{Binding Favourited, Converter={StaticResource boolToString}}"  HeightRequest="25" VerticalOptions="CenterAndExpand">
@@ -97,7 +97,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                     <StackLayout Orientation="Vertical" Padding="10, -5, 0, 10">
-                                        <Label Text="{Binding Author}" FontSize="Micro"/>
+                                        <Label Text="{Binding Author}" FontAttributes="Bold" FontSize="Micro"/>
                                     </StackLayout>
                                 </StackLayout>
                             </ContentView>

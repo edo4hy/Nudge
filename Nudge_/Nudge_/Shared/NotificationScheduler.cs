@@ -374,15 +374,18 @@ namespace Nudge_.Shared
             {
                 return DefaultMessages.DefaultMessage1.MessageText;
             }
+            int cycledThrough = 0;
 
-            while(m.MessageText == DefaultMessages.top5DefaultMessage && cycle < 4)
+            while(m.MessageText == DefaultMessages.top5DefaultMessage && cycledThrough <= 1)
             {
                 m = top5PageViewModel.MessagesTop5[cycle++];
+                if (cycle > 4)
+                {
+                    cycle = 0;
+                    cycledThrough++;
+                }
             }
-            if (cycle > 4)
-            {
-                cycle = 0;
-            }
+           
             if(m.MessageText == DefaultMessages.top5DefaultMessage)
             {
                 m.MessageText = DefaultMessages.DefaultMessage1.MessageText;

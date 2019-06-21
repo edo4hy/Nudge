@@ -102,39 +102,41 @@ namespace Nudge_.ViewModel
             //Clear list 
             MessagesTop5.Clear();
             int count = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                bool hasBeenSet = false;
-                foreach (Message m in msgs)
+            // If check in page
+           
+                for (int i = 0; i < 5; i++)
                 {
-                    if (tpConverter.Top5NumberToIntConverter(m.Top5) == i)
+                    bool hasBeenSet = false;
+                    foreach (Message m in msgs)
                     {
-                        //Console.WriteLine("Adding true message _____");
-                        if (isCheckPage) 
+                        if (tpConverter.Top5NumberToIntConverter(m.Top5) == i)
                         {
-                            MessageCheckTop5.Add(new Top5Check
+                            if (isCheckPage)
                             {
-                                message = m
-                            });
-                        }
+                                MessageCheckTop5.Add(new Top5Check
+                                {
+                                    message = m
+                                });
+                            }
 
-                        MessagesTop5.Add(m);
-                        hasBeenSet = true;
+                            MessagesTop5.Add(m);
+                            hasBeenSet = true;
+                            count++;
+                        }
+                    }
+                    if (hasBeenSet == false)
+                    {
+                        //Console.WriteLine("Adding fake message +++++++");
+                        MessagesTop5.Add(new Message { MessageText = DefaultMessages.top5DefaultMessage, Top5 = tpConverter.IntToTop5NumberConverter(i + 1) });
                         count++;
                     }
                 }
-                if (hasBeenSet == false)
-                {
-                    //Console.WriteLine("Adding fake message +++++++");
-                    MessagesTop5.Add(new Message { MessageText = DefaultMessages.top5DefaultMessage, Top5 = tpConverter.IntToTop5NumberConverter(i + 1) });
-                    count++;
-                }
-            }
 
-            if(isCheckPage && msgs.Count < 1)
-            {
-                MessageCheckTop5.Add(new Top5Check {message = new Message { MessageText = DefaultMessages.checkInNoMessagesMessage }, IsTop5Message = true });
-            }
+                if (isCheckPage && msgs.Count < 1)
+                {
+                    MessageCheckTop5.Add(new Top5Check { message = new Message { MessageText = DefaultMessages.checkInNoMessagesMessage }, IsTop5Message = true });
+                }
+            
         }
 
 

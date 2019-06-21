@@ -17,7 +17,11 @@
     </ContentPage.Resources>
     
    
-    <StackLayout Padding="10">
+   <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <SearchBar x:Name="filterText" HeightRequest="40"
            Placeholder="Search here to filter"
            TextChanged="Handle_TextChanged" Grid.Row="0"/>
@@ -28,6 +32,7 @@
             TapCommand="{Binding MessageTapCommand}"
             AutoFitMode="Height"
             IsStickyFooter="true"
+            Grid.Row="1"
             >
 
             <syncfusion:SfListView.ItemTemplate>
@@ -73,5 +78,5 @@
                 </DataTemplate>
             </syncfusion:SfListView.ItemTemplate>
         </syncfusion:SfListView >
-    </StackLayout>
+    </Grid>
 </ContentPage>
