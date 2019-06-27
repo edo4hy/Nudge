@@ -4,14 +4,14 @@
              x:Class="Nudge_.View.MasterDetail.MasterDetailPage1Master"
              Title="Menu"
              xmlns:colours="clr-namespace:Nudge_.Shared"
-             
-            
+               
              >
   <StackLayout BackgroundColor="{x:Static colours:ColourScheme.headerColour}">
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}"
+              
               BackgroundColor="{x:Static colours:ColourScheme.masterDetailSidebarBackgroundColour}">
       <ListView.Header>
         <Grid BackgroundColor="{x:Static colours:ColourScheme.headerColour}">
@@ -30,7 +30,6 @@
               Grid.Column="1"
               Grid.Row="2"
               Text="Nudge"
-                        
               TextColor="{x:Static colours:ColourScheme.headerTextColour}"
               />
         </Grid>

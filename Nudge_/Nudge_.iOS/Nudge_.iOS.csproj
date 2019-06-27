@@ -119,51 +119,44 @@
     <BundleResource Include="Resources\starEmpty.png" />
     <BundleResource Include="Resources\starFull.png" />
     <None Include="Entitlements.plist" />
+    <BundleResource Include="Resources\Icons\Nudge-IOs-58x58.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-80x80.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-120x120.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-180x180.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-40x40.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-58x58.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-20x20.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-60x60.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-76x76.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-152x152.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-1024x1024.png" />
+    <BundleResource Include="Resources\Icons\Nudge_IOS-29x29.png" />
+    <BundleResource Include="Resources\Icons\Nudge-IOS-167x167.png" />
+    <BundleResource Include="Resources\Icons\Nudge-IOS-87x87.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Artboard 74.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Artboard 81.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Artboard 76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Artboard 85.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Nudge_IOS-120x120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Artboard 82.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Nudge_IOS-40x40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Nudge_IOS-80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Artboard 96%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Asset 3.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Nudge_IOS-40x40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Asset 5.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Asset 8.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Asset 9.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Asset 12.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\rsz_asset_12.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\rsz_asset_14.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Nudge-IOS-87x87.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -219,5 +212,10 @@
   <ItemGroup />
   <ItemGroup>
     <Folder Include="AudioServices\" />
+    <Folder Include="Resources\Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Header1.png" />
+    <AndroidResource Include="Resources\Header2.png" />
   </ItemGroup>
 </Project>

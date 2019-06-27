@@ -12,6 +12,9 @@ using UIKit;
 //using UserNotifications;
 using Android.Support.V7.App;
 using UserNotifications;
+using Android.Graphics;
+using Android.Graphics.Drawables;
+using Android.Support.V4.Content;
 //using UserNotifications;
 //using Android.Support.V4.App;
 
@@ -21,13 +24,16 @@ namespace Plugin.Notifications
     {
         readonly AlarmManager alarmManager;
         public static int AppIconResourceId { get; set; }
+        public static int AppIconLargeResourceId { get; set; }
+    
 
         private NotificationManager mNotificationManager;
 
 
         static NotificationsImpl()
         {
-            AppIconResourceId = Application.Context.Resources.GetIdentifier("icon", "drawable", Application.Context.PackageName);
+            AppIconResourceId = Application.Context.Resources.GetIdentifier("icons", "drawable", Application.Context.PackageName);
+            AppIconLargeResourceId = Application.Context.Resources.GetIdentifier("NudgeIconA55", "drawable", Application.Context.PackageName);
         }
 
 
@@ -72,7 +78,6 @@ namespace Plugin.Notifications
 
                 intent.AddFlags(ActivityFlags.ClearTop);
                 var pendingIntent = PendingIntent.GetActivity(Application.Context, pushCount, intent, PendingIntentFlags.Immutable);
-
 
 
                 foreach (var pair in notification.Metadata)
@@ -129,6 +134,7 @@ namespace Plugin.Notifications
                     .SetContentTitle(notification.Title)
                     .SetContentText(notification.Message)
                     .SetSmallIcon(AppIconResourceId)
+                   
                     .SetChannelId(CHANNEL_ID)
                     //.SetContentIntent(pendingIntent
                     .SetContentIntent(Android.App.TaskStackBuilder

@@ -68,7 +68,8 @@ namespace Nudge_
 
             MainPage = new NavigationPage(new Top5CheckPage()
             {
-                Title = DefaultMessages.checkInPageTitle
+                Title = DefaultMessages.checkInPageTitle,
+
             })
             {
                 BarTextColor = ColourScheme.headerTextColour,
@@ -77,7 +78,6 @@ namespace Nudge_
 
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
 
-          
 
 
         }

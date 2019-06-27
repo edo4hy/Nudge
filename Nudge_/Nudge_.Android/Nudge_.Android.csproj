@@ -144,6 +144,15 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\Delete.png" />
     <AndroidResource Include="Resources\drawable\plusSign.png" />
+    <AndroidResource Include="Resources\drawable\NudgeIconA55.png" />
+    <AndroidResource Include="Resources\drawable\NudgeIconA80.png" />
+    <AndroidResource Include="Resources\drawable\NudgeIconA87.png" />
+    <AndroidResource Include="Resources\drawable\NudgeIconA88.png" />
+    <AndroidResource Include="Resources\drawable\NudgeIconA196.png" />
+    <AndroidResource Include="Resources\drawable\NudgeIconA24.png" />
+    <AndroidResource Include="Resources\drawable\icons.png" />
+    <AndroidResource Include="Resources\drawable\Header1.png" />
+    <AndroidResource Include="Resources\drawable\Header2.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
@@ -163,21 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\starEmpty.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\number3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\number2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\number1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\number5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\number4.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\rubbishBin.png" />

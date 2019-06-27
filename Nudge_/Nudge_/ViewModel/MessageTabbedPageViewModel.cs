@@ -296,6 +296,12 @@ namespace Nudge_.ViewModel
 
             selectedMessage = message;
 
+            if (sendObj.Position.X > 360)
+            {
+                messageTappedBeingExecuted = false;
+                return;
+            } 
+
             string pos1 = (MessagesTop5.FirstOrDefault(m => m.Top5 == Top5Number.pos1) != null) ? MessagesTop5.FirstOrDefault(m => m.Top5 == Top5Number.pos1).MessageText.ToString() : "...";
             string pos2 = (MessagesTop5.FirstOrDefault(m => m.Top5 == Top5Number.pos2) != null) ? MessagesTop5.FirstOrDefault(m => m.Top5 == Top5Number.pos2).MessageText.ToString() : "...";
             string pos3 = (MessagesTop5.FirstOrDefault(m => m.Top5 == Top5Number.pos3) != null) ? MessagesTop5.FirstOrDefault(m => m.Top5 == Top5Number.pos3).MessageText.ToString() : "...";
@@ -450,7 +456,6 @@ namespace Nudge_.ViewModel
 
                 await App.Database.SaveMessageAsync(itemFavourite);
 
-                Console.WriteLine("update the database");
             }
         }
 

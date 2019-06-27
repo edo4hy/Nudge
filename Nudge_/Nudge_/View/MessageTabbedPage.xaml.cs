@@ -1,4 +1,5 @@
-﻿using Nudge_.ViewModel;
+﻿using Nudge_.Shared;
+using Nudge_.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -43,6 +44,14 @@ namespace Nudge_.View
             this.Children.Add(new MessageView(viewModel.MessagesAffirmation) { Title = "Affirmations", BindingContext = viewModel });
             this.Children.Add(new MessageView(viewModel.MessagesFavourited) { Title = "Favourites", BindingContext = viewModel });
             this.Children.Add(new CreateMessage(viewModel) { Title = "Create", BindingContext = viewModel });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            NotificationScheduler ns = new NotificationScheduler();
+            ns.SendWeeklyNotifications();
         }
     }
 }

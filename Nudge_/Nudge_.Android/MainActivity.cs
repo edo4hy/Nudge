@@ -19,7 +19,7 @@ using HockeyApp.Android.Metrics;
 
 namespace Nudge_.Droid
 {
-    [Activity(Label = "Nudge_", Icon = "@drawable/bin2", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation), ]
+    [Activity(Label = "Nudge_", Icon = "@drawable/NudgeIconA196", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation), ]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
 

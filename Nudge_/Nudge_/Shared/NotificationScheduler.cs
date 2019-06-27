@@ -358,7 +358,7 @@ namespace Nudge_.Shared
             }
 
             Message m;
-            if (cycle > top5PageViewModel.MessagesTop5.Count)
+            if (cycle > top5PageViewModel.MessagesTop5.Count - 1)
             {
                 cycle = 0;
             }
