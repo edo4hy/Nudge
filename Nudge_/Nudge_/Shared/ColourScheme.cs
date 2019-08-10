@@ -8,7 +8,7 @@ namespace Nudge_.Shared
 {
     public static class ColourScheme
     {
-        public static Color headerColour = Color.FromHex("#2196F3");
+        public static Color headerColour = Color.FromHex("#2091a0"); //#2196F3
         public static Color headerTextColour = Color.FromHex("#F5F5F5");
 
         public static Color editButtonColour = Color.FromHex("#0066ff");
@@ -18,8 +18,9 @@ namespace Nudge_.Shared
 
         public static Color entryFeildColour = Color.FromHex("#fcfcfc");
 
-        public static Color primaryButtonColour = Color.FromHex("#0066ff");
+        public static Color primaryButtonColour = Color.FromHex("#3EA4B2");
         public static Color primaryButtonTextColour = Color.FromHex("#F5F5F5");
+        public static Color primaryButtonBoarderColour = Color.FromHex("#02616E");
 
         public static Color comboBoxBackgroundColour = Color.FromHex("#F5F5F5");
 

@@ -65,11 +65,10 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-       <CodesignKey>iPhone Developer: edward obree (FTVJQAGCK6)</CodesignKey>
+       <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
        <CodesignKey>iPhone Developer: edward obree (FTVJQAGCK6)</CodesignKey>
        <MtouchLink>None</MtouchLink>
-       <CodesignProvision>Nudge Dev WildCard</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -133,6 +132,7 @@
     <BundleResource Include="Resources\Icons\Nudge_IOS-29x29.png" />
     <BundleResource Include="Resources\Icons\Nudge-IOS-167x167.png" />
     <BundleResource Include="Resources\Icons\Nudge-IOS-87x87.png" />
+    <BundleResource Include="Resources\Artboard_1.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

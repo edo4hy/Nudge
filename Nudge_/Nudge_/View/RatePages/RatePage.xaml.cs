@@ -33,7 +33,7 @@ namespace Nudge_.View
             
 
             NavigationPage.SetHasBackButton(this, false);
-            //vm.saveButton = SaveButton;
+            vm.saveButton = SaveButton;
            
         }
 

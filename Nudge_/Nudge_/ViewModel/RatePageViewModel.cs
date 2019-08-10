@@ -62,26 +62,12 @@ namespace Nudge_.ViewModel
 
 
 
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
         public Task Initialization { get; private set; }
 
         public RatePageViewModel(StackLayout sliderHolder, StackLayout questionHolder, bool isEdit)
         {
-            //AddSliderdata();
-            //QuestionAddData();
-            //AddAnswers();
-            Initialization = InitializeAysnc();
-            // just a test to see if you and add both - should delete but maintian for future test atm 
-          
 
-            //GetQuestions();
-            //GetSliders();
+            Initialization = InitializeAysnc();
             this.sliderHolder = sliderHolder;
             this.questionHolder = questionHolder;
             this.isEditPage = isEdit;
@@ -312,7 +298,11 @@ namespace Nudge_.ViewModel
 
                 });
 
-                if (saveButton != null) saveButton.IsVisible = false;
+                if (saveButton != null)
+                {
+
+                    saveButton.IsVisible = false;
+                }
             }
 
             // Sort by Order by 

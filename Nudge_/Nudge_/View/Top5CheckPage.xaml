@@ -7,7 +7,6 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
-             
              Padding="0"
              xmlns:shared="clr-namespace:Nudge_.Shared"
              Title="Check in">
@@ -62,6 +61,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
+            <Image Source="Artboard_1.png" Aspect="AspectFill"/>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="60"/>
@@ -101,7 +101,12 @@
                 <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0,0,0,10">
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="StartAndExpand"></StackLayout>
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
-                        <Button CornerRadius="5" BackgroundColor="#204e99" WidthRequest="120" TextColor="White" Command="{Binding Source={x:Reference Top5ListView}, Path=BindingContext.ToHome}" Text="Skip"/>
+                        <Button CornerRadius="5" BackgroundColor="{x:Static shared:ColourScheme.primaryButtonColour}" 
+                                BorderColor="{x:Static shared:ColourScheme.primaryButtonBoarderColour}" 
+                                WidthRequest="120" 
+                                TextColor="{x:Static shared:ColourScheme.primaryButtonTextColour}" 
+                                Command="{Binding Source={x:Reference Top5ListView}, 
+                                Path=BindingContext.ToHome}" Text="Skip"/>
                     </StackLayout>
                </StackLayout>
         </Grid>

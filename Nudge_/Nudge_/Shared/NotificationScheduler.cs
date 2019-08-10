@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using Notification = Plugin.Notifications.Notification;
 using UIKit;
+using Nudge_.Data.Model;
 
 namespace Nudge_.Shared
 {
@@ -25,6 +26,7 @@ namespace Nudge_.Shared
         bool lastMessagesSent = false;
 
         int DaysNotificationAdvance;
+        Top5PageViewModel top5PageViewModel;
 
         public NotificationScheduler()
         {
@@ -33,6 +35,10 @@ namespace Nudge_.Shared
             rn = new Random();
             int p =  rn.Next(0, 100000);
             Console.WriteLine(p);
+
+            top5PageViewModel = new Top5PageViewModel();
+
+            Console.WriteLine("asldkfjasdf");
         }
 
         public void resetAllNotificationVariables()
@@ -124,7 +130,6 @@ namespace Nudge_.Shared
             // Get the Application Settings 
             DailyNumberOfNotifications = settings.MessageFrequency;
 
-
             startTime = settings.DailyStartTime;
             endTime = settings.DailyEndTime;
 
@@ -137,8 +142,18 @@ namespace Nudge_.Shared
             {
                 return;
             }
+
+            TimeSpan tempTimeSpan = new TimeSpan(0,0,0);
+
+            if(startTime == tempTimeSpan)
+            {
+                startTime = new TimeSpan(0, 0, 01);
+            }
+            if(endTime == tempTimeSpan){
+                 endTime = new TimeSpan(23, 59, 59);
+            }
+
             // 64 is the max number of notifications which can be held - 
-           
 
             DateTime Current = NotificationDate;
             Current = Current.Date.AddHours(startTime.Hours);
@@ -162,7 +177,7 @@ namespace Nudge_.Shared
                     Notification n = new Notification()
                     {
                         Title = DefaultMessages.notificationHeader,
-                        Message = SelectMessageText(),
+                        Message = SelectMessageText(top5PageViewModel.MessagesTop5),
                         Vibrate = true,
                         Date = dtTemp,
                         Id = SendId++
@@ -319,7 +334,7 @@ namespace Nudge_.Shared
         }
 
 
-        Top5PageViewModel top5PageViewModel = new Top5PageViewModel();
+        
 
         int i = 0;
 
@@ -346,45 +361,38 @@ namespace Nudge_.Shared
 
         int cycle = 0; 
         // Select one of the Messages from the Top 5 to send out in notification
-        public string SelectMessageText()
+        public string SelectMessageText(TrulyObservableCollection<Message> Top5Messages)
         {
-            if (top5PageViewModel == null || top5PageViewModel.MessagesTop5 == null) 
+            if (Top5Messages == null || Top5Messages.Count <= 0)
                 return DefaultMessages.DefaultMessage1.MessageText;
 
             if(cycle > 4)
             {
                 cycle = 0;
-                return DefaultMessages.DefaultMessage1.MessageText;
             }
 
             Message m;
-            if (cycle > top5PageViewModel.MessagesTop5.Count - 1)
-            {
-                cycle = 0;
-            }
 
-            if (cycle > top5PageViewModel.MessagesTop5.Count) return DefaultMessages.DefaultMessage1.MessageText;
-            if (top5PageViewModel.MessagesTop5.Count == 0) return DefaultMessages.DefaultMessage1.MessageText;
+            m = top5PageViewModel.MessagesTop5[cycle];
 
-            if (top5PageViewModel.MessagesTop5[cycle]!= null)
+            int cycledThrough = 0;
+            if(m.MessageText == DefaultMessages.top5DefaultMessage)
             {
-                m = top5PageViewModel.MessagesTop5[cycle++];
+                while (m.MessageText == DefaultMessages.top5DefaultMessage && cycledThrough <= 1)
+                {
+                    m = top5PageViewModel.MessagesTop5[cycle++];
+                    if (cycle > 4)
+                    {
+                        cycle = 0;
+                        cycledThrough++;
+                    }
+                }
             }
             else
             {
-                return DefaultMessages.DefaultMessage1.MessageText;
+                cycle++;
             }
-            int cycledThrough = 0;
-
-            while(m.MessageText == DefaultMessages.top5DefaultMessage && cycledThrough <= 1)
-            {
-                m = top5PageViewModel.MessagesTop5[cycle++];
-                if (cycle > 4)
-                {
-                    cycle = 0;
-                    cycledThrough++;
-                }
-            }
+           
            
             if(m.MessageText == DefaultMessages.top5DefaultMessage)
             {
@@ -392,6 +400,55 @@ namespace Nudge_.Shared
             }
             return m.MessageText;
         }
+
+        //public string SelectMessageText()
+        //{
+        //    if (top5PageViewModel == null || top5PageViewModel.MessagesTop5 == null)
+        //        return DefaultMessages.DefaultMessage1.MessageText;
+
+        //    if (cycle > 4)
+        //    {
+        //        cycle = 0;
+        //        return DefaultMessages.DefaultMessage1.MessageText;
+        //    }
+
+        //    Message m;
+        //    if (cycle > top5PageViewModel.MessagesTop5.Count - 1)
+        //    {
+        //        cycle = 0;
+        //    }
+
+        //    if (cycle > top5PageViewModel.MessagesTop5.Count) return DefaultMessages.DefaultMessage1.MessageText;
+        //    if (top5PageViewModel.MessagesTop5.Count == 0) return DefaultMessages.DefaultMessage1.MessageText;
+
+        //    if (top5PageViewModel.MessagesTop5[cycle] != null)
+        //    {
+        //        m = top5PageViewModel.MessagesTop5[cycle++];
+        //    }
+        //    else
+        //    {
+        //        return DefaultMessages.DefaultMessage1.MessageText;
+        //    }
+
+        //    int cycledThrough = 0;
+
+        //    while (m.MessageText == DefaultMessages.top5DefaultMessage && cycledThrough <= 1)
+        //    {
+        //        m = top5PageViewModel.MessagesTop5[cycle++];
+        //        if (cycle > 4)
+        //        {
+        //            cycle = 0;
+        //            cycledThrough++;
+        //        }
+        //    }
+
+        //    if (m.MessageText == DefaultMessages.top5DefaultMessage)
+        //    {
+        //        m.MessageText = DefaultMessages.DefaultMessage1.MessageText;
+        //    }
+        //    return m.MessageText;
+        //}
+
 
 
 

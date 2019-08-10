@@ -79,6 +79,9 @@ namespace Nudge_
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
 
 
+            //MainPage = new Top5Page();
+            //MainPage = new MyPage();
+
 
         }
 

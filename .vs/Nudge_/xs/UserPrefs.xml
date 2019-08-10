@@ -1,33 +1,34 @@
-﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/App.xaml">
+﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/Top5CheckPage.xaml">
     <Files>
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" />
-      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="152" Column="1" />
-      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" Line="377" Column="35" />
-      <File FileName="Nudge_/Nudge_.Android/MainActivity.cs" Line="61" Column="1" />
-      <File FileName="Nudge_/Nudge_/ViewModel/MessageTabbedPageViewModel.cs" Line="300" Column="14" />
-      <File FileName="Nudge_/Nudge_/View/MessageTabbedPage.xaml.cs" Line="55" Column="10" />
-      <File FileName="Nudge_/Nudge_.Android/Notifications/NotificationsImpl.cs" Line="81" Column="1" />
-      <File FileName="Nudge_/Nudge_.Android/Notifications/AlarmBroadcastReceiver.cs" Line="16" Column="1" />
-      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="72" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1.xaml" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Detail.xaml" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Master.xaml" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1MenuItem.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1.xaml.cs" Line="56" Column="7" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Detail.xaml.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Master.xaml.cs" Line="35" Column="60" />
-      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml" />
-      <File FileName="Nudge_/Nudge_.iOS/Info.plist" />
-      <File FileName="Nudge_/Nudge_.iOS/Entitlements.plist" />
-      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/Top5Page.xaml" Line="16" Column="13" />
       <File FileName="Nudge_/Nudge_/App.xaml" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="12" Column="7" />
+      <File FileName="Nudge_/Nudge_/View/MyPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/MyPage.xaml" />
+      <File FileName="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" Line="5" Column="1" />
+      <File FileName="Nudge_/Nudge_/Notification/INotifications.cs" Line="35" Column="23" />
+      <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml.cs" Line="36" Column="1" />
+      <File FileName="Nudge_/Nudge_.Android/Notifications/NotificationsImpl.cs" Line="39" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
-            <Node name="Nudge_" expanded="True" selected="True" />
+            <Node name="Nudge_" expanded="True">
+              <Node name="Notification" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="Top5CheckPage.xaml" selected="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="Nudge_.Android" expanded="True">
+              <Node name="Notifications" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
+            </Node>
             <Node name="Nudge_.iOS" expanded="True">
               <Node name="Resources" expanded="True" />
             </Node>
@@ -43,12 +44,10 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.12931e97c26943b7dc9064642db55f3f9db1f3c6" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.158B6155-00BD-424E-85F2-4DEA185ECF36" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/edwardobree/Projects/Nudge Back up /Test/Nudge_/Nudge_/Shared/NotificationScheduler.cs" line="308" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

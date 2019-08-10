@@ -144,10 +144,10 @@
            
 <!--        <StackLayout StyleClass="HeaderColours" Padding="0">-->
 <!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
-                <StackLayout Grid.Row="0" StyleClass="HeaderColours" HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
+                <StackLayout Grid.Row="0" StyleClass="HeaderColours" HeightRequest="50" Margin="-10"  >
                     <StackLayout StyleClass="HeaderColours" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
                         <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Text=" Change Questions "  Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}">
+                            <Button Text=" Change Questions "  Margin="0,7.5,0,7.5" BackgroundColor="{x:Static colours:ColourScheme.headerColour}" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddQuestion}">
                              <Button.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">30</On>
@@ -160,7 +160,7 @@
                             <Label Text="" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
                         </StackLayout>
                         <StackLayout StyleClass="HeaderColours" Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
-                            <Button Text=" Change Sliders " Margin="0,7.5,0,7.5" BackgroundColor="#2196F3" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddSlider}">
+                            <Button Text=" Change Sliders " Margin="0,7.5,0,7.5" BackgroundColor="{x:Static colours:ColourScheme.headerColour}" CornerRadius="10" BorderWidth="1" BorderColor="White" TextColor="White" Command="{Binding AddSlider}">
                                 <Button.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">30</On>

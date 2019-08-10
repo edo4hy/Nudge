@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colours="clr-namespace:Nudge_.Shared"
              x:Class="Nudge_.App">
 	<Application.Resources>
-        <Style TargetType="StackLayout">
+        <!--<Style TargetType="StackLayout">
             <Setter Property="BackgroundColor" Value="#FFE8E8EC"/>
         </Style>
         <Style TargetType="ContentPage">
@@ -20,10 +21,10 @@
         </Style>
         <Style TargetType="ListView">
             <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-        </Style>
+        </Style>-->
           <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="#2196F3"/>
-                <Setter Property="BarTextColor" Value="#F5F5F5"/>
+                <Setter Property="BarBackgroundColor" Value="{x:Static colours:ColourScheme.headerColour}"/>
+                <Setter Property="BarTextColor" Value="{x:Static colours:ColourScheme.headerTextColour}"/>
           </Style>
 	</Application.Resources>
 </Application>

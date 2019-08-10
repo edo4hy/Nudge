@@ -38,19 +38,12 @@
                 <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
             </Style>
              <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#204e99" />
+                <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.primaryButtonColour}" />
+                
                 <Setter Property="WidthRequest" Value="120"/>
                 <Setter Property="CornerRadius" Value="5"/>
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="{x:Static colours:ColourScheme.primaryButtonTextColour}" />
             </Style>
-           <!--  <Style TargetType="SfListView">
-                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-               
-                
-            </Style>-->
-            
-          
-           
             
              <DataTemplate x:Key="sliderTemplate">
                 <ViewCell>
@@ -157,18 +150,12 @@
             <DataTemplate x:Key="buttonTemplate">
                 <ViewCell>
                    <StackLayout Margin="0,-10,0,0" Orientation="Horizontal" Padding="0,0,0,20"  BackgroundColor="#FFE8E8EC">
-                        <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                            <Button  CornerRadius="20" BackgroundColor="{x:Static colours:ColourScheme.primaryButtonColour}" WidthRequest="120" 
-                                    TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}" 
-                                    Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Save"/>
+                        <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Button Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Save"/>
                        
                         </StackLayout>
-                        <StackLayout Padding="20,5,20,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
-                 <!--       <buttons:SfButton Command="{Binding Path=BindingContext.ToHome}"
-                                               Padding="5" CornerRadius="20"  WidthRequest="150" Text="Skip" IsCheckable="True"/>-->
-                            <Button CornerRadius="20" BackgroundColor="{x:Static colours:ColourScheme.primaryButtonColour}" WidthRequest="120" 
-                                    TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}" 
-                                     Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Skip"/>
+                        <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                            <Button Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Skip"/>
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>
@@ -202,51 +189,31 @@
     </ContentPage.Resources>
     <ContentPage.Content >
         <ContentView>
-            
-        
-           
-                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="60"/>
-                    </Grid.RowDefinitions>
-                    
-                
-               
-            
-              
-<!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
-              <!--  <StackLayout HeightRequest="50" Margin="-10" BackgroundColor="#2196F3">
-                    <StackLayout HeightRequest="50" x:Name="headerBox" IsVisible="true" Orientation="Horizontal" Padding="20, 5, 20, 5" >
-                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                            <Label Text="How are you today?" x:Name="headerLabel"  TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
-                        </StackLayout>
-                    </StackLayout>
-                                       ItemTemplate="{StaticResource editRatePageSelector}"
-                //
-                </StackLayout>-->
-                <syncfusion:SfListView x:Name="RateListView"
-                                       ItemSize="120"
-                                       SelectionMode="None"
-                                       AutoFitMode="Height"
-                                       ItemTemplate="{StaticResource editRatePageSelector}"
-                                       Margin="0, 0, 0, -10"
-                                       Grid.Row="0"
-                                     >
-               
-                </syncfusion:SfListView>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <syncfusion:SfListView x:Name="RateListView"
+                                   ItemSize="120"
+                                   SelectionMode="None"
+                                   AutoFitMode="Height"
+                                   ItemTemplate="{StaticResource editRatePageSelector}"
+                                   Margin="0, 0, 0, -10"
+                                   Grid.Row="0"
+                                 >
+            </syncfusion:SfListView>
                 
              <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0,0,0,20" >
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
                         <Button x:Name="SaveButton" Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.SaveAnswers}" Text="Save"/>
                     </StackLayout>
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
-                 <!--       <buttons:SfButton Command="{Binding Path=BindingContext.ToHome}"
-                                               Padding="5" CornerRadius="20"  WidthRequest="150" Text="Skip" IsCheckable="True"/>-->
                         <Button  Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Skip"/>
                      </StackLayout>
                 </StackLayout>
-               </Grid>
+           </Grid>
         </ContentView>
     </ContentPage.Content>
 </ContentPage>

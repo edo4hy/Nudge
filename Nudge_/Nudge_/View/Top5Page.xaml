@@ -6,42 +6,46 @@
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
              Padding="0"
              Title="Top 5">
-    <ContentPage.Resources>
+                     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <ListView 
-                 HasUnevenRows="True"
-                 SelectionMode="Single"
-                 ItemsSource="{Binding MessagesTop5}"
-                 x:Name="Top5ListView"  
-                 >
-                  <ListView.Behaviors>
-                     <behaviours:EventToCommandBehavior
-                        Source="{x:Reference Top5ListView}"
-                        EventName="ItemSelected"
-                        Command="{Binding Top5Selection}"
-                        Converter="{StaticResource SelectedItemConverter}" 
-                        />
-                </ListView.Behaviors>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ContentView>
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
-                                        <Label Text="{Binding MessageText}"  />
-                                        <Label Text="{Binding Author}" FontSize="Small" FontAttributes="Bold" />
-                                        <!--<Label Text="{Binding Top5}" />-->
-                                    </StackLayout>
-                                </ContentView>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-        </StackLayout>
+            <Grid>
+                <Image Source="Artboard_1.png" Aspect="AspectFill"/>
+                <StackLayout >
+                    <ListView 
+                         HasUnevenRows="True"
+                         SelectionMode="Single"
+                         ItemsSource="{Binding MessagesTop5}"
+                         x:Name="Top5ListView"
+                        BackgroundColor="#804d4d4d"
+                         >
+                          <ListView.Behaviors>
+                             <behaviours:EventToCommandBehavior
+                                Source="{x:Reference Top5ListView}"
+                                EventName="ItemSelected"
+                                Command="{Binding Top5Selection}"
+                                Converter="{StaticResource SelectedItemConverter}" 
+                                />
+                        </ListView.Behaviors>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell> 
+                                        <ContentView BackgroundColor="Transparent">
+                                            <StackLayout BackgroundColor="Transparent" Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
+                                                <Label Text="{Binding MessageText}"  TextColor="White" BackgroundColor="Transparent"/>
+                                                <Label Text="{Binding Author}" TextColor="White" FontSize="Small" FontAttributes="Bold" BackgroundColor="Transparent"/>
+                                                <!--<Label Text="{Binding Top5}" />-->
+                                            </StackLayout>
+                                        </ContentView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                </StackLayout>
+              </Grid>
     </ContentPage.Content>
 </ContentPage>
