@@ -1,25 +1,25 @@
-﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/Top5CheckPage.xaml">
+﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml">
     <Files>
-      <File FileName="Nudge_/Nudge_/View/Top5Page.xaml" Line="16" Column="13" />
-      <File FileName="Nudge_/Nudge_/App.xaml" />
-      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="12" Column="7" />
-      <File FileName="Nudge_/Nudge_/View/MyPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MyPage.xaml" />
-      <File FileName="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" Line="5" Column="1" />
-      <File FileName="Nudge_/Nudge_/Notification/INotifications.cs" Line="35" Column="23" />
-      <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml.cs" Line="36" Column="1" />
-      <File FileName="Nudge_/Nudge_.Android/Notifications/NotificationsImpl.cs" Line="39" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" Line="58" Column="13" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditSliderPage.xaml" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditQuestionPage.xaml" Line="35" Column="15" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseSliders.xaml" Line="50" Column="57" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml" Line="70" Column="17" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionsCreated.xaml" Line="102" Column="51" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml" Line="36" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Notification" expanded="True" />
+              <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="Top5CheckPage.xaml" selected="True" />
+                <Node name="RatePages" expanded="True">
+                  <Node name="BrowseQuestionsCreated.xaml" expanded="True" />
+                  <Node name="EditRatePage.xaml" selected="True" />
+                </Node>
               </Node>
               <Node name="App.xaml" expanded="True" />
             </Node>
@@ -44,7 +44,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.158B6155-00BD-424E-85F2-4DEA185ECF36" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.03EF9256-9656-4615-A16A-1B29AB9364AA" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

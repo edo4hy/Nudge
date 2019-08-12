@@ -2,26 +2,41 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:colours="clr-namespace:Nudge_.Shared"
+             xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+
              x:Class="Nudge_.App">
 	<Application.Resources>
-        <!--<Style TargetType="StackLayout">
-            <Setter Property="BackgroundColor" Value="#FFE8E8EC"/>
+        <Style TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="#00E8E8EC"/>
         </Style>
-        <Style TargetType="ContentPage">
+        <!--<Style TargetType="ContentPage">
             <Setter Property="BackgroundColor" Value="#FFE8E8EC"/>
+        </Style>-->
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="#FFFFFF"/>
+            <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.backgroundFilmColour}"/>
+        </Style>
+        <Style TargetType="syncCheckBox:SfCheckBox">
+            <Setter Property="UncheckedColor" Value="#FFFFFF" />
+            <Setter Property="CheckedColor" Value="#FFFFFF" />
+            <Setter Property="TickColor" Value="#545454" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#FFFFFF"/>
         </Style>
         <Style TargetType="Grid">
-            <Setter Property="BackgroundColor" Value="#FFE8E8EC"/>
+            <Setter Property="BackgroundColor" Value="#00E8E8EC"/>
         </Style>
          <Style TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="#FFE8E8EC"/>
+            <Setter Property="BackgroundColor" Value="#00E8E8EC"/>
         </Style>
+        
         <Style TargetType="ContentView">
-            <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
+            <Setter Property="BackgroundColor" Value="#00E8E8EC" />
         </Style>
         <Style TargetType="ListView">
-            <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-        </Style>-->
+            <Setter Property="BackgroundColor" Value="#804d4d4d" />
+        </Style>
           <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{x:Static colours:ColourScheme.headerColour}"/>
                 <Setter Property="BarTextColor" Value="{x:Static colours:ColourScheme.headerTextColour}"/>

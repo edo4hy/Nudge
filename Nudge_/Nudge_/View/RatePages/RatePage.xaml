@@ -2,16 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
-             xmlns:ViewModels="clr-namespace:Nudge_.ViewModel"
-             xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
-             xmlns:dataSource="clr-namespace:Syncfusion.DataSource;assembly=Syncfusion.DataSource.Portable"
              xmlns:shared="clr-namespace:Nudge_.Shared"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
-             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=mscorlib"
-             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             xmlns:colours="clr-namespace:Nudge_.Shared;"
+             xmlns:colours="clr-namespace:Nudge_.Shared"
              x:Class="Nudge_.View.RatePage">
 <!--  <UserControl.DataContext>
         <ViewModels:RatePageViewModel/>
@@ -24,18 +19,18 @@
             <helpers:InverseBoolConverter x:Key="inverseBoolConverter"/>
 <!--            <ViewModels:RatePageViewModel x:Key="rpViewModel" />-->
             
-             <Style TargetType="ContentView">
+             <!--<Style TargetType="ContentView">
                 <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-            </Style>
-            <Style TargetType="StackLayout">
-                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-            </Style>
+            </Style>-->
+            <!--<Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#804d4d4d" />
+            </Style>-->
         
-            <Style TargetType="ListView">
+            <!--<Style TargetType="ListView">
                 <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
-            </Style>
+            </Style>-->
              <Style TargetType="syncfusion:SfListView">
-                <Setter Property="BackgroundColor" Value="#FFE8E8EC" />
+                <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.backgroundFilmColour}" />
             </Style>
              <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.primaryButtonColour}" />
@@ -87,7 +82,12 @@
                         <Grid>
                             <combobox:SfComboBox 
                                     HeightRequest="40" 
-                                    BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}" 
+                                    BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}"
+                                    TextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
+                                    SelectedDropDownItemColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}"
+                                    DropDownBackgroundColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
+                                    BorderColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
+                                    DropDownTextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
                                     MaximumDropDownHeight="200" 
                                     IsEditableMode="true"  
                                     AllowFiltering="true"
@@ -98,11 +98,11 @@
                                     ValueChanged="Handle_ValueChanged"
                                     Text="{Binding ComboTextField}"
                                     DisplayMemberPath="AnswerText"
-                                    
+                                 
                                    >
-                                <combobox:SfComboBox.ItemTemplate BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
+                                <combobox:SfComboBox.ItemTemplate>
                                     <DataTemplate>
-                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
+                                        <StackLayout Padding="5" Orientation="Horizontal">
                                             <Label Text="{Binding AnswerText}"/>
                                             </StackLayout>
                                         </DataTemplate>
@@ -126,7 +126,12 @@
                         <Grid>
                            <combobox:SfComboBox 
                                     HeightRequest="40" 
-                                    BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}" 
+                                    BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}"
+                                    TextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
+                                    SelectedDropDownItemColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}"
+                                    DropDownBackgroundColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
+                                    BorderColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
+                                    DropDownTextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
                                     MaximumDropDownHeight="200" 
                                     IsEditableMode="true"  
                                     AllowFiltering="true"
@@ -189,31 +194,32 @@
     </ContentPage.Resources>
     <ContentPage.Content >
         <ContentView>
-         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="60"/>
-            </Grid.RowDefinitions>
-
-            <syncfusion:SfListView x:Name="RateListView"
-                                   ItemSize="120"
-                                   SelectionMode="None"
-                                   AutoFitMode="Height"
-                                   ItemTemplate="{StaticResource editRatePageSelector}"
-                                   Margin="0, 0, 0, -10"
-                                   Grid.Row="0"
-                                 >
-            </syncfusion:SfListView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+            
+                <syncfusion:SfListView x:Name="RateListView"
+                                       ItemSize="120"
+                                       SelectionMode="None"
+                                       AutoFitMode="Height"
+                                       ItemTemplate="{StaticResource editRatePageSelector}"
+                                       Margin="0, 0, 0, -6"
+                                       Grid.Row="0"
+                                     >
+                </syncfusion:SfListView>
                 
-             <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0,0,0,20" >
+                <StackLayout BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Grid.Row="1" Orientation="Horizontal" Padding="0,0,0,20" >
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="StartAndExpand">
                         <Button x:Name="SaveButton" Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.SaveAnswers}" Text="Save"/>
                     </StackLayout>
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
                         <Button  Command="{Binding Source={x:Reference RateListView}, Path=BindingContext.ToHome}" Text="Skip"/>
-                     </StackLayout>
+                        </StackLayout>
                 </StackLayout>
-           </Grid>
+             </Grid>
         </ContentView>
     </ContentPage.Content>
 </ContentPage>

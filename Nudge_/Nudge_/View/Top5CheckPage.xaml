@@ -14,6 +14,10 @@
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+
+            <Style TargetType="syncfusion:SfListView">
+                <Setter Property="BackgroundColor" Value="{x:Static shared:ColourScheme.backgroundFilmColour}" />
+            </Style>
             
             <DataTemplate x:Key="checkedMessage">
                 <ViewCell>
@@ -36,7 +40,7 @@
                                 <Grid Grid.Row="0" Grid.Column="1" Padding="5">
                                     <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
                                 </Grid>
-                                <Frame Padding="0" Grid.Row="1" Grid.ColumnSpan="2" HasShadow="true" OutlineColor="#E4E4E4"  HeightRequest="1"/> 
+                                <Frame Padding="0" Grid.Row="1" Grid.ColumnSpan="2"  OutlineColor="#FFFFFF"  HeightRequest="1"/> 
                             </Grid>
                     </ContentView>
                 </ViewCell>
@@ -61,11 +65,12 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
-            <Image Source="Artboard_1.png" Aspect="AspectFill"/>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
+            <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+  
             <syncfusion:SfListView 
                       ItemsSource="{Binding MessagesTop5}"
                       x:Name="Top5ListView" 
@@ -73,32 +78,12 @@
                       SelectionMode="None"
                       AutoFitMode="Height"
                       Grid.Row="0"
+                      Margin="0, 0, 0, -6"
                       >
-                   <!-- <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ContentView>
-                                   <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="40" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid Grid.Column="0">
-                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="20, 30, 20, 30" Spacing="5">
-                                                <Label Text="{Binding MessageText}" FontAttributes="Bold" /> 
-                                                <Label Text="{Binding Author}" />
-                                            </StackLayout>
-                                        </Grid>
-                                        <Grid Grid.Column="1" Padding="5">
-                                            <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
-                                        </Grid>
-                                    </Grid>
-                                </ContentView>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>-->
+
+
                 </syncfusion:SfListView>
-                <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0,0,0,10">
+                <StackLayout BackgroundColor="#804d4d4d" Grid.Row="1" Orientation="Horizontal" Padding="0,0,0,10">
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="StartAndExpand"></StackLayout>
                     <StackLayout Padding="15,5,15,5" Orientation="Vertical" HorizontalOptions="EndAndExpand">
                         <Button CornerRadius="5" BackgroundColor="{x:Static shared:ColourScheme.primaryButtonColour}" 

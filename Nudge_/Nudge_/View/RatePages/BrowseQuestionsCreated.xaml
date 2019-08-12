@@ -15,85 +15,101 @@
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+
+            <Style TargetType="syncfusion:SfListView">
+                <!--<Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.backgroundFilmColour}" />-->
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
 
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Padding="20">
-                <Label FontSize="Large" Text="Add a question"
-                    HorizontalOptions="CenterAndExpand" />
-                <Entry Placeholder="Enter new question" x:Name="newQuestionEntry" />
-                <Button Command="{Binding AddNewQuestion}"  Text="Add" HorizontalOptions="End"></Button>
-                <Label TextColor="Red" IsVisible="False" x:Name="questionAddedLabel" HorizontalOptions="Center" Text="Question has been addded"/>
-            </StackLayout>
-            <BoxView HeightRequest="1" BackgroundColor="Gray"/>
-            <syncfusion:SfListView 
-                      x:Name="QuestionsListView"
-                      SelectionMode="Single"
-                      AutoFitMode="Height"
-                      AllowSwiping="true"
-                      SwipeOffset="80"
-                      SwipeThreshold="30"
-                      TapCommand="{Binding QuestionTapped}"
-                      
-                >
+        <Grid BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}">
+             <Grid.RowDefinitions>
+                 <RowDefinition Height="0"/>
+                 <RowDefinition Height="150"/>
+                 <RowDefinition Height="1"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Grid.RowSpan="4" Source="Artboard_1.png" Aspect="AspectFill"/>
+            <Image Grid.RowSpan="4" BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
+            
+                <StackLayout  Grid.Row="1" Padding="10">
+                    <Label FontSize="Large" Text="Add a question"
+                        HorizontalOptions="CenterAndExpand" />
+                    <Entry Placeholder="Enter new question" x:Name="newQuestionEntry" />
+                    <Button Command="{Binding AddNewQuestion}" BackgroundColor="{x:Static colours:ColourScheme.primaryButtonColour}"
+                            TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}"
+                            BorderColor="{x:Static colours:ColourScheme.primaryButtonBoarderColour}"
+                            Text="Add" HorizontalOptions="End" HeightRequest="40"></Button>
+                    <Label TextColor="Red" IsVisible="False" x:Name="questionAddedLabel" HorizontalOptions="Center" Text="Question has been addded"/>
+                </StackLayout>
+              <BoxView HeightRequest="1" Grid.Row="2" BackgroundColor="#D3D3D3"/>
+                <syncfusion:SfListView 
+                          x:Name="QuestionsListView"
+                          SelectionMode="Single"
+                          AutoFitMode="Height"
+                          AllowSwiping="true"
+                          SwipeOffset="80"
+                          SwipeThreshold="30"
+                          TapCommand="{Binding QuestionTapped}"
+                          Grid.Row="3"
+                    >
                 
 
-<!--               <SfListView.Behaviors>
-                    <behaviours:EventToCommandBehavior
-                        Source="{x:Reference QuestionsListView}"
-                        EventName="ItemSelected"
-                        Command="{Binding QuestionTapped}"
-                        Converter="{StaticResource SelectedItemConverter}"
-                        CommandParameter="{Binding .}"/>
-                </SfListView.Behaviors>
-                -->
-               <syncfusion:SfListView.RightSwipeTemplate>
-                  <DataTemplate x:Name="RightSwipeTemplate">
-                    <Grid BackgroundColor="{Binding Source={x:Static colours:ColourScheme.editButtonColour }}" HorizontalOptions="Fill" VerticalOptions="Fill">
-                        <Label Grid.Row="0"
-                                HeightRequest="50"
-                                WidthRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                                BackgroundColor="Transparent"
-                                Text="Edit" />
-                        <Grid.GestureRecognizers>
-                               <TapGestureRecognizer Command="{Binding Path=BindingContext.EditQuestionPressed, Source={x:Reference QuestionsListView} }" CommandParameter="{Binding .}" />
-                       </Grid.GestureRecognizers>
-                    </Grid>
-                  </DataTemplate>
-                </syncfusion:SfListView.RightSwipeTemplate>
+                   <!--<SfListView.Behaviors>
+                        <behaviours:EventToCommandBehavior
+                            Source="{x:Reference QuestionsListView}"
+                            EventName="ItemSelected"
+                            Command="{Binding QuestionTapped}"
+                            Converter="{StaticResource SelectedItemConverter}"
+                            CommandParameter="{Binding .}"/>
+                    </SfListView.Behaviors>-->
+                    
+                   <syncfusion:SfListView.RightSwipeTemplate>
+                      <DataTemplate x:Name="RightSwipeTemplate">
+                        <Grid BackgroundColor="{Binding Source={x:Static colours:ColourScheme.editButtonColour }}" HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <Label Grid.Row="0"
+                                    HeightRequest="50"
+                                    WidthRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                    BackgroundColor="Transparent"
+                                    Text="Edit" />
+                            <Grid.GestureRecognizers>
+                                   <TapGestureRecognizer Command="{Binding Path=BindingContext.EditQuestionPressed, Source={x:Reference QuestionsListView} }" CommandParameter="{Binding .}" />
+                           </Grid.GestureRecognizers>
+                        </Grid>
+                      </DataTemplate>
+                    </syncfusion:SfListView.RightSwipeTemplate>
                 
-                <syncfusion:SfListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="40" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="1"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Column="0">
-                                <StackLayout Padding="20">
-                                    <StackLayout>
-                                        <Label FontSize="Medium" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
-                                        <Label FontSize="Small" Text="{Binding Author}"/>
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                 <Grid BackgroundColor="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="40" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Column="0">
+                                    <StackLayout Padding="20">
+                                        <StackLayout>
+                                            <Label FontSize="Medium" HorizontalOptions="CenterAndExpand" Text="{Binding Title}"/>
+                                            <Label FontSize="Small" Text="{Binding Author}"/>
+                                        </StackLayout>
                                     </StackLayout>
-                                </StackLayout>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Padding="5" >
+                                        <syncCheckBox:SfCheckBox TickColor="Transparent" UncheckedColor="#FFFFFF" CheckedColor="#FFFFFF" IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
+                                    </Grid>
+                                    <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="true" HeightRequest="1"/> 
                                 </Grid>
-                                <Grid Grid.Column="1" Padding="5" >
-                                    <syncCheckBox:SfCheckBox IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
-                                </Grid>
-                                <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="true" HeightRequest="1"/> 
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                 </syncfusion:SfListView.ItemTemplate>
-            </syncfusion:SfListView>
-        </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                     </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -82,6 +82,8 @@ namespace Nudge_
             //MainPage = new Top5Page();
             //MainPage = new MyPage();
 
+            //MainPage = new NavigationPage(new EditRatePage());
+
 
         }
 

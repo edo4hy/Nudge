@@ -12,20 +12,24 @@
     </ContentPage.Padding>
     
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label FontSize="Large" Text="Edit question"
-                HorizontalOptions="CenterAndExpand" />
-            <Entry Placeholder="Enter new question" x:Name="editQuestionEntry" />
-               <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-               <Button Grid.Column="0"  Command="{Binding  CancelEdit}" Text="Dismiss"/>
-               <Button Grid.Column="1"  Command="{Binding  DeleteQuestion}" Text="Delete"/>
-               <Button Grid.Column="2" Command="{Binding SaveQuestion}" Text="Save" />
-             </Grid>
-        </StackLayout>
+        <Grid>
+            <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+            
+            <StackLayout Padding="20">
+                <Label FontSize="Large" Text="Edit question"
+                    HorizontalOptions="CenterAndExpand" />
+                <Entry Placeholder="Enter new question" x:Name="editQuestionEntry" />
+                   <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                   <Button Grid.Column="0"  Command="{Binding  CancelEdit}" Text="Dismiss"/>
+                   <Button Grid.Column="1"  Command="{Binding  DeleteQuestion}" Text="Delete"/>
+                   <Button Grid.Column="2" Command="{Binding SaveQuestion}" Text="Save" />
+                 </Grid>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

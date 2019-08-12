@@ -20,6 +20,9 @@
             <Style TargetType="StackLayout" Class="HeaderColours">
                 <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.headerColour}" />
             </Style>
+           <Style TargetType="syncfusion:SfListView">
+                <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.backgroundFilmColour}" />
+            </Style>
             
              <DataTemplate x:Key="sliderTemplate">
                 <ViewCell>
@@ -28,6 +31,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="1"/>
                         </Grid.RowDefinitions>
+
                         <StackLayout Grid.Row="0" Padding="10">
                             <StackLayout Padding="0" >
                                 <StackLayout Orientation="Horizontal" Padding="10, 10, 10, 5">
@@ -141,6 +145,8 @@
                     </RowDefinition>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+
            
 <!--        <StackLayout StyleClass="HeaderColours" Padding="0">-->
 <!--            <StackLayout BackgroundColor="Gray" Padding="0,40,0,0"> </StackLayout>-->
@@ -180,12 +186,13 @@
                                    ItemSize="120"
                                    AllowGroupExpandCollapse="false"
                                    ItemTemplate="{StaticResource editRatePageSelector}"
-                                   BackgroundColor="#FFE8E8EC"
                                    DragStartMode="OnHold"
                                    SelectionMode="None"
                                    AutoFitMode="Height"
                                    ItemDragging="Handle_ItemDragging"
-                                 Grid.Row="1">
+                                   Grid.Row="1"
+                                   Margin="0,9,0,0"
+                                   >
                  
             </syncfusion:SfListView>
             

@@ -18,9 +18,17 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Padding="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                 <RowDefinition Height="0"/>
+                 <RowDefinition Height="200"/>
+                 <RowDefinition Height="1"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Grid.RowSpan="4" Source="Artboard_1.png" Aspect="AspectFill"/>
+            <Image Grid.RowSpan="4" BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
             
-            <StackLayout  Padding="10">
+            <StackLayout Grid.Row="1" Padding="10">
                 <Label HorizontalOptions="Center" FontSize="Large" Text="Create Sliders" />
                 <Entry x:Name="sliderTitle" Placeholder="Enter slider title"/>
                 <StackLayout Orientation="Horizontal">
@@ -31,12 +39,14 @@
                         <Entry x:Name="sliderPos" Placeholder="Positive answer" HorizontalOptions="End" HorizontalTextAlignment="End"/>
                     </StackLayout>
                 </StackLayout>
-                <Button Text="Add" Command="{Binding AddNewSlider}" HorizontalOptions="End"/>
+                <Button Text="Add" Command="{Binding AddNewSlider}"
+                        BackgroundColor="{x:Static colours:ColourScheme.primaryButtonColour}"
+                        TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}"
+                        BorderColor="{x:Static colours:ColourScheme.primaryButtonBoarderColour}"
+                        HorizontalOptions="End"/>
                 <Label TextColor="#a82121" IsVisible="False" x:Name="sliderAddedLabel" HorizontalOptions="Center" Text="New Slider has been addded"/>
-                
             </StackLayout>
-            <BoxView HeightRequest="1" BackgroundColor="Gray"     />       
-            <StackLayout>
+            <BoxView Grid.Row="2" HeightRequest="1" BackgroundColor="Gray"     />       
                 <syncfusion:SfListView
                       x:Name="SlidersListView"
                       SelectionMode="Single"
@@ -44,6 +54,7 @@
                       AllowSwiping="true"
                       SwipeOffset="80"
                       SwipeThreshold="30"
+                    Grid.Row="3"
                       >
          <!--       <ListView.Behaviors>
                     <behaviours:EventToCommandBehavior
@@ -96,7 +107,7 @@
                                     </StackLayout>
                                  </Grid>
                                 <Grid Grid.Column="1" Padding="5">
-                                    <syncCheckBox:SfCheckBox IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
+                                    <syncCheckBox:SfCheckBox TickColor="Transparent" UncheckedColor="#FFFFFF" CheckedColor="#FFFFFF" IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
                                 </Grid>
                                 <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="True" HeightRequest="1"/> 
                             </Grid>
@@ -104,7 +115,8 @@
                         </DataTemplate>
                    </syncfusion:SfListView.ItemTemplate>
                 </syncfusion:SfListView>
-            </StackLayout>
-        </StackLayout>
+            
+        </Grid>
+        
   </ContentPage.Content>
 </ContentPage>

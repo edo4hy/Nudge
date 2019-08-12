@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -21,7 +22,6 @@
                          SelectionMode="Single"
                          ItemsSource="{Binding MessagesTop5}"
                          x:Name="Top5ListView"
-                        BackgroundColor="#804d4d4d"
                          >
                           <ListView.Behaviors>
                              <behaviours:EventToCommandBehavior
