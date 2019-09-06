@@ -7,6 +7,8 @@
              xmlns:colours="clr-namespace:Nudge_.Shared"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
+
              >
     
     <ContentPage.Padding>
@@ -21,27 +23,43 @@
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+
+
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
-        <StackLayout Padding="20">
+        <Grid>
+        <Grid.RowDefinitions>
+            
+           <RowDefinition Height="Auto"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.RowSpan="3" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
+        <Image  Grid.RowSpan="3" BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
+
+
+        <StackLayout Grid.Row="0" BackgroundColor="Transparent" Padding="20">
             <Label Text="Create a new Message"/>
             <Entry x:Name="newMessageEntry" Placeholder="Enter new message" />
             
             <Entry x:Name="newMessageAuthor" Placeholder="Enter Author" />
-            <Button Command="{Binding AddNewMessage}" Text="Add" HorizontalOptions="End"/>
+            <Button Command="{Binding AddNewMessage}" BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}"
+                    TextColor="{x:Static colours:ColourScheme.infoTextLightColour}" WidthRequest="60" Text="Add" HorizontalOptions="End"/>
             <Label TextColor="Red" IsVisible="False" x:Name="messageAddedLabel" HorizontalOptions="Center"
                    Text="New Message has been added, check the Created tab"/>
             <Label TextColor="Red" IsVisible="False" x:Name="messageNoText" HorizontalOptions="Center"
                    Text="New message must contain text"/>
         </StackLayout>
         
-             <SearchBar x:Name="filterText" WidthRequest="1000" HeightRequest="40"
+             <SearchBar Grid.Row="1" x:Name="filterText" WidthRequest="1000" HeightRequest="40"
                 Placeholder="Search here to filter"
-                TextChanged="Handle_TextChanged" Grid.Row="0"/>
-            <StackLayout Padding="0">
+                TextChanged="Handle_TextChanged"
+                        BackgroundColor="Transparent"
+                />
+            
           
             <syncfusion:SfListView 
                 x:Name="MessagesListView"
@@ -51,6 +69,9 @@
                 AllowSwiping="true"
                 SwipeOffset="80"
                 SwipeThreshold="30"
+                Grid.Row="2"
+                BackgroundColor="Transparent"
+                SelectionBackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}"
                 >
     <!--            <sync:SfListView.Behaviors>-->
                    <!-- <local:EventToCommandBehavior EventName="Loaded" Command="{Binding LoadedCommand}"
@@ -105,7 +126,8 @@
                     </DataTemplate>
                 </syncfusion:SfListView.ItemTemplate>
             </syncfusion:SfListView >
-        </StackLayout>
-        </StackLayout>
+        
+        </Grid>
+       
     </ContentPage.Content>
 </ContentPage>

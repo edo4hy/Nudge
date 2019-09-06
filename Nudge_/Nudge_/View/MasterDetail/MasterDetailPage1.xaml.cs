@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nudge_.Shared;
+using Syncfusion.ListView.XForms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +16,7 @@ namespace Nudge_.View.MasterDetail
         public MasterDetailPage1()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            MasterPage.ListView.SelectionChanging += ListView_ItemSelected;
 
 
         }
@@ -23,7 +24,7 @@ namespace Nudge_.View.MasterDetail
         public MasterDetailPage1(ContentPage page)
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            MasterPage.ListView.SelectionChanging += ListView_ItemSelected;
             Detail = new NavigationPage(page)
             {
                 BarBackgroundColor = ColourScheme.headerColour,
@@ -32,9 +33,9 @@ namespace Nudge_.View.MasterDetail
 
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void ListView_ItemSelected(object sender, ItemSelectionChangingEventArgs e)
         {
-            var item = e.SelectedItem as MasterDetailPage1MenuItem;
+            var item = e.AddedItems.ElementAtOrDefault(0) as MasterDetailPage1MenuItem;
             if (item == null)
                 return;
 

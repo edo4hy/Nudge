@@ -178,7 +178,7 @@ namespace Nudge_.ViewModel
         public async void EditMessageModal(object o)
         {
             OnPropertyChanged();
-            await Navigation.PushModalAsync(new EditMessage(this, o));
+            await Navigation.PushAsync(new EditMessage(this, o));
         }
 
 
@@ -370,6 +370,7 @@ namespace Nudge_.ViewModel
             }
 
             messageTappedBeingExecuted = false;
+
 
             OnPropertyChanged("Top5Changed");
         }

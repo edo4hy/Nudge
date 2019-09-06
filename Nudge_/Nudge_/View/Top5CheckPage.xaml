@@ -7,6 +7,8 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
+
              Padding="0"
              xmlns:shared="clr-namespace:Nudge_.Shared"
              Title="Check in">
@@ -40,7 +42,7 @@
                                 <Grid Grid.Row="0" Grid.Column="1" Padding="5">
                                     <syncCheckBox:SfCheckBox IsChecked="{Binding Top5Checked}" StateChanged="Handle_StateChanged" CornerRadius="0" />
                                 </Grid>
-                                <Frame Padding="0" Grid.Row="1" Grid.ColumnSpan="2"  OutlineColor="#FFFFFF"  HeightRequest="1"/> 
+                                <Frame Padding="0" Grid.Row="1" Grid.ColumnSpan="2" HasShadow="False" OutlineColor="#FFFFFF"  HeightRequest="1"/> 
                             </Grid>
                     </ContentView>
                 </ViewCell>
@@ -69,7 +71,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+             <Image Grid.RowSpan="2" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
   
             <syncfusion:SfListView 
                       ItemsSource="{Binding MessagesTop5}"

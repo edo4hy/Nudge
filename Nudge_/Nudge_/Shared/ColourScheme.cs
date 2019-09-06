@@ -8,17 +8,20 @@ namespace Nudge_.Shared
 {
     public static class ColourScheme
     {
-        public static Color headerColour = Color.FromHex("#2091a0"); //#2196F3
+        // If change then also change in the tabbed page Render in IOS 
+        public static Color headerColour = Color.FromHex("#4d5a6d"); //#2196F3 //2091a0 // #2a6083 // #3c4f6d
         public static Color headerTextColour = Color.FromHex("#F5F5F5");
 
-        public static Color editButtonColour = Color.FromHex("#0066ff");
+        public static Color editButtonColour = Color.FromHex("#80677194");
 
         public static Color infoTextColour = Color.FromHex("#0066ff");
+        public static Color infoTextLightColour = Color.FromHex("#F5F5F5");
         public static Color infoTextColourDark = Color.FromHex("#23262b");
+        public static Color infoTextErrorColour = Color.FromHex("#d32121");
 
         public static Color entryFeildColour = Color.FromHex("#fcfcfc");
 
-        public static Color primaryButtonColour = Color.FromHex("#3EA4B2");
+        public static Color primaryButtonColour = Color.FromHex("#4d5a6d"); //#3EA4B2
         public static Color primaryButtonTextColour = Color.FromHex("#F5F5F5");
         public static Color primaryButtonBoarderColour = Color.FromHex("#02616E");
 

@@ -83,6 +83,7 @@ namespace Nudge_
             //MainPage = new MyPage();
 
             //MainPage = new NavigationPage(new EditRatePage());
+            //MainPage = new NavigationPage(new SettingsPage());
 
 
         }

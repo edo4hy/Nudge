@@ -4,48 +4,75 @@
              x:Class="Nudge_.View.MasterDetail.MasterDetailPage1Master"
              Title="Menu"
              xmlns:colours="clr-namespace:Nudge_.Shared"
-               
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              >
-  <StackLayout BackgroundColor="{x:Static colours:ColourScheme.headerColour}">
-    <ListView x:Name="MenuItemsListView"
-              SeparatorVisibility="None"
-              HasUnevenRows="true"
+    <Grid>
+        <Image Source="{x:Static colours:DefaultVariables.backgroundMasterDetails}" Aspect="AspectFill"/>
+        <Image  BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
+
+          <StackLayout BackgroundColor="Transparent">
+    <syncfusion:SfListView
+              x:Name="MenuItemsListView"
               ItemsSource="{Binding MenuItems}"
-              
-              BackgroundColor="{x:Static colours:ColourScheme.masterDetailSidebarBackgroundColour}">
-      <ListView.Header>
-        <Grid BackgroundColor="{x:Static colours:ColourScheme.headerColour}">
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-          </Grid.ColumnDefinitions>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-          </Grid.RowDefinitions>
-          <Label
-              Grid.Column="1"
-              Grid.Row="2"
-              Text="Nudge"
-              TextColor="{x:Static colours:ColourScheme.headerTextColour}"
-              />
-        </Grid>
-      </ListView.Header>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout BackgroundColor="{x:Static colours:ColourScheme.masterDetailSidebarBackgroundColour}" Padding="15,10" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
-                    FontSize="24"/>
-            </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+              SelectionBackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}"
+              BackgroundColor="Transparent"
+              HeaderSize="180"
+              RowSpacing="25"
+              ItemSpacing="10"
+              IsStickyHeader="True"
+              HeightRequest="1000"
+      >
+          <syncfusion:SfListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="2"
+                            Text="Nudge"
+                            TextColor="{x:Static colours:ColourScheme.headerTextColour}"
+                            />
+                    </Grid>
+                </DataTemplate>
+           </syncfusion:SfListView.HeaderTemplate>
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>  
+                            <Grid.RowDefinitions> 
+                              <RowDefinition Height="*" /> 
+                              <RowDefinition Height="1" /> 
+                            </Grid.RowDefinitions> 
+                            <Grid>  
+                            
+                              <StackLayout BackgroundColor="Transparent" Padding="15,10,15,30" HorizontalOptions="FillAndExpand">
+                                <Label VerticalOptions="FillAndExpand"
+                                       
+                                    VerticalTextAlignment="Center" 
+                                    Text="{Binding Title}" 
+                                    FontSize="24"/>
+                            </StackLayout>
+                           </Grid> 
+                          <Frame Grid.Row="1" OutlineColor="#80b5b5b6" HeightRequest="1"/> 
+                         </Grid> 
+
+                       
+                    </ViewCell>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
   </StackLayout>
+    </Grid>
+
 </ContentPage>

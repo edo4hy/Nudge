@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Nudge_.Shared;
 using Xamarin.Forms;
 
 namespace Nudge_.Converters
@@ -13,12 +14,12 @@ namespace Nudge_.Converters
             if ((bool)value == true)
             {
                 // Blue
-                return Color.FromHex("#4286f4");
+                return ColourScheme.infoTextLightColour;
             }
             else
             {
                 // Red
-                return Color.FromHex("#d32121");
+                return ColourScheme.infoTextErrorColour;
             }
         }
 

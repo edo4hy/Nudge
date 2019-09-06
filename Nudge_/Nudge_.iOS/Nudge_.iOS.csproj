@@ -133,6 +133,10 @@
     <BundleResource Include="Resources\Icons\Nudge-IOS-167x167.png" />
     <BundleResource Include="Resources\Icons\Nudge-IOS-87x87.png" />
     <BundleResource Include="Resources\Artboard_1.png" />
+    <Compile Include="TabbedPageRenderer.cs" />
+    <Compile Include="MasterBehaviorChanger.cs" />
+    <BundleResource Include="Resources\Background_2.png" />
+    <Compile Include="CustomSearchBarRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

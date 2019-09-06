@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Nudge_.View.EditSliderPage">
+             x:Class="Nudge_.View.EditSliderPage"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
+             >
     
             <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -12,7 +14,7 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <Grid>
-            <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+            <Image Grid.RowSpan="2" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
 
             <StackLayout Padding="10">
                 <Label HorizontalOptions="Center" FontSize="Large" Text="Create a new Slider" />

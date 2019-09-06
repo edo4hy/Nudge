@@ -7,6 +7,8 @@
              xmlns:shared="clr-namespace:Nudge_.Shared"
              xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
              xmlns:colours="clr-namespace:Nudge_.Shared"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
+
              x:Class="Nudge_.View.RatePage">
 <!--  <UserControl.DataContext>
         <ViewModels:RatePageViewModel/>
@@ -199,7 +201,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
-                <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+                <Image Grid.RowSpan="2" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
             
                 <syncfusion:SfListView x:Name="RateListView"
                                        ItemSize="120"

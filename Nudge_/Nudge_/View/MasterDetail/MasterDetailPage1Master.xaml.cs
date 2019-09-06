@@ -10,13 +10,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Nudge_.View;
+using Syncfusion.ListView;
+using Syncfusion.ListView.XForms;
 
 namespace Nudge_.View.MasterDetail
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetailPage1Master : ContentPage
     {
-        public ListView ListView;
+        public SfListView ListView;
 
         public MasterDetailPage1Master()
         {

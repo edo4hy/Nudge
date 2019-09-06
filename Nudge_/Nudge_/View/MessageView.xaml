@@ -7,22 +7,33 @@
              x:Class="Nudge_.View.MessageView"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
-             
+             xmlns:colours="clr-namespace:Nudge_.Shared"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
+
              >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:FavouriteToImageConverter x:Key="boolToString"/>
             <Converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+
+            <Style TargetType="syncfusion:SfListView">
+                <Setter Property="BackgroundColor" Value="{x:Static colours:ColourScheme.backgroundFilmColour}" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     
    
-   <Grid Padding="10">
+   <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <SearchBar x:Name="filterText" HeightRequest="40"
+
+
+       <Image Grid.RowSpan="2" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
+
+        <SearchBar x:Name="filterText" HeightRequest="39"
+                   BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}"
            Placeholder="Search here to filter"
            TextChanged="Handle_TextChanged" Grid.Row="0"/>
         
@@ -33,6 +44,8 @@
             AutoFitMode="Height"
             IsStickyFooter="true"
             Grid.Row="1"
+            Margin="0, -6, 0, 0"
+            SelectionBackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}"
             >
 
             <syncfusion:SfListView.ItemTemplate>
@@ -71,7 +84,7 @@
                                         <Label Text="{Binding Author}" FontSize="Micro"/>
                                     </StackLayout>
                                 </StackLayout>
-                                <Frame Grid.Row="1" OutlineColor="#E4E4E4" HasShadow="True" HeightRequest="1"/> 
+                                <Frame Grid.Row="1" OutlineColor="#E4E4E4" HasShadow="False" HeightRequest="1"/> 
                             </Grid>
                         </ContentView>
                     </ViewCell>

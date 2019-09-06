@@ -4,6 +4,7 @@
              x:Class="Nudge_.View.Top5Page"
              xmlns:Converters="clr-namespace:Nudge_.Converters"
              xmlns:behaviours="clr-namespace:Nudge_.Behaviours"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
              Padding="0"
              Title="Top 5">
                      <ContentPage.Resources>
@@ -15,7 +16,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
             <Grid>
-                <Image Source="Artboard_1.png" Aspect="AspectFill"/>
+                <Image Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
                 <StackLayout >
                     <ListView 
                          HasUnevenRows="True"

@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Nudge_.View.EditMessage">
-    
-    <ContentPage.Padding>
+             x:Class="Nudge_.View.EditMessage"
+             xmlns:colours="clr-namespace:Nudge_.Shared"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
+
+             >
+    <!--<ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="Android" Value="0, 0, 0, 0"/>
             <On Platform="WinPhone" Value="0, 0, 0, 0"/>
             <On Platform="iOS" Value="0, 45, 0, 0"/>
         </OnPlatform>
-    </ContentPage.Padding>
+    </ContentPage.Padding>-->
     
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label Text="Create a new Message"/>
-            <Entry x:Name="editEntry" Placeholder="Edit message" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
+                <Image  Grid.RowSpan="2" BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
+            <StackLayout Padding="20">
+
+                <Label Text="Create a new Message"/>
+                <Entry  x:Name="editEntry" Placeholder="Edit message" />
             
-            <Entry x:Name="editAuthor" Placeholder="Edit Author" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-               <Button Grid.Column="0"  Command="{Binding  CancelEdit}" Text="Dismiss"/>
-               <Button Grid.Column="1"  Command="{Binding  DeleteMessage}" Text="Delete"/>
-               <Button Grid.Column="2" Command="{Binding SaveMessage}" Text="Save" />
-             </Grid>
-            <Label TextColor="Red" IsVisible="False" x:Name="messageAddedLabel" HorizontalOptions="Center"
-                   Text="New Message has been added, check the Created tab"/>
-        </StackLayout>
+                <Entry x:Name="editAuthor" Placeholder="Edit Author" />
+                <Grid>
+                   <Button Grid.Column="0" TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}" Command="{Binding  CancelEdit}" Text="Dismiss"/>
+                   <Button Grid.Column="1" TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}" Command="{Binding  DeleteMessage}" Text="Delete"/>
+                   <Button Grid.Column="2" TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}" Command="{Binding SaveMessage}" Text="Save" />
+                 </Grid>
+                <Label TextColor="Red" IsVisible="False" x:Name="messageAddedLabel" HorizontalOptions="Center"
+                       Text="New Message has been added, check the Created tab"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

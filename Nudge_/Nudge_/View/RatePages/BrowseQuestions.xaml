@@ -9,6 +9,8 @@
              xmlns:colours="clr-namespace:Nudge_.Shared"
              xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              BackgroundColor="#FFE8E8EC"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
+
              >
 
     <ContentPage.Resources>
@@ -32,7 +34,8 @@
                  <RowDefinition Height="0"/>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-             <Image Grid.RowSpan="2" Source="Artboard_1.png" Aspect="AspectFill"/>
+             <Image Grid.RowSpan="2" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
+
             
               <syncfusion:SfListView 
                       x:Name="QuestionsListView"

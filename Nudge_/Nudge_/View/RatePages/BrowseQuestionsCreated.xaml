@@ -8,6 +8,7 @@
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              xmlns:colours="clr-namespace:Nudge_.Shared"
              xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:Defaults="clr-namespace:Nudge_.Shared"
              
              >
 
@@ -31,7 +32,7 @@
                  <RowDefinition Height="1"/>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Image Grid.RowSpan="4" Source="Artboard_1.png" Aspect="AspectFill"/>
+            <Image Grid.RowSpan="4" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
             <Image Grid.RowSpan="4" BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
             
                 <StackLayout  Grid.Row="1" Padding="10">

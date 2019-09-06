@@ -7,6 +7,7 @@
               >
    
   <MasterDetailPage.Master>
+     
     <pages:MasterDetailPage1Master x:Name="MasterPage" />
    </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
