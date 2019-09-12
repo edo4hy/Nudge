@@ -84,7 +84,7 @@
                                         <Label Text="{Binding Author}" FontSize="Micro"/>
                                     </StackLayout>
                                 </StackLayout>
-                                <Frame Grid.Row="1" OutlineColor="#E4E4E4" HasShadow="False" HeightRequest="1"/> 
+                                <Frame Grid.Row="1" OutlineColor="#E4E4E4" HasShadow="True" HeightRequest="1"/> 
                             </Grid>
                         </ContentView>
                     </ViewCell>

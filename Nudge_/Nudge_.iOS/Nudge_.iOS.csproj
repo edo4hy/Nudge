@@ -137,6 +137,12 @@
     <Compile Include="MasterBehaviorChanger.cs" />
     <BundleResource Include="Resources\Background_2.png" />
     <Compile Include="CustomSearchBarRenderer.cs" />
+    <BundleResource Include="Resources\tree_background.png" />
+    <BundleResource Include="Resources\lilly_pads.jpeg" />
+    <BundleResource Include="Resources\moor.jpeg" />
+    <BundleResource Include="Resources\menuBackground_greyBlue.png" />
+    <BundleResource Include="Resources\sea1.jpeg" />
+    <BundleResource Include="Resources\sea_2.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

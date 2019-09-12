@@ -7,9 +7,17 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:helpers="clr-namespace:Syncfusion.ListView.XForms.Helpers;assembly=Syncfusion.SfListView.XForms"
              >
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="HeaderTemplate">
+            <ViewCell>
+                <Frame HeightRequest="1" WidthRequest="1000" BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}"/>
+            </ViewCell>
+        </DataTemplate>
+    </ContentPage.Resources>
     <Grid>
         <Image Source="{x:Static colours:DefaultVariables.backgroundMasterDetails}" Aspect="AspectFill"/>
-        <Image  BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
+        <!--<Image  BackgroundColor="{x:Static colours:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>-->
 
           <StackLayout BackgroundColor="Transparent">
     <syncfusion:SfListView
@@ -22,6 +30,8 @@
               ItemSpacing="10"
               IsStickyHeader="True"
               HeightRequest="1000"
+              GroupHeaderSize="1"
+              GroupHeaderTemplate="{x:StaticResource Key=HeaderTemplate}"
       >
           <syncfusion:SfListView.HeaderTemplate>
                 <DataTemplate>
@@ -41,6 +51,7 @@
                             Grid.Column="1"
                             Grid.Row="2"
                             Text="Nudge"
+                            FontSize="Large"                           
                             TextColor="{x:Static colours:ColourScheme.headerTextColour}"
                             />
                     </Grid>
@@ -64,7 +75,7 @@
                                     FontSize="24"/>
                             </StackLayout>
                            </Grid> 
-                          <Frame Grid.Row="1" OutlineColor="#80b5b5b6" HeightRequest="1"/> 
+                          <!--<Frame Grid.Row="1" OutlineColor="#80b5b5b6" HeightRequest="1"/>--> 
                          </Grid> 
 
                        

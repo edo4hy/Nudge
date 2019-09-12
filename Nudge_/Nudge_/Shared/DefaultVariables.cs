@@ -9,8 +9,8 @@ namespace Nudge_.Shared
     {
         public static int startSize = 25;
 
-        public static string backgroundImage = "Artboard_1.png";
+        public static string backgroundImage = "sea_2.jpeg";
 
-        public static string backgroundMasterDetails = "Background_2";
+        public static string backgroundMasterDetails = "menuBackground_greyBlue";
     }
 }

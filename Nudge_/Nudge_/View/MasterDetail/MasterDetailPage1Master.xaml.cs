@@ -12,6 +12,7 @@ using Xamarin.Forms.Xaml;
 using Nudge_.View;
 using Syncfusion.ListView;
 using Syncfusion.ListView.XForms;
+using Nudge_.Shared;
 
 namespace Nudge_.View.MasterDetail
 {
@@ -26,6 +27,17 @@ namespace Nudge_.View.MasterDetail
 
             BindingContext = new MasterDetailPage1MasterViewModel();
             ListView = MenuItemsListView;
+            ListView.DataSource.GroupDescriptors.Add(new Syncfusion.DataSource.GroupDescriptor()
+            {
+                PropertyName = " ",
+                KeySelector = (object obj) =>
+                {
+                    var item = (obj as MasterDetailPage1MenuItem);
+                    return item.Id <= 2;
+                },
+                //Comparer = (System.Collections.Generic.IComparer<Syncfusion.DataSource.Extensions.GroupResult>)new CustomGroupComparer()
+
+            }) ;
         }
 
         class MasterDetailPage1MasterViewModel : INotifyPropertyChanged
@@ -39,9 +51,9 @@ namespace Nudge_.View.MasterDetail
                     new MasterDetailPage1MenuItem {Id = 0, Title = "Top 5 Page", TargetType = typeof(Top5Page)},
                     new MasterDetailPage1MenuItem { Id = 1, Title = "Rate Page" , TargetType = typeof(RatePage)},
                     new MasterDetailPage1MenuItem {Id = 2, Title = "Check In", TargetType = typeof(Top5CheckPage)},
-                    new MasterDetailPage1MenuItem { Id = 2, Title = "Edit Rate Page" , TargetType = typeof(EditRatePage) },
-                    new MasterDetailPage1MenuItem {Id = 3, Title = "Browse Messages", TargetType = typeof(MessageTabbedPage)},
-                    new MasterDetailPage1MenuItem { Id = 4, Title = "Settings", TargetType = typeof(SettingsPage) },   
+                    new MasterDetailPage1MenuItem { Id = 3, Title = "Edit Rate Page" , TargetType = typeof(EditRatePage) },
+                    new MasterDetailPage1MenuItem {Id = 4, Title = "Browse Messages", TargetType = typeof(MessageTabbedPage)},
+                    new MasterDetailPage1MenuItem { Id = 5, Title = "Settings", TargetType = typeof(SettingsPage) },   
                     
                     //new MasterDetailPage1MenuItem { Id = 3, Title = "Page 4" },
                     //new MasterDetailPage1MenuItem { Id = 4, Title = "Page 5" },

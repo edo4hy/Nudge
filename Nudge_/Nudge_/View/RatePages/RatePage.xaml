@@ -88,7 +88,7 @@
                                     TextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
                                     SelectedDropDownItemColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}"
                                     DropDownBackgroundColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
-                                    BorderColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
+                                    BorderColor="{x:Static colours:ColourScheme.comboBoxBoarderColour}"
                                     DropDownTextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
                                     MaximumDropDownHeight="200" 
                                     IsEditableMode="true"  
@@ -100,15 +100,14 @@
                                     ValueChanged="Handle_ValueChanged"
                                     Text="{Binding ComboTextField}"
                                     DisplayMemberPath="AnswerText"
-                                 
                                    >
-                                <combobox:SfComboBox.ItemTemplate>
+                                <combobox:SfComboBox.ItemTemplate BackgroundColor="Blue">
                                     <DataTemplate>
-                                        <StackLayout Padding="5" Orientation="Horizontal">
+                                        <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
                                             <Label Text="{Binding AnswerText}"/>
-                                            </StackLayout>
-                                        </DataTemplate>
-                                    </combobox:SfComboBox.ItemTemplate>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </combobox:SfComboBox.ItemTemplate>
                             </combobox:SfComboBox> 
                         </Grid>
                     </StackLayout>
@@ -132,7 +131,7 @@
                                     TextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
                                     SelectedDropDownItemColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}"
                                     DropDownBackgroundColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
-                                    BorderColor="{x:Static colours:ColourScheme.comboBoxDropdownColour}"
+                                    BorderColor="{x:Static colours:ColourScheme.comboBoxBoarderColour}"
                                     DropDownTextColor="{x:Static colours:ColourScheme.comboBoxTextColour}"
                                     MaximumDropDownHeight="200" 
                                     IsEditableMode="true"  
@@ -141,7 +140,7 @@
                                     Text="{Binding ComboTextField}"
                                     DisplayMemberPath="AnswerText"
                                     >
-                                <combobox:SfComboBox.ItemTemplate  BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
+                                <combobox:SfComboBox.ItemTemplate  BackgroundColor="Transparent">
                                     <DataTemplate>
                                         <StackLayout Padding="5" Orientation="Horizontal" BackgroundColor="{x:Static colours:ColourScheme.comboBoxBackgroundColour}">
                                             <Label Text="{Binding AnswerText}"/>

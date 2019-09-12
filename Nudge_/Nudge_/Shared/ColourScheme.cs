@@ -27,6 +27,7 @@ namespace Nudge_.Shared
 
         public static Color comboBoxBackgroundColour = Color.FromHex("#404d4d4d");
         public static Color comboBoxDropdownColour = Color.FromHex("#CC4d4d4d");
+        public static Color comboBoxBoarderColour = Color.FromHex("CCA3A3A3");
         public static Color comboBoxTextColour = Color.FromHex("#FFFFFF");
 
         public static Color backgroundFilmColour = Color.FromHex("#804d4d4d");

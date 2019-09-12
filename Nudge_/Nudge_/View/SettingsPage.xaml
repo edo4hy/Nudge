@@ -33,7 +33,7 @@
                          <Label Text="Show Rate Page on open"/>
                         <Switch x:Name="ShowRatePage"  IsToggled="{Binding ShowRatePage}"></Switch>
             
-                        <Label  x:Name="SliderDisplay" Text="{Binding Source={x:Reference FrequencyPicker}, Path=Value, StringFormat='Frequency {0:F0}'}"/>
+                        <Label  x:Name="SliderDisplay" Text="{Binding Source={x:Reference FrequencyPicker}, Path=Value, StringFormat='Daily Notification Frequency {0:F0}'}"/>
                         <Slider x:Name="FrequencyPicker"  Value="{Binding MessageFrequency } " Maximum="50" Minimum="0" ValueChanged="FrequencyPicker_SelectedIndexChanged"/>
             
                         <Label Text="Start time:"/>

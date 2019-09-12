@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nudge_.View.EditQuestionPage"
              xmlns:Defaults="clr-namespace:Nudge_.Shared"
+             BackgroundColor="{x:Static Defaults:ColourScheme.headerColour}"
              >
     
         <ContentPage.Padding>
@@ -16,6 +17,8 @@
     <ContentPage.Content>
         <Grid>
             <Image Grid.RowSpan="2" Source="{x:Static Defaults:DefaultVariables.backgroundImage}" Aspect="AspectFill"/>
+            <Image Grid.RowSpan="2" BackgroundColor="{x:Static Defaults:ColourScheme.backgroundFilmColour}" Aspect="AspectFill"/>
+
             
             <StackLayout Padding="20">
                 <Label FontSize="Large" Text="Edit question"

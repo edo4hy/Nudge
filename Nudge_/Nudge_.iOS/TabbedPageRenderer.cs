@@ -25,10 +25,11 @@ namespace Kern.Client.iOS.Renderers
             TabBar.TintColor = UIKit.UIColor.FromRGB(206, 206, 206);
             //TabBar.BarTintColor = UIKit.UIColor.FromCGColor(ColourScheme.headerColour.ToCGColor());
             TabBar.BarTintColor = UIKit.UIColor.FromRGB((nfloat)R, (nfloat)G, (nfloat)B);
+            
 
-            Color Tf = UIKit.UIColor.FromRGBA(48, 79, 109, 255).ToColor();
+            //Color Tf = UIKit.UIColor.FromRGBA(48, 79, 109, 255).ToColor();
 
-            TabBar.BarTintColor = UIKit.UIColor.FromRGBA(48, 63, 86, 255);
+            //TabBar.BarTintColor = UIKit.UIColor.FromRGBA(48, 63, 86, 255);
             TabBar.BackgroundColor = UIKit.UIColor.White;
             TabBar.UnselectedItemTintColor = UIKit.UIColor.White;
         }

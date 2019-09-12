@@ -1,37 +1,33 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml">
     <Files>
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Master.xaml" Line="17" Column="48" />
-      <File FileName="Nudge_/Nudge_/Shared/DefaultVariables.cs" Line="14" Column="71" />
-      <File FileName="Nudge_/Nudge_/View/CreateMessage.xaml" Line="11" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/Top5Page.xaml" Line="7" Column="58" />
-      <File FileName="Nudge_/Nudge_/View/Top5CheckPage.xaml" Line="11" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/SettingsPage.xaml" Line="10" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/MessageView.xaml" Line="12" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/EditMessage.xaml" Line="7" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/RatePage.xaml" Line="11" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditSliderPage.xaml" Line="6" Column="14" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditRatePage.xaml" Line="13" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditQuestionPage.xaml" Line="6" Column="14" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml" Line="12" Column="14" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseSliders.xaml" Line="12" Column="14" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionsCreated.xaml" Line="12" Column="14" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml" Line="13" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Master.xaml.cs" Line="47" Column="54" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/MainActivity.cs" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.iOS/AppDelegate.cs" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml" Line="36" Column="37" />
+      <File FileName="../.nuget/packages/com.airbnb.xamarin.forms.lottie/2.7.1/readme.txt" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.iOS/Main.cs" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/Resources/values/styles.xml" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditQuestionPage.xaml" Line="23" Column="61" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml" Line="30" Column="129" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml" Line="70" Column="40" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionsCreated.xaml" Line="45" Column="41" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/RatePages/EditSliderPage.xaml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Shared" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="MasterDetail" expanded="True" />
                 <Node name="RatePages" expanded="True">
-                  <Node name="BrowseQuestions.xaml" selected="True" />
+                  <Node name="CreateSlider.xaml" selected="True" />
                 </Node>
               </Node>
             </Node>
           </Node>
+          <Node />
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -42,10 +38,8 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.oreo_8_1" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../Nudge_/Nudge_.iOS/TabbedPageRenderer.cs" line="18" offsetX="-1" offsetY="-1" expression="F" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.49BC5CD8-8282-4865-9854-623106F39AD1" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.158B6155-00BD-424E-85F2-4DEA185ECF36" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

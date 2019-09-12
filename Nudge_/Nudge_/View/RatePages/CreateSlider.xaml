@@ -40,12 +40,12 @@
                         <Entry x:Name="sliderPos" Placeholder="Positive answer" HorizontalOptions="End" HorizontalTextAlignment="End"/>
                     </StackLayout>
                 </StackLayout>
-                <Button Text="Add" Command="{Binding AddNewSlider}"
+                <Button Text="  Add  " Command="{Binding AddNewSlider}"
                         BackgroundColor="{x:Static colours:ColourScheme.primaryButtonColour}"
                         TextColor="{x:Static colours:ColourScheme.primaryButtonTextColour}"
                         BorderColor="{x:Static colours:ColourScheme.primaryButtonBoarderColour}"
                         HorizontalOptions="End"/>
-                <Label TextColor="#a82121" IsVisible="False" x:Name="sliderAddedLabel" HorizontalOptions="Center" Text="New Slider has been addded"/>
+                <Label TextColor="{x:Static colours:ColourScheme.infoTextLightColour}" IsVisible="False" x:Name="sliderAddedLabel" HorizontalOptions="Center" Text="New Slider has been addded"/>
             </StackLayout>
             <BoxView Grid.Row="2" HeightRequest="1" BackgroundColor="Gray"     />       
                 <syncfusion:SfListView
@@ -108,7 +108,7 @@
                                     </StackLayout>
                                  </Grid>
                                 <Grid Grid.Column="1" Padding="5">
-                                    <syncCheckBox:SfCheckBox TickColor="Transparent" UncheckedColor="#FFFFFF" CheckedColor="#FFFFFF" IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
+                                    <syncCheckBox:SfCheckBox UncheckedColor="#FFFFFF" CheckedColor="#FFFFFF" IsChecked="{Binding InUse}" StateChanged="Handle_StateChanged" CornerRadius="0" />
                                 </Grid>
                                 <Frame Grid.Row="1" Grid.ColumnSpan="2" OutlineColor="#E4E4E4" HasShadow="True" HeightRequest="1"/> 
                             </Grid>
