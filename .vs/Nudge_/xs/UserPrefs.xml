@@ -1,38 +1,55 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml">
     <Files>
-      <File FileName="Nudge_/Nudge_/View/MasterDetail/MasterDetailPage1Master.xaml.cs" Line="47" Column="54" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/MainActivity.cs" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.iOS/AppDelegate.cs" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml" Line="36" Column="37" />
-      <File FileName="../.nuget/packages/com.airbnb.xamarin.forms.lottie/2.7.1/readme.txt" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.iOS/Main.cs" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/Resources/values/styles.xml" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditQuestionPage.xaml" Line="23" Column="61" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/CreateSlider.xaml" Line="30" Column="129" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestions.xaml" Line="70" Column="40" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionsCreated.xaml" Line="45" Column="41" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/BrowseQuestionTabbed.xaml" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/RatePages/EditSliderPage.xaml" Line="1" Column="1" />
+      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/SelectWebVideoPage.xaml" Line="15" Column="1" />
+      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/SelectWebVideoPage.xaml.cs" Line="18" Column="89" />
+      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/PlayVideoResourcePage.xaml" Line="4" Column="13" />
+      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/PlayVideoResourcePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoPlayer.cs" Line="1" Column="1" />
+      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoSource.cs" Line="1" Column="1" />
+      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoSourceConverter.cs" Line="1" Column="1" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/FileVideoSource.cs" Line="4" Column="11" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml" Line="32" Column="33" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/AcrobaticsView.xaml" Line="1" Column="1" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/IVideoPicker.cs" Line="4" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/IVideoPlayerController.cs" Line="3" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/PositionSlider.cs" Line="4" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/ResourceVideoSource.cs" Line="4" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/UriVideoSource.cs" Line="4" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoInfo.cs" Line="3" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoPlayer.cs" Line="4" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoSource.cs" Line="4" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoSourceConverter.cs" Line="4" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoStatus.cs" Line="1" Column="40" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/FormsVideoLibrary/VideoPicker.cs" Line="38" Column="2" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/FormsVideoLibrary/VideoPlayerRenderer.cs" Line="13" Column="92" />
+      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Nudge_" expanded="True">
-            <Node name="Nudge_" expanded="True">
-              <Node name="View" expanded="True">
-                <Node name="RatePages" expanded="True">
-                  <Node name="CreateSlider.xaml" selected="True" />
+          <Node />
+          <Node name="VideoPlayerDemos" expanded="True">
+            <Node name="VideoPlayerDemos" expanded="True" />
+            <Node name="VideoPlayerDemos.Android" expanded="True" />
+          </Node>
+          <Node name="Walkthrough" expanded="True">
+            <Node name="Walkthrough" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Walkthrough" expanded="True">
+                  <Node name="BikingHardView.xaml" selected="True" />
                 </Node>
               </Node>
             </Node>
+            <Node name="Walkthrough.Android" expanded="True">
+              <Node name="FormsVideoLibrary" expanded="True" />
+            </Node>
           </Node>
-          <Node />
         </State>
       </Pad>
       <Pad Id="ClassPad">
         <State name="__root__">
-          <Node name="Nudge_" expanded="True" selected="True" />
+          <Node name="Walkthrough" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
