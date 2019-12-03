@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nudge_.View.Walkthrough.Nudge_Rates"
+             xmlns:me="clr-namespace:Nudge_.MarkupExtensions;assembly=Nudge_"
+             xmlns:player="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             BackgroundColor="{StaticResource BikingHardColor}"
+             >
+      <ContentView.Resources>
+        <ResourceDictionary>
+            <xamanimation:StoryBoard
+                x:Key="InfoPanelAnimation"
+                Target="{x:Reference InfoPanel}">
+                <xamanimation:FadeToAnimation
+                    Duration="50"
+                    Opacity="1" />
+                <xamanimation:TranslateToAnimation
+                    TranslateY="0"
+                    Easing="CubicIn"
+                    Duration="100" />
+            </xamanimation:StoryBoard>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid
+        x:Name="MainPanel"
+        BackgroundColor="{StaticResource BikingHardColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="2*" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition Height="20"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Padding="0,20" Grid.Column="1">
+            <player:VideoPlayer FillMode="ResizeAspect" Source="{me:VideoResource Setting_Rate.mp4} " AutoPlay="True" Repeat="True" />
+        </Grid>
+        <StackLayout Grid.ColumnSpan="3"
+            x:Name="InfoPanel"
+            Padding="0,-24,0,0"
+            Grid.Row="1"
+            VerticalOptions="Start"
+            >
+            <Label
+                Text="Rate Page Set Up"
+                Style="{StaticResource TutorialTitle}"
+                HorizontalTextAlignment="Start"
+                />
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold"
+                            Text="Self reflection is an important aspect of self improvement.  " />
+                        <Span
+                            Text="The Rate page helps you reflect on your own thoughts, experiences, moods, " />
+                        <Span
+                            Text=" actions and anything else you want to reflect upon throughout the day. " />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="Personalise the Rate page for your use by adding sliders and questions, " />
+                        <Span
+                            Text="both of which can be created and added to your rate page for when you check in. " />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>

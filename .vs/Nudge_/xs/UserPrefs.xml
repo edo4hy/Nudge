@@ -1,65 +1,68 @@
 ﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs">
     <Files>
-      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/SelectWebVideoPage.xaml" Line="15" Column="1" />
-      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/SelectWebVideoPage.xaml.cs" Line="18" Column="89" />
-      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/PlayVideoResourcePage.xaml" Line="4" Column="13" />
-      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/PlayVideoResourcePage.xaml.cs" Line="1" Column="1" />
-      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoPlayer.cs" Line="1" Column="1" />
-      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoSource.cs" Line="1" Column="1" />
-      <File FileName="../Downloads/Xamarin_Forms___Video_Player_Demos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoSourceConverter.cs" Line="1" Column="1" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/FileVideoSource.cs" Line="4" Column="11" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml" Line="32" Column="33" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/AcrobaticsView.xaml" Line="1" Column="1" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/IVideoPicker.cs" Line="4" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/IVideoPlayerController.cs" Line="3" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/PositionSlider.cs" Line="4" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/ResourceVideoSource.cs" Line="4" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/UriVideoSource.cs" Line="4" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoInfo.cs" Line="3" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoPlayer.cs" Line="4" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoSource.cs" Line="4" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoSourceConverter.cs" Line="4" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/FormsVideoLibrary/VideoStatus.cs" Line="1" Column="40" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/FormsVideoLibrary/VideoPicker.cs" Line="38" Column="2" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough.Android/FormsVideoLibrary/VideoPlayerRenderer.cs" Line="13" Column="92" />
-      <File FileName="../Development/xamarin-forms-walkthrough/src/Walkthrough/Walkthrough/Views/Walkthrough/BikingHardView.xaml.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="37" Column="53" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Top5.xaml" Line="9" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Rates.xaml" Line="8" Column="64" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Safe.xaml" Line="8" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Settings.xaml" Line="75" Column="70" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Welcome.xaml" Line="53" Column="16" />
+      <File FileName="Nudge_/Nudge_/View/WalkthroughView.xaml" Line="54" Column="39" />
+      <File FileName="Nudge_/Nudge_/View/WalkthroughView.xaml.cs" Line="21" Column="1" />
+      <File FileName="Nudge_/Nudge_/ViewModel/WalkthroughViewModel.cs" Line="25" Column="37" />
+      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="60" Column="32" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Welcome.xaml.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/Top5Page.xaml" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/View/EditMessage.xaml" Line="9" Column="4" />
+      <File FileName="Nudge_/Nudge_/App.xaml" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/ViewModel/SettingsViewModel.cs" Line="1" Column="1" />
+      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="180" Column="13" />
+      <File FileName="../.nuget/packages/xamarin.essentials/1.3.1/readme.txt" Line="20" Column="1" />
+      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
+      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
+      <File FileName="Nudge_/Nudge_.iOS/Notifications/UNNotificationsImpl.cs" Line="72" Column="75" />
+      <File FileName="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" Line="14" Column="66" />
+      <File FileName="Nudge_/Nudge_/Notification/INotifications.cs" Line="24" Column="50" />
+      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" Line="267" Column="14" />
+      <File FileName="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs" Line="64" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node />
-          <Node name="VideoPlayerDemos" expanded="True">
-            <Node name="VideoPlayerDemos" expanded="True" />
-            <Node name="VideoPlayerDemos.Android" expanded="True" />
-          </Node>
-          <Node name="Walkthrough" expanded="True">
-            <Node name="Walkthrough" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="Walkthrough" expanded="True">
-                  <Node name="BikingHardView.xaml" selected="True" />
-                </Node>
+          <Node name="Nudge_" expanded="True">
+            <Node name="Nudge_" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="Walkthrough" expanded="True" />
               </Node>
+              <Node name="ViewModel" expanded="True">
+                <Node name="Top5PageViewModel.cs" selected="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Walkthrough.Android" expanded="True">
-              <Node name="FormsVideoLibrary" expanded="True" />
+            <Node name="Nudge_.iOS" expanded="True">
+              <Node name="Notifications" expanded="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State name="__root__">
-          <Node name="Walkthrough" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.oreo_8_1" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.oreo_8_1" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.158B6155-00BD-424E-85F2-4DEA185ECF36" />
+  <MonoDevelop.Ide.ItemProperties.Nudge__.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FE3F3997-1000-46E5-9318-6437A76E6556" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/edwardobree/Downloads/Xamarin_Forms___TodoREST/TodoREST/Data/RestService.cs" line="34" column="1" />
+      <Breakpoint file="/Users/edwardobree/Downloads/Xamarin_Forms___TodoREST/TodoREST/Data/RestService.cs" line="51" column="1" />
+      <Breakpoint file="/Users/edwardobree/Downloads/Xamarin_Forms___TodoREST/TodoREST/Views/TodoItemPage.xaml.cs" line="19" column="1" />
+      <Breakpoint file="/Users/edwardobree/Downloads/Xamarin_Forms___TodoREST/TodoREST/Data/RestService.cs" line="30" column="1" />
+      <Breakpoint file="/Users/edwardobree/Projects/akin/API/akinApi/Controllers/AAddressesController.cs" line="92" column="1" />
+      <Breakpoint file="/Users/edwardobree/Projects/akin/API/akinApi/Controllers/AAddressesController.cs" line="82" column="1" />
+      <Breakpoint file="/Users/edwardobree/Projects/akin/API/akinApi/Controllers/AAddressesController.cs" line="50" column="1" />
+      <Breakpoint file="/Users/edwardobree/Projects/akin/akin/akin.Core/ViewModels/FirstViewModel.cs" line="78" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

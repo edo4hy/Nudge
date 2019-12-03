@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Nudge_.View.Walkthrough.Nudge_Safe"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            
+            <xamanimation:ColorAnimation
+                x:Key="BackgroundColorAnimation"
+                Target="{x:Reference MainPanel}"
+                ToColor="{StaticResource AcrobaticsColor}"
+                Duration="500" />
+            
+            <xamanimation:StoryBoard
+                x:Key="InfoPanelAnimation"
+                Target="{x:Reference InfoPanel}">
+                <xamanimation:FadeToAnimation
+                    Duration="50"
+                    Opacity="1" />
+                <xamanimation:TranslateToAnimation
+                    TranslateY="0"
+                    Easing="CubicIn"
+                    Duration="100" />
+            </xamanimation:StoryBoard>
+            
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid
+        x:Name="MainPanel"
+        BackgroundColor="{StaticResource BikingHardColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="1.3*" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition Height="20"/>
+
+        </Grid.RowDefinitions>
+        <forms:AnimationView
+            x:Name="LottieAnimation"
+            Grid.Row="0"
+            Animation="padlock_secure2.json"
+            AutoPlay="true"
+            Loop="True"
+            Speed="0.75"
+            Scale="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Margin="12" />
+        <StackLayout
+            x:Name="InfoPanel"
+            Padding="5,-24,5,0"
+            Grid.Row="1"
+            VerticalOptions="Start"
+           >
+            <Label
+                Text="Nudge is your app"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource TutorialTitle}" />
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="Use it how you want, to become more social, funnier, help with depression, anxiety, shift your mindset in anyway you choose." />
+              
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+                <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                       <Span
+                            Text="Its about reminding yourself of things you know but keep forgetting. " />
+              
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                         <Span
+                            Text="Nudge is for you and only you. Absolutely"/>
+                        <Span FontAttributes="Bold" Text=" no data "/>
+                        <Span Text="is collected. Everything is save to your phone on an SQLite database."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                         <Span
+                            Text="Nudge is completely " />
+                        <Span
+                            FontAttributes="Bold"
+                            Text="free " />
+                        <Span
+                            Text="and always will be. " />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>

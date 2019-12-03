@@ -15,6 +15,9 @@ using Nudge_.Shared;
 //using HockeyApp.iOS;
 using UIKit;
 using HockeyApp.iOS;
+using CarouselView.FormsPlugin.iOS;
+using Octane.Xamarin.Forms.VideoPlayer.iOS;
+using Lottie.Forms.iOS.Renderers;
 
 namespace Nudge_.iOS
 {
@@ -51,6 +54,10 @@ namespace Nudge_.iOS
             SfListViewRenderer.Init();
             SfButtonRenderer.Init();
 
+            //Walk through initialise
+            CarouselViewRenderer.Init();
+            FormsVideoPlayer.Init();
+            AnimationViewRenderer.Init();
 
             //Set up HockeyApp
 

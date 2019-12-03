@@ -86,7 +86,7 @@ namespace Nudge_.Shared
                 }
             }
             await Task.Delay(1000);
-            PrintNotifications();
+            //PrintNotifications();
         }
 
         public DateTime FindNextValidDay(Settings setting, DateTime date, int dayCount)
@@ -307,7 +307,7 @@ namespace Nudge_.Shared
 
             await Task.Delay(1000);
 
-            PrintNotifications();
+            //PrintNotifications();
             Console.WriteLine("asdklfjasldf");
         }
 

@@ -13,6 +13,8 @@ using UIKit;
 using Foundation;
 //using Android.Content.PM;
 using System.Collections.Generic;
+using Nudge_.View.Walkthrough;
+using Xamarin.Essentials; 
 //using UIKit;
 //using Foundation;
 //using UserNotifications;
@@ -30,61 +32,34 @@ namespace Nudge_
         public App()
         {
             InitializeComponent();
+            if(Preferences.Get("NewOpen", "default Value") != "false")
+            {
+                Preferences.Set("NewOpen", "newopen");
+            }
 
-            //if (database.GetSettingAsync(1) == null)
-            //{
-            //    Settings settings = new Settings
-            //        {
-            //            SettingId = 1,
-            //            SendNotifications = true,
-            //            DailyStartTime = new TimeSpan(7, 0, 0),
-            //            DailyEndTime = new TimeSpan(20, 0, 0),
-            //            ShowRatePage = true,
-            //            ShowTop5CheckPage = true,
-            //            MonNotify = true,
-            //            TueNotify = true,
-            //            WedNotify = true,
-            //            ThurNotify = true, 
-            //            FriNotify = true, 
-            //            SatNotify = true,
-            //            SunNotify = true, 
-            //        };
-
-            //     App.database.SaveSettingsAsync(settings);
-            //}
-
-            //MainPage = new BrowseSliderTabbed();
-
-            //MainPage = new NavigationPage(new RatePage()
-            //{
-            //    Title = DefaultMessages.ratePageTitle
-            //})
-            //{
-            //    BarTextColor = ColourScheme.headerTextColour,
-            //    BarBackgroundColor = ColourScheme.headerColour
-            //};
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
 
-            MainPage = new NavigationPage(new Top5CheckPage()
+            if(Preferences.Get("NewOpen", "false") == "false")
             {
-                Title = DefaultMessages.checkInPageTitle,
 
-            })
+                MainPage = new NavigationPage(new Top5CheckPage()
+                {
+                    Title = DefaultMessages.checkInPageTitle,
+
+                })
+                {
+                    BarTextColor = ColourScheme.headerTextColour,
+                    BarBackgroundColor = ColourScheme.headerColour
+                };
+                ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
+
+            }
+            else
             {
-                BarTextColor = ColourScheme.headerTextColour,
-                BarBackgroundColor = ColourScheme.headerColour
-            };
-
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = ColourScheme.headerColour;
-
-
-            //MainPage = new Top5Page();
-            //MainPage = new MyPage();
-
-            //MainPage = new NavigationPage(new EditRatePage());
-            //MainPage = new NavigationPage(new SettingsPage());
-
+                MainPage = new WalkthroughView();
+                Preferences.Set("NewOpen", "false");
+            }
 
         }
 

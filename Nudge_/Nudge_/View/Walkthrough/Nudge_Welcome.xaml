@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Nudge_.View.Walkthrough.Nudge_Welcome"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation">
+
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            
+            <xamanimation:ColorAnimation
+                x:Key="BackgroundColorAnimation"
+                Target="{x:Reference MainPanel}"
+                ToColor="{StaticResource AcrobaticsColor}"
+                Duration="500" />
+            
+            <xamanimation:StoryBoard
+                x:Key="InfoPanelAnimation"
+                Target="{x:Reference InfoPanel}">
+                <xamanimation:FadeToAnimation
+                    Duration="50"
+                    Opacity="1" />
+                <xamanimation:TranslateToAnimation
+                    TranslateY="0"
+                    Easing="CubicIn"
+                    Duration="100" />
+            </xamanimation:StoryBoard>
+            
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid
+        x:Name="MainPanel"
+        BackgroundColor="{StaticResource BikingHardColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="1.5*" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Padding="20, 80, 20, -150">
+             <forms:AnimationView
+                x:Name="LottieAnimation"
+                Animation="plus_5.json"
+                AutoPlay="true"
+                Loop="True"
+                Speed="1"
+                Scale="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+               />
+        </Grid>
+       
+        <StackLayout
+            x:Name="InfoPanel"
+            Padding="5,-24,5,0"
+            Grid.Row="1"
+            VerticalOptions="Start"
+            >
+            <Label
+                Text="Welcome to Nudge, give yourself a jolt in the right direction."
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource TutorialTitle}" />
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text='Mentality and mindset define all experience. As Friedrich Nietzsche said: "there are no facts, only interpretations".' />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+                <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                       <Span
+                            Text="Sometimes it can be hard to think positively or with a particular lens. Once we start heading down a mental pathway it can be difficult to turn back." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                         <Span
+                            Text="Nudge can help. It instills positive concepts and aids with self reflection to help improve your state of mind. " />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>

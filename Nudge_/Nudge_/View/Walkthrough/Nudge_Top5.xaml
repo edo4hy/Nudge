@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Nudge_.View.Walkthrough.Nudge_Top5"
+    xmlns:me="clr-namespace:Nudge_.MarkupExtensions;assembly=Nudge_"
+    xmlns:player="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <xamanimation:StoryBoard
+                x:Key="InfoPanelAnimation"
+                Target="{x:Reference InfoPanel}">
+                <xamanimation:FadeToAnimation
+                    Duration="50"
+                    Opacity="1" />
+                <xamanimation:TranslateToAnimation
+                    TranslateY="0"
+                    Easing="CubicIn"
+                    Duration="100" />
+            </xamanimation:StoryBoard>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid
+        x:Name="MainPanel"
+        BackgroundColor="{StaticResource BikingHardColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="1.5*" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition Height="20"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Padding="0,20" Grid.Column="1">
+            <player:VideoPlayer FillMode="ResizeAspect" Source="{me:VideoResource Setting_Top_5.mp4} " AutoPlay="True" Repeat="True" />
+        </Grid>
+        <StackLayout Grid.ColumnSpan="3"
+            x:Name="InfoPanel"
+            Padding="0,-24,0,0"
+            Grid.Row="1"
+            VerticalOptions="Start"
+            >
+            <Label
+                Text="Top 5 Set Up"
+                Style="{StaticResource TutorialTitle}"
+                HorizontalTextAlignment="Start"
+                />
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="Top 5 messages are sent out in notifications and are what you check in with. " />
+                        <Span 
+                            Text=" They are concepts, ideas, quotes, mindsets which you want to more rigorously instil in your psyche." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="It is good to keep a Top 5 message until it sinks in, but switch out messages which are becoming boring or no longer relevant. " />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="You can switch out a Top 5 message by either selecting it from the Top 5 page, or selecting a different message from the browse messages page. " />
+                         <Span
+                              FontAttributes="Bold"
+                            Text="You can also create messages in the create tab" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>
