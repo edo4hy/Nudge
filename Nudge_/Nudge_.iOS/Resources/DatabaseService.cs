@@ -13,6 +13,12 @@ using System.IO;
 [assembly: Dependency(typeof(DatabaseService))]
 namespace SQLiteTutorial.iOS
 {
+    /// <summary>
+    ///  DatabaseServices: Class that connects with db3 file
+    ///  or creates and copies over data from NudgeSQLite.db3 in file system
+    /// The connection is then called through the shared IDBInterface in NudgeDatabase
+    /// </summary> 
+
     public class DatabaseService : IDBInterface
     {
         public DatabaseService()
@@ -45,6 +51,7 @@ namespace SQLiteTutorial.iOS
             //var connection = new SQLite.Net.SQLiteConnection(iOSPlatform, path);
 
             var connection = new SQLiteAsyncConnection(path);
+         
 
             // Return the database connection 
             return connection;

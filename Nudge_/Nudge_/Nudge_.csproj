@@ -27,13 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="starEmpty.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="starEmpty.png">
-      <CustomToolNamespace></CustomToolNamespace>
-    </EmbeddedResource>
     <EmbeddedResource Include="Videos\Setting_Rate.mp4" />
     <EmbeddedResource Include="Videos\Setting_settings8.mp4">
       <SubType></SubType>

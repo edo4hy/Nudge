@@ -108,7 +108,6 @@
     <Compile Include="Notifications\UILocalNotificationsImpl.cs" />
     <Compile Include="Notifications\UNNotificationsImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\NudgeSQLite4.db3" />
     <BundleResource Include="Resources\Delete.png" />
     <BundleResource Include="Resources\negSign.png" />
     <BundleResource Include="Resources\plusSign.png" />

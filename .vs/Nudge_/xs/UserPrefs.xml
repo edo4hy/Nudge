@@ -1,49 +1,57 @@
-﻿<Properties StartupConfiguration="{37C730C2-D12B-4D6E-A46C-3A2BD6D39768}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs">
+﻿<Properties StartupConfiguration="{75C3D36B-6BBF-455A-8DDD-A8BABA82F807}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nudge_/Nudge_.iOS/Resources/DatabaseService.cs">
     <Files>
-      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="37" Column="53" />
-      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Top5.xaml" Line="9" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Rates.xaml" Line="8" Column="64" />
-      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Safe.xaml" Line="8" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Settings.xaml" Line="75" Column="70" />
-      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Welcome.xaml" Line="53" Column="16" />
-      <File FileName="Nudge_/Nudge_/View/WalkthroughView.xaml" Line="54" Column="39" />
-      <File FileName="Nudge_/Nudge_/View/WalkthroughView.xaml.cs" Line="21" Column="1" />
-      <File FileName="Nudge_/Nudge_/ViewModel/WalkthroughViewModel.cs" Line="25" Column="37" />
-      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" Line="60" Column="32" />
-      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Welcome.xaml.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/Top5Page.xaml" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/View/EditMessage.xaml" Line="9" Column="4" />
-      <File FileName="Nudge_/Nudge_/App.xaml" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/ViewModel/SettingsViewModel.cs" Line="1" Column="1" />
-      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" Line="180" Column="13" />
-      <File FileName="../.nuget/packages/xamarin.essentials/1.3.1/readme.txt" Line="20" Column="1" />
-      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
-      <File FileName="Nudge_/Nudge_.iOS/Main.cs" Line="18" Column="1" />
-      <File FileName="Nudge_/Nudge_.iOS/Notifications/UNNotificationsImpl.cs" Line="72" Column="75" />
-      <File FileName="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" Line="14" Column="66" />
-      <File FileName="Nudge_/Nudge_/Notification/INotifications.cs" Line="24" Column="50" />
-      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" Line="267" Column="14" />
-      <File FileName="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs" Line="64" Column="31" />
+      <File FileName="Nudge_/Nudge_/App.xaml.cs" Line="94" Column="10" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Top5.xaml" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Rates.xaml" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Safe.xaml" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Settings.xaml" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Welcome.xaml" />
+      <File FileName="Nudge_/Nudge_/View/WalkthroughView.xaml" />
+      <File FileName="Nudge_/Nudge_/View/WalkthroughView.xaml.cs" />
+      <File FileName="Nudge_/Nudge_/ViewModel/WalkthroughViewModel.cs" />
+      <File FileName="Nudge_/Nudge_.iOS/AppDelegate.cs" />
+      <File FileName="Nudge_/Nudge_/View/Walkthrough/Nudge_Welcome.xaml.cs" />
+      <File FileName="Nudge_/Nudge_/View/Top5Page.xaml" />
+      <File FileName="Nudge_/Nudge_/View/EditMessage.xaml" />
+      <File FileName="Nudge_/Nudge_/App.xaml" />
+      <File FileName="Nudge_/Nudge_/ViewModel/SettingsViewModel.cs" />
+      <File FileName="Nudge_/Nudge_/ViewModel/RatePageViewModel.cs" />
+      <File FileName="../.nuget/packages/xamarin.essentials/1.3.1/readme.txt" />
+      <File FileName="Nudge_/Nudge_.iOS/Main.cs" />
+      <File FileName="Nudge_/Nudge_.iOS/Notifications/UNNotificationsImpl.cs" />
+      <File FileName="Nudge_/Nudge_/Notification/AbstractNotificationsImpl.cs" />
+      <File FileName="Nudge_/Nudge_/Notification/INotifications.cs" />
+      <File FileName="Nudge_/Nudge_/Shared/NotificationScheduler.cs" />
+      <File FileName="Nudge_/Nudge_/ViewModel/Top5PageViewModel.cs" />
+      <File FileName="Nudge_/Nudge_/Data/NudgeDatabase.cs" />
+      <File FileName="Nudge_/Nudge_.Android/Infrastructure/DbSettings.cs" />
+      <File FileName="Nudge_/Nudge_.Android/Infrastructure/AcrSqliteConnection.cs" />
+      <File FileName="Nudge_/Nudge_.Android/Assets/DatabaseService.cs" />
+      <File FileName="Nudge_/Nudge_.iOS/Resources/DatabaseService.cs" Line="54" Column="10" />
+      <File FileName="Nudge_/Nudge_/Shared/IDBInterface.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nudge_" expanded="True">
             <Node name="Nudge_" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="View" expanded="True">
-                <Node name="Walkthrough" expanded="True" />
-              </Node>
-              <Node name="ViewModel" expanded="True">
-                <Node name="Top5PageViewModel.cs" selected="True" />
-              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Shared" expanded="True" />
               <Node name="App.xaml" expanded="True" />
             </Node>
+            <Node name="Nudge_.Android" expanded="True" />
             <Node name="Nudge_.iOS" expanded="True">
-              <Node name="Notifications" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="DatabaseService.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="Nudge_" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

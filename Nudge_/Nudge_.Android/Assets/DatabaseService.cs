@@ -15,9 +15,16 @@ using SQLite;
 using SQLiteTutorial.Droid;
 using Xamarin.Forms;
 
+
 [assembly: Dependency(typeof(DatabaseService))]
 namespace SQLiteTutorial.Droid
 {
+    /// <summary>
+    ///  DatabaseServices: Class that connects with db3 file
+    ///  or creates and copies over data from NudgeSQLite.db3 in file system
+    ///  The connection is then called through the shared IDBInterface in NudgeDatabase
+    /// </summary> 
+
     public class DatabaseService : IDBInterface
     {
         public DatabaseService()
@@ -53,6 +60,9 @@ namespace SQLiteTutorial.Droid
             return conn;
         }
 
+        /// <summary>
+        ///  ReadWriteStream: method which copies stream form db3 to platform file system 
+        /// </summary> 
         void ReadWriteStream(Stream readStream, Stream writeStream)
         {
             int Length = 256;
